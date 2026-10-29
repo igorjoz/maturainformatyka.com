@@ -2,6 +2,7 @@
 import { introMeeting } from '../data/site';
 import Arrow from './Arrow.astro';
 import OrbitAccent from './OrbitAccent.astro';
+import BookingCalendar from './BookingCalendar.astro';
 ---
 <section class="container intro-meeting" id="spotkanie-zapoznawcze" aria-labelledby="intro-title">
   <div class="intro-panel" data-motion data-reveal>
@@ -13,10 +14,11 @@ import OrbitAccent from './OrbitAccent.astro';
     </div>
     <div class="intro-next">
       <ul class="intro-points">
-        {introMeeting.points.map((point, index) => <li><span aria-hidden="true">0{index + 1}</span>{point}</li>)}
+        {introMeeting.agenda.map((step, index) => <li><span aria-hidden="true">0{index + 1}</span>{step.title}</li>)}
       </ul>
-      <a class="button button-primary button-free" href="#kontakt">{introMeeting.cta} <Arrow /></a>
-      <p class="intro-format">Spotkanie {introMeeting.format} · termin do uzgodnienia</p>
+      <a class="button button-primary button-free" href="#rezerwacja">{introMeeting.cta} <Arrow /></a>
+      <p class="intro-format">Spotkanie {introMeeting.format}{introMeeting.bookingUrl ? ' · Google Meet' : ''}</p>
     </div>
   </div>
+  <BookingCalendar />
 </section>

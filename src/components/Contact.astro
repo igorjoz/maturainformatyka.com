@@ -4,13 +4,12 @@ import Arrow from './Arrow.astro';
 import OrbitAccent from './OrbitAccent.astro';
 import GeometryBackdrop from './GeometryBackdrop.astro';
 import ContactCelebration from './ContactCelebration.astro';
-const bookingHref = `mailto:${site.email}?subject=${encodeURIComponent('Bezpłatne spotkanie zapoznawcze — matura z informatyki')}&body=${encodeURIComponent('Cześć Igor!\n\nChcę umówić bezpłatne, 30-minutowe spotkanie online.\n\nMaturę zdaję: \nMój poziom: \nMój cel: \nDogodne terminy: \n')}`;
 ---
 <section class="contact-section geometry-host" data-motion id="kontakt" aria-labelledby="contact-title"><OrbitAccent /><GeometryBackdrop variant="copper" /><div class="container contact">
   <div><p class="eyebrow">06 / ZRÓB PIERWSZY KROK</p><h2 id="contact-title">Twój plan na maturę<br />zaczyna się od rozmowy.</h2><p class="contact-invitation">{introMeeting.contactInvitation}</p><p>Napisz, kiedy zdajesz maturę, na jakim jesteś poziomie i jaki wynik jest Twoim celem. Wspólnie ustalimy, od czego zacząć.</p></div>
   <div class="contact-links"><a class="contact-email" href={`mailto:${site.email}`}><span>NAPISZ DO MNIE</span><strong>{site.email}</strong><Arrow diagonal /></a><a class="contact-phone" href={`tel:${site.phoneHref}`}><span>LUB ZADZWOŃ</span><strong>{site.phone}</strong><Arrow diagonal /></a><a class="listing-link" href={site.listing}>Zobacz ofertę i opinie na e-korepetycje.net <Arrow diagonal /></a></div>
   <div class="contact-booking">
     <div><span class="booking-eyebrow">TWÓJ PIERWSZY KROK</span><p>{introMeeting.duration} minut · {introMeeting.format} · <strong>{introMeeting.costLabel}</strong></p></div>
-    <a class="button button-primary button-free contact-booking-button" href={bookingHref}>{introMeeting.cta} <Arrow /></a>
+    <a class="button button-primary button-free contact-booking-button" href="#rezerwacja">{introMeeting.cta} <Arrow /></a>
   </div>
 </div><ContactCelebration /></section>

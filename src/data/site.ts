@@ -1,3 +1,6 @@
+import promptLabIllustration from '../../images/prompt_lab_illustration.png';
+import vulnerabilityVaultIllustration from '../../images/vulnerability_vault_illustration.png';
+
 const introDuration = 30;
 
 export const introMeeting = {
@@ -5,9 +8,20 @@ export const introMeeting = {
   format: 'online',
   costLabel: 'bezpłatnie',
   cta: 'Umów bezpłatne spotkanie',
+  // Wklej pełny adres z atrybutu src kodu „Wbudowana strona rezerwacji” Google.
+  bookingUrl: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ25WZbeDzESmQuNbh_KRaelOGxbBfgdW267RQf88-KVEOg6ysqbp2CJwDwL09aipDRayW0GvPJD',
   heading: 'Poznajmy się na darmowym spotkaniu online.',
   description: 'Podczas spotkania zapoznawczego porozmawiamy o Twoich oczekiwaniach i celu przygotowania do matury. Poznasz mój sposób pracy, a ja wstępnie sprawdzę Twój poziom i zaproponuję, jak mogę Ci pomóc.',
-  points: ['Poznajemy się', 'Omawiamy Twój cel', 'Wstępnie sprawdzamy poziom'],
+  agenda: [
+    { title: 'Poznajemy Twój cel', description: 'Porozmawiamy o tym, kiedy zdajesz maturę i jaki wynik chcesz osiągnąć.' },
+    { title: 'Omawiamy trudności', description: 'Przyjrzymy się temu, co już potrafisz i które tematy sprawiają Ci najwięcej problemów.' },
+    { title: 'Ustalamy kierunek przygotowań', description: 'Zaproponuję, od czego zacząć i jak mogę pomóc Ci w dalszej nauce.' },
+  ],
+  practicalQuestions: [
+    { question: 'Czy muszę coś przygotować?', answer: 'Nie potrzebujesz specjalnego przygotowania. Jeśli chcesz, możesz przynieść pytania albo zadanie, które sprawia Ci trudność.' },
+    { question: 'Czy muszę włączyć kamerę?', answer: 'Kamera jest opcjonalna. Możesz dołączyć do rozmowy tak, jak jest Ci wygodnie.' },
+    { question: 'Czy muszę od razu zdecydować się na zajęcia?', answer: 'Nie. Spotkanie służy temu, żebyśmy się poznali. O dalszej współpracy możesz spokojnie zdecydować po rozmowie.' },
+  ],
   contactInvitation: `Umów bezpłatne, ${introDuration}-minutowe spotkanie zapoznawcze online.`,
 };
 
@@ -26,6 +40,7 @@ export const site = {
     { href: '#wspolpraca', label: 'Współpraca' },
     { href: '#zakres', label: 'Zakres' },
     { href: '#o-mnie', label: 'O mnie' },
+    { href: '#opinie', label: 'Opinie' },
     { href: '#faq', label: 'FAQ' },
   ],
   hero: {
@@ -54,15 +69,21 @@ export const site = {
     ],
   },
   projects: [
-    { name: 'PromptLab', category: 'AI · LLM · RAG', description: 'Laboratorium do poznawania działania modeli językowych, chatbotów i systemów RAG.', url: 'https://igorjozef.com/' },
-    { name: 'Vulnerability Vault', category: 'Cyberbezpieczeństwo', description: 'Miejsce do nauki hackingu i poznawania zagadnień cyberbezpieczeństwa.', url: 'https://igorjozefowicz.com/' },
+    { name: 'PromptLab', category: 'AI · LLM · RAG', description: 'Laboratorium do poznawania działania modeli językowych, chatbotów i systemów RAG.', url: 'https://igorjozef.com/', image: promptLabIllustration, imageAlt: 'Dokumenty połączone ze szklanym modułem przetwarzania informacji i kartą odpowiedzi.' },
+    { name: 'Vulnerability Vault', category: 'Cyberbezpieczeństwo', description: 'Miejsce do nauki hackingu i poznawania zagadnień cyberbezpieczeństwa.', url: 'https://igorjozefowicz.com/', image: vulnerabilityVaultIllustration, imageAlt: 'Otwarty sejf z modułami systemu i lupą wskazującą przerwane połączenie.' },
   ],
   personal: 'https://igorjoz.com/pl',
   benefits: ['Zajęcia indywidualne 1:1', 'Plan dopasowany do Ciebie', 'Podsumowania i materiały', 'Wskazówki do pracy między zajęciami'],
 };
 
+export const testimonials = [
+  { name: 'Wiktor', date: '2026-06-08', dateLabel: '8 czerwca 2026', rating: 5, quote: 'Polecam, solidna instytucja, indywidualne podejście, pasja i odpowiednie podejście czynią cuda, dziękuję!!! Warto spróbować i poczuć moc wiedzy i pomocy.' },
+  { name: 'Maria', date: '2026-01-25', dateLabel: '25 stycznia 2026', rating: 5, quote: 'Nauczyciel z pasją i ogromną wiedzą. Tłumaczy jasno i konkretnie, dzięki czemu nawet trudne zagadnienia stają się zrozumiałe. Z pełnym przekonaniem polecam.' },
+  { name: 'Aleksandra', date: '2025-10-15', dateLabel: '15 października 2025', rating: 5, quote: 'Wystawiam bardzo dobrą opinię z poleceniem. Bardzo się cieszę, że tu trafiłam i dziękuję za zaoferowaną mi pomoc.' },
+];
+
 export const faqs = [
-  { question: 'Jak wygląda bezpłatne spotkanie zapoznawcze?', answer: `Spotkanie odbywa się ${introMeeting.format}, trwa ${introMeeting.duration} minut i jest bezpłatne. ${introMeeting.description} Aby ustalić termin, napisz do mnie lub zadzwoń.` },
+  { question: 'Jak wygląda bezpłatne spotkanie zapoznawcze?', answer: `Spotkanie odbywa się ${introMeeting.format}, trwa ${introMeeting.duration} minut i jest bezpłatne. ${introMeeting.description} ${introMeeting.bookingUrl ? 'Wybierz dostępny termin w kalendarzu w sekcji spotkania zapoznawczego. Po rezerwacji otrzymasz e-mail z potwierdzeniem i linkiem do Google Meet.' : 'Aby umówić spotkanie, napisz do mnie lub zadzwoń.'}` },
   { question: 'Jak wyglądają regularne zajęcia?', answer: 'Pracujemy zgodnie z indywidualnym planem przygotowania, rozwiązując zadania maturalne i omawiając zagadnienia, które wymagają uwagi. Po zajęciach otrzymujesz podsumowanie, materiały i wskazówki do samodzielnej pracy.' },
   { question: 'Czy muszę już dobrze programować?', answer: 'Punkt startu ustalamy indywidualnie. Napisz, co już potrafisz i kiedy zdajesz maturę. Na tej podstawie porozmawiamy o zakresie przygotowania i realnym planie pracy.' },
   { question: 'Python czy C++ — w którym języku pracujemy?', answer: 'Przygotowuję zarówno w Pythonie, jak i C++. Wybór dopasujemy do Twojego dotychczasowego doświadczenia i planu przygotowania.' },

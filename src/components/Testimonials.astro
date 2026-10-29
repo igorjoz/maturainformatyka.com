@@ -1,0 +1,20 @@
+---
+import { site, testimonials } from '../data/site';
+import Arrow from './Arrow.astro';
+---
+<section class="section container testimonials" id="opinie" aria-labelledby="testimonials-title">
+  <div class="section-heading">
+    <p class="eyebrow">OPINIE UCZNIÓW</p>
+    <div><h2 id="testimonials-title">Tak wspominają wspólną naukę.</h2><p>Opinie opublikowane na e-korepetycje.net.</p></div>
+  </div>
+  <div class="testimonials-grid">
+    {testimonials.map(review => (
+      <figure class="testimonial-card">
+        <span class="testimonial-stars" role="img" aria-label={`Ocena: ${review.rating} na 5`}>{'★'.repeat(review.rating)}</span>
+        <blockquote><p>{review.quote}</p></blockquote>
+        <figcaption><strong>{review.name}</strong><time datetime={review.date}>{review.dateLabel}</time></figcaption>
+      </figure>
+    ))}
+  </div>
+  <a class="text-link testimonials-source" href={site.listing} target="_blank" rel="noopener noreferrer">Zobacz opinie na e-korepetycje.net <Arrow diagonal /></a>
+</section>
