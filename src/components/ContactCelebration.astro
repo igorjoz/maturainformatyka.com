@@ -1,0 +1,15 @@
+---
+const particles = Array.from({ length: 48 }, (_, index) => {
+  const angle = (index % 24) / 24 * Math.PI * 2;
+  const radius = .65 + (index % 5) * .09;
+  return { x: Math.cos(angle) * radius, y: Math.sin(angle) * radius - .35 };
+});
+---
+<div class="contact-celebration" aria-hidden="true">
+  <span class="celebration-ring celebration-ring-left"></span>
+  <span class="celebration-ring celebration-ring-right"></span>
+  {particles.map((particle, index) => <span
+    class:list={['celebration-particle', { 'particle-right': index >= 24, 'particle-spark': index % 3 === 0 }]}
+    style={`--burst-x: ${particle.x.toFixed(3)}; --burst-y: ${particle.y.toFixed(3)}; --particle-delay: ${(index % 4) * 45}ms; --particle-turn: ${index * 37}deg;`}
+  />)}
+</div>

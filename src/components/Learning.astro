@@ -1,0 +1,14 @@
+---
+import { site } from '../data/site';
+import GeometryBackdrop from './GeometryBackdrop.astro';
+---
+<section class="section container geometry-host" data-motion id="wspolpraca" aria-labelledby="process-title">
+  <GeometryBackdrop />
+  <div class="section-heading"><p class="eyebrow">01 / SPOSÓB PRACY</p><div><h2 id="process-title">Dobry wynik zaczyna się od dobrego planu.</h2><p>Każdy uczeń ma inny punkt startu. Dlatego przygotowanie zaczynamy od Ciebie, a potem krok po kroku budujemy umiejętności.</p></div></div>
+  <div class="steps" data-process><span class="process-line" aria-hidden="true"></span>{site.steps.map((step, index) => <article class="step" data-reveal><div class="step-top"><span class="step-number">0{index + 1}</span></div><h3>{step.title}</h3><p>{step.text}</p><span class="step-tag">{step.tag}</span></article>)}</div>
+  <div class="learning-note"><span aria-hidden="true">↳</span><p><strong>Praca trwa również między spotkaniami.</strong> Dostajesz podsumowania, materiały i konkretne wskazówki do samodzielnej nauki.</p></div>
+</section>
+<section class="subjects-section geometry-host" data-motion id="zakres" aria-labelledby="subjects-title"><GeometryBackdrop variant="copper" /><div class="container section">
+  <div class="section-heading"><p class="eyebrow">02 / ZAKRES PRZYGOTOWANIA</p><div><h2 id="subjects-title">Wiedza, która łączy się w całość.</h2><p>Programowanie, praca z danymi i teoria. Uczymy się rozumieć zadania i świadomie wybierać narzędzia do ich rozwiązania.</p></div></div>
+  <div class="subjects-grid">{site.subjects.map((subject, index) => <article class="subject" data-card data-reveal style={`--reveal-delay: ${index * 80}ms`}><span class="subject-code" aria-hidden="true">{subject.code}</span><h3>{subject.title}</h3><p>{subject.text}</p></article>)}</div>
+</div></section>

@@ -1,0 +1,11 @@
+---
+import { site, faqs } from '../data/site';
+import Arrow from './Arrow.astro';
+import OrbitAccent from './OrbitAccent.astro';
+import GeometryBackdrop from './GeometryBackdrop.astro';
+---
+<section class="offer-section geometry-host" data-motion aria-labelledby="offer-title"><OrbitAccent /><GeometryBackdrop variant="light" /><div class="container offer">
+  <div><p class="eyebrow">04 / TWOJE PRZYGOTOWANIE</p><h2 id="offer-title">Pełna uwaga.<br />Twój rytm nauki.</h2><p>Zajęcia online, na których pracujemy nad Twoim celem. Terminy ustalamy wspólnie.</p></div>
+  <div class="price-card" data-reveal><span class="price-label">INDYWIDUALNE ZAJĘCIA ONLINE</span><p class="price"><strong>{site.onlinePrice}<span> zł</span></strong><span>/ 60 minut</span></p><ul>{site.benefits.map(benefit => <li><span aria-hidden="true">✓</span>{benefit}</li>)}</ul><a class="button button-primary" href="#kontakt">Porozmawiajmy o Twoim celu <Arrow /></a><p class="price-footnote">Spotkania {site.durations.join(' / ')} min · terminy do uzgodnienia</p></div>
+</div></section>
+<section class="section container faq" id="faq" aria-labelledby="faq-title"><div><p class="eyebrow">05 / WARTO WIEDZIEĆ</p><h2 id="faq-title">Zanim zaczniemy.</h2><p>Masz inne pytanie?<br /><a href={`mailto:${site.email}`}>Napisz do mnie.</a></p></div><div class="faq-list">{faqs.map(item => <details><summary>{item.question}<span class="faq-plus" aria-hidden="true"></span></summary><p>{item.answer}</p></details>)}</div></section>

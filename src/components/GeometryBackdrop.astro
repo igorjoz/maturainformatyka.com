@@ -1,0 +1,21 @@
+---
+const { variant = 'sage' } = Astro.props;
+---
+<div class:list={['section-geometry', `geometry-${variant}`]} aria-hidden="true">
+  <div class="geometry-parallax" data-parallax>
+    <div class="geometry-grid"></div>
+    <div class="geometry-halo ambient"></div>
+    <svg class="geometry-orbits" viewBox="0 0 600 600" fill="none">
+      <g class="geometry-ring ambient">
+        <ellipse cx="300" cy="300" rx="275" ry="170" transform="rotate(-35 300 300)" />
+        <circle cx="525" cy="142" r="6" fill="currentColor" />
+      </g>
+      <g class="geometry-ring geometry-ring-reverse ambient">
+        <ellipse cx="300" cy="300" rx="275" ry="125" transform="rotate(35 300 300)" />
+        <circle cx="80" cy="155" r="4" fill="currentColor" />
+      </g>
+      <circle cx="300" cy="300" r="225" stroke-dasharray="2 18" />
+      <path d="M280 300h40m-20-20v40" />
+    </svg>
+  </div>
+</div>

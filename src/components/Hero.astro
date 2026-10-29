@@ -1,0 +1,24 @@
+---
+import PortraitScene from './PortraitScene.astro';
+import { site, introMeeting } from '../data/site';
+import Arrow from './Arrow.astro';
+import GeometryBackdrop from './GeometryBackdrop.astro';
+---
+<section class="hero container geometry-host" data-motion id="start" aria-labelledby="hero-title">
+  <GeometryBackdrop variant="hero" />
+  <div class="hero-copy" data-reveal>
+    <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> INDYWIDUALNY MENTORING · ONLINE</p>
+    <h1 id="hero-title">{site.hero.heading}<br /><span>{site.hero.accent}</span></h1>
+    <p class="hero-description">{site.hero.description}</p>
+    <div class="hero-actions">
+      <div class="hero-intro-action">
+        <a class="button button-primary button-free" href="#kontakt" aria-describedby="intro-hero-note">{introMeeting.cta} <Arrow /></a>
+        <p class="intro-hero-note" id="intro-hero-note">{introMeeting.duration} minut · {introMeeting.format} · <strong>{introMeeting.costLabel}</strong></p>
+      </div>
+      <a class="text-link" href="#wspolpraca">Poznaj sposób pracy <span aria-hidden="true">↓</span></a>
+    </div>
+    <div class="hero-facts"><span>Online</span><span>Indywidualnie</span><span class="regular-price">Regularne zajęcia: <strong>{site.onlinePrice} zł</strong> / 60 min</span></div>
+  </div>
+  <PortraitScene />
+</section>
+<div class="topic-strip"><div class="container"><span>Od zrozumienia do rozwiązania.</span><div>Python / C++ <span aria-hidden="true">✳</span> Algorytmika <span aria-hidden="true">✳</span> Excel i Access <span aria-hidden="true">✳</span> Zadania CKE</div></div></div>

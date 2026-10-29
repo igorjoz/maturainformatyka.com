@@ -1,0 +1,45 @@
+---
+import { Picture } from 'astro:assets';
+import portrait from '../../images/portrait-art.png';
+import { site } from '../data/site';
+---
+<figure class="portrait-scene" data-portrait-scene>
+  <div class="portrait-composition">
+    <div class="scene-layer scene-backdrop" aria-hidden="true">
+      <svg viewBox="0 0 560 640" fill="none">
+        <g class="scene-drift ambient"><path class="scene-blob" d="M98 111C164 28 365 39 445 133C513 213 483 292 477 373C470 472 432 573 296 593C160 613 73 528 66 417C59 306 28 199 98 111Z" fill="#dce6db" /></g>
+        <g class="scene-drift scene-drift-copper ambient"><circle cx="440" cy="127" r="68" fill="#f4d4b8" /></g>
+        <g class="scene-drift scene-drift-sage ambient"><circle cx="127" cy="462" r="80" fill="#c2d2c2" opacity=".6" /></g>
+      </svg>
+    </div>
+    <div class="scene-layer scene-geometry" aria-hidden="true">
+      <svg viewBox="0 0 560 640" fill="none">
+        <g class="orbit-track ambient"><ellipse class="scene-orbit" cx="282" cy="322" rx="241" ry="173" transform="rotate(-39 282 322)" stroke="#18364a" stroke-opacity=".55" stroke-width="1.5" pathLength="1" /><circle cx="466" cy="170" r="5" fill="#18364a" /><circle cx="466" cy="170" r="13" stroke="#18364a" stroke-opacity=".2" /></g>
+        <g class="orbit-track orbit-track-reverse ambient"><ellipse class="scene-orbit scene-orbit-copper" cx="283" cy="316" rx="258" ry="122" transform="rotate(42 283 316)" stroke="#ac632f" stroke-width="1.8" pathLength="1" /><circle cx="475" cy="482" r="6" fill="#ac632f" /></g>
+        <path class="scene-connections" d="M65 230L125 113L442 105L511 389L430 539L109 501L65 230" stroke="#18364a" stroke-opacity=".18" stroke-width="1" pathLength="1" />
+        <g fill="#18364a"><circle cx="65" cy="230" r="5" /><circle cx="125" cy="113" r="4" /><circle cx="511" cy="389" r="5" /><circle cx="109" cy="501" r="4" /></g>
+        <g fill="#ac632f"><circle cx="442" cy="105" r="6" /><circle cx="430" cy="539" r="5" /></g>
+        <circle cx="442" cy="105" r="14" stroke="#ac632f" stroke-opacity=".35" />
+        <path d="M36 360h20m-10-10v20M484 181h20m-10-10v20" stroke="#ac632f" stroke-width="1.5" />
+      </svg>
+    </div>
+    <div class="scene-layer scene-person">
+      <Picture
+        src={portrait}
+        formats={['avif', 'webp']}
+        fallbackFormat="png"
+        widths={[360, 560, 800, 1122]}
+        sizes="(max-width: 600px) 88vw, (max-width: 900px) 440px, (max-width: 1200px) 40vw, 460px"
+        alt="Artystyczny portret Igora Józefowicza, prowadzącego zajęcia z informatyki"
+        loading="eager"
+        fetchpriority="high"
+        class="hero-portrait"
+      />
+    </div>
+    <span class="scene-coordinate" aria-hidden="true">01 — TWÓJ PUNKT STARTU</span>
+  </div>
+  <figcaption class="portrait-caption">
+    <strong>{site.name}</strong>
+    <span>Inżynier informatyki · Politechnika Gdańska</span>
+  </figcaption>
+</figure>

@@ -1,0 +1,40 @@
+---
+import { site } from '../data/site';
+import Arrow from './Arrow.astro';
+import logo from '../assets/logo-book-code.png';
+---
+<a class="skip-link" href="#tresc">Przejdź do treści</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#start" aria-label="Matura z informatyki — początek strony">
+      <img class="brand-symbol" src={logo.src} width="38" height="38" alt="" aria-hidden="true" />
+      <span>matura<span class="brand-light">informatyka</span><span class="brand-dot">.</span></span>
+    </a>
+    <nav aria-label="Nawigacja główna" class="desktop-nav">
+      {site.navigation.map(link => <a href={link.href}>{link.label}</a>)}
+    </nav>
+    <a class="header-contact" href="#kontakt">Porozmawiajmy <Arrow /></a>
+    <details class="mobile-menu">
+      <summary aria-label="Menu nawigacji" aria-controls="mobile-navigation">
+        <span class="menu-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      </summary>
+      <nav id="mobile-navigation" aria-label="Nawigacja mobilna">
+        {site.navigation.map(link => <a href={link.href}>{link.label}</a>)}
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<script>
+  const menu = document.querySelector<HTMLDetailsElement>('.mobile-menu');
+  menu?.addEventListener('toggle', () => {
+    menu.querySelector('summary')?.setAttribute('aria-label', menu.open ? 'Zamknij menu nawigacji' : 'Otwórz menu nawigacji');
+  });
+  menu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { menu.open = false; }));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && menu?.open) {
+      menu.open = false;
+      menu.querySelector('summary')?.focus();
+    }
+  });
+</script>

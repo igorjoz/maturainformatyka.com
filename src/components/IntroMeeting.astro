@@ -1,0 +1,22 @@
+---
+import { introMeeting } from '../data/site';
+import Arrow from './Arrow.astro';
+import OrbitAccent from './OrbitAccent.astro';
+---
+<section class="container intro-meeting" id="spotkanie-zapoznawcze" aria-labelledby="intro-title">
+  <div class="intro-panel" data-motion data-reveal>
+    <OrbitAccent />
+    <div class="intro-copy">
+      <p class="intro-badge">{introMeeting.costLabel} · {introMeeting.duration} minut</p>
+      <h2 id="intro-title">{introMeeting.heading}</h2>
+      <p class="intro-description">{introMeeting.description}</p>
+    </div>
+    <div class="intro-next">
+      <ul class="intro-points">
+        {introMeeting.points.map((point, index) => <li><span aria-hidden="true">0{index + 1}</span>{point}</li>)}
+      </ul>
+      <a class="button button-primary button-free" href="#kontakt">{introMeeting.cta} <Arrow /></a>
+      <p class="intro-format">Spotkanie {introMeeting.format} · termin do uzgodnienia</p>
+    </div>
+  </div>
+</section>
