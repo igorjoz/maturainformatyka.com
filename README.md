@@ -58,13 +58,24 @@ npm run preview
 
 Gotowa witryna znajduje się w `dist/`. Do hostingu statycznego należy przekazać całą zawartość tego katalogu, wraz z `_astro/`. Publikację na Hostingerze obsługuje opisany poniżej workflow GitHub Actions.
 
+### Testy
+
+Podstawowe testy przeglądarkowe korzystają z Playwright i Chromium. Po `npm ci` zainstaluj przeglądarkę (jednorazowo, ponownie po aktualizacji Playwright):
+
+```bash
+npx playwright install --with-deps chromium
+npm test
+```
+
+`npm test` sam buduje stronę i uruchamia tymczasowy podgląd na porcie 4322. Sześć testów sprawdza treść i metadane, obrazy, nawigację, przejście do rezerwacji, linki kontaktowe, menu mobilne oraz FAQ i podstawową nawigację bez JavaScriptu. Połączenie z Google Calendar jest zastępowane lokalną odpowiedzią; testy nie rezerwują terminów ani nie sprawdzają dostępności zewnętrznej usługi. Po błędzie zrzut ekranu i ślad wykonania trafiają do ignorowanego `test-results/`.
+
 ## Automatyczne wdrożenia na Hostingera
 
-Workflow `.github/workflows/deploy.yml` instaluje zależności, uruchamia `npm run check` i `npm run build`, a po ich powodzeniu wysyła zawartość `dist/` przez rsync po SSH. Docker nie jest wymagany na hostingu.
+Workflow `.github/workflows/deploy.yml` instaluje zależności i Chromium, uruchamia `npm run check` oraz `npm test` (wraz z buildem), a po ich powodzeniu wysyła zawartość `dist/` przez rsync po SSH. Błąd testów zatrzymuje wdrożenie. Docker nie jest wymagany na hostingu.
 
-- Push do `master` uruchamia sprawdzanie, build i wdrożenie.
-- Pull request do `master` uruchamia tylko sprawdzanie i build, bez dostępu do sekretów wdrożeniowych.
-- Ręczne uruchomienie jest dostępne w **Actions → Deploy to Hostinger → Run workflow**. Wybierz gałąź `master`. Zaznaczenie `dry_run` sprawdza połączenie i plan transferu bez zmiany plików na serwerze. Ręczne uruchomienie z innej gałęzi wykonuje tylko sprawdzanie i build.
+- Push do `master` uruchamia sprawdzanie, build, testy i wdrożenie.
+- Pull request do `master` uruchamia sprawdzanie, build i testy, bez dostępu do sekretów wdrożeniowych.
+- Ręczne uruchomienie jest dostępne w **Actions → Deploy to Hostinger → Run workflow**. Wybierz gałąź `master`. Zaznaczenie `dry_run` sprawdza połączenie i plan transferu bez zmiany plików na serwerze. Ręczne uruchomienie z innej gałęzi wykonuje sprawdzanie, build i testy.
 - Wdrożenia nie wykonują się równocześnie. Grafiki, style i skrypty są wysyłane przed `index.html`. Stare pliki, w tym `.htaccess` i wcześniejsze zasoby `_astro/`, pozostają na serwerze; automatyczne wdrożenie ich nie usuwa.
 
 ### Konfiguracja sekretów

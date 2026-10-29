@@ -34,3 +34,7 @@ auth.json
 .astro/
 dist/
 .tools/
+
+# Playwright
+test-results/
+playwright-report/
