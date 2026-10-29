@@ -56,7 +56,46 @@ npm run build
 npm run preview
 ```
 
-Gotowa witryna znajduje się w `dist/`. Do hostingu statycznego należy przekazać całą zawartość tego katalogu, wraz z `_astro/`. Publikacja i konfiguracja domeny nie są częścią implementacji.
+Gotowa witryna znajduje się w `dist/`. Do hostingu statycznego należy przekazać całą zawartość tego katalogu, wraz z `_astro/`. Publikację na Hostingerze obsługuje opisany poniżej workflow GitHub Actions.
+
+## Automatyczne wdrożenia na Hostingera
+
+Workflow `.github/workflows/deploy.yml` instaluje zależności, uruchamia `npm run check` i `npm run build`, a po ich powodzeniu wysyła zawartość `dist/` przez rsync po SSH. Docker nie jest wymagany na hostingu.
+
+- Push do `master` uruchamia sprawdzanie, build i wdrożenie.
+- Pull request do `master` uruchamia tylko sprawdzanie i build, bez dostępu do sekretów wdrożeniowych.
+- Ręczne uruchomienie jest dostępne w **Actions → Deploy to Hostinger → Run workflow**. Wybierz gałąź `master`. Zaznaczenie `dry_run` sprawdza połączenie i plan transferu bez zmiany plików na serwerze. Ręczne uruchomienie z innej gałęzi wykonuje tylko sprawdzanie i build.
+- Wdrożenia nie wykonują się równocześnie. Grafiki, style i skrypty są wysyłane przed `index.html`. Stare pliki, w tym `.htaccess` i wcześniejsze zasoby `_astro/`, pozostają na serwerze; automatyczne wdrożenie ich nie usuwa.
+
+### Konfiguracja sekretów
+
+W repozytorium GitHub otwórz **Settings → Secrets and variables → Actions → New repository secret** i dodaj:
+
+| Sekret | Wartość |
+| --- | --- |
+| `HOSTINGER_HOST` | Adres IP lub nazwa serwera z hPanel, bez `ssh://` i bez portu. |
+| `HOSTINGER_PORT` | Port SSH z hPanel, zwykle `65002` na hostingu współdzielonym. |
+| `HOSTINGER_USER` | Nazwa użytkownika SSH z hPanel. |
+| `HOSTINGER_PATH` | Istniejący, zapisywalny katalog strony, np. `/home/u123456789/domains/maturainformatyka.com/public_html`. Użyj rzeczywistej ścieżki z konta. |
+| `HOSTINGER_SSH_KEY` | Cały klucz prywatny bez hasła, wraz z liniami `BEGIN` i `END`. Nie plik `.pub`. |
+| `HOSTINGER_KNOWN_HOSTS` | Pełny wpis z pliku `known_hosts` dla tego samego hosta i portu, np. `[ADRES_IP]:65002 ssh-ed25519 AAAA…`. Nie sam odcisk `SHA256:…`. |
+
+W Hostingerze włącz SSH i dodaj odpowiadający klucz publiczny w **Dostęp SSH → Dodaj klucz SSH**. Przed zapisaniem `HOSTINGER_KNOWN_HOSTS` porównaj odcisk klucza serwera z odciskiem wyświetlanym w hPanel. Nie zapisuj klucza prywatnego w repozytorium.
+
+Jeśli plik hosta został już zaakceptowany i zapisany w Windows PowerShell, jego zawartość skopiujesz poleceniem:
+
+```powershell
+Get-Content "$HOME\.ssh\hostinger_known_hosts" | Set-Clipboard
+```
+
+### Pierwsze uruchomienie i aktualizacje
+
+1. Zrób kopię obecnego katalogu strony w Hostingerze. Wdrożenie nadpisuje pliki o tych samych nazwach.
+2. Dodaj sześć sekretów i wyślij workflow oraz `scripts/deploy-hostinger.sh` do repozytorium. Push do `master` uruchomi wdrożenie automatycznie; jeśli chcesz zacząć od próby, dodaj pliki najpierw na innej gałęzi i uzupełnij sekrety dopiero po scaleniu workflow do `master`, następnie uruchom ręcznie z `dry_run`.
+3. Po udanym teście uruchom workflow na `master` bez `dry_run`. Sprawdź stronę, ilustracje i kalendarz pod domeną. Jeśli Hostinger lub CDN pokazuje poprzednią wersję, wyczyść jego cache.
+4. Następne pushe do `master` publikują aktualizacje automatycznie. Brak sekretu, błąd klucza, połączenia lub builda zatrzymuje wdrożenie. Dziennik jest dostępny w zakładce **Actions**.
+
+Skrypt `scripts/deploy-hostinger.sh` odczytuje powyższe zmienne środowiskowe. Można go uruchomić po lokalnym buildzie na Linuxie/WSL z zainstalowanymi SSH i rsync; `DEPLOY_DRY_RUN=true bash scripts/deploy-hostinger.sh` wykonuje próbę. Skrypt usuwa tymczasowe pliki kluczy po zakończeniu i nie akceptuje nieznanych kluczy serwera automatycznie. Transfer nie jest atomową podmianą całego katalogu i nie wykonuje kopii zapasowej hostingu.
 
 ## Edycja
 

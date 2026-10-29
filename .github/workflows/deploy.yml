@@ -1,0 +1,59 @@
+name: Deploy to Hostinger
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Sprawdź połączenie i plan wysyłki bez zmiany plików na hostingu
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hostinger-${{ github.event_name == 'pull_request' && github.ref || 'production' }}
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      ASTRO_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Check project
+        run: npm run check
+
+      - name: Build website
+        run: npm run build
+
+      - name: Deploy to Hostinger
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+        env:
+          HOSTINGER_HOST: ${{ secrets.HOSTINGER_HOST }}
+          HOSTINGER_PORT: ${{ secrets.HOSTINGER_PORT }}
+          HOSTINGER_USER: ${{ secrets.HOSTINGER_USER }}
+          HOSTINGER_PATH: ${{ secrets.HOSTINGER_PATH }}
+          HOSTINGER_SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
+          HOSTINGER_KNOWN_HOSTS: ${{ secrets.HOSTINGER_KNOWN_HOSTS }}
+          DEPLOY_DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}
+        run: bash scripts/deploy-hostinger.sh
