@@ -121,7 +121,7 @@ Skrypt `scripts/deploy-hostinger.sh` odczytuje powyższe zmienne środowiskowe. 
 - `src/scripts/lesson-lab.ts` — sterowanie demonstracją, pauzowanie i przywracanie pełnego rozwiązania.
 - `src/styles/lesson-lab.css` — wygląd panelu sterowania i wyróżnienia aktualnego kroku.
 
-Nowe ilustracje znajdują się w `images/learning-algorithm.png` i `images/learning-data.png`; opis generowania i pełne prompty zapisano w `images/learning-assets.md`. Astro tworzy ich responsywne warianty podczas builda. Projekty w sekcji „O mnie” używają małych miniatur. Sekcja oferty ma kotwicę `#oferta`, przykład lekcji — `#przyklad`. Rezerwacja znajduje się pod ofertą, przed FAQ; wszystkie główne przyciski prowadzą do `#rezerwacja`.
+Ilustracje zakresu nauki pochodzą z `images/algorithm.png` (algorytmy) i `images/relations.png` (dane). Oryginały mają 1536 × 1024 px. Podczas builda Astro tworzy warianty AVIF, WebP i zapasowe JPEG o szerokości 360, 640, 960 i 1280 px, z jakością 75. Przeglądarka dobiera plik do szerokości ilustracji i gęstości ekranu; `sizes` uwzględnia także dwukolumnowy układ na tablecie. Obrazy ładują się leniwie i są dekodowane asynchronicznie. Projekty w sekcji „O mnie” używają małych miniatur. Sekcja oferty ma kotwicę `#oferta`, przykład lekcji — `#przyklad`. Rezerwacja znajduje się pod ofertą, przed FAQ; wszystkie główne przyciski prowadzą do `#rezerwacja`.
 
 Treści trzech poziomów przykładu zapisano w `lessonExample.examples` w `src/data/site.ts`; lista `actions` określa przyciski przejścia i powrotu. Poziomy to „Podstawy” (liczenie parzystych liczb), „Krok dalej” (największa suma spójnego fragmentu, algorytm Kadane’a) oraz „Wyzwanie” (długość najdłuższego ściśle rosnącego podciągu, programowanie dynamiczne O(n²)). Wyzwanie oblicza długość 4, a wyróżnione liczby `[1, 2, 4, 9]` pokazują jeden z poprawnych podciągów. Po zmianie fokus trafia na polecenie, a przewijanie uwzględnia nagłówek i ograniczenie ruchu. Bez JavaScriptu wszystkie przykłady są widoczne kolejno, z linkami między nimi. Oznaczenie teorii ma postać `1010` z indeksem dolnym `2`, zapisanym w danych jako `base`.
 
@@ -139,7 +139,7 @@ Odtwarzanie przechodzi o jeden krok co 1200 ms. Zatrzymuje się na końcu, przy 
 
 Nagłówek pokazuje postęp czytania i oznacza aktualną sekcję przez `aria-current="location"`. Te wskazówki działają także przy ograniczeniu ruchu. Sekcje korzystają ze wspólnych parametrów `--motion-reaction` (200 ms), `--motion-enter` (550 ms) i `--ease-out`.
 
-Świetlny fragment orbity, aktywowane etapy współpracy, rysowane połączenia przy ilustracjach i sekwencyjne wejście korzyści uzupełniają istniejące animacje. Karty projektów otrzymują poświatę pod kursorem i niewielkie przybliżenie miniatury. Efekty kursora działają wyłącznie na ekranach szerszych niż 900 px z precyzyjnym wskaźnikiem; dotyk ma krótkie podświetlenie. Grafiki pozostają lokalnymi obrazami, a dekoracje używają CSS i SVG.
+Świetlny fragment orbity, aktywowane etapy współpracy i sekwencyjne wejście korzyści uzupełniają istniejące animacje. Karty projektów otrzymują poświatę pod kursorem i niewielkie przybliżenie miniatury. Efekty kursora działają wyłącznie na ekranach szerszych niż 900 px z precyzyjnym wskaźnikiem; dotyk ma krótkie podświetlenie. Grafiki pozostają lokalnymi obrazami, a dekoracje używają CSS i SVG.
 
 Portret pochodzi z `images/portrait-art.png`. Responsywne AVIF/WebP i zapasowe PNG zachowują przezroczystość. Po zmianie oryginału odtwórz wariant z jasnym tłem dla Open Graph, a następnie uruchom build:
 

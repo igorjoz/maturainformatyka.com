@@ -1,7 +1,7 @@
 import promptLabIllustration from '../../images/prompt_lab_illustration.png';
 import vulnerabilityVaultIllustration from '../../images/vulnerability_vault_illustration.png';
-import algorithmIllustration from '../../images/learning-algorithm.png';
-import dataIllustration from '../../images/learning-data.png';
+import algorithmIllustration from '../../images/algorithm.png';
+import dataIllustration from '../../images/relations.png';
 
 const introDuration = 30;
 
@@ -90,14 +90,14 @@ export const subjectGroups = [
     number: '01', title: 'Programowanie i algorytmy',
     description: 'Od „nie wiem, jak zacząć” do własnego rozwiązania. Najpierw rozumiesz problem, potem dobierasz narzędzia i piszesz kod.',
     image: algorithmIllustration,
-    imageAlt: 'Ceramiczne moduły połączone w ścieżkę symbolizującą kolejne kroki algorytmu.',
+    imageAlt: 'Nieuporządkowane słupki przechodzą przez moduł decyzji i tworzą rosnący ciąg.',
     subjects: site.subjects.slice(0, 2),
   },
   {
     number: '02', title: 'Praca z danymi',
     description: 'W tabelach zaczynasz dostrzegać zależności. Uczysz się zadawać danym właściwe pytania i wyciągać z nich wnioski.',
     image: dataIllustration,
-    imageAlt: 'Przestrzenny arkusz danych i połączone tabele z wyróżnionymi komórkami.',
+    imageAlt: 'Powiązane tabele, arkusz z wyróżnionymi komórkami i przestrzenny wykres słupkowy.',
     subjects: site.subjects.slice(2, 4),
   },
 ];
