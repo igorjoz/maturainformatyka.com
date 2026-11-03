@@ -105,6 +105,8 @@ test('przykład przełącza poziom i pozwala wielokrotnie wrócić do podstaw', 
     // Ukryty panel nie występuje w drzewie dostępności ani w kolejności Tab.
     await expect(page.getByRole('heading', { name: 'Policz, ile liczb w podanym ciągu jest parzystych.' })).toHaveCount(0);
     await page.keyboard.press('Tab');
+    await expect(advanced.getByRole('button', { name: 'Prześledź rozwiązanie' })).toBeFocused();
+    await page.keyboard.press('Tab');
     await expect(advanced.locator('pre')).toBeFocused();
     await page.keyboard.press('Tab');
     const back = advanced.getByRole('button', { name: '← Wróć do podstaw' });
@@ -134,6 +136,8 @@ test('wyzwanie pokazuje rosnący podciąg i pozwala wracać przez wszystkie pozi
     await expect(challenge.locator('.sequence-caption')).toContainText('zachować ich kolejność');
     await expect(challenge.locator('.lesson-takeaway')).toContainText('O(n²)');
     await expect(page.getByRole('heading', { level: 3 }).filter({ hasText: 'Znajdź największą sumę' })).toHaveCount(0);
+    await page.keyboard.press('Tab');
+    await expect(challenge.getByRole('button', { name: 'Prześledź rozwiązanie' })).toBeFocused();
     await page.keyboard.press('Tab');
     await expect(challenge.locator('pre')).toBeFocused();
     await page.keyboard.press('Tab');

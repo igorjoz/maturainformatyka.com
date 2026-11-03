@@ -67,7 +67,7 @@ npx playwright install --with-deps chromium
 npm test
 ```
 
-`npm test` sam buduje stronę i uruchamia tymczasowy podgląd na porcie 4322. Dwadzieścia sześć testów sprawdza treść i metadane, obrazy, nawigację, rezerwację, kontakt, trzy poziomy przykładu lekcji i ich przełączanie, oznaczenie teorii, kolejność oferty i kalendarza, menu mobilne, klawiaturę, ograniczenie ruchu i działanie bez JavaScriptu. Testy kolorowania Pythona sprawdzają kolory tokenów, kontrast i zachowanie tekstu oraz wcięć przy zaznaczaniu kodu, także bez JavaScriptu. Układ jest sprawdzany dla szerokości 360, 390, 768, 1024, 1366 i 1440 px, również pod kątem odsłonięcia kotwic pod przyklejonym nagłówkiem. Połączenie z Google Calendar jest zastępowane lokalną odpowiedzią; testy nie rezerwują terminów ani nie sprawdzają dostępności zewnętrznej usługi. Po błędzie zrzut ekranu i ślad wykonania trafiają do ignorowanego `test-results/`.
+`npm test` sam buduje stronę i uruchamia tymczasowy podgląd na porcie 4322. Testy sprawdzają treść i metadane, obrazy, nawigację, rezerwację, kontakt, trzy poziomy przykładu lekcji i ich przełączanie, oznaczenie teorii, kolejność oferty i kalendarza, menu mobilne, klawiaturę, ograniczenie ruchu i działanie bez JavaScriptu. Laboratorium ma testy kroków, cofania, resetu, odtwarzania co 1200 ms, zatrzymywania poza sekcją i w ukrytej karcie oraz zmiany poziomów. Osobne testy algorytmów porównują wyniki z niezależnymi obliczeniami, uwzględniają liczby ujemne i remisy oraz sprawdzają niezależność migawek. Testy kolorowania Pythona sprawdzają kolory tokenów, kontrast i zachowanie tekstu oraz wcięć przy zaznaczaniu kodu, także bez JavaScriptu. Układ strony i otwartego laboratorium jest sprawdzany dla szerokości 360, 390, 768, 1024, 1366 i 1440 px, również pod kątem odsłonięcia kotwic pod przyklejonym nagłówkiem. Połączenie z Google Calendar jest zastępowane lokalną odpowiedzią; testy nie rezerwują terminów ani nie sprawdzają dostępności zewnętrznej usługi. Po błędzie zrzut ekranu i ślad wykonania trafiają do ignorowanego `test-results/`.
 
 ## Automatyczne wdrożenia na Hostingera
 
@@ -117,12 +117,29 @@ Skrypt `scripts/deploy-hostinger.sh` odczytuje powyższe zmienne środowiskowe. 
 - `src/styles/global.css` — wygląd, responsywność i ograniczenie animacji.
 - `src/components/PortraitScene.astro` — portret, orbity i warstwy kompozycji.
 - `src/scripts/motion.ts` — reakcja na kursor i jednokrotne animacje wejścia.
+- `src/scripts/lesson-trace.ts` — kroki trzech algorytmów: dane, linie kodu, zmienne i objaśnienia.
+- `src/scripts/lesson-lab.ts` — sterowanie demonstracją, pauzowanie i przywracanie pełnego rozwiązania.
+- `src/styles/lesson-lab.css` — wygląd panelu sterowania i wyróżnienia aktualnego kroku.
 
 Nowe ilustracje znajdują się w `images/learning-algorithm.png` i `images/learning-data.png`; opis generowania i pełne prompty zapisano w `images/learning-assets.md`. Astro tworzy ich responsywne warianty podczas builda. Projekty w sekcji „O mnie” używają małych miniatur. Sekcja oferty ma kotwicę `#oferta`, przykład lekcji — `#przyklad`. Rezerwacja znajduje się pod ofertą, przed FAQ; wszystkie główne przyciski prowadzą do `#rezerwacja`.
 
 Treści trzech poziomów przykładu zapisano w `lessonExample.examples` w `src/data/site.ts`; lista `actions` określa przyciski przejścia i powrotu. Poziomy to „Podstawy” (liczenie parzystych liczb), „Krok dalej” (największa suma spójnego fragmentu, algorytm Kadane’a) oraz „Wyzwanie” (długość najdłuższego ściśle rosnącego podciągu, programowanie dynamiczne O(n²)). Wyzwanie oblicza długość 4, a wyróżnione liczby `[1, 2, 4, 9]` pokazują jeden z poprawnych podciągów. Po zmianie fokus trafia na polecenie, a przewijanie uwzględnia nagłówek i ograniczenie ruchu. Bez JavaScriptu wszystkie przykłady są widoczne kolejno, z linkami między nimi. Oznaczenie teorii ma postać `1010` z indeksem dolnym `2`, zapisanym w danych jako `base`.
 
 Kod Python w `solution.py` używa angielskich nazw (`numbers`, `even_count`, `current_sum`, `best_sum`, `lengths`). Pole `code` pozostaje zwykłym tekstem; komponent `Code` z Astro koloruje składnię przez Shiki podczas builda, również dla wersji bez JavaScriptu. Motyw `css-variables` korzysta z palety `--astro-code-*` w `.lesson-code` w `src/styles/global.css`. Bloki zachowują wcięcia, zaznaczanie i kopiowanie tekstu, fokus klawiatury oraz własne przewijanie poziome. Czcionka ma 14 px na komputerze i 13 px na telefonie.
+
+### Interaktywne laboratorium
+
+Każdy poziom początkowo pokazuje kompletne rozwiązanie. „Prześledź rozwiązanie” otwiera krok 0; dostępne są poprzedni i następny krok, odtwarzanie/pauza, powrót do początku i przycisk pokazania pełnego rozwiązania. Przejście do innego poziomu przywraca podsumowania. Bezpośredni link do identyfikatora przykładu otwiera odpowiedni poziom.
+
+Pole `algorithm` w danych wybiera `parity`, `kadane` albo `lis`. Generator otrzymuje dokładnie te same `values`, które renderuje komponent, i tworzy niezależne migawki z indeksami danych, numerami linii kodu, zmiennymi i objaśnieniem. Shiki dodaje `data-code-line` podczas builda, bez zmiany tekstu kodu. Po zmianie treści Python należy dopasować numery linii w generatorze. To demonstracja na ustalonych danych; strona nie wykonuje kodu Python. Rekonstrukcja wyróżnionego podciągu LIS służy ilustracji, natomiast pokazany kod oblicza jego długość.
+
+Odtwarzanie przechodzi o jeden krok co 1200 ms. Zatrzymuje się na końcu, przy zmianie poziomu, opuszczeniu sekcji i ukryciu karty; wymaga ręcznego wznowienia. Przy ograniczeniu ruchu pozostaje ręczne sterowanie krokami, bez odtwarzania w czasie i animowanych przejść. Przyciski obsługują klawiaturę i mają co najmniej 44 × 44 px, a objaśnienie kroku jest komunikatem `aria-live`.
+
+### Oprawa i animacje
+
+Nagłówek pokazuje postęp czytania i oznacza aktualną sekcję przez `aria-current="location"`. Te wskazówki działają także przy ograniczeniu ruchu. Sekcje korzystają ze wspólnych parametrów `--motion-reaction` (200 ms), `--motion-enter` (550 ms) i `--ease-out`.
+
+Świetlny fragment orbity, aktywowane etapy współpracy, rysowane połączenia przy ilustracjach i sekwencyjne wejście korzyści uzupełniają istniejące animacje. Karty projektów otrzymują poświatę pod kursorem i niewielkie przybliżenie miniatury. Efekty kursora działają wyłącznie na ekranach szerszych niż 900 px z precyzyjnym wskaźnikiem; dotyk ma krótkie podświetlenie. Grafiki pozostają lokalnymi obrazami, a dekoracje używają CSS i SVG.
 
 Portret pochodzi z `images/portrait-art.png`. Responsywne AVIF/WebP i zapasowe PNG zachowują przezroczystość. Po zmianie oryginału odtwórz wariant z jasnym tłem dla Open Graph, a następnie uruchom build:
 

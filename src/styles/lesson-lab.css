@@ -1,0 +1,50 @@
+/* The laboratory is an optional layer over the complete HTML solution. */
+.lesson-lab { margin-top: 26px; }
+.lesson-lab [hidden] { display: none !important; }
+.lesson-lab button { cursor: pointer; }
+.lab-launch { display: flex; align-items: center; gap: 14px; width: 100%; min-height: 76px; padding: 16px; border: 1px solid #9cb6a1; border-radius: 10px; background: #eaf1e5; color: var(--ink); text-align: left; transition: background var(--motion-reaction, 200ms), box-shadow var(--motion-reaction, 200ms); }
+.lab-launch:hover, .lab-launch:focus-visible { background: #dfead7; box-shadow: 0 5px 20px #18364a0d; }
+.lab-launch > span:nth-child(2) { flex: 1; font-size: 14px; font-weight: 750; line-height: 1.5; }
+.lab-launch small { display: block; margin-top: 3px; font-size: 11px; font-weight: 500; color: var(--muted); }
+.lab-play-mark { display: grid; place-items: center; width: 36px; height: 36px; flex-shrink: 0; border-radius: 50%; background: var(--ink); color: var(--paper); font-size: 11px; padding-left: 2px; }
+.lab-workspace { border: 1px solid #b5c8b6; border-radius: 12px; padding: 20px; background: linear-gradient(145deg, #f3f6ed, #eaf0e5); }
+.lab-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+.lab-heading .eyebrow { font-size: 10px; letter-spacing: .13em; }
+.lab-counter { color: var(--sage); font: 11px var(--mono); white-space: nowrap; }
+.lab-progress { appearance: none; display: block; width: 100%; height: 3px; margin: 13px 0 16px; border: 0; border-radius: 4px; overflow: hidden; background: #d8e1d2; color: var(--sage); }
+.lab-progress::-webkit-progress-bar { background: #d8e1d2; }
+.lab-progress::-webkit-progress-value { background: var(--sage); transition: width var(--motion-reaction, 200ms); }
+.lab-progress::-moz-progress-bar { background: var(--sage); }
+.lab-explanation { min-height: 4.8em; font-size: 13px; line-height: 1.6; color: var(--text); }
+.lab-variables { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+.lab-variables > div { min-width: 0; flex: 1 1 85px; padding: 10px 12px; border: 1px solid #cbd7c6; border-radius: 7px; background: #fafbf6; }
+.lab-variables dt { overflow-wrap: anywhere; color: var(--muted); font: 10px/1.5 var(--mono); }
+.lab-variables dd { margin: 4px 0 0; color: var(--ink); font: 650 16px/1.5 var(--mono); overflow-wrap: anywhere; }
+.lab-variables > div:has(.lab-array) { flex-basis: 100%; }
+.lab-array { display: flex; flex-wrap: wrap; gap: 5px; }
+.lab-array > span { display: grid; place-items: center; min-width: 25px; height: 28px; border: 1px solid #d1dccd; border-radius: 4px; }
+.lab-array > .is-current { color: #fff; background: var(--ink); border-color: var(--ink); }
+.lab-array > .is-compared { border-color: var(--accent); box-shadow: inset 0 -2px var(--accent); }
+.lab-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.lab-controls button { display: flex; justify-content: center; align-items: center; gap: 7px; min-width: 0; min-height: 44px; padding: 10px 6px; border: 1px solid #9bab9a; border-radius: 6px; background: #fafbf6; color: var(--ink); font-size: 12px; line-height: 1.4; transition: background var(--motion-reaction, 200ms), border-color var(--motion-reaction, 200ms); }
+.lab-controls button:not(:disabled):hover { border-color: var(--sage); background: #dfe9d7; }
+.lab-controls button:disabled { cursor: default; color: #63715f; background: #e7ecdf; border-color: #c9d3c3; }
+.lab-controls .lab-play { background: var(--ink); border-color: var(--ink); color: white; }
+.lab-controls .lab-play:not(:disabled):hover { background: #284b61; color: white; }
+.lab-summary { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 44px; margin-top: 7px; padding: 8px 0 0; width: 100%; border: 0; color: var(--sage); background: transparent; font-size: 11px; text-align: left; text-decoration: underline; text-underline-offset: 4px; }
+.lab-active .number-sequence > span { position: relative; transition: background var(--motion-reaction, 200ms), border-color var(--motion-reaction, 200ms), color var(--motion-reaction, 200ms); }
+.lab-active .number-sequence > .is-compared { border-color: var(--accent); box-shadow: inset 0 -3px var(--accent); }
+.lab-active .number-sequence > .is-current { border-color: var(--ink); background: var(--ink); color: #fff; box-shadow: 0 3px 10px #18364a26; }
+.lab-active .number-sequence > .is-current::after { content: ''; position: absolute; left: calc(50% - 3px); bottom: -9px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.lesson-code [data-code-line] { border-radius: 3px; transition: background var(--motion-reaction, 200ms), box-shadow var(--motion-reaction, 200ms); }
+.lesson-code .is-code-current { background: #ffffff15; box-shadow: -6px 0 #c6d9a6; }
+.lesson-panel.lesson-enter > .lesson-sheet { animation: lesson-enter var(--motion-enter, 550ms) var(--ease-out, ease-out) both; }
+@keyframes lesson-enter { from { opacity: .7; translate: 0 10px; } to { opacity: 1; translate: 0 0; } }
+@media (max-width: 600px) {
+  .lab-workspace { padding: 16px 12px; }
+  .lab-launch { padding: 14px 12px; gap: 10px; }
+  .lab-controls button { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lesson-lab *, .lesson-lab *::before, .lesson-lab *::after, .lab-active .number-sequence > span, .lesson-code [data-code-line], .lesson-panel.lesson-enter > .lesson-sheet { transition: none !important; animation: none !important; }
+}
