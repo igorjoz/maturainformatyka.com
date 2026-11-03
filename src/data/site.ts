@@ -1,5 +1,7 @@
 import promptLabIllustration from '../../images/prompt_lab_illustration.png';
 import vulnerabilityVaultIllustration from '../../images/vulnerability_vault_illustration.png';
+import algorithmIllustration from '../../images/learning-algorithm.png';
+import dataIllustration from '../../images/learning-data.png';
 
 const introDuration = 30;
 
@@ -41,6 +43,7 @@ export const site = {
     { href: '#zakres', label: 'Zakres' },
     { href: '#o-mnie', label: 'O mnie' },
     { href: '#opinie', label: 'Opinie' },
+    { href: '#oferta', label: 'Oferta' },
     { href: '#faq', label: 'FAQ' },
   ],
   hero: {
@@ -49,16 +52,16 @@ export const site = {
     description: 'Celujesz w wysoki wynik i studia techniczne? Pomogę Ci zrozumieć programowanie, uporządkować wiedzę i pewniej rozwiązywać zadania maturalne.',
   },
   steps: [
-    { title: 'Poznajemy punkt startu.', text: `Zaczynamy od bezpłatnego, ${introMeeting.duration}-minutowego spotkania online. Poznajemy Twoje oczekiwania i wstępnie sprawdzamy poziom. To punkt wyjścia do dalszego przygotowania.`, tag: 'Wstępna diagnoza poziomu' },
+    { title: 'Poznajemy punkt startu.', text: `Na bezpłatnej, ${introMeeting.duration}-minutowej rozmowie poznajemy Twój cel i sprawdzamy, od czego zacząć.`, tag: 'Diagnoza' },
     { title: 'Układamy Twój plan.', text: 'Dobieramy tematy i tempo do Twojego poziomu oraz czasu do matury. Wiesz, nad czym pracujesz i po co.', tag: 'Indywidualna ścieżka' },
-    { title: 'Zamieniamy wiedzę w praktykę.', text: 'Rozwiązujemy zadania maturalne i pracujemy na autorskich materiałach. Analizujemy rozwiązania i uczymy się unikać typowych błędów.', tag: 'Zadania i informacja zwrotna' },
+    { title: 'Rozwiązujesz coraz więcej.', text: 'Pracujemy na zadaniach maturalnych. Rozumiesz rozwiązania, analizujesz błędy i dostajesz wskazówki do dalszej pracy.', tag: 'Praktyka' },
   ],
   subjects: [
     { code: '</>', title: 'Python lub C++', text: 'Od zrozumienia kodu do samodzielnego pisania rozwiązań. Pracujemy w wybranym przez Ciebie języku.' },
     { code: 'O(n)', title: 'Algorytmika', text: 'Rozkładanie problemu na kroki, dobór algorytmu i ocena, czy rozwiązanie jest poprawne i efektywne.' },
     { code: 'Σ', title: 'Excel', text: 'Analiza danych, formuły i wyciąganie wniosków. Arkusz jako narzędzie do rozwiązywania zadań.' },
     { code: 'SQL', title: 'Access', text: 'Relacje między tabelami, zapytania i wyszukiwanie informacji w bazach danych.' },
-    { code: '01', title: 'Teoria informatyki', text: 'Zagadnienia potrzebne w zadaniach — ze zrozumieniem i w połączeniu z praktyką.' },
+    { code: '1010', base: 2, title: 'Teoria informatyki', text: 'Zagadnienia potrzebne w zadaniach — ze zrozumieniem i w połączeniu z praktyką.' },
     { code: 'CKE', title: 'Zadania maturalne', text: 'Praca z arkuszami, czytanie poleceń i sprawdzanie rozwiązań pod kątem wymagań zadania.' },
   ],
   about: {
@@ -82,8 +85,68 @@ export const testimonials = [
   { name: 'Aleksandra', date: '2025-10-15', dateLabel: '15 października 2025', rating: 5, quote: 'Wystawiam bardzo dobrą opinię z poleceniem. Bardzo się cieszę, że tu trafiłam i dziękuję za zaoferowaną mi pomoc.' },
 ];
 
+export const subjectGroups = [
+  {
+    number: '01', title: 'Programowanie i algorytmy',
+    description: 'Od „nie wiem, jak zacząć” do własnego rozwiązania. Najpierw rozumiesz problem, potem dobierasz narzędzia i piszesz kod.',
+    image: algorithmIllustration,
+    imageAlt: 'Ceramiczne moduły połączone w ścieżkę symbolizującą kolejne kroki algorytmu.',
+    subjects: site.subjects.slice(0, 2),
+  },
+  {
+    number: '02', title: 'Praca z danymi',
+    description: 'W tabelach zaczynasz dostrzegać zależności. Uczysz się zadawać danym właściwe pytania i wyciągać z nich wnioski.',
+    image: dataIllustration,
+    imageAlt: 'Przestrzenny arkusz danych i połączone tabele z wyróżnionymi komórkami.',
+    subjects: site.subjects.slice(2, 4),
+  },
+];
+
+export const lessonExample = {
+  title: 'Tak pracujemy nad zadaniem.',
+  description: 'Nie zaczynamy od gotowego kodu. Najpierw szukamy pomysłu, sprawdzamy go na przykładzie i dopiero wtedy zapisujemy rozwiązanie.',
+  examples: [
+    {
+      id: 'przyklad-podstawowy', level: 'Podstawy',
+      task: 'Policz, ile liczb w podanym ciągu jest parzystych.',
+      values: [3, 8, 5, 12, 7, 4], highlightedIndices: [1, 3, 5],
+      sequenceCaption: 'Wyróżnione liczby spełniają warunek parzystości.',
+      hint: 'Liczba jest parzysta, gdy reszta z dzielenia przez 2 wynosi 0. Jak zapisać ten warunek w kodzie?',
+      code: 'numbers = [3, 8, 5, 12, 7, 4]\neven_count = 0\n\nfor number in numbers:\n    if number % 2 == 0:\n        even_count += 1\n\nprint(even_count)  # 3',
+      result: 3, resultLabel: '3 liczby parzyste',
+      conclusion: 'Każdą liczbę sprawdzasz raz. Ten sam schemat — przejście po danych i sprawdzenie warunku — wykorzystasz w wielu kolejnych zadaniach.',
+      actions: [{ targetId: 'przyklad-trudniejszy', label: 'Proste? Spróbuj trudniejszego →' }],
+    },
+    {
+      id: 'przyklad-trudniejszy', level: 'Krok dalej',
+      task: 'Znajdź największą sumę niepustego spójnego fragmentu ciągu.',
+      values: [-2, 3, -1, 4, -5, 2], highlightedIndices: [1, 2, 3],
+      sequenceCaption: 'Wyróżniony fragment [3, −1, 4] ma sumę 6. Fragment musi zawierać kolejne elementy — nie można wybierać dowolnych liczb.',
+      hint: 'Czy lepiej przedłużyć dotychczasowy fragment, czy zacząć nowy od bieżącej liczby?',
+      code: 'numbers = [-2, 3, -1, 4, -5, 2]\ncurrent_sum = best_sum = numbers[0]\n\nfor number in numbers[1:]:\n    current_sum = max(\n        number,\n        current_sum + number\n    )\n    best_sum = max(\n        best_sum, current_sum\n    )\n\nprint(best_sum)  # 6',
+      result: 6, resultLabel: 'Największa suma: 6',
+      conclusion: 'Sprawdzanie wszystkich fragmentów można zastąpić jednym przejściem po ciągu. Algorytm Kadane’a zapamiętuje najlepszą sumę kończącą się w bieżącym miejscu i najlepszy wynik do tej pory. Złożoność: O(n).',
+      actions: [
+        { targetId: 'przyklad-podstawowy', label: '← Wróć do podstaw' },
+        { targetId: 'przyklad-wyzwanie', label: 'Jeszcze za prosto? Sprawdź wyzwanie →' },
+      ],
+    },
+    {
+      id: 'przyklad-wyzwanie', level: 'Wyzwanie',
+      task: 'Wyznacz długość najdłuższego ściśle rosnącego podciągu w niepustym ciągu liczb.',
+      values: [3, 1, 5, 2, 6, 4, 9], highlightedIndices: [1, 3, 5, 6],
+      sequenceCaption: 'Wyróżniony podciąg [1, 2, 4, 9] ma długość 4. Możesz pomijać elementy, ale musisz zachować ich kolejność. Każda następna liczba musi być większa.',
+      hint: 'Jeśli podciąg ma kończyć się na bieżącej liczbie, który wcześniejszy wynik możesz przedłużyć?',
+      code: 'numbers = [3, 1, 5, 2, 6, 4, 9]\nlengths = [1] * len(numbers)\n\nfor i in range(len(numbers)):\n    for j in range(i):\n        if numbers[j] < numbers[i]:\n            lengths[i] = max(\n                lengths[i],\n                lengths[j] + 1\n            )\n\nprint(max(lengths))  # 4',
+      result: 4, resultLabel: 'Największa długość: 4',
+      conclusion: 'To programowanie dynamiczne: dla każdej pozycji zapamiętujesz długość najdłuższego rosnącego podciągu, który się na niej kończy. Przeglądasz wcześniejsze mniejsze elementy i przedłużasz najlepszy z ich wyników. Kod oblicza długość; wyróżnione liczby pokazują jeden z poprawnych podciągów. Złożoność: O(n²).',
+      actions: [{ targetId: 'przyklad-trudniejszy', label: '← Wróć do poprzedniego' }],
+    },
+  ],
+};
+
 export const faqs = [
-  { question: 'Jak wygląda bezpłatne spotkanie zapoznawcze?', answer: `Spotkanie odbywa się ${introMeeting.format}, trwa ${introMeeting.duration} minut i jest bezpłatne. ${introMeeting.description} ${introMeeting.bookingUrl ? 'Wybierz dostępny termin w kalendarzu w sekcji spotkania zapoznawczego. Po rezerwacji otrzymasz e-mail z potwierdzeniem i linkiem do Google Meet.' : 'Aby umówić spotkanie, napisz do mnie lub zadzwoń.'}` },
+  { question: 'Jak wygląda bezpłatne spotkanie zapoznawcze?', answer: `Przez ${introMeeting.duration} minut rozmawiamy online o Twoim celu, poziomie i planie nauki. Nie musisz decydować się na zajęcia. ${introMeeting.bookingUrl ? 'Termin wybierzesz w kalendarzu powyżej. Potwierdzenie i link do Google Meet otrzymasz e-mailem.' : 'Aby umówić spotkanie, napisz do mnie lub zadzwoń.'}` },
   { question: 'Jak wyglądają regularne zajęcia?', answer: 'Pracujemy zgodnie z indywidualnym planem przygotowania, rozwiązując zadania maturalne i omawiając zagadnienia, które wymagają uwagi. Po zajęciach otrzymujesz podsumowanie, materiały i wskazówki do samodzielnej pracy.' },
   { question: 'Czy muszę już dobrze programować?', answer: 'Punkt startu ustalamy indywidualnie. Napisz, co już potrafisz i kiedy zdajesz maturę. Na tej podstawie porozmawiamy o zakresie przygotowania i realnym planie pracy.' },
   { question: 'Python czy C++ — w którym języku pracujemy?', answer: 'Przygotowuję zarówno w Pythonie, jak i C++. Wybór dopasujemy do Twojego dotychczasowego doświadczenia i planu przygotowania.' },

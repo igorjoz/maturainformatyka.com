@@ -1,11 +1,9 @@
 ---
-import { site, faqs } from '../data/site';
+import { site, introMeeting } from '../data/site';
 import Arrow from './Arrow.astro';
-import OrbitAccent from './OrbitAccent.astro';
 import GeometryBackdrop from './GeometryBackdrop.astro';
 ---
-<section class="offer-section geometry-host" data-motion aria-labelledby="offer-title"><OrbitAccent /><GeometryBackdrop variant="light" /><div class="container offer">
-  <div><p class="eyebrow">04 / TWOJE PRZYGOTOWANIE</p><h2 id="offer-title">Pełna uwaga.<br />Twój rytm nauki.</h2><p>Zajęcia online, na których pracujemy nad Twoim celem. Terminy ustalamy wspólnie.</p></div>
-  <div class="price-card" data-reveal><span class="price-label">INDYWIDUALNE ZAJĘCIA ONLINE</span><p class="price"><strong>{site.onlinePrice}<span> zł</span></strong><span>/ 60 minut</span></p><ul>{site.benefits.map(benefit => <li><span aria-hidden="true">✓</span>{benefit}</li>)}</ul><a class="button button-primary" href="#kontakt">Porozmawiajmy o Twoim celu <Arrow /></a><p class="price-footnote">Spotkania {site.durations.join(' / ')} min · terminy do uzgodnienia</p></div>
+<section class="offer-section geometry-host" data-motion id="oferta" aria-labelledby="offer-title"><GeometryBackdrop variant="light" /><div class="container offer">
+  <div class="offer-copy" data-reveal><p class="eyebrow">06 / TWOJE PRZYGOTOWANIE</p><h2 id="offer-title">Twój cel.<br />Wspólny plan.<br /><span>Pełna uwaga.</span></h2><p>Na zajęciach 1:1 jest przestrzeń na Twoje pytania, Twoje tempo i zadania, które naprawdę wymagają przećwiczenia.</p><div class="offer-format"><span>Online</span><span>Indywidualnie</span><span>Terminy do uzgodnienia</span></div></div>
+  <div class="price-card" data-reveal><span class="price-label">INDYWIDUALNE ZAJĘCIA ONLINE</span><p class="price"><strong>{site.onlinePrice}<span> zł</span></strong><span>/ 60 minut</span></p><ul>{site.benefits.map(benefit => <li><span aria-hidden="true">✓</span>{benefit}</li>)}</ul><a class="button button-primary button-free" href="#rezerwacja">{introMeeting.cta} <Arrow /></a><p class="price-footnote">Najpierw {introMeeting.duration} minut bezpłatnej rozmowy.<br />Regularne spotkania: {site.durations.join(' / ')} min.</p></div>
 </div></section>
-<section class="section container faq" id="faq" aria-labelledby="faq-title"><div><p class="eyebrow">05 / WARTO WIEDZIEĆ</p><h2 id="faq-title">Zanim zaczniemy.</h2><p>Masz inne pytanie?<br /><a href={`mailto:${site.email}`}>Napisz do mnie.</a></p></div><div class="faq-list">{faqs.map(item => <details><summary>{item.question}<span class="faq-plus" aria-hidden="true"></span></summary><p>{item.answer}</p></details>)}</div></section>

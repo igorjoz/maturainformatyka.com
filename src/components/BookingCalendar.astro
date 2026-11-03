@@ -19,14 +19,15 @@ const emailHref = `mailto:${site.email}?subject=${encodeURIComponent('Bezpłatne
 <section class="booking-calendar" id="rezerwacja" aria-labelledby="booking-title">
   <div class="booking-overview">
     <div class="booking-calendar-heading">
-      <p class="eyebrow">{introMeeting.duration} MINUT · ONLINE · BEZPŁATNIE</p>
-      <h3 id="booking-title">{embedUrl ? 'Wybierz termin naszej rozmowy.' : 'Umówmy się na rozmowę.'}</h3>
+      <p class="eyebrow">POZNAJMY SIĘ · {introMeeting.costLabel.toUpperCase()}</p>
+      <h2 id="booking-title">{embedUrl ? 'Zacznijmy od rozmowy.' : 'Umówmy się na rozmowę.'}</h2>
+      <p class="booking-duration">{introMeeting.duration} minut · {introMeeting.format}{embedUrl ? ' · Google Meet' : ''}</p>
       <p>{embedUrl
         ? 'Wybierz dzień i godzinę w kalendarzu poniżej. Potwierdzenie rezerwacji i link do Google Meet otrzymasz e-mailem.'
         : 'Napisz, jakie terminy Ci odpowiadają. Wspólnie wybierzemy czas na bezpłatne spotkanie zapoznawcze.'}</p>
     </div>
     <div class="booking-agenda" aria-labelledby="booking-agenda-title">
-      <h4 id="booking-agenda-title">Jak wygląda nasza rozmowa?</h4>
+      <h3 id="booking-agenda-title">Jak wygląda nasza rozmowa?</h3>
       <ol>
         {introMeeting.agenda.map((step, index) => (
           <li>
