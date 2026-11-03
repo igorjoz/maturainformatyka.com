@@ -9,6 +9,14 @@ export function initMotion() {
   const scene = document.querySelector<HTMLElement>('[data-portrait-scene]');
   const process = document.querySelector<HTMLElement>('[data-process]');
   const processScope = process?.closest<HTMLElement>('[data-motion]');
+  const steps = [...(process?.querySelectorAll<HTMLElement>('.step') ?? [])];
+  const header = document.querySelector<HTMLElement>('.site-header');
+  const readingProgress = document.querySelector<HTMLElement>('[data-reading-progress]');
+  const navLinks = [...document.querySelectorAll<HTMLAnchorElement>('.site-header nav a[href^="#"]')];
+  const navSections = [...new Set(navLinks.map(link => link.hash))]
+    .map(hash => document.getElementById(hash.slice(1)))
+    .filter((section): section is HTMLElement => section !== null);
+  let activeSection = '';
   const contact = document.querySelector<HTMLElement>('#kontakt');
   const pageEnd = document.querySelector<HTMLElement>('[data-page-end]');
   let endVisible = false;
@@ -92,14 +100,32 @@ export function initMotion() {
   const clamp = (value: number) => Math.max(0, Math.min(1, value));
   const renderScroll = () => {
     scrollFrame = 0;
-    if (reduced.matches || document.hidden) return;
+    if (document.hidden) return;
     const height = window.innerHeight;
-    // Read layout before writing styles to avoid repeated synchronous layouts.
-    const positions = [...visible].map(scope => ({ scope, rect: scope.getBoundingClientRect() }));
-    const processRect = processScope && visible.has(processScope) ? process?.getBoundingClientRect() : undefined;
+    const headerBottom = header?.getBoundingClientRect().bottom ?? 88;
+    const sectionPositions = navSections.map(section => ({ section, top: section.getBoundingClientRect().top }));
+    const reading = clamp(window.scrollY / Math.max(1, document.documentElement.scrollHeight - height));
+    // Finish every geometry read before updating progress or section styles.
+    const positions = reduced.matches ? [] : [...visible].map(scope => ({ scope, rect: scope.getBoundingClientRect() }));
+    const processRect = !reduced.matches && processScope && visible.has(processScope) ? process?.getBoundingClientRect() : undefined;
+    let current = '';
+    for (const { section, top } of sectionPositions) {
+      if (top <= headerBottom + height * .18) current = `#${section.id}`;
+    }
+    // Reading position and current location remain useful with reduced motion.
+    readingProgress?.style.setProperty('--reading-progress', reading.toFixed(4));
+    if (current !== activeSection) {
+      activeSection = current;
+      for (const link of navLinks) {
+        if (link.hash === current) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      }
+    }
+    if (reduced.matches) return;
     for (const { scope, rect } of positions) {
       const offset = (clamp((height - rect.top) / (height + rect.height)) - .5) * (narrow.matches ? 24 : 64);
       scope.style.setProperty('--scroll-drift', `${offset.toFixed(2)}px`);
+      if (scope.id === 'zakres') scope.style.setProperty('--art-drift', `${(offset * .3).toFixed(2)}px`);
     }
     if (process && processRect) {
       // Vertical steps track their actual marker positions; horizontal steps
@@ -108,10 +134,15 @@ export function initMotion() {
         ? clamp((height * .72 - processRect.top - 24) / Math.max(1, processRect.height - 48))
         : clamp((height * .88 - processRect.top) / Math.max(1, height * .42));
       process.style.setProperty('--process-progress', progress.toFixed(4));
+      steps.forEach((step, index) => {
+        const active = progress >= index / Math.max(1, steps.length - 1);
+        step.classList.toggle('step-active', active);
+        if (active) step.classList.add('step-activated');
+      });
     }
   };
   const scheduleScroll = () => {
-    if (!scrollFrame && !reduced.matches && !document.hidden && visible.size) scrollFrame = requestAnimationFrame(renderScroll);
+    if (!scrollFrame && !document.hidden) scrollFrame = requestAnimationFrame(renderScroll);
   };
   const sync = () => {
     for (const scope of scopes) {
@@ -120,7 +151,11 @@ export function initMotion() {
     if (reduced.matches || document.hidden) {
       cancelAnimationFrame(scrollFrame);
       scrollFrame = 0;
-      for (const scope of scopes) scope.style.removeProperty('--scroll-drift');
+      for (const scope of scopes) {
+        scope.style.removeProperty('--scroll-drift');
+        scope.style.removeProperty('--art-drift');
+      }
+      steps.forEach(step => step.classList.remove('step-active'));
       process?.style.removeProperty('--process-progress');
       for (const [card, timer] of tapped) { clearTimeout(timer); card.classList.remove('is-tapped'); }
       tapped.clear();

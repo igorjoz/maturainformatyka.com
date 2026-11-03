@@ -6,7 +6,7 @@ import GeometryBackdrop from './GeometryBackdrop.astro';
 ---
 <section class="section container about geometry-host" data-motion id="o-mnie" aria-labelledby="about-title">
   <GeometryBackdrop />
-  <div class="about-copy" data-reveal><p class="eyebrow">03 / POZNAJMY SIĘ</p><h2 id="about-title">{site.about.title}</h2>{site.about.paragraphs.map(paragraph => <p>{paragraph}</p>)}<a class="text-link" href={site.personal}>Więcej o mnie <Arrow diagonal /></a></div>
+  <div class="about-copy" data-reveal><p class="eyebrow">04 / POZNAJMY SIĘ</p><h2 id="about-title">{site.about.title}</h2>{site.about.paragraphs.map(paragraph => <p>{paragraph}</p>)}<a class="text-link" href={site.personal}>Więcej o mnie <Arrow diagonal /></a></div>
   <div class="projects">
     <div class="projects-heading"><span>MOJE PROJEKTY</span><span aria-hidden="true">↗</span></div>
     {site.projects.map((project, index) => (
@@ -17,8 +17,8 @@ import GeometryBackdrop from './GeometryBackdrop.astro';
             alt={project.imageAlt}
             formats={['avif', 'webp']}
             fallbackFormat="png"
-            widths={[320, 640, 960, 1280]}
-            sizes="(max-width: 600px) calc(100vw - 42px), (max-width: 1376px) calc((100vw - 124px) / 2), 626px"
+            widths={[160, 240, 320]}
+            sizes="(max-width: 600px) 80px, 112px"
             loading="lazy"
             decoding="async"
           />

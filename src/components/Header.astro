@@ -13,7 +13,7 @@ import logo from '../assets/logo-book-code.png';
     <nav aria-label="Nawigacja główna" class="desktop-nav">
       {site.navigation.map(link => <a href={link.href}>{link.label}</a>)}
     </nav>
-    <a class="header-contact" href="#kontakt">Porozmawiajmy <Arrow /></a>
+    <a class="header-contact" href="#rezerwacja">Bezpłatna rozmowa <Arrow /></a>
     <details class="mobile-menu">
       <summary aria-label="Menu nawigacji" aria-controls="mobile-navigation">
         <span class="menu-lines" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -24,8 +24,10 @@ import logo from '../assets/logo-book-code.png';
       </nav>
     </details>
   </div>
+  <span class="reading-progress" data-reading-progress aria-hidden="true"></span>
 </header>
 <script>
+  document.documentElement.classList.add('navigation-enhanced');
   const menu = document.querySelector<HTMLDetailsElement>('.mobile-menu');
   menu?.addEventListener('toggle', () => {
     menu.querySelector('summary')?.setAttribute('aria-label', menu.open ? 'Zamknij menu nawigacji' : 'Otwórz menu nawigacji');

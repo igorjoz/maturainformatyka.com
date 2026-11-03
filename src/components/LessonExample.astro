@@ -1,0 +1,58 @@
+---
+import { Code } from 'astro:components';
+import { lessonExample } from '../data/site';
+import '../styles/lesson-lab.css';
+
+const lineNumbers = {
+  line(node: { properties: Record<string, unknown> }, line: number) {
+    node.properties['data-code-line'] = line;
+  },
+};
+---
+<section class="example-section" data-motion id="przyklad" aria-labelledby="example-title">
+  <div class="container section" data-lesson-switcher>
+    <div class="section-heading"><p class="eyebrow">02 / OD POMYSŁU DO KODU</p><div><h2 id="example-title">{lessonExample.title}</h2><p>{lessonExample.description}</p></div></div>
+    {lessonExample.examples.map(example => (
+      <article class="lesson-panel" id={example.id} aria-labelledby={`${example.id}-task`} data-lesson-panel data-algorithm={example.algorithm} data-values={JSON.stringify(example.values)}>
+        <div class="lesson-sheet" data-reveal>
+          <div class="lesson-toolbar"><span><span class="status-dot" aria-hidden="true"></span> Fragment wspólnej nauki <span class="lesson-level">{example.level}</span></span><span>Python · przykład autorski, demonstracyjny</span></div>
+          <div class="lesson-layout">
+            <div class="lesson-thinking">
+              <div class="lesson-task" data-reveal><p class="eyebrow">01 — ZROZUM PROBLEM</p><h3 id={`${example.id}-task`} tabindex="-1">{example.task}</h3><div class="number-sequence" aria-label="Dane wejściowe">{example.values.map((value, index) => <span class:list={{ 'is-highlighted': example.highlightedIndices.includes(index) }}>{value}</span>)}</div><p class="sequence-caption">{example.sequenceCaption}</p></div>
+              <aside class="mentor-hint" data-reveal style="--reveal-delay: 140ms"><span class="hint-mark" aria-hidden="true">↳</span><div><p class="eyebrow">WSKAZÓWKA ODE MNIE</p><p>{example.hint}</p></div></aside>
+              <div class="lesson-lab" data-lab>
+                <button class="lab-launch" type="button" data-lab-open aria-expanded="false" aria-controls={`${example.id}-lab`} hidden><span class="lab-play-mark" aria-hidden="true">▶</span><span>Prześledź rozwiązanie<small>Zobacz, co dzieje się w każdym kroku</small></span><span aria-hidden="true">↗</span></button>
+                <div id={`${example.id}-lab`} class="lab-workspace" data-lab-workspace hidden>
+                  <div class="lab-heading"><span class="eyebrow">LABORATORIUM</span><span class="lab-counter" data-lab-counter></span></div>
+                  <progress class="lab-progress" data-lab-progress max="1" value="0" aria-label="Postęp demonstracji"></progress>
+                  <p class="lab-explanation" data-lab-explanation role="status" aria-live="polite" aria-atomic="true"></p>
+                  <dl class="lab-variables" data-lab-variables aria-label="Wartości zmiennych"></dl>
+                  <div class="lab-controls" role="group" aria-label="Sterowanie rozwiązaniem">
+                    <button type="button" data-lab-previous><span aria-hidden="true">←</span> Poprzedni krok</button>
+                    <button type="button" data-lab-next>Następny krok <span aria-hidden="true">→</span></button>
+                    <button type="button" class="lab-play" data-lab-play aria-label="Odtwórz" aria-pressed="false"><span data-lab-play-icon aria-hidden="true">▶</span> <span data-lab-play-label>Odtwórz</span></button>
+                    <button type="button" data-lab-reset><span aria-hidden="true">↺</span> Od początku</button>
+                  </div>
+                  <button class="lab-summary" type="button" data-lab-close>Pokaż pełne rozwiązanie <span aria-hidden="true">↗</span></button>
+                </div>
+              </div>
+            </div>
+            <div class="lesson-code" data-reveal style="--reveal-delay: 260ms"><div class="code-caption"><span>02 — ZAPISZ POMYSŁ</span><span>solution.py</span></div><Code code={example.code} lang="python" theme="css-variables" transformers={[lineNumbers]} tabindex="0" aria-label={`Rozwiązanie w Pythonie — ${example.level}`} /><div class="code-result"><span>Wynik</span><strong>{example.resultLabel} <span aria-hidden="true">✓</span></strong></div></div>
+          </div>
+          <div class="lesson-takeaway" data-reveal style="--reveal-delay: 380ms"><span class="eyebrow">03 — ZAUWAŻ SCHEMAT</span><p>{example.conclusion}</p></div>
+        </div>
+        <div class="lesson-actions">
+          {example.actions.map(action => <Fragment>
+            <button type="button" class="button button-secondary lesson-switch" data-lesson-target={action.targetId} aria-controls={action.targetId} hidden>{action.label}</button>
+            <noscript><a class="button button-secondary" href={`#${action.targetId}`}>{action.label}</a></noscript>
+          </Fragment>)}
+        </div>
+      </article>
+    ))}
+    <p class="example-note">Przykłady pokazują sposób pracy. Poziom i język programowania dobieramy do Ciebie.</p>
+  </div>
+</section>
+<script>
+  import { initLessonLab } from '../scripts/lesson-lab';
+  initLessonLab();
+</script>
