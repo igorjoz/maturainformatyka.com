@@ -122,7 +122,7 @@ export const lessonExample = {
   description: 'Nie zaczynamy od gotowego kodu. Najpierw szukamy pomysłu, sprawdzamy go na przykładzie i dopiero wtedy zapisujemy rozwiązanie.',
   examples: [
     {
-      id: 'przyklad-podstawowy', level: 'Podstawy', algorithm: 'parity',
+      id: 'przyklad-podstawowy', level: 'Podstawy', algorithm: 'parity' as const,
       task: 'Policz, ile liczb w podanym ciągu jest parzystych.',
       values: [3, 8, 5, 12, 7, 4], highlightedIndices: [1, 3, 5],
       sequenceCaption: 'Wyróżnione liczby spełniają warunek parzystości.',
@@ -133,7 +133,7 @@ export const lessonExample = {
       actions: [{ targetId: 'przyklad-trudniejszy', label: 'Proste? Spróbuj trudniejszego →' }],
     },
     {
-      id: 'przyklad-trudniejszy', level: 'Krok dalej', algorithm: 'kadane',
+      id: 'przyklad-trudniejszy', level: 'Krok dalej', algorithm: 'kadane' as const,
       task: 'Znajdź największą sumę niepustego spójnego fragmentu ciągu.',
       values: [-2, 3, -1, 4, -5, 2], highlightedIndices: [1, 2, 3],
       sequenceCaption: 'Wyróżniony fragment [3, −1, 4] ma sumę 6. Fragment musi zawierać kolejne elementy — nie można wybierać dowolnych liczb.',
@@ -147,7 +147,7 @@ export const lessonExample = {
       ],
     },
     {
-      id: 'przyklad-wyzwanie', level: 'Wyzwanie', algorithm: 'lis',
+      id: 'przyklad-wyzwanie', level: 'Wyzwanie', algorithm: 'lis' as const,
       task: 'Wyznacz długość najdłuższego ściśle rosnącego podciągu w niepustym ciągu liczb.',
       values: [3, 1, 5, 2, 6, 4, 9], highlightedIndices: [1, 3, 5, 6],
       sequenceCaption: 'Wyróżniony podciąg [1, 2, 4, 9] ma długość 4. Możesz pomijać elementy, ale musisz zachować ich kolejność. Każda następna liczba musi być większa.',

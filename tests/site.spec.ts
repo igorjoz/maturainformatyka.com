@@ -1,12 +1,18 @@
 import { expect, test } from '@playwright/test';
 
-test.beforeEach(async ({ page }) => {
+test.beforeEach(async ({ page, javaScriptEnabled }) => {
   // Testujemy integrację po naszej stronie, bez połączeń z Google i rezerwacji terminów.
   await page.route('https://calendar.google.com/**', route => route.fulfill({
     contentType: 'text/html',
     body: '<!doctype html><html lang="pl"><title>Kalendarz testowy</title></html>',
   }));
   await page.goto('/');
+  if (javaScriptEnabled) {
+    // React enhances the lab only when its island approaches the viewport.
+    await page.locator('#przyklad').scrollIntoViewIfNeeded();
+    await expect(page.locator('#przyklad').locator('xpath=ancestor::astro-island[1]')).not.toHaveAttribute('ssr');
+    await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
+  }
 });
 
 test('strona ładuje treść, metadane i lokalne obrazy', async ({ page }) => {

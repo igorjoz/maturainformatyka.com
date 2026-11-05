@@ -3,19 +3,26 @@ import '@fontsource-variable/manrope';
 import '../styles/global.css';
 import { getImage } from 'astro:assets';
 import socialPortrait from '../assets/portrait-social.png';
-import { site } from '../data/site';
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import IntroMeeting from '../components/IntroMeeting.astro';
-import Learning from '../components/Learning.astro';
-import LessonExample from '../components/LessonExample.astro';
-import Subjects from '../components/Subjects.astro';
-import Faq from '../components/Faq.astro';
-import About from '../components/About.astro';
-import Testimonials from '../components/Testimonials.astro';
-import Offer from '../components/Offer.astro';
-import Contact from '../components/Contact.astro';
-import Arrow from '../components/Arrow.astro';
+import { site, introMeeting, testimonials, faqs, maturaExample } from '../data/site';
+import { preparePageProps } from '../build/page-props';
+import Footer from '../components/Footer';
+import logo from '../assets/logo-book-code.png';
+import '../styles/subjects.css';
+import '../styles/lesson-lab.css';
+import '../styles/refresh.css';
+import '../styles/celebration.css';
+import Header from '../components/Header.tsx';
+import Hero from '../components/Hero.tsx';
+import IntroMeeting from '../components/IntroMeeting.tsx';
+import Learning from '../components/Learning.tsx';
+import LessonExample from '../components/LessonExample.tsx';
+import Subjects from '../components/Subjects.tsx';
+import Faq from '../components/Faq.tsx';
+import About from '../components/About.tsx';
+import Testimonials from '../components/Testimonials.tsx';
+import Offer from '../components/Offer.tsx';
+import Contact from '../components/Contact.tsx';
+const props = await preparePageProps();
 const socialImage = await getImage({ src: socialPortrait, width: 1122, format: 'jpg' });
 const socialUrl = new URL(socialImage.src, Astro.site ?? Astro.url);
 ---
@@ -42,12 +49,19 @@ const socialUrl = new URL(socialImage.src, Astro.site ?? Astro.url);
     <title>{site.title}</title>
   </head>
   <body>
-    <Header />
-    <main id="tresc"><Hero /><Learning /><LessonExample /><Subjects /><About /><Testimonials /><Offer /><IntroMeeting /><Faq /><Contact /></main>
-    <footer class="container footer"><span>© {new Date().getFullYear()} {site.name}</span><span>Matura z informatyki. Przygotowanie z planem.</span><a href={site.personal}>Strona osobista <Arrow diagonal /></a><span class="page-end" data-page-end aria-hidden="true"></span></footer>
-    <script>
-      import { initMotion } from '../scripts/motion';
-      initMotion();
-    </script>
+    <Header site={{ navigation: site.navigation }} logo={logo.src} client:load />
+    <main id="tresc">
+      <Hero site={{ name: site.name, hero: site.hero, onlinePrice: site.onlinePrice }} introMeeting={{ duration: introMeeting.duration, format: introMeeting.format, costLabel: introMeeting.costLabel, cta: introMeeting.cta }} portraitImage={props.portraitImage} client:load />
+      <Learning site={{ steps: site.steps }} client:visible={{ rootMargin: '200px' }} />
+      <LessonExample lesson={props.lesson} client:visible={{ rootMargin: '200px' }} />
+      <Subjects site={{ subjects: site.subjects }} groups={props.groups} maturaExample={maturaExample} client:visible={{ rootMargin: '200px' }} />
+      <About site={{ about: site.about, projects: props.site.projects, personal: site.personal }} client:visible={{ rootMargin: '200px' }} />
+      <Testimonials site={{ listing: site.listing }} testimonials={testimonials} client:visible={{ rootMargin: '200px' }} />
+      <Offer site={{ onlinePrice: site.onlinePrice, benefits: site.benefits, durations: site.durations }} introMeeting={{ duration: introMeeting.duration, cta: introMeeting.cta }} client:visible={{ rootMargin: '200px' }} />
+      <IntroMeeting site={{ email: site.email, phone: site.phone, phoneHref: site.phoneHref }} introMeeting={introMeeting} />
+      <Faq site={{ email: site.email }} faqs={faqs} />
+      <Contact site={{ email: site.email, phone: site.phone, phoneHref: site.phoneHref, listing: site.listing }} introMeeting={{ duration: introMeeting.duration, format: introMeeting.format, costLabel: introMeeting.costLabel, cta: introMeeting.cta }} client:visible={{ rootMargin: '200px' }} />
+    </main>
+    <Footer year={new Date().getFullYear()} name={site.name} personal={site.personal} />
   </body>
 </html>

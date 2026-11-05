@@ -1,0 +1,59 @@
+/* Shared visual rhythm for the React sections. Content remains visible before hydration. */
+:root { --space: 8px; --radius: 12px; --radius-large: 20px; }
+[hidden] { display: none !important; }
+astro-island { display: contents; }
+.section { padding-block: 96px; }
+.section-heading { margin-bottom: 48px; }
+.hero { padding-block: 64px; }
+.hero-description { max-width: 560px; }
+.hero-intro-action { padding: 8px 0; }
+.hero-facts { padding-top: 24px; border-top: 1px solid var(--line); }
+.button { border-radius: var(--radius); }
+.lesson-levels { display: flex; gap: 8px; flex-wrap: wrap; width: fit-content; max-width: 100%; padding: 8px; margin-bottom: 24px; border: 1px solid #cfdad1; border-radius: 16px; background: var(--paper); }
+.lesson-levels button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 48px; padding: 12px 24px; border: 0; border-radius: 10px; background: transparent; color: var(--muted); font: 700 var(--text-detail)/1.5 var(--font); cursor: pointer; transition: background var(--motion-reaction), color var(--motion-reaction); }
+.lesson-levels button > span { font: 11px var(--mono); opacity: .7; }
+.lesson-levels button:hover { background: var(--soft); color: var(--ink); }
+.lesson-levels button[aria-pressed="true"] { background: var(--ink); color: white; }
+.lesson-sheet { box-shadow: 0 16px 48px #18364a0a; }
+.lesson-toolbar { padding-block: 16px; }
+.lesson-thinking { padding: 32px; }
+.mentor-hint { margin-top: 24px; padding: 24px; border-radius: var(--radius); }
+.lesson-code { padding: 32px; }
+.lesson-code .line { display: inline-block; min-width: 100%; }
+.lesson-takeaway { padding: 24px 32px; }
+.lab-workspace { padding: 24px; border-radius: var(--radius); background: #f5f8f0; }
+.lab-launch { border-radius: var(--radius); min-height: 80px; }
+.lab-controls { gap: 8px; }
+.lab-controls button { min-height: 48px; border-radius: 8px; }
+.lab-variables > div { padding: 12px; border-radius: 8px; background: white; }
+.lab-summary { min-height: 48px; }
+.subject-group-copy { padding: 16px 0 0; }
+.subject-tabs { gap: 8px; padding: 4px; margin-top: 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--soft); }
+.subject-tabs button { flex: 1; padding: 12px 8px; border-radius: 8px; min-width: 0; }
+.subject-tabs button::after { display: none; }
+.subject-tabs button[aria-selected="true"] { background: white; color: var(--ink); box-shadow: 0 2px 8px #18364a0c; }
+.subject-example-task { padding: 16px; border-left: 2px solid var(--sage); background: var(--soft); border-radius: 0 8px 8px 0; }
+.subject-foundation > .foundation-card { padding: 32px; }
+.project { border-radius: var(--radius); }
+.testimonial-card { border-radius: var(--radius-large); }
+.price-card { border-radius: var(--radius-large); }
+@keyframes content-enter { from { opacity: .75; translate: 0 16px; } to { opacity: 1; translate: 0 0; } }
+@keyframes portrait-enter { from { opacity: .7; translate: 0 16px; } to { opacity: 1; translate: 0 0; } }
+.scene-intro .scene-orbit { animation-duration: var(--motion-enter); }
+@media (max-width: 900px) {
+  .section { padding-block: 72px; }
+  .hero { padding-block: 40px; }
+}
+@media (max-width: 600px) {
+  .section { padding-block: 64px; }
+  .section-heading { margin-bottom: 32px; }
+  .hero { padding-block: 32px 40px; }
+  .lesson-levels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; gap: 4px; padding: 4px; }
+  .lesson-levels button { padding: 12px 6px; gap: 4px; font-size: 12px; flex-direction: column; }
+  .lesson-levels button > span { font-size: 10px; }
+  .lesson-thinking, .lesson-code { padding: 24px 20px; }
+  .mentor-hint { padding: 16px; }
+  .lesson-takeaway { padding: 24px 20px; }
+  .lab-workspace { padding: 16px 12px; }
+  .subject-foundation > .foundation-card { padding: 24px 20px; }
+}

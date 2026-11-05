@@ -1,6 +1,6 @@
 # Matura z informatyki — Igor Józefowicz
 
-Statyczna witryna one page zbudowana w Astro, TypeScript i własnym CSS. Bez własnego backendu, formularza i analityki. Rezerwacje obsługuje osadzona strona Google Calendar. Font Manrope jest hostowany lokalnie; oryginalne zdjęcia pozostają w `images/`.
+Statyczna witryna one page zbudowana w React, Astro, TypeScript i własnym CSS. Wszystkie sekcje, ikony i dekoracje są komponentami TSX; Astro generuje dokument HTML, metadane i zoptymalizowane obrazy. Bez własnego backendu, formularza i analityki. Rezerwacje obsługuje osadzona strona Google Calendar. Font Manrope jest hostowany lokalnie; oryginalne zdjęcia pozostają w `images/`.
 
 ## Uruchomienie
 
@@ -111,27 +111,49 @@ Skrypt `scripts/deploy-hostinger.sh` odczytuje powyższe zmienne środowiskowe. 
 ## Edycja
 
 - `src/data/site.ts` — treści, ceny, kontakt, projekty i FAQ.
-- `src/components/` — sekcje strony.
-- `src/components/LessonExample.astro` — trzy poziomy demonstracyjnego przykładu pracy nad zadaniem, z treścią i kodem w HTML oraz przełączaniem w tej samej karcie.
-- `src/components/Subjects.astro` — dwa ilustrowane obszary nauki oraz teoria i zadania maturalne.
-- `src/styles/global.css` — wygląd, responsywność i ograniczenie animacji.
-- `src/components/PortraitScene.astro` — portret, orbity i warstwy kompozycji.
-- `src/scripts/motion.ts` — reakcja na kursor i jednokrotne animacje wejścia.
+- `src/components/` — sekcje, ikony i dekoracje w React; `types.ts` definiuje dane przekazywane do komponentów.
+- `src/components/LessonExample.tsx` — trzy poziomy demonstracyjnego przykładu pracy nad zadaniem, z treścią i kodem w HTML oraz przełączaniem w tej samej karcie.
+- `src/components/Subjects.tsx` — dwa ilustrowane obszary nauki oraz teoria i zadania maturalne.
+- `src/styles/global.css` — style bazowe, responsywność i ograniczenie animacji; `refresh.css` — odświeżona kompozycja, odstępy i kontrolki.
+- `src/components/PortraitScene.tsx` — portret, orbity i warstwy kompozycji.
+- `src/hooks/useSectionMotion.ts` — lokalne efekty kursora, przewijania i wejścia, wraz ze sprzątaniem obserwatorów, nasłuchów i timerów.
 - `src/scripts/lesson-trace.ts` — kroki trzech algorytmów: dane, linie kodu, zmienne i objaśnienia.
-- `src/scripts/lesson-lab.ts` — sterowanie demonstracją, pauzowanie i przywracanie pełnego rozwiązania.
+- `src/components/LessonExample.tsx` — reducer poziomu i odtwarzacza, pauzowanie i przywracanie pełnego rozwiązania.
 - `src/styles/lesson-lab.css` — wygląd panelu sterowania i wyróżnienia aktualnego kroku.
 
 Ilustracje zakresu nauki pochodzą z `images/algorithm.png` (algorytmy) i `images/relations.png` (dane). Oryginały mają 1536 × 1024 px. Podczas builda Astro tworzy warianty AVIF, WebP i zapasowe JPEG o szerokości 360, 640, 960 i 1280 px, z jakością 75. Przeglądarka dobiera plik do szerokości ilustracji i gęstości ekranu; `sizes` uwzględnia także dwukolumnowy układ na tablecie. Obrazy ładują się leniwie i są dekodowane asynchronicznie. Projekty w sekcji „O mnie” używają małych miniatur. Sekcja oferty ma kotwicę `#oferta`, przykład lekcji — `#przyklad`. Rezerwacja znajduje się pod ofertą, przed FAQ; wszystkie główne przyciski prowadzą do `#rezerwacja`.
 
 Treści trzech poziomów przykładu zapisano w `lessonExample.examples` w `src/data/site.ts`; lista `actions` określa przyciski przejścia i powrotu. Poziomy to „Podstawy” (liczenie parzystych liczb), „Krok dalej” (największa suma spójnego fragmentu, algorytm Kadane’a) oraz „Wyzwanie” (długość najdłuższego ściśle rosnącego podciągu, programowanie dynamiczne O(n²)). Wyzwanie oblicza długość 4, a wyróżnione liczby `[1, 2, 4, 9]` pokazują jeden z poprawnych podciągów. Po zmianie fokus trafia na polecenie, a przewijanie uwzględnia nagłówek i ograniczenie ruchu. Bez JavaScriptu wszystkie przykłady są widoczne kolejno, z linkami między nimi. Oznaczenie teorii ma postać `1010` z indeksem dolnym `2`, zapisanym w danych jako `base`.
 
-Kod Python w `solution.py` używa angielskich nazw (`numbers`, `even_count`, `current_sum`, `best_sum`, `lengths`). Pole `code` pozostaje zwykłym tekstem; komponent `Code` z Astro koloruje składnię przez Shiki podczas builda, również dla wersji bez JavaScriptu. Motyw `css-variables` korzysta z palety `--astro-code-*` w `.lesson-code` w `src/styles/global.css`. Bloki zachowują wcięcia, zaznaczanie i kopiowanie tekstu, fokus klawiatury oraz własne przewijanie poziome. Czcionka ma 14 px na komputerze i 13 px na telefonie.
+Kod Python w `solution.py` używa angielskich nazw (`numbers`, `even_count`, `current_sum`, `best_sum`, `lengths`). Pole `code` pozostaje zwykłym tekstem; `src/build/page-props.ts` koloruje składnię przez Shiki podczas builda i przekazuje serializowalne tokeny do React. `PythonCode` renderuje tokeny oraz numerowane linie, również dla wersji bez JavaScriptu. Shiki nie jest wysyłane do przeglądarki. Motyw `css-variables` korzysta z palety `--astro-code-*` w `.lesson-code` w `src/styles/global.css`. Bloki zachowują wcięcia, zaznaczanie i kopiowanie tekstu, fokus klawiatury oraz własne przewijanie poziome. Czcionka ma 14 px na komputerze i 13 px na telefonie.
+
+### React i hydratacja
+
+`src/pages/index.astro` jest cienką warstwą dokumentu i kompozycji. Oficjalna integracja `@astrojs/react` generuje HTML komponentów podczas builda, a React przejmuje interakcje w przeglądarce. Header i Hero używają `client:load`; laboratorium, zakres, współpraca, projekty, opinie, oferta i kontakt — `client:visible` z wyprzedzeniem 200 px. FAQ, rezerwacja i stopka nie wymagają hydratacji. Nie ma routera ani globalnego magazynu stanu.
+
+Obrazy i tokeny kodu przygotowuje wyłącznie moduł builda. `ResponsivePicture` renderuje gotowe warianty AVIF/WebP i obraz zapasowy. Komponenty otrzymują dane przez typowane właściwości; narzędzia przetwarzania obrazów i Shiki pozostają poza paczkami klienta.
+
+Pierwszy render React jest zgodny z HTML z builda. Pełne przykłady i opisy są widoczne przed hydratacją oraz bez skryptów; kontrolki wymagające JavaScriptu pojawiają się dopiero po uruchomieniu komponentu. Laboratorium korzysta z `useReducer`, zakładki mają niezależny stan kart. Efekty sekcji używają referencji, obserwatorów i zmiennych CSS; ruch kursora nie powoduje renderowania React. Wszystkie efekty sprzątają zasoby przy demontażu.
+
+Wyniki odbioru migracji i porównanie rozmiaru paczek: [docs/react-migration.md](docs/react-migration.md). `npm run report:bundle` mierzy sumę plików JavaScriptu w `dist/_astro/`, wraz z rozmiarem gzip.
+
+### Interaktywny zakres przygotowania
+
+W sekcji `#zakres` pod ilustracjami są zakładki „Python lub C++” / „Algorytmika” oraz „Excel” / „SQL i Access”. Pierwszy temat jest widoczny od początku. Kliknięcie podmienia opis i przykładowe polecenie w tym samym miejscu, bez zamykania panelu i zmiany wysokości karty. Obie pary działają niezależnie. Strzałki lewo/prawo przełączają tematy (z zawijaniem), Home/End wybierają pierwszy/ostatni; fokus pozostaje na zakładce. Tab prowadzi do panelu i jego linków. Przy programowaniu link prowadzi do podstawowego przykładu lekcji.
+
+Panele zajmują wspólną komórkę siatki CSS, która rezerwuje wysokość dłuższego opisu także po zmianie szerokości. Nieaktywny panel jest niewidoczny (`visibility: hidden`), ma `aria-hidden` i `inert`, więc nie jest dostępny dla klawiatury ani czytników ekranu. Bez JavaScriptu wszystkie tematy są widoczne kolejno z nagłówkami, a zakładki pozostają ukryte. Ograniczenie ruchu wyłącza przenikanie; stan nie jest zapisywany między wizytami. Teoria i zadania maturalne mają osobne karty z przykładami widocznymi od razu.
+
+Karta „Zadania maturalne” przedstawia fragment zadania 7.1 „Staw” z oficjalnego arkusza CKE z maja 2026 (Formuła 2023, 3 pkt). Cytat jest oddzielony od wskazówek „Jak pracujemy nad zadaniem”. Linki prowadzą do strony 16 arkusza i strony 14 zasad oceniania na serwerze CKE. Metryka, kontekst, cytat, wskazówki i adresy są zapisane w `maturaExample` w `src/data/site.ts`. Strona nie pobiera dokumentów ani danych egzaminacyjnych; testy sprawdzają adresy źródeł bez wywoływania serwera CKE.
+
+Tytuł i wstęp obszaru są nad ilustracją; bezpośrednio pod nią są zakładki i opis tematu w osobnej karcie z wewnętrznym odstępem. Ilustracje reagują na precyzyjny kursor przechyleniem, zbliżeniem i poświatą. Dotyk daje krótkie podświetlenie. Dwa punkty na każdej ilustracji wybierają temat w tym samym panelu co zakładki; oba sposoby sterowania współdzielą stan. Kliknięcie punktu przenosi fokus na aktywny panel bez automatycznego skoku przeglądarki, a krótka animacja (420 ms) odsłania opis tylko w potrzebnym zakresie, zachowując minimum 96 px ilustracji nad nim. W bardzo niskim oknie priorytetem jest kontekst ilustracji i początek opisu. Animacja śledzi zmiany położenia karty podczas ładowania, ale nie wyrównuje strony po zakończeniu; ruch kółkiem, dotyk lub klawiatura ją przerywają. Przy ograniczeniu ruchu przejście jest natychmiastowe. Dotyczy to także ponownego wyboru tego samego tematu; same zakładki nie przewijają strony. Punkty mają co najmniej 44 × 44 px. Obrys fokusu jest tylko dla klawiatury i mieści się wewnątrz panelu.
+
+Treści i identyfikatory tematów są w `src/data/site.ts`, stan, pozycje punktów i sterowanie w `src/components/Subjects.tsx`, a wygląd w `src/styles/subjects.css`. Testy `tests/subjects.spec.ts` obejmują przełączanie, klawiaturę, dostępność, wersję bez skryptów i stabilną wysokość przy pięciu szerokościach ekranu. Dodatkowe testy `tests/visual-effects.spec.ts` sprawdzają punkty, kursor, dotyk i wstęgi na końcu strony.
 
 ### Interaktywne laboratorium
 
 Każdy poziom początkowo pokazuje kompletne rozwiązanie. „Prześledź rozwiązanie” otwiera krok 0; dostępne są poprzedni i następny krok, odtwarzanie/pauza, powrót do początku i przycisk pokazania pełnego rozwiązania. Przejście do innego poziomu przywraca podsumowania. Bezpośredni link do identyfikatora przykładu otwiera odpowiedni poziom.
 
-Pole `algorithm` w danych wybiera `parity`, `kadane` albo `lis`. Generator otrzymuje dokładnie te same `values`, które renderuje komponent, i tworzy niezależne migawki z indeksami danych, numerami linii kodu, zmiennymi i objaśnieniem. Shiki dodaje `data-code-line` podczas builda, bez zmiany tekstu kodu. Po zmianie treści Python należy dopasować numery linii w generatorze. To demonstracja na ustalonych danych; strona nie wykonuje kodu Python. Rekonstrukcja wyróżnionego podciągu LIS służy ilustracji, natomiast pokazany kod oblicza jego długość.
+Pole `algorithm` w danych wybiera `parity`, `kadane` albo `lis`. Generator otrzymuje dokładnie te same `values`, które renderuje komponent, i tworzy niezależne migawki z indeksami danych, numerami linii kodu, zmiennymi i objaśnieniem. Komponent React dodaje `data-code-line` do linii tokenów przygotowanych podczas builda, bez zmiany tekstu kodu. Po zmianie treści Python należy dopasować numery linii w generatorze. To demonstracja na ustalonych danych; strona nie wykonuje kodu Python. Rekonstrukcja wyróżnionego podciągu LIS służy ilustracji, natomiast pokazany kod oblicza jego długość.
 
 Odtwarzanie przechodzi o jeden krok co 1200 ms. Zatrzymuje się na końcu, przy zmianie poziomu, opuszczeniu sekcji i ukryciu karty; wymaga ręcznego wznowienia. Przy ograniczeniu ruchu pozostaje ręczne sterowanie krokami, bez odtwarzania w czasie i animowanych przejść. Przyciski obsługują klawiaturę i mają co najmniej 44 × 44 px, a objaśnienie kroku jest komunikatem `aria-live`.
 
@@ -152,7 +174,7 @@ Adres w metadanych canonical i Open Graph to `https://maturainformatyka.com`, zg
 
 Nawigacja, FAQ i kompletna kompozycja portretu działają bez JavaScriptu. Skrypty zamykają menu mobilne i dodają animacje. Orbity i plamy koloru poruszają się tylko w widocznych sekcjach; ruch zatrzymuje się w nieaktywnej karcie. Tła reagują na przewijanie, a linia procesu pokazuje jego postęp. Reakcja portretu i kart na kursor jest aktywna tylko dla precyzyjnego wskaźnika na ekranach szerszych niż 900 px. Na urządzeniach dotykowych karty mają krótkie podświetlenie. Ustawienie ograniczenia ruchu wyłącza animacje i parallax. Elementy pozostają czytelne przed uruchomieniem efektów. FAQ korzysta z natywnego `details` i płynnego rozwijania w przeglądarkach obsługujących tę funkcję.
 
-Na końcu strony zielone cząsteczki i poświata wyróżniają panel bezpłatnego spotkania. Efekt uruchamia się raz po dotarciu do końca stopki, respektuje ograniczenie ruchu i zatrzymuje się poza widokiem. Przyciski bezpłatnego spotkania prowadzą do sekcji rezerwacji; działają również bez JavaScriptu strony.
+Na końcu strony duże wstęgi SVG w kolorach zieleni i miedzi rozwijają się wokół sekcji kontaktu. Towarzyszą im opadające konfetti i poświata panelu bezpłatnego spotkania. Efekt uruchamia się raz po dotarciu do końca stopki; wstęgi pozostają widoczne po animacji. Dekoracje są pod treścią, nie przechwytują kliknięć, respektują ograniczenie ruchu i zatrzymują się poza widokiem. Na telefonie mają mniejszą intensywność i mniej cząsteczek. Wygląd definiuje `src/styles/celebration.css`, a SVG i cząsteczki — `src/components/ContactCelebration.tsx`. Przyciski spotkania prowadzą do rezerwacji i działają również bez JavaScriptu strony.
 
 ## Rezerwacja spotkania w Google Calendar
 

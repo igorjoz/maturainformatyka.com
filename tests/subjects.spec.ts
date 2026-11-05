@@ -3,6 +3,8 @@ import { expect, test } from '@playwright/test';
 test.beforeEach(async ({ page }) => {
   await page.route('https://calendar.google.com/**', route => route.fulfill({ contentType: 'text/html', body: '<p>Kalendarz</p>' }));
   await page.goto('/');
+  await page.locator('#zakres').scrollIntoViewIfNeeded();
+  await expect(page.locator('#zakres').locator('xpath=ancestor::astro-island[1]')).not.toHaveAttribute('ssr');
 });
 
 test('pierwsze tematy są otwarte, zakładki działają niezależnie i nie zamykają panelu', async ({ page }) => {

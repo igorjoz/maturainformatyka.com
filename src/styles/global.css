@@ -317,25 +317,12 @@ a:hover .diagonal { transform: rotate(-45deg) translateX(3px); }
 [data-motion]:not(.motion-active) .hero-portrait { animation-play-state: paused; }
 [data-card] { transform: perspective(900px) rotateX(var(--card-rx, 0deg)) rotateY(var(--card-ry, 0deg)); }
 [data-card].pointer-active { border-color: #a8b7ab; box-shadow: 0 12px 30px #18364a12; }
-.contact-celebration { --burst-distance: 140px; position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-.celebration-particle, .celebration-ring { position: absolute; left: 15%; bottom: 130px; opacity: 0; }
-.particle-right, .celebration-ring-right { left: 85%; }
-.celebration-particle { width: 5px; height: 5px; border-radius: 50%; background: var(--free-green); }
-.celebration-particle:nth-child(3n) { background: #91b8a0; width: 8px; height: 8px; }
-.celebration-ring { width: 20px; height: 20px; margin: -10px; border: 1px solid #00843d66; border-radius: 50%; }
-.contact-arrived .celebration-particle { animation: green-burst 1.5s ease-out both; animation-delay: var(--particle-delay); }
-.contact-arrived .celebration-ring { animation: green-ripple 1.2s ease-out both; }
-.contact-arrived .contact-booking { animation: booking-glow 1.8s ease-out both; }
-.contact-section:not(.motion-active) .celebration-particle, .contact-section:not(.motion-active) .celebration-ring, .contact-section:not(.motion-active) .contact-booking { animation-play-state: paused; }
 @keyframes orbit-turn { to { transform: rotate(360deg); } }
 @keyframes color-drift { from { transform: translate(-6px, 5px) scale(.98); } to { transform: translate(10px, -8px) scale(1.025); } }
 @keyframes bloom { from { transform: scale(.88); } to { transform: scale(1); } }
 @keyframes draw-orbit { from { stroke-dasharray: 1; stroke-dashoffset: 1; } to { stroke-dasharray: 1; stroke-dashoffset: 0; } }
 @keyframes portrait-enter { from { opacity: .7; translate: 0 18px; } to { opacity: 1; translate: 0 0; } }
 @keyframes content-enter { from { opacity: .75; translate: 0 18px; } to { opacity: 1; translate: 0 0; } }
-@keyframes green-burst { 0% { opacity: 0; transform: scale(.2); } 15% { opacity: .8; } 100% { opacity: 0; transform: translate(calc(var(--burst-x) * var(--burst-distance)), calc(var(--burst-y) * var(--burst-distance))) scale(.5); } }
-@keyframes green-ripple { from { opacity: .6; transform: scale(.2); } to { opacity: 0; transform: scale(10); } }
-@keyframes booking-glow { 35% { border-color: var(--free-green); box-shadow: 0 0 0 8px #00843d0a, 0 12px 40px #00843d20; } }
 
 /* Premium depth uses the same restrained palette throughout the page. */
 .reading-progress { display: none; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: linear-gradient(90deg, var(--accent), #88aa91 70%, var(--free-green)); transform: scaleX(var(--reading-progress, 0)); transform-origin: left; pointer-events: none; }
@@ -513,8 +500,6 @@ a:hover .diagonal { transform: rotate(-45deg) translateX(3px); }
   .contact h2 br { display: none; }
   .contact-booking { flex-direction: column; align-items: stretch; padding: 24px; }
   .contact-booking .button { width: 100%; }
-  .contact-celebration { --burst-distance: 100px; }
-  .celebration-particle:nth-child(2n) { display: none; }
   .footer { flex-direction: column; align-items: flex-start; gap: 8px; padding-block: 22px; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -522,5 +507,4 @@ a:hover .diagonal { transform: rotate(-45deg) translateX(3px); }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .scene-layer, .geometry-parallax, [data-card], .button:hover, .subject-art img, .project.pointer-active .project-illustration img, .project:focus-visible .project-illustration img { transform: none; }
   .process-enhanced .process-line { scale: 1; }
-  .contact-celebration { display: none; }
 }
