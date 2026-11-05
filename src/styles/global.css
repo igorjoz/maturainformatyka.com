@@ -166,13 +166,7 @@ a:hover .diagonal { transform: rotate(-45deg) translateX(3px); }
 .subject-index { font: 11px/1.6 var(--mono); letter-spacing: .1em; color: var(--accent); }
 .subject-group h3 { font-size: clamp(24px, 2.2vw, 30px); margin-top: 12px; }
 .subject-group-copy > p { margin-top: 16px; }
-.subject-group dl { margin: 26px 0 0; }
-.subject-group dl > div { padding: 18px 0; border-top: 1px solid var(--line); }
-.subject-group dt { display: flex; gap: 12px; align-items: center; color: var(--ink); font-size: var(--text-action); font-weight: 750; }
-.subject-group dt > span { display: inline-block; min-width: 36px; font: 14px var(--mono); color: var(--sage); }
-.subject-group dd { margin: 8px 0 0 48px; font-size: var(--text-detail); color: var(--muted); }
-.subject-foundation { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; background: var(--soft); border-radius: var(--radius); padding: 28px 32px; margin-top: 32px; }
-.subject-foundation > div { display: flex; gap: 20px; }
+.subject-foundation { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 40px; }
 .foundation-code { font: 18px var(--mono); color: var(--sage); padding-top: 3px; min-width: 36px; }
 .foundation-code.binary-code { display: inline-block; align-self: flex-start; flex-shrink: 0; padding: 6px 8px; border: 1px solid #bccbc2; border-radius: 6px; font-size: 14px; line-height: 1.2; }
 .binary-code sub { font-size: .7em; vertical-align: sub; line-height: 0; }
@@ -445,7 +439,6 @@ a:hover .diagonal { transform: rotate(-45deg) translateX(3px); }
   .subject-group { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
   .subject-group-copy { padding: 0; }
   .subject-group h3 { font-size: 25px; }
-  .subject-group dl { margin-top: 16px; }
   .subject-art { margin-top: 6px; }
   .subject-foundation { grid-template-columns: 1fr; gap: 28px; }
   .testimonials-grid { grid-template-columns: 1fr; }
@@ -496,8 +489,6 @@ a:hover .diagonal { transform: rotate(-45deg) translateX(3px); }
   .lesson-takeaway { padding: 24px 20px; }
   .subject-group { display: block; }
   .subject-group-copy { padding-top: 24px; }
-  .subject-foundation { padding: 24px 20px; }
-  .subject-foundation > div { gap: 14px; }
   .subject-foundation p { font-size: 13px; }
   .about-copy h2 { margin-top: 20px; }
   .project { grid-template-columns: 80px minmax(0, 1fr); padding: 14px; gap: 14px; }
