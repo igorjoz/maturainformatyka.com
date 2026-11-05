@@ -1,9 +1,0 @@
----
-import { site, introMeeting } from '../data/site';
-import Arrow from './Arrow.astro';
-import GeometryBackdrop from './GeometryBackdrop.astro';
----
-<section class="offer-section geometry-host" data-motion id="oferta" aria-labelledby="offer-title"><GeometryBackdrop variant="light" /><div class="container offer">
-  <div class="offer-copy" data-reveal><p class="eyebrow">06 / TWOJE PRZYGOTOWANIE</p><h2 id="offer-title">Twój cel.<br />Wspólny plan.<br /><span>Pełna uwaga.</span></h2><p>Na zajęciach 1:1 jest przestrzeń na Twoje pytania, Twoje tempo i zadania, które naprawdę wymagają przećwiczenia.</p><div class="offer-format"><span>Online</span><span>Indywidualnie</span><span>Terminy do uzgodnienia</span></div></div>
-  <div class="price-card" data-reveal><span class="price-label">INDYWIDUALNE ZAJĘCIA ONLINE</span><p class="price"><strong>{site.onlinePrice}<span> zł</span></strong><span>/ 60 minut</span></p><ul>{site.benefits.map((benefit, index) => <li data-reveal style={`--reveal-delay: ${index * 90 + 100}ms`}><span aria-hidden="true">✓</span>{benefit}</li>)}</ul><a class="button button-primary button-free" href="#rezerwacja">{introMeeting.cta} <Arrow /></a><p class="price-footnote">Najpierw {introMeeting.duration} minut bezpłatnej rozmowy.<br />Regularne spotkania: {site.durations.join(' / ')} min.</p></div>
-</div></section>

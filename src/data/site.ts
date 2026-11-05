@@ -57,12 +57,12 @@ export const site = {
     { title: 'Rozwiązujesz coraz więcej.', text: 'Pracujemy na zadaniach maturalnych. Rozumiesz rozwiązania, analizujesz błędy i dostajesz wskazówki do dalszej pracy.', tag: 'Praktyka' },
   ],
   subjects: [
-    { code: '</>', title: 'Python lub C++', text: 'Od zrozumienia kodu do samodzielnego pisania rozwiązań. Pracujemy w wybranym przez Ciebie języku.' },
-    { code: 'O(n)', title: 'Algorytmika', text: 'Rozkładanie problemu na kroki, dobór algorytmu i ocena, czy rozwiązanie jest poprawne i efektywne.' },
-    { code: 'Σ', title: 'Excel', text: 'Analiza danych, formuły i wyciąganie wniosków. Arkusz jako narzędzie do rozwiązywania zadań.' },
-    { code: 'SQL', title: 'Access', text: 'Relacje między tabelami, zapytania i wyszukiwanie informacji w bazach danych.' },
-    { code: '1010', base: 2, title: 'Teoria informatyki', text: 'Zagadnienia potrzebne w zadaniach — ze zrozumieniem i w połączeniu z praktyką.' },
-    { code: 'CKE', title: 'Zadania maturalne', text: 'Praca z arkuszami, czytanie poleceń i sprawdzanie rozwiązań pod kątem wymagań zadania.' },
+    { id: 'programowanie', example: 'Policz liczby spełniające podany warunek.', lessonHref: '#przyklad-podstawowy', code: '</>', title: 'Python lub C++', text: 'Od zrozumienia kodu do samodzielnego pisania rozwiązań. Pracujemy w wybranym przez Ciebie języku.' },
+    { id: 'algorytmika', example: 'Opisz kolejne kroki porządkowania liczb i oceń liczbę porównań.', code: 'O(n)', title: 'Algorytmika', text: 'Rozkładanie problemu na kroki, dobór algorytmu i ocena, czy rozwiązanie jest poprawne i efektywne.' },
+    { id: 'excel', example: 'Oblicz średnią wyników i wskaż wartości powyżej średniej.', code: 'Σ', title: 'Excel', text: 'Analiza danych, formuły i wyciąganie wniosków. Arkusz jako narzędzie do rozwiązywania zadań.' },
+    { id: 'access', example: 'Połącz uczniów z ich wynikami i wybierz osoby spełniające warunek.', code: 'SQL', title: 'SQL i Access', text: 'Relacje między tabelami, zapytania SQL i tworzenie kwerend w Accessie. Łączysz dane, filtrujesz wyniki i odpowiadasz na pytania.' },
+    { id: 'teoria', code: '1010', base: 2, title: 'Teoria informatyki', text: 'Zagadnienia potrzebne w zadaniach — ze zrozumieniem i w połączeniu z praktyką.' },
+    { id: 'matura', code: 'CKE', title: 'Zadania maturalne', text: 'Praca z arkuszami, czytanie poleceń i sprawdzanie rozwiązań pod kątem wymagań zadania.' },
   ],
   about: {
     title: 'Uczę informatyki, którą sam wykorzystuję.',
@@ -84,6 +84,21 @@ export const testimonials = [
   { name: 'Maria', date: '2026-01-25', dateLabel: '25 stycznia 2026', rating: 5, quote: 'Nauczyciel z pasją i ogromną wiedzą. Tłumaczy jasno i konkretnie, dzięki czemu nawet trudne zagadnienia stają się zrozumiałe. Z pełnym przekonaniem polecam.' },
   { name: 'Aleksandra', date: '2025-10-15', dateLabel: '15 października 2025', rating: 5, quote: 'Wystawiam bardzo dobrą opinię z poleceniem. Bardzo się cieszę, że tu trafiłam i dziękuję za zaoferowaną mi pomoc.' },
 ];
+
+export const maturaExample = {
+  sourceLabel: 'CKE · maj 2026 · zadanie 7.1 · 3 pkt',
+  context: 'Zadanie „Staw”: dane pogodowe z pliku staw.txt (Formuła 2023).',
+  quote: 'Utwórz zestawienie średnich miesięcznych temperatur w zaokrągleniu do jednego miejsca po przecinku.',
+  steps: [
+    { label: 'Dane', text: 'Odczytujemy daty i temperatury, rozpoznajemy miesiące.' },
+    { label: 'Metoda', text: 'Obliczamy średnie miesięczne i przygotowujemy wykres kolumnowy.' },
+    { label: 'Sprawdzenie', text: 'Kontrolujemy zaokrąglenie, dobór danych, tytuł, opisy osi i oznaczenie miesięcy.' },
+  ],
+  sources: [
+    { label: 'Pełne polecenie — PDF', url: 'https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Informatyka/MINP-R0-100-A-2605-arkusz.pdf#page=16' },
+    { label: 'Zasady oceniania — PDF', url: 'https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Informatyka/MINP-R0-100-2605-zasady.pdf#page=14' },
+  ],
+};
 
 export const subjectGroups = [
   {
@@ -107,7 +122,7 @@ export const lessonExample = {
   description: 'Nie zaczynamy od gotowego kodu. Najpierw szukamy pomysłu, sprawdzamy go na przykładzie i dopiero wtedy zapisujemy rozwiązanie.',
   examples: [
     {
-      id: 'przyklad-podstawowy', level: 'Podstawy', algorithm: 'parity',
+      id: 'przyklad-podstawowy', level: 'Podstawy', algorithm: 'parity' as const,
       task: 'Policz, ile liczb w podanym ciągu jest parzystych.',
       values: [3, 8, 5, 12, 7, 4], highlightedIndices: [1, 3, 5],
       sequenceCaption: 'Wyróżnione liczby spełniają warunek parzystości.',
@@ -118,7 +133,7 @@ export const lessonExample = {
       actions: [{ targetId: 'przyklad-trudniejszy', label: 'Proste? Spróbuj trudniejszego →' }],
     },
     {
-      id: 'przyklad-trudniejszy', level: 'Krok dalej', algorithm: 'kadane',
+      id: 'przyklad-trudniejszy', level: 'Krok dalej', algorithm: 'kadane' as const,
       task: 'Znajdź największą sumę niepustego spójnego fragmentu ciągu.',
       values: [-2, 3, -1, 4, -5, 2], highlightedIndices: [1, 2, 3],
       sequenceCaption: 'Wyróżniony fragment [3, −1, 4] ma sumę 6. Fragment musi zawierać kolejne elementy — nie można wybierać dowolnych liczb.',
@@ -132,7 +147,7 @@ export const lessonExample = {
       ],
     },
     {
-      id: 'przyklad-wyzwanie', level: 'Wyzwanie', algorithm: 'lis',
+      id: 'przyklad-wyzwanie', level: 'Wyzwanie', algorithm: 'lis' as const,
       task: 'Wyznacz długość najdłuższego ściśle rosnącego podciągu w niepustym ciągu liczb.',
       values: [3, 1, 5, 2, 6, 4, 9], highlightedIndices: [1, 3, 5, 6],
       sequenceCaption: 'Wyróżniony podciąg [1, 2, 4, 9] ma długość 4. Możesz pomijać elementy, ale musisz zachować ich kolejność. Każda następna liczba musi być większa.',

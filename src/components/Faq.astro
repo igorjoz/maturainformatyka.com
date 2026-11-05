@@ -1,4 +1,0 @@
----
-import { site, faqs } from '../data/site';
----
-<section class="section container faq" id="faq" aria-labelledby="faq-title"><div><p class="eyebrow">07 / WARTO WIEDZIEĆ</p><h2 id="faq-title">Zanim zaczniemy.</h2><p>Masz inne pytanie?<br /><a href={`mailto:${site.email}`}>Napisz do mnie.</a></p></div><div class="faq-list">{faqs.map(item => <details><summary>{item.question}<span class="faq-plus" aria-hidden="true"></span></summary><p>{item.answer}</p></details>)}</div></section>

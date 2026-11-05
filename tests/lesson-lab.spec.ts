@@ -3,6 +3,8 @@ import { expect, test } from '@playwright/test';
 test.beforeEach(async ({ page }) => {
   await page.route('https://calendar.google.com/**', route => route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>Kalendarz testowy</title>' }));
   await page.goto('/');
+  await page.locator('#przyklad').scrollIntoViewIfNeeded();
+  await expect(page.locator('#przyklad').locator('xpath=ancestor::astro-island[1]')).not.toHaveAttribute('ssr');
 });
 
 const examples = [

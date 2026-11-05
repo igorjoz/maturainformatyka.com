@@ -1,0 +1,42 @@
+/* Large ribbons frame the contact section; every decoration is non-interactive. */
+.contact-celebration { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.celebration-ring { position: absolute; left: 15%; bottom: 130px; opacity: 0; width: 20px; height: 20px; margin: -10px; border: 1px solid #00843d66; border-radius: 50%; }
+.celebration-ring-right { left: 85%; }
+.contact { position: relative; z-index: 1; }
+.celebration-ribbons { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; overflow: hidden; }
+.celebration-ribbon { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.ribbon-left { transform: translateX(-120px); }
+.ribbon-right { transform: translateX(100px); }
+.contact-arrived .celebration-ribbons { opacity: .8; }
+.contact-arrived .celebration-ribbon { animation: ribbon-unfurl 2200ms cubic-bezier(.22, 1, .36, 1) both; }
+.contact-arrived .ribbon-right { animation-delay: 180ms; }
+.contact-arrived .ribbon-fine { animation-delay: 400ms; opacity: .5; }
+.contact-celebration .celebration-particle { position: absolute; opacity: 0; top: -24px; left: var(--confetti-left); width: 11px; height: 7px; border-radius: 2px; background: #00843d; }
+.contact-celebration .celebration-particle:nth-child(3n) { width: 8px; height: 16px; background: #c99453; }
+.contact-celebration .celebration-particle:nth-child(4n) { width: 10px; height: 10px; border-radius: 50%; background: #8daf98; }
+.contact-celebration .celebration-particle:nth-child(5n) { background: #18364a; }
+.contact-arrived .celebration-particle { animation: celebration-fall var(--confetti-duration) ease-out both; animation-delay: var(--particle-delay); }
+.contact-arrived .celebration-ring { animation: green-ripple 1800ms ease-out both; }
+.contact-arrived .contact-booking { animation: booking-glow 2400ms ease-out both; }
+.contact-section:not(.motion-active) .celebration-ribbon,
+.contact-section:not(.motion-active) .celebration-particle,
+.contact-section:not(.motion-active) .celebration-ring,
+.contact-section:not(.motion-active) .contact-booking { animation-play-state: paused; }
+@keyframes green-ripple { from { opacity: .6; transform: scale(.2); } to { opacity: 0; transform: scale(10); } }
+@keyframes booking-glow { 35% { border-color: var(--free-green); box-shadow: 0 0 0 8px #00843d0a, 0 12px 40px #00843d20; } }
+@keyframes ribbon-unfurl { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes celebration-fall {
+  0% { opacity: 0; transform: translate3d(0, 0, 0) rotate(var(--particle-turn)); }
+  12% { opacity: .9; }
+  75% { opacity: .8; }
+  100% { opacity: 0; transform: translate3d(var(--confetti-sway), 680px, 0) rotate(calc(var(--particle-turn) + 420deg)); }
+}
+@media (max-width: 600px) {
+  .celebration-particle:nth-child(2n) { display: none; }
+  .contact-arrived .celebration-ribbons { opacity: .5; }
+  .celebration-ribbon { stroke-width: 10px; }
+  .ribbon-fine { stroke-width: 3px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-celebration { display: none; }
+}
