@@ -43,6 +43,9 @@ jobs:
       - name: Check project
         run: npm run check
 
+      - name: Test archive validation
+        run: npm run exams:test
+
       - name: Install test browser
         run: npx playwright install --with-deps chromium
 

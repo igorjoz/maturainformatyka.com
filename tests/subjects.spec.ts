@@ -75,8 +75,8 @@ test('przykłady fundamentów są zawsze widoczne, ograniczenie ruchu wyłącza 
   await expect(exam).toContainText('Jak pracujemy nad zadaniem');
   await expect(exam).not.toContainText('przykład autorski');
   await expect(exam).not.toContainText('Wyznacz największą liczbę');
-  await expect(exam.getByRole('link', { name: 'Pełne polecenie — PDF' })).toHaveAttribute('href', 'https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Informatyka/MINP-R0-100-A-2605-arkusz.pdf#page=16');
-  await expect(exam.getByRole('link', { name: 'Zasady oceniania — PDF' })).toHaveAttribute('href', 'https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Informatyka/MINP-R0-100-2605-zasady.pdf#page=14');
+  await expect(exam.getByRole('link', { name: 'Pełne polecenie — PDF' })).toHaveAttribute('href', '/pliki/matury/informatyka-2026-maj-formula-2023-rozszerzona/arkusz.pdf#page=16');
+  await expect(exam.getByRole('link', { name: 'Zasady oceniania — PDF' })).toHaveAttribute('href', '/pliki/matury/informatyka-2026-maj-formula-2023-rozszerzona/ocenianie.pdf#page=14');
 });
 
 test('bez JavaScriptu tematy są zwykłą treścią z nagłówkami', async ({ browser }) => {

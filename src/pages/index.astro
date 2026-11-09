@@ -11,6 +11,8 @@ import '../styles/subjects.css';
 import '../styles/lesson-lab.css';
 import '../styles/refresh.css';
 import '../styles/celebration.css';
+import '../styles/archive.css';
+import ArchiveTeaser from '../components/ArchiveTeaser.astro';
 import Header from '../components/Header.tsx';
 import Hero from '../components/Hero.tsx';
 import IntroMeeting from '../components/IntroMeeting.tsx';
@@ -55,6 +57,7 @@ const socialUrl = new URL(socialImage.src, Astro.site ?? Astro.url);
       <Learning site={{ steps: site.steps }} client:visible={{ rootMargin: '200px' }} />
       <LessonExample lesson={props.lesson} client:visible={{ rootMargin: '200px' }} />
       <Subjects site={{ subjects: site.subjects }} groups={props.groups} maturaExample={maturaExample} client:visible={{ rootMargin: '200px' }} />
+      <ArchiveTeaser />
       <About site={{ about: site.about, projects: props.site.projects, personal: site.personal }} client:visible={{ rootMargin: '200px' }} />
       <Testimonials site={{ listing: site.listing }} testimonials={testimonials} client:visible={{ rootMargin: '200px' }} />
       <Offer site={{ onlinePrice: site.onlinePrice, benefits: site.benefits, durations: site.durations }} introMeeting={{ duration: introMeeting.duration, cta: introMeeting.cta }} client:visible={{ rootMargin: '200px' }} />

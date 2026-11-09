@@ -5,19 +5,22 @@ import type { Site } from "./types";
 export default function Header({
   site,
   logo,
+  home = true,
 }: {
   site: Pick<Site, "navigation">;
   logo: string;
+  home?: boolean;
 }) {
   const menu = useRef<HTMLDetailsElement>(null);
   const header = useRef<HTMLElement>(null);
   const progress = useRef<HTMLSpanElement>(null);
   const [open, setOpen] = useState(false);
-  const [current, setCurrent] = useState("");
+  const [current, setCurrent] = useState(home ? "" : "/arkusze/");
   useEffect(() => {
     document.documentElement.classList.add("navigation-enhanced");
     setOpen(menu.current?.open ?? false);
     const sections = site.navigation
+      .filter((link) => link.href.startsWith("#"))
       .map((link) => document.getElementById(link.href.slice(1)))
       .filter((element): element is HTMLElement => !!element);
     let frame = 0;
@@ -25,7 +28,7 @@ export default function Header({
       frame = 0;
       if (document.hidden) return;
       const bottom = header.current?.getBoundingClientRect().bottom ?? 88;
-      let active = "";
+      let active = home ? "" : "/arkusze/";
       for (const section of sections)
         if (section.getBoundingClientRect().top <= bottom + innerHeight * 0.18)
           active = `#${section.id}`;
@@ -69,12 +72,12 @@ export default function Header({
       document.removeEventListener("keydown", escape);
       document.documentElement.classList.remove("navigation-enhanced");
     };
-  }, [site.navigation]);
+  }, [site.navigation, home]);
   const links = site.navigation.map((link) => (
     <a
       key={link.href}
-      href={link.href}
-      aria-current={current === link.href ? "location" : undefined}
+      href={!home && link.href.startsWith("#") ? `/${link.href}` : link.href}
+      aria-current={current === link.href ? (link.href.startsWith("#") ? "location" : "page") : undefined}
     >
       {link.label}
     </a>
@@ -88,7 +91,7 @@ export default function Header({
         <div className="container header-inner">
           <a
             className="brand"
-            href="#start"
+            href={home ? "#start" : "/"}
             aria-label="Matura z informatyki — początek strony"
           >
             <img
@@ -107,7 +110,7 @@ export default function Header({
           <nav aria-label="Nawigacja główna" className="desktop-nav">
             {links}
           </nav>
-          <a className="header-contact" href="#rezerwacja">
+          <a className="header-contact" href={home ? "#rezerwacja" : "/#rezerwacja"}>
             Bezpłatna rozmowa <Arrow />
           </a>
           <details
@@ -141,7 +144,7 @@ export default function Header({
               }}
             >
               {links}
-              <a href="#kontakt">Kontakt</a>
+              <a href={home ? "#kontakt" : "/#kontakt"}>Kontakt</a>
             </nav>
           </details>
         </div>

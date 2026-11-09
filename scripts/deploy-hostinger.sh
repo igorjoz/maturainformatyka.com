@@ -68,10 +68,10 @@ if [[ "$DEPLOY_DRY_RUN" == true ]]; then
 fi
 
 # Keep existing files, including .htaccess and assets used by older page versions.
-# Publish index.html only after all its new assets have been transferred.
+# Publish every HTML document only after all downloads and assets have arrived.
 destination="hostinger-deploy:${HOSTINGER_PATH%/}/"
-rsync "${rsync_options[@]}" --exclude=/index.html dist/ "$destination"
-rsync "${rsync_options[@]}" dist/index.html "$destination"
+rsync "${rsync_options[@]}" --exclude='*.html' dist/ "$destination"
+rsync "${rsync_options[@]}" --include='*/' --include='*.html' --exclude='*' dist/ "$destination"
 
 if [[ "$DEPLOY_DRY_RUN" == true ]]; then
   printf '%s\n' 'Dry run completed successfully.'

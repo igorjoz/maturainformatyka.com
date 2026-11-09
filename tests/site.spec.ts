@@ -43,6 +43,10 @@ test('nawigacja prowadzi do istniejących sekcji', async ({ page }) => {
   expect(await links.count()).toBeGreaterThan(0);
   for (const link of await links.all()) {
     const href = await link.getAttribute('href');
+    if (href === '/arkusze/') {
+      await expect(link).toHaveAttribute('href', '/arkusze/');
+      continue;
+    }
     expect(href).toMatch(/^#.+/);
     await expect(page.locator(href!)).toHaveCount(1);
     await link.click();

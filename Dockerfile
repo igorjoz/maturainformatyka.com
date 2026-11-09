@@ -1,5 +1,7 @@
 FROM node:22-alpine AS build
 
+RUN apk add --no-cache python3
+
 WORKDIR /app
 ENV ASTRO_TELEMETRY_DISABLED=1
 
@@ -10,6 +12,8 @@ COPY astro.config.mjs tsconfig.json ./
 COPY src/ ./src/
 COPY public/ ./public/
 COPY images/ ./images/
+COPY scripts/exam_archive.py ./scripts/exam_archive.py
+COPY docs/exam-import-report.json ./docs/exam-import-report.json
 RUN npm run check && npm run build
 
 FROM nginx:stable-alpine

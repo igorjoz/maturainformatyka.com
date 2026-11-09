@@ -1,0 +1,41 @@
+---
+import ArchiveLayout from '../../layouts/ArchiveLayout.astro';
+import { exams, formulas, examKinds, examTitle, fileSize, fileFormat } from '../../data/exams';
+const years = [...new Set(exams.map(exam => exam.year))].sort((a, b) => b - a);
+---
+<ArchiveLayout title="Arkusze maturalne z informatyki — PDF, odpowiedzi i dane" description="Archiwum matur z informatyki od 2005 roku. Formuła 2023, Formuła 2015 i starsze: arkusze PDF, zasady oceniania oraz dane do zadań do pobrania." canonical="/arkusze/" breadcrumbs={[{ name: 'Strona główna', path: '/' }, { name: 'Arkusze maturalne', path: '/arkusze/' }]}>
+  <header class="archive-intro">
+    <p class="eyebrow">POBIERZ. ROZWIĄŻ. SPRAWDŹ.</p>
+    <h1>Arkusze maturalne<br /><span>z informatyki.</span></h1>
+    <p>Wybierz maturę i zacznij ćwiczyć. Arkusze, zasady oceniania i dane do zadań pobierzesz bezpośrednio z naszej strony — pojedynczo lub w jednej paczce.</p>
+    <p class="archive-note">Materiały CKE od 2005 roku. Starsze formuły również przydają się do ćwiczeń; wymagania i budowa egzaminu mogą się różnić. Przy niepełnych zestawach wskazujemy brakujące materiały.</p>
+  </header>
+  <form class="archive-filters" data-archive-filters hidden aria-label="Filtry arkuszy">
+    <div class="archive-filter"><label for="archive-formula">Formuła</label><select id="archive-formula" name="formula"><option value="all">Wszystkie formuły</option>{Object.entries(formulas).map(([value, label]) => <option value={value} selected={value === '2023'}>{label}</option>)}</select></div>
+    <div class="archive-filter"><label for="archive-year">Rok</label><select id="archive-year" name="year"><option value="all">Wszystkie lata</option>{years.map(year => <option value={year}>{year}</option>)}</select></div>
+    <div class="archive-filter"><label for="archive-level">Poziom</label><select id="archive-level" name="level"><option value="all">Wszystkie poziomy</option><option value="rozszerzony">Rozszerzony</option><option value="podstawowy">Podstawowy</option></select></div>
+    <div class="archive-filter"><label for="archive-kind">Rodzaj zestawu</label><select id="archive-kind" name="kind"><option value="all">Wszystkie rodzaje</option>{Object.entries(examKinds).map(([value, label]) => <option value={value}>{label}</option>)}</select></div>
+    <button type="reset" class="archive-reset">Wyczyść filtry</button>
+  </form>
+  <noscript><p class="archive-notice">Wyświetlamy wszystkie zestawy. Pobieranie plików i podstrony matur działają bez JavaScriptu.</p></noscript>
+  <p class="archive-count" role="status" aria-live="polite" aria-atomic="true" data-archive-count>Liczba zestawów: {exams.length}</p>
+  <div class="archive-empty archive-notice" data-archive-empty hidden><h2>Brak pasujących zestawów</h2><p>Zmień rok, formułę lub pozostałe filtry.</p></div>
+  <div class="exam-list">
+    {exams.map(exam => <article class="exam-row" data-exam-row data-formula={exam.formula} data-year={exam.year} data-level={exam.level} data-kind={exam.kind}>
+      <div class="exam-summary">
+        <p class="exam-meta">{exam.formulaLabel} <span aria-hidden="true">·</span> {examKinds[exam.kind]}</p>
+        <h2><a data-exam-detail href={`/arkusze/${exam.slug}/`}>Informatyka {exam.year} — {exam.sessionLabel}</a></h2>
+        <p>Poziom {exam.level}</p>
+        {exam.missing.length > 0 && <p class="exam-incomplete">Niepełny zestaw. Brak: {exam.missing.join(', ')}.</p>}
+      </div>
+      <div class="exam-downloads" aria-label={`Pliki: ${examTitle(exam)}`}>
+        {exam.files.map(file => <a class="file-link" href={file.path} download><span>{file.label}</span><small>{fileFormat(file)} · {fileSize(file.size)}</small></a>)}
+        <a class="file-link file-bundle" href={exam.bundle.path} download><span>{exam.missing.length ? 'Dostępne pliki ZIP' : 'Cały zestaw ZIP'}</span><small>ZIP · {fileSize(exam.bundle.size)}</small></a>
+      </div>
+    </article>)}
+  </div>
+  <aside class="archive-source"><h2>Skąd pochodzą materiały?</h2><p>Udostępniamy lokalne kopie oficjalnych materiałów Centralnej Komisji Egzaminacyjnej. Źródła podajemy przy poszczególnych zestawach. Zasady oceniania zawierają oficjalne odpowiedzi; nie są naszymi autorskimi rozwiązaniami.</p></aside>
+</ArchiveLayout>
+<script>
+  import '../../scripts/archive';
+</script>

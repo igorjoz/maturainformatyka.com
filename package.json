@@ -7,7 +7,10 @@
     "dev": "astro dev --host 127.0.0.1",
     "check": "astro check",
     "test": "playwright test",
-    "build": "astro build",
+    "build": "npm run exams:validate && astro build",
+    "exams:import": "python3 scripts/exam_archive.py import",
+    "exams:validate": "python3 scripts/exam_archive.py validate",
+    "exams:test": "python3 -m unittest discover -s scripts -p 'test_exam_archive.py'",
     "report:bundle": "node scripts/bundle-size.mjs",
     "preview": "astro preview --host 127.0.0.1"
   },

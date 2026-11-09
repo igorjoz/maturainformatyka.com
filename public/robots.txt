@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maturainformatyka.com/sitemap.xml

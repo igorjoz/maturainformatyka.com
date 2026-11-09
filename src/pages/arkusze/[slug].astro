@@ -1,0 +1,57 @@
+---
+import ArchiveLayout from '../../layouts/ArchiveLayout.astro';
+import { exams, examTitle, examDescription, examKinds, fileSize, fileFormat } from '../../data/exams';
+export function getStaticPaths() { return exams.map(exam => ({ params: { slug: exam.slug }, props: { exam } })); }
+const { exam } = Astro.props;
+const title = examTitle(exam);
+const sheets = exam.files.filter(file => file.kind === 'sheet' && fileFormat(file) === 'PDF');
+---
+<ArchiveLayout title={title} description={examDescription(exam)} canonical={`/arkusze/${exam.slug}/`} breadcrumbs={[{ name: 'Strona główna', path: '/' }, { name: 'Arkusze maturalne', path: '/arkusze/' }, { name: `Informatyka ${exam.year} — ${exam.sessionLabel}`, path: `/arkusze/${exam.slug}/` }]}>
+  <a class="text-link" data-archive-back href="/arkusze/">← Wróć do spisu arkuszy</a>
+  <header class="archive-intro exam-intro">
+    <p class="eyebrow">{exam.formulaLabel.toLocaleUpperCase('pl')} · {examKinds[exam.kind].toLocaleUpperCase('pl')}</p>
+    <h1>Informatyka {exam.year}<br /><span>{exam.sessionLabel}.</span></h1>
+    <p>Poziom {exam.level}. {exam.files.some(file => file.part) ? 'Materiały zachowują podział na części egzaminu. ' : ''}Pobierz arkusz do samodzielnej pracy, a po rozwiązaniu sprawdź odpowiedzi w oficjalnych zasadach oceniania. {exam.files.some(file => file.kind === 'data') ? 'Dane do zadań znajdziesz wśród dostępnych plików.' : 'Informację o dostępności danych do zadań znajdziesz poniżej.'}</p>
+  </header>
+  {exam.missing.length > 0 && <aside class="archive-notice"><h2>Ten zestaw jest niepełny</h2><p>Nie udało się pozyskać: {exam.missing.join(', ')}. Paczka ZIP zawiera wyłącznie pliki wymienione poniżej.</p></aside>}
+  <section aria-labelledby="exam-files-title" class="exam-files">
+    <h2 id="exam-files-title">Materiały do pobrania</h2>
+    <div class="exam-downloads">
+      {exam.files.map(file => <a class="file-link" href={file.path} download><span>{file.label}</span><small>{fileFormat(file)} · {fileSize(file.size)}</small></a>)}
+      <a class="file-link file-bundle" href={exam.bundle.path} download><span>{exam.missing.length ? 'Dostępne pliki ZIP — niepełny zestaw' : 'Cały zestaw ZIP'}</span><small>ZIP · {fileSize(exam.bundle.size)}</small></a>
+    </div>
+  </section>
+  {sheets.length > 0 && <section class="exam-preview" aria-labelledby="exam-preview-title">
+    <h2 id="exam-preview-title">Podgląd arkusza</h2>
+    <p>Możesz czytać arkusz tutaj lub otworzyć PDF w osobnej karcie. Jeżeli podgląd nie jest dostępny na Twoim urządzeniu, skorzystaj z linków poniżej.</p>
+    <div class="preview-actions">{sheets.map((file, index) => <div><button type="button" data-preview-src={file.path} aria-pressed={index === 0 ? 'true' : 'false'} hidden>{file.label}</button><a class="text-link" href={file.path} target="_blank" rel="noopener">Otwórz PDF: {file.label}</a></div>)}</div>
+    <iframe data-exam-preview src={sheets[0].path} title={`Podgląd: ${sheets[0].label} — ${title}`} loading="lazy" />
+  </section>}
+  <aside class="archive-source">
+    <h2>Pochodzenie i dostępność materiałów</h2>
+    <p>Materiały: Centralna Komisja Egzaminacyjna. {exam.formulaLabel}, poziom {exam.level}; {examKinds[exam.kind].toLocaleLowerCase('pl')}. Pliki pobierasz z lokalnego archiwum maturainformatyka.com. Zachowujemy oryginalną treść dokumentów.</p>
+    <ul>{exam.sourcePages.map((source, index) => <li><a href={source} target="_blank" rel="noopener">Oficjalne źródło materiałów{exam.sourcePages.length > 1 ? ` (${index + 1})` : ''} ↗</a></li>)}</ul>
+    <p>Archiwum nie jest serwisem CKE. Starsze zestawy służą do ćwiczeń i mogą różnić się od aktualnych wymagań egzaminacyjnych.</p>
+  </aside>
+</ArchiveLayout>
+<script>
+  const back = document.querySelector<HTMLAnchorElement>('[data-archive-back]');
+  const returnTo = new URLSearchParams(location.search).get('powrot');
+  if (back && returnTo) {
+    try {
+      const target = new URL(returnTo, location.origin);
+      if (target.origin === location.origin && target.pathname === '/arkusze/') back.href = target.pathname + target.search;
+    } catch { /* A malformed return address keeps the canonical archive link. */ }
+  }
+  const preview = document.querySelector<HTMLIFrameElement>('[data-exam-preview]');
+  const buttons = document.querySelectorAll<HTMLButtonElement>('[data-preview-src]');
+  buttons.forEach(button => {
+    button.hidden = false;
+    button.addEventListener('click', () => {
+      if (!preview || !button.dataset.previewSrc) return;
+      preview.src = button.dataset.previewSrc;
+      preview.title = `Podgląd: ${button.textContent} — ${document.title}`;
+      buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    });
+  });
+</script>

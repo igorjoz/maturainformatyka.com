@@ -1,0 +1,3117 @@
+[
+  {
+    "id": "informatyka-2005-maj-starsza-formula-rozszerzona",
+    "slug": "informatyka-2005-maj-starsza-formula-rozszerzona",
+    "year": 2005,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2005-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/stories/Matura2005/inf_a1.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/stories/Matura2005/inf_a2.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 1",
+        "filename": "ocenianie-1.pdf",
+        "url": "https://cke.gov.pl/images/stories/Matura_odp_2005/inf_a1_model.pdf",
+        "part": 1
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 2",
+        "filename": "ocenianie-2.pdf",
+        "url": "https://cke.gov.pl/images/stories/Matura_odp_2005/informat_a2_model.pdf",
+        "part": 2
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2005/dane.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      },
+      {
+        "kind": "grading",
+        "part": 1,
+        "label": "zasady oceniania — część 1"
+      },
+      {
+        "kind": "grading",
+        "part": 2,
+        "label": "zasady oceniania — część 2"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2006-maj-starsza-formula-rozszerzona",
+    "slug": "informatyka-2006-maj-starsza-formula-rozszerzona",
+    "year": 2006,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2006-2/maj-2006/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/stories/Matura2006/a1_inform.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/stories/Matura2006/a2_inform.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 1",
+        "filename": "ocenianie-1.pdf",
+        "url": "https://cke.gov.pl/images/stories/Matura2006/a1_inform_rozw.pdf",
+        "part": 1
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 2",
+        "filename": "ocenianie-2.pdf",
+        "url": "https://cke.gov.pl/images/stories/Matura2006/a2_inform_rozw.pdf",
+        "part": 2
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.rar",
+        "url": "https://cke.gov.pl/images/stories/DANE.rar"
+      },
+      {
+        "kind": "extra",
+        "label": "Wyniki — pliki do części 2",
+        "filename": "wyniki-2.rar",
+        "url": "https://cke.gov.pl/images/stories/WYNIKI.rar"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      },
+      {
+        "kind": "grading",
+        "part": 1,
+        "label": "zasady oceniania — część 1"
+      },
+      {
+        "kind": "grading",
+        "part": 2,
+        "label": "zasady oceniania — część 2"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2006-styczen-starsza-formula-rozszerzona",
+    "slug": "informatyka-2006-styczen-starsza-formula-rozszerzona",
+    "year": 2006,
+    "month": 1,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Styczeń",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2006-2/sesja-zimowa-2006-r/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/stories/Arkusz2006styczen/inform_a1.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/stories/Arkusz2006styczen/a2_inform.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 1",
+        "filename": "ocenianie-1.pdf",
+        "url": "https://cke.gov.pl/images/stories/Arkusz2006styczen/inform_a1_schemat.pdf",
+        "part": 1
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 2",
+        "filename": "ocenianie-2.pdf",
+        "url": "https://cke.gov.pl/images/stories/Arkusz2006styczen/inform_a2_schemat.pdf",
+        "part": 2
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.rar",
+        "url": "https://cke.gov.pl/images/stories/Arkusz2006styczen/dane.rar"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      },
+      {
+        "kind": "grading",
+        "part": 1,
+        "label": "zasady oceniania — część 1"
+      },
+      {
+        "kind": "grading",
+        "part": 2,
+        "label": "zasady oceniania — część 2"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2007-maj-starsza-formula-rozszerzona",
+    "slug": "informatyka-2007-maj-starsza-formula-rozszerzona",
+    "year": 2007,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2007-2/maj-2007/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/stories/mat3_07/inf_pr_cz1.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/stories/mat3_07/inf_pr_cz2.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 1",
+        "filename": "ocenianie-1.pdf",
+        "url": "https://cke.gov.pl/images/stories/mat3_07/inf_pr_cz1_rozw.pdf",
+        "part": 1
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 2",
+        "filename": "ocenianie-2.pdf",
+        "url": "https://cke.gov.pl/images/stories/mat3_07/inf_pr_cz2_rozw.pdf",
+        "part": 2
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.rar",
+        "url": "https://cke.gov.pl/images/stories/Dane_cz2.rar"
+      },
+      {
+        "kind": "extra",
+        "label": "Wyniki — pliki do części 2",
+        "filename": "wyniki-2.rar",
+        "url": "https://cke.gov.pl/images/stories/Wynik_07i.rar"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      },
+      {
+        "kind": "grading",
+        "part": 1,
+        "label": "zasady oceniania — część 1"
+      },
+      {
+        "kind": "grading",
+        "part": 2,
+        "label": "zasady oceniania — część 2"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2008-maj-starsza-formula-rozszerzona",
+    "slug": "informatyka-2008-maj-starsza-formula-rozszerzona",
+    "year": 2008,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2008-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2008/inform_cz_1.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2008/inform_cz_2.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 1",
+        "filename": "ocenianie-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2008/inform_r1_rozw.pdf",
+        "part": 1
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 2",
+        "filename": "ocenianie-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2008/inform_r2_rozw.pdf",
+        "part": 2
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.rar",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2008/dane08_a.rar"
+      },
+      {
+        "kind": "extra",
+        "label": "Wyniki — pliki do części 2",
+        "filename": "wyniki-2.rar",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2008/wyniki08.rar"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      },
+      {
+        "kind": "grading",
+        "part": 1,
+        "label": "zasady oceniania — część 1"
+      },
+      {
+        "kind": "grading",
+        "part": 2,
+        "label": "zasady oceniania — część 2"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2009-maj-starsza-formula-podstawowa",
+    "slug": "informatyka-2009-maj-starsza-formula-podstawowa",
+    "year": 2009,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "podstawowy",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2009-2/maj-2009/",
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2009-2/klucze-punktowania-maj-2009/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2009/informatyka/PP_I.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2009/informatyka/PP_II.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2009/KLUCZE/pozostale/informatyka.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.rar",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2009/informatyka/Dane_pp.rar"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2009-maj-starsza-formula-rozszerzona",
+    "slug": "informatyka-2009-maj-starsza-formula-rozszerzona",
+    "year": 2009,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2009-2/maj-2009/",
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2009-2/klucze-punktowania-maj-2009/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2009/informatyka/PR_1.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2009/informatyka/PR_2.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2009/KLUCZE/pozostale/informatyka.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.rar",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2009/informatyka/Dane_pr.rar"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2010-maj-starsza-formula-podstawowa",
+    "slug": "informatyka-2010-maj-starsza-formula-podstawowa",
+    "year": 2010,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "podstawowy",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2010-2/maj-2010/",
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2010-2/klucze-punktowania-maj-2010/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Informatyka/pp_i.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Informatyka/pp_ii.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Informatyka/inform_klucz_pp.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.rar",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Informatyka/Dane_PP.rar"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2010-maj-starsza-formula-rozszerzona",
+    "slug": "informatyka-2010-maj-starsza-formula-rozszerzona",
+    "year": 2010,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2010-2/maj-2010/",
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2010-2/klucze-punktowania-maj-2010/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Informatyka/pr_i.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Informatyka/pr_ii.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Informatyka/inform_klucz_pr.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.rar",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2010/Informatyka/Dane_PR.rar"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2011-maj-starsza-formula-podstawowa",
+    "slug": "informatyka-2011-maj-starsza-formula-podstawowa",
+    "year": 2011,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "podstawowy",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2011-2/maj-2011/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/P/inf_pp_i.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/P/inf_pp_2.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/kryteria/informatyka_model_PP.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.rar",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/Dane_PP.rar"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2011-maj-starsza-formula-rozszerzona",
+    "slug": "informatyka-2011-maj-starsza-formula-rozszerzona",
+    "year": 2011,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2011-2/maj-2011/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/R/inf_pr_i.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/R/inf_pr_ii.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/kryteria/informatyka_model_pr.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.rar",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2011/Dane_PR.rar"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2012-maj-starsza-formula-podstawowa",
+    "slug": "informatyka-2012-maj-starsza-formula-podstawowa",
+    "year": 2012,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "podstawowy",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2012-2/maj-2012/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/infor/a1_pp.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/infor/a2_pp.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/klucze/inform_pp_klucz.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.rar",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/infor/Dane_PP.rar"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2012-maj-starsza-formula-rozszerzona",
+    "slug": "informatyka-2012-maj-starsza-formula-rozszerzona",
+    "year": 2012,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2012-2/maj-2012/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/infor/a1_pr.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/infor/a2_pr.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/klucze/inform_pr_klucz.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.rar",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2012/maj/infor/Dane_PR.rar"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2013-maj-starsza-formula-podstawowa",
+    "slug": "informatyka-2013-maj-starsza-formula-podstawowa",
+    "year": 2013,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "podstawowy",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2013-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/informatyka_PP_1.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/informatyka_PP_2.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/Kryteria-Oceniania/informatyka_model_PP.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.rar",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/Dane_PP.rar"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2013-maj-starsza-formula-rozszerzona",
+    "slug": "informatyka-2013-maj-starsza-formula-rozszerzona",
+    "year": 2013,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2013-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/20130522-informatyka-PR.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/informatyka_PR_2.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/Kryteria-Oceniania/informatyka_model_PR.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.rar",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2013/Dane_PR.rar"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2014-grudzien-probna-formula-2015-rozszerzona",
+    "slug": "informatyka-2014-grudzien-probna-formula-2015-rozszerzona",
+    "year": 2014,
+    "month": 12,
+    "formula": "2015",
+    "formulaLabel": "Formuła 2015",
+    "level": "rozszerzony",
+    "kind": "probny",
+    "sessionLabel": "Grudzień — matura próbna",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/materialy-dodatkowe/probny-egzamin/informatyka-poziom-rozszerzony/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/egzamin_probny_2015/informatyka_pr/Czesc_1/A1Informatyka_PR_część_I.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/egzamin_probny_2015/informatyka_pr/Czesc_2/A1Informatyka_PR_część_II.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 1",
+        "filename": "ocenianie-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/egzamin_probny_2015/informatyka_pr/A1A2A3A4A7Informatyka_PR_część_I_model_odpowiedzi.pdf",
+        "part": 1
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 2",
+        "filename": "ocenianie-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/egzamin_probny_2015/informatyka_pr/A1A2A3A4A7Informatyka_PR_czesc_II_model_odpowiedzi.pdf",
+        "part": 2
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/egzamin_probny_2015/informatyka_pr/Czesc_2/Dane_Pr/DANE_PR.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      },
+      {
+        "kind": "grading",
+        "part": 1,
+        "label": "zasady oceniania — część 1"
+      },
+      {
+        "kind": "grading",
+        "part": 2,
+        "label": "zasady oceniania — część 2"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2014-maj-starsza-formula-podstawowa",
+    "slug": "informatyka-2014-maj-starsza-formula-podstawowa",
+    "year": 2014,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "podstawowy",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2014-2/",
+      "https://www.oke.poznan.pl/cms,804,rok_2014.htm"
+    ],
+    "files": [],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2014-maj-starsza-formula-rozszerzona",
+    "slug": "informatyka-2014-maj-starsza-formula-rozszerzona",
+    "year": 2014,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2014-2/",
+      "https://www.oke.poznan.pl/cms,804,rok_2014.htm"
+    ],
+    "files": [],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2015-maj-formula-2015-rozszerzona",
+    "slug": "informatyka-2015-maj-formula-2015-rozszerzona",
+    "year": 2015,
+    "month": 5,
+    "formula": "2015",
+    "formulaLabel": "Formuła 2015",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/arkusze/2015-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_od_2015/MIN-R1_1P-152.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_od_2015/MIN-R2_1P-152.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 1",
+        "filename": "ocenianie-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_od_2015/odpowiedzi/MIN-R1-N.pdf",
+        "part": 1
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_od_2015/Dane_PR2.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2015-maj-starsza-formula-podstawowa",
+    "slug": "informatyka-2015-maj-starsza-formula-podstawowa",
+    "year": 2015,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "podstawowy",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2015-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_do_2014/MIN-P1_1P-152.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_do_2014/MIN-P2_1P-152.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 1",
+        "filename": "ocenianie-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_do_2014/odpowiedzi/MIN-P1-S.pdf",
+        "part": 1
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_do_2014/Dane_PP2.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2015-maj-starsza-formula-rozszerzona",
+    "slug": "informatyka-2015-maj-starsza-formula-rozszerzona",
+    "year": 2015,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2015-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_do_2014/MIN-R1_1P-152.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_do_2014/MIN-R2_1P-152.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 1",
+        "filename": "ocenianie-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_do_2014/odpowiedzi/MIN-R1-S.pdf",
+        "part": 1
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2015/formula_do_2014/Dane_PR2.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2015-przykladowy-pokazowa-formula-2015-rozszerzona",
+    "slug": "informatyka-2015-przykladowy-pokazowa-formula-2015-rozszerzona",
+    "year": 2015,
+    "month": 0,
+    "formula": "2015",
+    "formulaLabel": "Formuła 2015",
+    "level": "rozszerzony",
+    "kind": "pokazowy",
+    "sessionLabel": "Arkusz przykładowy",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/materialy-dodatkowe/przykladowe-arkusze/informatyka-poziom-rozszerzony/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Przykladowe_arkusze/2015/informatka_PR/informatyka_PR_czI_A1.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Przykladowe_arkusze/2015/informatka_PR/informatyka_PR_czII_A1.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Przykladowe_arkusze/2015/informatka_PR/informatyka_PR_model_A1_A2_A3_A4_A6_A7.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Przykladowe_arkusze/2015/informatka_PR/dane_czII.zip"
+      },
+      {
+        "kind": "extra",
+        "label": "Rozwiązania — pliki do części 2",
+        "filename": "rozwiazania-2.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Przykladowe_arkusze/2015/informatka_PR/rozwiązania_czII.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2016-maj-formula-2015-rozszerzona",
+    "slug": "informatyka-2016-maj-formula-2015-rozszerzona",
+    "year": 2016,
+    "month": 5,
+    "formula": "2015",
+    "formulaLabel": "Formuła 2015",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/arkusze/2016-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_od_2015/MIN-R1_1P-162.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_od_2015/MIN-R2_1P-162.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 1",
+        "filename": "ocenianie-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_od_2015/zasady_oceniania/MIN-R1-N.pdf",
+        "part": 1
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_od_2015/Dane_PR2.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2016-maj-starsza-formula-podstawowa",
+    "slug": "informatyka-2016-maj-starsza-formula-podstawowa",
+    "year": 2016,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "podstawowy",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2016-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/MIN-P1_1P-162.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/MIN-P2_1P-162.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 1",
+        "filename": "ocenianie-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/zasady_oceniania/MIN-P1-S.pdf",
+        "part": 1
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/Dane_PP2.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2016-maj-starsza-formula-rozszerzona",
+    "slug": "informatyka-2016-maj-starsza-formula-rozszerzona",
+    "year": 2016,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2016-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/MIN-R1_1P-162.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/MIN-R2_1P-162.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 1",
+        "filename": "ocenianie-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/zasady_oceniania/MIN-R1-S.pdf",
+        "part": 1
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2016/formula_do_2014/Dane_PR2.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2017-maj-formula-2015-rozszerzona",
+    "slug": "informatyka-2017-maj-formula-2015-rozszerzona",
+    "year": 2017,
+    "month": 5,
+    "formula": "2015",
+    "formulaLabel": "Formuła 2015",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/arkusze/2017-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_od_2015/informatyka/MIN-R1_1P-172.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_od_2015/informatyka/MIN-R2_1P-172.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 1",
+        "filename": "ocenianie-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_od_2015/zasady_oceniania/MIN-R1-N.pdf",
+        "part": 1
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_od_2015/informatyka/Dane_PR2.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2017-maj-starsza-formula-podstawowa",
+    "slug": "informatyka-2017-maj-starsza-formula-podstawowa",
+    "year": 2017,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "podstawowy",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2017-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_do_2014/informatyka/MIN-P1_1P-172.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_do_2014/informatyka/MIN-P2_1P-172.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 1",
+        "filename": "ocenianie-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_do_2014/zasady_oceniania/MIN-P1-S.pdf",
+        "part": 1
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_do_2014/informatyka/Dane_PP2.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2017-maj-starsza-formula-rozszerzona",
+    "slug": "informatyka-2017-maj-starsza-formula-rozszerzona",
+    "year": 2017,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2017-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_do_2014/informatyka/MIN-R1_1P-172.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_do_2014/informatyka/MIN-R2_1P-172.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania — część 1",
+        "filename": "ocenianie-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_do_2014/zasady_oceniania/MIN-R1-S.pdf",
+        "part": 1
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2017/formula_do_2014/informatyka/Dane_PR2.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2018-maj-formula-2015-rozszerzona",
+    "slug": "informatyka-2018-maj-formula-2015-rozszerzona",
+    "year": 2018,
+    "month": 5,
+    "formula": "2015",
+    "formulaLabel": "Formuła 2015",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/arkusze/2018-2"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_od_2015/informatyka/MIN-R1_1P-182.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_od_2015/informatyka/MIN-R2_1P-182.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_od_2015/Zasady_oceniania/MIN-R2_1P-182_zasady_oceniania.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_od_2015/informatyka/Dane_PR2.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2018-maj-starsza-formula-podstawowa",
+    "slug": "informatyka-2018-maj-starsza-formula-podstawowa",
+    "year": 2018,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "podstawowy",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2018-2"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/informatyka/MIN-P1_1P-182.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/informatyka/MIN-P2_1P-182.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/Zasady_ocenienia/MIN-P2_1P-182_zasady_oceniania.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/informatyka/Dane_PP2.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2018-maj-starsza-formula-rozszerzona",
+    "slug": "informatyka-2018-maj-starsza-formula-rozszerzona",
+    "year": 2018,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2018-2"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/informatyka/MIN-R1_1P-182.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/informatyka/MIN-R2_1P-182.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/Zasady_ocenienia/MIN-R2_1P-182_zasady_oceniania.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2018/formula_do_2014/informatyka/Dane_PR2.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2019-maj-formula-2015-rozszerzona",
+    "slug": "informatyka-2019-maj-formula-2015-rozszerzona",
+    "year": 2019,
+    "month": 5,
+    "formula": "2015",
+    "formulaLabel": "Formuła 2015",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/arkusze/2019-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_od_2015/informatyka/MIN-R1_1P-192.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_od_2015/informatyka/MIN-R2_1P-192.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_od_2015/Zasady_oceniania/MIN-R2_1P-192_model.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_od_2015/informatyka/Dane_PR2.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2019-maj-starsza-formula-podstawowa",
+    "slug": "informatyka-2019-maj-starsza-formula-podstawowa",
+    "year": 2019,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "podstawowy",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2019-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_do_2014/informatyka/MIN-P1_1P-192.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_do_2014/informatyka/MIN-P2_1P-192.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_do_2014/Zasady_ocenienia/MIN-P2_1P-192_model.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_do_2014/informatyka/Dane_PP2.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2019-maj-starsza-formula-rozszerzona",
+    "slug": "informatyka-2019-maj-starsza-formula-rozszerzona",
+    "year": 2019,
+    "month": 5,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2019-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_do_2014/informatyka/MIN-R1_1P-192.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_do_2014/informatyka/MIN-R2_1P-192.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_do_2014/Zasady_ocenienia/MIN-R2_1P-192_model.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2019/formula_do_2014/informatyka/Dane_PR2.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2020-czerwiec-formula-2015-rozszerzona",
+    "slug": "informatyka-2020-czerwiec-formula-2015-rozszerzona",
+    "year": 2020,
+    "month": 6,
+    "formula": "2015",
+    "formulaLabel": "Formuła 2015",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Czerwiec",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/arkusze/2020-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_od_2015/informatyka/MIN-R1_1P-202.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_od_2015/informatyka/MIN-R2_1P-202.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_od_2015/Zasady_oceniania/MIN-PR-202_zasady.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_od_2015/informatyka/Dane_PR2.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2020-czerwiec-starsza-formula-podstawowa",
+    "slug": "informatyka-2020-czerwiec-starsza-formula-podstawowa",
+    "year": 2020,
+    "month": 6,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "podstawowy",
+    "kind": "glowny",
+    "sessionLabel": "Czerwiec",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2020-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/informatyka/MIN-P1_1P-202s.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/informatyka/MIN-P2_1P-202s.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/Zasady_oceniania/MIN-PP-202s_zasady.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/informatyka/Dane_PP2s.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2020-czerwiec-starsza-formula-rozszerzona",
+    "slug": "informatyka-2020-czerwiec-starsza-formula-rozszerzona",
+    "year": 2020,
+    "month": 6,
+    "formula": "starsza",
+    "formulaLabel": "Starsza formuła (CKE: formuła do 2014 r.)",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Czerwiec",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-w-starej-formule/arkusze/2020-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/informatyka/MIN-R1_1P-202s.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/informatyka/MIN-R2_1P-202s.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/Zasady_oceniania/MIN-PR-202s_zasady.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2020/formula_do_2014/informatyka/Dane_PR2s.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2020-kwiecien-probna-formula-2015-rozszerzona",
+    "slug": "informatyka-2020-kwiecien-probna-formula-2015-rozszerzona",
+    "year": 2020,
+    "month": 4,
+    "formula": "2015",
+    "formulaLabel": "Formuła 2015",
+    "level": "rozszerzony",
+    "kind": "probny",
+    "sessionLabel": "Kwiecień — matura próbna",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/materialy-dodatkowe/probny-egzamin-maturalny-2020"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2020/MIN-R1_1P.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2020/MIN-R2_1P.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2020/MIN-R1_1P-zasady.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2020/Dane_PR2.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2021-maj-formula-2015-rozszerzona",
+    "slug": "informatyka-2021-maj-formula-2015-rozszerzona",
+    "year": 2021,
+    "month": 5,
+    "formula": "2015",
+    "formulaLabel": "Formuła 2015",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/arkusze/2021-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2021/Informatyka/poziom_rozszerzony/EINP-R1-100-2105.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2021/Informatyka/poziom_rozszerzony/EINP-R2-100-2105.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2021/Zasady_Oceniania/EINP-R1_R2-100-2105-zasady.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2021/Informatyka/poziom_rozszerzony/Dane_2105.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2021-marzec-probna-formula-2015-rozszerzona",
+    "slug": "informatyka-2021-marzec-probna-formula-2015-rozszerzona",
+    "year": 2021,
+    "month": 3,
+    "formula": "2015",
+    "formulaLabel": "Formuła 2015",
+    "level": "rozszerzony",
+    "kind": "probny",
+    "sessionLabel": "Marzec — matura próbna",
+    "sourcePages": [
+      "https://www.oke.poznan.pl/cms,257,arkusze_probnego_egzaminu_maturalnego_2021_r..htm"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://www.oke.poznan.pl/files/cms/653/einp_r1_100_2103.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://www.oke.poznan.pl/files/cms/653/einp_r2_100_2103.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://www.oke.poznan.pl/files/cms/653/einp_r1r2_100_2103_zasady.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://www.oke.poznan.pl/files/cms/653/einp_dane_2103.zip"
+      },
+      {
+        "kind": "extra",
+        "label": "Karta odpowiedzi — część 1",
+        "filename": "karta-1.pdf",
+        "url": "https://www.oke.poznan.pl/files/cms/653/einp_r1_100_a_2103.pdf",
+        "part": 1
+      },
+      {
+        "kind": "extra",
+        "label": "Karta odpowiedzi — część 2",
+        "filename": "karta-2.pdf",
+        "url": "https://www.oke.poznan.pl/files/cms/653/einp_r2_100_a_2103.pdf",
+        "part": 2
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2022-grudzien-probna-formula-2023-rozszerzona",
+    "slug": "informatyka-2022-grudzien-probna-formula-2023-rozszerzona",
+    "year": 2022,
+    "month": 12,
+    "formula": "2023",
+    "formulaLabel": "Formuła 2023",
+    "level": "rozszerzony",
+    "kind": "probny",
+    "sessionLabel": "Grudzień — matura próbna",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2023/materialy-dodatkowe/10384-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz",
+        "filename": "arkusz.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/diagnostyczne_12/informatyka/MINP-R0-100-2212.pdf"
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/diagnostyczne_12/informatyka/MINP-R0-100-200-300-400-660-Q00-Z00-2212-zasady.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/diagnostyczne_12/informatyka/Dane_2212.zip"
+      },
+      {
+        "kind": "extra",
+        "label": "Karta odpowiedzi",
+        "filename": "karta.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/diagnostyczne_12/informatyka/MINP-R0-100-A-2212.pdf"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "label": "arkusz"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2022-maj-formula-2015-rozszerzona",
+    "slug": "informatyka-2022-maj-formula-2015-rozszerzona",
+    "year": 2022,
+    "month": 5,
+    "formula": "2015",
+    "formulaLabel": "Formuła 2015",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/arkusze/2022-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2022/Informatyka/poziom_rozszerzony/EINP-R1-100-2205.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2022/Informatyka/poziom_rozszerzony/EINP-R2-100-2205.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2022/Zasady_oceniania/EINP-R1_R2-100-2205-zasady.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2022/Informatyka/poziom_rozszerzony/Dane_2205.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2022-marzec-pokazowa-formula-2023-rozszerzona",
+    "slug": "informatyka-2022-marzec-pokazowa-formula-2023-rozszerzona",
+    "year": 2022,
+    "month": 3,
+    "formula": "2023",
+    "formulaLabel": "Formuła 2023",
+    "level": "rozszerzony",
+    "kind": "pokazowy",
+    "sessionLabel": "Marzec — arkusz pokazowy",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2023/materialy-dodatkowe/arkusze-pokazowe-marzec-2022/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz",
+        "filename": "arkusz.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/pokazowe/Informatyka/MINP-R0-100-2203.pdf"
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/pokazowe/Informatyka/MINP-R0-100-200-300-400-660-700-Q00-2203-zasady.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/materialy_dodatkowe/pokazowe/Informatyka/Dane_2203.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "label": "arkusz"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2023-maj-formula-2015-rozszerzona",
+    "slug": "informatyka-2023-maj-formula-2015-rozszerzona",
+    "year": 2023,
+    "month": 5,
+    "formula": "2015",
+    "formulaLabel": "Formuła 2015",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2015/arkusze/2023-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2023/Informatyka/EINP-R1-100-2305.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2023/Informatyka/EINP-R2-100-2305.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2023/Informatyka/EINP-R1_R2-100-2305-zasady.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Arkusze_egzaminacyjne/2023/Informatyka/Dane_2305.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2023-maj-formula-2023-rozszerzona",
+    "slug": "informatyka-2023-maj-formula-2023-rozszerzona",
+    "year": 2023,
+    "month": 5,
+    "formula": "2023",
+    "formulaLabel": "Formuła 2023",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2023/arkusze/2023-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz",
+        "filename": "arkusz.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/Informatyka/MINP-R0-100-2305.pdf"
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/Informatyka/MINP-R0-100-2305-zasady.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/Informatyka/Dane_2305.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "label": "arkusz"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2024-grudzien-probna-formula-2023-rozszerzona",
+    "slug": "informatyka-2024-grudzien-probna-formula-2023-rozszerzona",
+    "year": 2024,
+    "month": 12,
+    "formula": "2023",
+    "formulaLabel": "Formuła 2023",
+    "level": "rozszerzony",
+    "kind": "probny",
+    "sessionLabel": "Grudzień — matura próbna",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2023/materialy-dodatkowe/arkusze-diagnostyczne-grudzien-2024/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz",
+        "filename": "arkusz.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2024/Informatyka/MINP-R0-100-A-2412-arkusz.pdf"
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2024/Informatyka/MINP-R0-100-200-300-400-660-2412-zasady.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2024/Informatyka/Dane-2412.zip"
+      },
+      {
+        "kind": "extra",
+        "label": "Karta odpowiedzi",
+        "filename": "karta.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2015/Probny/2024/Informatyka/MINP-R0-100-A-2412-karta.pdf"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "label": "arkusz"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2024-maj-formula-2015-rozszerzona",
+    "slug": "informatyka-2024-maj-formula-2015-rozszerzona",
+    "year": 2024,
+    "month": 5,
+    "formula": "2015",
+    "formulaLabel": "Formuła 2015",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://www.oke.poznan.pl/cms,881,rok_2024.htm"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 1",
+        "filename": "arkusz-1.pdf",
+        "url": "https://www.oke.poznan.pl/files/cms/829/einp_r1_100_2405.pdf",
+        "part": 1
+      },
+      {
+        "kind": "sheet",
+        "label": "Arkusz — część 2",
+        "filename": "arkusz-2.pdf",
+        "url": "https://www.oke.poznan.pl/files/cms/829/einp_r2_100_2405.pdf",
+        "part": 2
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://www.oke.poznan.pl/files/cms/829/einp_r1_r2_100_2405_zasady.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://www.oke.poznan.pl/files/cms/829/einp_dane_2405.zip"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "part": 1,
+        "label": "arkusz — część 1"
+      },
+      {
+        "kind": "sheet",
+        "part": 2,
+        "label": "arkusz — część 2"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2024-maj-formula-2023-rozszerzona",
+    "slug": "informatyka-2024-maj-formula-2023-rozszerzona",
+    "year": 2024,
+    "month": 5,
+    "formula": "2023",
+    "formulaLabel": "Formuła 2023",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2023/arkusze/2024-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz",
+        "filename": "arkusz.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/Informatyka/MINP-R0-100-A-2405-arkusz.pdf"
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/Informatyka/MINP-R0-100-2405-zasady.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/Informatyka/Dane-NF-2405.zip"
+      },
+      {
+        "kind": "extra",
+        "label": "Karta odpowiedzi",
+        "filename": "karta.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/Informatyka/MINP-R0-100-A-2405-karta.pdf"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "label": "arkusz"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2025-maj-formula-2023-rozszerzona",
+    "slug": "informatyka-2025-maj-formula-2023-rozszerzona",
+    "year": 2025,
+    "month": 5,
+    "formula": "2023",
+    "formulaLabel": "Formuła 2023",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2023/arkusze/2025-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz",
+        "filename": "arkusz.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Informatyka/MINP-R0-100-A-2505-arkusz.pdf"
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/zasady_oceniania/MINP-R0-100-2505-zasady.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Informatyka/Dane-NF-2505.zip"
+      },
+      {
+        "kind": "extra",
+        "label": "Karta odpowiedzi",
+        "filename": "karta.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Informatyka/MINP-R0-100-A-2505-karta.pdf"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "label": "arkusz"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  },
+  {
+    "id": "informatyka-2026-maj-formula-2023-rozszerzona",
+    "slug": "informatyka-2026-maj-formula-2023-rozszerzona",
+    "year": 2026,
+    "month": 5,
+    "formula": "2023",
+    "formulaLabel": "Formuła 2023",
+    "level": "rozszerzony",
+    "kind": "glowny",
+    "sessionLabel": "Maj",
+    "sourcePages": [
+      "https://cke.gov.pl/egzamin-maturalny/egzamin-maturalny-w-formule-2023/arkusze/2026-2/"
+    ],
+    "files": [
+      {
+        "kind": "sheet",
+        "label": "Arkusz",
+        "filename": "arkusz.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Informatyka/MINP-R0-100-A-2605-arkusz.pdf"
+      },
+      {
+        "kind": "grading",
+        "label": "Zasady oceniania",
+        "filename": "ocenianie.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Informatyka/MINP-R0-100-2605-zasady.pdf"
+      },
+      {
+        "kind": "data",
+        "label": "Dane do zadań",
+        "filename": "dane.zip",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Informatyka/Dane-NF-2605.zip"
+      },
+      {
+        "kind": "extra",
+        "label": "Karta odpowiedzi",
+        "filename": "karta.pdf",
+        "url": "https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Informatyka/MINP-R0-100-A-2605-karta.pdf"
+      }
+    ],
+    "required": [
+      {
+        "kind": "sheet",
+        "label": "arkusz"
+      },
+      {
+        "kind": "grading",
+        "label": "zasady oceniania"
+      },
+      {
+        "kind": "data",
+        "label": "dane do zadań"
+      }
+    ]
+  }
+]

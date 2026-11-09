@@ -1,0 +1,45 @@
+---
+import '@fontsource-variable/manrope';
+import '../styles/global.css';
+import '../styles/refresh.css';
+import '../styles/archive.css';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import logo from '../assets/logo-book-code.png';
+import { site } from '../data/site';
+interface Props { title: string; description: string; canonical: string; breadcrumbs: { name: string; path: string }[] }
+const { title, description, canonical, breadcrumbs } = Astro.props;
+const canonicalUrl = new URL(canonical, Astro.site).href;
+const schema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: breadcrumbs.map((crumb, index) => ({ '@type': 'ListItem', position: index + 1, name: crumb.name, item: new URL(crumb.path, Astro.site).href })) };
+---
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | Matura Informatyka</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#18364a" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={new URL(logo.src, Astro.site).href} />
+    <meta property="og:image:alt" content="Matura Informatyka — arkusze maturalne" />
+    <meta name="twitter:card" content="summary" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />
+  </head>
+  <body>
+    <Header site={{ navigation: site.navigation }} logo={logo.src} home={false} client:load />
+    <main id="tresc" class="container archive-main">
+      <nav class="breadcrumbs" aria-label="Ścieżka nawigacji">
+        <ol>{breadcrumbs.map((crumb, index) => <li>{index === breadcrumbs.length - 1 ? <span aria-current="page">{crumb.name}</span> : <a href={crumb.path}>{crumb.name}</a>}</li>)}</ol>
+      </nav>
+      <slot />
+    </main>
+    <Footer year={new Date().getFullYear()} name={site.name} personal={site.personal} />
+  </body>
+</html>

@@ -10,3 +10,7 @@
 !public/**
 !images/
 !images/**
+!scripts/
+!scripts/exam_archive.py
+!docs/
+!docs/exam-import-report.json

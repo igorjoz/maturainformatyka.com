@@ -41,6 +41,7 @@ export const site = {
   navigation: [
     { href: '#wspolpraca', label: 'Współpraca' },
     { href: '#zakres', label: 'Zakres' },
+    { href: '/arkusze/', label: 'Arkusze maturalne' },
     { href: '#o-mnie', label: 'O mnie' },
     { href: '#opinie', label: 'Opinie' },
     { href: '#oferta', label: 'Oferta' },
@@ -95,8 +96,8 @@ export const maturaExample = {
     { label: 'Sprawdzenie', text: 'Kontrolujemy zaokrąglenie, dobór danych, tytuł, opisy osi i oznaczenie miesięcy.' },
   ],
   sources: [
-    { label: 'Pełne polecenie — PDF', url: 'https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Informatyka/MINP-R0-100-A-2605-arkusz.pdf#page=16' },
-    { label: 'Zasady oceniania — PDF', url: 'https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Informatyka/MINP-R0-100-2605-zasady.pdf#page=14' },
+    { label: 'Pełne polecenie — PDF', url: '/pliki/matury/informatyka-2026-maj-formula-2023-rozszerzona/arkusz.pdf#page=16' },
+    { label: 'Zasady oceniania — PDF', url: '/pliki/matury/informatyka-2026-maj-formula-2023-rozszerzona/ocenianie.pdf#page=14' },
   ],
 };
 
