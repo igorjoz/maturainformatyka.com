@@ -76,3 +76,96 @@
   .subject-art, .subject-art img, .subject-art.pointer-active img, .subject-art:focus-within img, .subject-art.is-tapped img { transform: none; }
   .subject-art-spot:hover .subject-art-dot, .subject-art-spot:focus-visible .subject-art-dot { scale: 1; }
 }
+
+/* Shared desktop rows follow content, including the tallest inactive topic. */
+@media (min-width: 901px) {
+  .subject-groups { grid-template-rows: repeat(4, auto); row-gap: 0; }
+  .subject-groups > .subject-group { display: grid; grid-row: span 4; grid-template-rows: subgrid; }
+  .subject-group-intro { padding-bottom: 24px; margin-bottom: 0; }
+  .subject-group-copy { display: grid; grid-row: span 2; grid-template-rows: subgrid; }
+  .subject-panels { align-self: stretch; }
+}
+.subjects-enhanced .subject-panel { align-self: stretch; display: flex; flex-direction: column; }
+.subjects-enhanced .subject-panel > .subject-diagram { display: flex; flex: 1; flex-direction: column; padding-top: 20px; }
+.subject-panel .diagram-actions { margin-top: auto; padding-top: 8px; }
+.subject-panel .subject-example-task { margin-bottom: 0; }
+.subject-diagram { min-width: 0; }
+.subject-diagram .diagram-title { color: var(--sage); font: 650 11px/1.5 var(--mono); margin: 0 0 12px; }
+.diagram-scene { display: flex; flex-direction: column; justify-content: center; gap: 16px; min-height: 152px; padding: 18px 16px; border: 1px solid #d8e1d8; border-radius: 10px; background: radial-gradient(ellipse at 10% 0, #fffaf1, transparent 75%), #f1f4ee; }
+.diagram-numbers { display: flex; justify-content: center; gap: clamp(4px, .6vw, 10px); }
+.diagram-number { display: grid; place-items: center; flex: 1; max-width: 54px; min-width: 0; height: 48px; border: 1px solid #c7d3cb; border-radius: 8px; background: #fffdf9; color: var(--ink); font: 600 19px/1 var(--mono); }
+.diagram-scene .is-marked, .diagram-bits .is-marked .diagram-bit, .diagram-bits .is-marked .diagram-weight { background: #d9e8d2; border-color: #8ba77d; color: #28532f; }
+.diagram-scene .is-current { border-color: var(--accent); box-shadow: 0 0 0 3px #9b56281a; }
+.diagram-calculation { display: flex; align-items: center; justify-content: space-between; gap: 8px; color: var(--sage); font: 11px/1.6 var(--mono); }
+.diagram-calculation strong { color: var(--ink); font-size: 14px; }
+.diagram-calculation > span:last-child { white-space: nowrap; }
+.subject-diagram .diagram-result { margin: 12px 0 0; color: var(--ink); font-size: 12px; line-height: 1.6; }
+.diagram-actions { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0 12px; margin-top: 8px; }
+.subject-panel .diagram-actions a { margin-top: 0; }
+.diagram-replay { display: inline-flex; gap: 7px; align-items: center; min-height: 44px; padding: 8px 0; border: 0; background: transparent; color: var(--sage); font: 650 12px/1.5 var(--font); cursor: pointer; }
+.diagram-replay > span { font-size: 20px; }
+.diagram-replay:hover { color: var(--ink); }
+.diagram-replay:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.diagram-chart { position: relative; display: flex; gap: 12px; height: 90px; padding: 0 42px 0 12px; border-bottom: 1px solid #bccbc2; }
+.diagram-chart-column { display: flex; flex: 1; align-items: flex-end; justify-content: center; }
+.diagram-bar { position: relative; height: var(--bar-height); width: 100%; max-width: 48px; background: #c9d3cd; border: 1px solid #a3b5ab; border-radius: 4px 4px 0 0; }
+.diagram-bar b { position: absolute; bottom: 100%; width: 100%; text-align: center; font: 11px/1.5 var(--mono); color: var(--ink); }
+.diagram-average { position: absolute; z-index: 1; left: 0; right: 0; bottom: 48%; border-top: 1px dashed var(--accent); opacity: 0; }
+.diagram-average > span { position: absolute; right: 0; bottom: 2px; color: var(--accent); font: 10px var(--mono); }
+.diagram-average.is-shown { opacity: 1; }
+.diagram-relations { display: grid; grid-template-columns: minmax(0, 1fr) 56px minmax(0, 1fr); gap: 6px; font: 12px/1.5 var(--mono); }
+.diagram-relations > div { display: flex; flex-direction: column; gap: 5px; }
+.diagram-relations small { color: var(--sage); font: 650 10px/1.5 var(--font); }
+.diagram-relations span { display: block; padding: 3px 7px; border: 1px solid #d1dacf; border-radius: 4px; white-space: nowrap; background: #fffdf9; }
+.diagram-relations .diagram-joins { padding-top: 20px; opacity: .2; }
+.diagram-relations .diagram-joins.is-shown { opacity: 1; }
+.diagram-joins span { border-color: transparent; background: transparent; padding-inline: 0; text-align: center; color: var(--accent); font-size: 10px; }
+.diagram-relations .is-filtered { opacity: .3; text-decoration: line-through; }
+.subject-foundation > .foundation-card { display: flex; flex-direction: column; }
+.foundation-card > .foundation-example { flex: 1; display: flex; flex-direction: column; }
+.foundation-example > .diagram-teoria { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-top: 20px; }
+.diagram-teoria .diagram-scene { min-height: 230px; padding: 24px; gap: 24px; }
+.diagram-bits { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.diagram-bits > div { display: flex; flex-direction: column; align-items: center; background: transparent !important; }
+.diagram-bit { display: grid; place-items: center; width: 100%; max-width: 76px; aspect-ratio: 1; border-radius: 10px; border: 1px solid #c5d2c8; background: #fffdf9; color: var(--ink); font: 600 28px var(--mono); }
+.diagram-bit-link { color: #9cab9f; font-size: 22px; }
+.diagram-bits .is-marked .diagram-bit-link { color: var(--accent); }
+.diagram-weight { display: grid; place-items: center; width: 100%; max-width: 76px; border: 1px solid transparent; border-radius: 6px; color: var(--muted); font: 18px/1.8 var(--mono); }
+.diagram-binary-sum { display: flex; gap: 14px; align-items: center; justify-content: center; opacity: .25; font: 600 24px/1.5 var(--mono); color: var(--ink); }
+.diagram-binary-sum.is-shown { opacity: 1; }
+.diagram-binary-sum strong { border-radius: 8px; background: #d9e8d2; padding: 4px 14px; color: #28532f; }
+.foundation-exam .subject-example-label { margin-top: 14px; }
+.foundation-exam .exam-caption { margin-top: 12px; }
+.foundation-exam blockquote { margin-top: 6px; }
+.foundation-example .diagram-exam-steps { list-style: none; padding: 0; counter-reset: exam-step; margin-top: 12px; }
+.diagram-exam-steps li { position: relative; padding: 8px 10px 8px 42px; border: 1px solid transparent; border-radius: 8px; counter-increment: exam-step; }
+.diagram-exam-steps li::before { content: counter(exam-step, decimal-leading-zero); position: absolute; top: 10px; left: 8px; color: var(--sage); font: 12px var(--mono); }
+.foundation-example .diagram-exam-steps li + li { margin-top: 4px; }
+.diagram-exam-steps li.is-marked { background: #e1eade; }
+.diagram-exam-steps li.is-current { background: #fffaf1; border-color: #c9a17b; }
+.foundation-exam .exam-sources { margin-top: auto; padding-top: 12px; }
+@media (prefers-reduced-motion: no-preference) {
+  .diagram-number, .diagram-bit, .diagram-weight, .diagram-exam-steps li { transition: background 300ms, border-color 300ms, color 300ms, box-shadow 300ms; }
+  .diagram-average, .diagram-binary-sum, .diagram-relations span, .diagram-relations .diagram-joins { transition: opacity 350ms, background 350ms; }
+  .diagram-bar { transition: background 350ms, border-color 350ms; }
+}
+@media (max-width: 900px) {
+  .subject-groups > .subject-group { display: block; }
+  .subject-group-intro { margin-bottom: 20px; }
+  .subject-group-copy { padding-top: 16px; }
+  .subject-art { margin-top: 0; }
+  .foundation-example > .diagram-teoria { flex: initial; }
+  .diagram-numbers { gap: 8px; }
+}
+@media (max-width: 600px) {
+  .diagram-scene { padding: 16px 12px; }
+  .diagram-numbers { gap: 4px; }
+  .diagram-number { height: 40px; font-size: 16px; }
+  .diagram-calculation { font-size: 10px; }
+  .diagram-calculation strong { font-size: 12px; }
+  .diagram-relations { grid-template-columns: minmax(0, 1fr) 42px minmax(0, 1fr); gap: 3px; font-size: 10px; }
+  .diagram-relations span { padding-inline: 4px; }
+  .diagram-joins span { padding-inline: 0; font-size: 9px; }
+  .diagram-bits { gap: 8px; }
+  .diagram-teoria .diagram-scene { padding: 20px 12px; }
+}

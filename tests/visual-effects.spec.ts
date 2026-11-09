@@ -20,7 +20,9 @@ test("punkty na ilustracjach i zakładki współdzielą wybór, także z klawiat
   await algorithm.click();
   await expect(algorithm).toHaveAttribute("aria-pressed", "true");
   await expect(first.getByRole("tabpanel")).toBeFocused();
-  await expect(first.getByRole("tabpanel")).toBeInViewport({ ratio: 1 });
+  await expect(
+    first.getByRole("tabpanel").locator(".subject-example-task"),
+  ).toBeInViewport({ ratio: 1 });
   await expect(first.locator(".subject-art")).not.toHaveAttribute(
     "data-revealing",
   );
@@ -37,7 +39,9 @@ test("punkty na ilustracjach i zakładki współdzielą wybór, także z klawiat
   await page.keyboard.press("Enter");
   await expect(first.getByRole("tabpanel")).toContainText("liczbę porównań");
   await expect(first.getByRole("tabpanel")).toBeFocused();
-  await expect(first.getByRole("tabpanel")).toBeInViewport({ ratio: 1 });
+  await expect(
+    first.getByRole("tabpanel").locator(".subject-example-task"),
+  ).toBeInViewport({ ratio: 1 });
   for (const spot of await page.locator(".subject-art-spot").all()) {
     const box = (await spot.boundingBox())!;
     expect(box.width).toBeGreaterThanOrEqual(44);
@@ -73,7 +77,14 @@ for (const width of [360, 768, 1440]) {
       const panel = card.getByRole("tabpanel");
       await expect(panel).toHaveAccessibleName(name);
       await expect(panel).toBeFocused();
-      await expect(panel).toBeInViewport({ ratio: 1 });
+      // The task remains fully visible with part of the illustration. The new
+      // diagram below it can extend beyond a short viewport.
+      await expect(panel.locator(".subject-skill")).toBeInViewport({
+        ratio: 1,
+      });
+      await expect(panel.locator(".subject-example-task")).toBeInViewport({
+        ratio: 1,
+      });
       await expect(card.locator(".subject-art")).not.toHaveAttribute(
         "data-revealing",
       );
@@ -196,9 +207,12 @@ test("na telefonie punkty działają dotykiem, a dekoracje mieszczą się w ekra
   await expect(spot).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator("#subject-panel-access")).toBeVisible();
   await expect(page.locator("#subject-panel-access")).toBeFocused();
-  await expect(page.locator("#subject-panel-access")).toBeInViewport({
+  await expect(
+    page.locator("#subject-panel-access .subject-example-task"),
+  ).toBeInViewport({
     ratio: 1,
   });
+  await expect(page.locator("[data-revealing]")).toHaveCount(0);
   for (const button of await page.locator(".subject-art-spot").all()) {
     const box = (await button.boundingBox())!;
     expect(box.x).toBeGreaterThanOrEqual(0);

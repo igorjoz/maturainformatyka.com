@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { css, type Site, type SubjectGroup, type MaturaExample } from "./types";
 import ResponsivePicture from "./ResponsivePicture";
+import SubjectDiagram from "./SubjectDiagram";
 import { useHydrated } from "../hooks/useHydrated";
 import { useSectionMotion } from "../hooks/useSectionMotion";
 
@@ -52,6 +53,8 @@ function SubjectCard({ group }: { group: SubjectGroup }) {
       const headerBottom =
         document.querySelector(".site-header")?.getBoundingClientRect()
           .bottom ?? 0;
+      // Keep the task and a piece of the illustration in view. On short screens
+      // the added diagram may continue below the fold.
       const target = Math.min(
         Math.max(from, bounds.bottom + scrollY - innerHeight + 20),
         image.bottom + scrollY - headerBottom - 16 - Math.min(96, image.height),
@@ -207,9 +210,18 @@ function SubjectCard({ group }: { group: SubjectGroup }) {
               <p className="subject-skill">{subject.text}</p>
               <p className="subject-example-label">Przykładowe polecenie</p>
               <p className="subject-example-task">{subject.example}</p>
-              {subject.lessonHref && (
-                <a href={subject.lessonHref}>Zobacz przykład lekcji →</a>
-              )}
+              <SubjectDiagram
+                kind={
+                  subject.id as
+                    "programowanie" | "algorytmika" | "excel" | "access"
+                }
+                active={selected === index}
+                action={
+                  subject.lessonHref && (
+                    <a href={subject.lessonHref}>Zobacz przykład lekcji →</a>
+                  )
+                }
+              />
             </section>
           ))}
         </div>
@@ -279,6 +291,7 @@ export default function Subjects({
                   Pozycje od prawej mają wartości 1, 2, 4 i 8. Jedynki wskazują
                   wartości, które dodajemy: 8 + 2 = 10.
                 </p>
+                <SubjectDiagram kind="teoria" />
               </div>
             ) : (
               <div className="foundation-example foundation-exam">
@@ -298,13 +311,7 @@ export default function Subjects({
                 <p className="exam-caption" id="exam-method-label">
                   Jak pracujemy nad zadaniem
                 </p>
-                <ol aria-labelledby="exam-method-label">
-                  {maturaExample.steps.map((step) => (
-                    <li key={step.label}>
-                      <strong>{step.label}:</strong> {step.text}
-                    </li>
-                  ))}
-                </ol>
+                <SubjectDiagram kind="matura" steps={maturaExample.steps} />
                 <div className="exam-sources">
                   {maturaExample.sources.map((source) => (
                     <a key={source.url} href={source.url}>
