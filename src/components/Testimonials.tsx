@@ -32,6 +32,7 @@ export default function Testimonials({
               key={review.name}
               className={`testimonial-card${index === 1 ? " testimonial-featured" : ""}`}
               data-reveal
+              data-card
               style={css({ "--reveal-delay": `${index * 90}ms` })}
             >
               <span

@@ -192,6 +192,10 @@ a:hover .diagonal { transform: rotate(-45deg) translateX(3px); }
 .testimonials { padding-top: 24px; }
 .testimonials-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 20px; }
 .testimonial-card { display: flex; flex-direction: column; gap: 18px; padding: 28px 32px; border: 1px solid var(--line); border-radius: var(--radius); }
+.testimonial-card[data-card] { position: relative; isolation: isolate; transform: perspective(900px) rotateX(calc(var(--card-rx, 0deg) * .5)) rotateY(calc(var(--card-ry, 0deg) * .5)); transition: transform var(--motion-reaction) var(--ease-out), box-shadow var(--motion-reaction), border-color var(--motion-reaction); }
+.testimonial-card[data-card]::before { content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit; pointer-events: none; background: radial-gradient(320px circle at var(--glow-x, 50%) var(--glow-y, 50%), #e5bc8752, transparent 75%); opacity: 0; transition: opacity var(--motion-reaction); }
+.testimonial-card[data-card].pointer-active, .testimonial-card[data-card].is-tapped { border-color: #a8b7ab; box-shadow: var(--shadow-lift); }
+.testimonial-card[data-card].pointer-active::before, .testimonial-card[data-card].is-tapped::before { opacity: 1; }
 .testimonial-featured { grid-column: 1; grid-row: 1 / span 2; padding: 42px; background: #e8ede3; border-color: #d7dfd0; justify-content: center; }
 .testimonial-featured blockquote p { font-size: clamp(23px, 2.2vw, 30px); letter-spacing: -.025em; line-height: 1.55; }
 .testimonial-card:not(.testimonial-featured) { grid-column: 2; }
@@ -503,6 +507,8 @@ a:hover .diagonal { transform: rotate(-45deg) translateX(3px); }
   .footer { flex-direction: column; align-items: flex-start; gap: 8px; padding-block: 22px; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .testimonial-card[data-card] { transform: none; }
+  .testimonial-card[data-card]::before { opacity: 0; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .scene-layer, .geometry-parallax, [data-card], .button:hover, .subject-art img, .project.pointer-active .project-illustration img, .project:focus-visible .project-illustration img { transform: none; }
