@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: Sprawdź połączenie i plan wysyłki bez zmiany plików na hostingu
+        description: Connection and transfer-plan verification without changes to hosted files
         type: boolean
         default: false
 

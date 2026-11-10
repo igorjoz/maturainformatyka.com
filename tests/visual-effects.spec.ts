@@ -2,12 +2,12 @@ import { expect, test } from "@playwright/test";
 
 test.beforeEach(async ({ page }) => {
   await page.route("https://calendar.google.com/**", (route) =>
-    route.fulfill({ contentType: "text/html", body: "<p>Kalendarz</p>" }),
+    route.fulfill({ contentType: "text/html", body: "<p>Calendar</p>" }),
   );
   await page.goto("/");
 });
 
-test("punkty na ilustracjach i zakładki współdzielą wybór, także z klawiatury", async ({
+test("illustration hotspots and tabs share selection, including keyboard input", async ({
   page,
 }) => {
   await page.locator("#zakres").scrollIntoViewIfNeeded();
@@ -50,7 +50,7 @@ test("punkty na ilustracjach i zakładki współdzielą wybór, także z klawiat
 });
 
 for (const width of [360, 768, 1440]) {
-  test(`kliknięcie plusa łagodnie odsłania opis i zachowuje obrazek przy ${width}px`, async ({
+  test(`hotspot selection smoothly reveals the description and retains artwork at ${width}px`, async ({
     page,
   }) => {
     await page.setViewportSize({ width, height: 640 });
@@ -118,7 +118,7 @@ for (const width of [360, 768, 1440]) {
   });
 }
 
-test("ilustracja reaguje na kursor i wraca do spoczynku; ograniczenie ruchu wyłącza przechylenie", async ({
+test("artwork responds to the pointer and returns to rest, while reduced motion disables tilt", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });
@@ -143,7 +143,7 @@ test("ilustracja reaguje na kursor i wraca do spoczynku; ograniczenie ruchu wył
   await expect(art.locator("img")).toHaveCSS("transform", "none");
 });
 
-test("wstęgi uruchamiają się na końcu strony, zostają po animacji i nie przechwytują kliknięć", async ({
+test("ribbons start at the page end, remain after animation, and do not intercept clicks", async ({
   page,
 }) => {
   const contact = page.locator("#kontakt");
@@ -189,7 +189,7 @@ test("wstęgi uruchamiają się na końcu strony, zostają po animacji i nie prz
   await expect(page).toHaveURL(/#rezerwacja$/);
 });
 
-test("na telefonie punkty działają dotykiem, a dekoracje mieszczą się w ekranie", async ({
+test("mobile hotspots support touch and decorations fit the viewport", async ({
   browser,
 }) => {
   const context = await browser.newContext({
@@ -199,7 +199,7 @@ test("na telefonie punkty działają dotykiem, a dekoracje mieszczą się w ekra
   });
   const page = await context.newPage();
   await page.route("https://calendar.google.com/**", (route) =>
-    route.fulfill({ contentType: "text/html", body: "<p>Kalendarz</p>" }),
+    route.fulfill({ contentType: "text/html", body: "<p>Calendar</p>" }),
   );
   await page.goto("/#zakres");
   const spot = page.getByRole("button", { name: "Poznaj temat: SQL i Access" });

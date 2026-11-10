@@ -7,7 +7,7 @@ const modern = catalog.find(exam => exam.year === 2026 && exam.formula === '2023
 const multipart = catalog.find(exam => exam.formula === '2015' && exam.files.filter(file => file.kind === 'sheet').length === 2)!;
 const incomplete = catalog.find(exam => exam.missing.length > 0)!;
 
-test('strona główna udostępnia archiwum w menu i sekcji materiałów', async ({ page }) => {
+test('the homepage links to the archive from navigation and the materials section', async ({ page }) => {
   await page.route('https://calendar.google.com/**', route => route.fulfill({ body: '' }));
   await page.goto('/');
   await expect(page.getByRole('navigation', { name: 'Nawigacja główna', exact: true }).getByRole('link', { name: 'Arkusze maturalne' })).toHaveAttribute('href', '/arkusze/');
@@ -18,7 +18,7 @@ test('strona główna udostępnia archiwum w menu i sekcji materiałów', async 
   expect(await page.locator('[data-exam-row]:visible').evaluateAll(rows => rows.every(row => (row as HTMLElement).dataset.formula === '2023'))).toBe(true);
 });
 
-test('filtry zachowują stan po odświeżeniu, powrocie ze szczegółów i zmianie historii', async ({ page }) => {
+test('filters preserve state across reloads, detail-page returns, and history navigation', async ({ page }) => {
   await page.goto('/arkusze/');
   const formula = page.getByLabel('Formuła', { exact: true });
   await formula.selectOption('2015');
@@ -42,7 +42,7 @@ test('filtry zachowują stan po odświeżeniu, powrocie ze szczegółów i zmian
   await expect(formula).toHaveValue('all');
 });
 
-test('brak dopasowań i niepoprawne parametry nie psują spisu', async ({ page }) => {
+test('empty results and invalid parameters leave the archive usable', async ({ page }) => {
   await page.goto('/arkusze/?formula=2023&level=podstawowy');
   await expect(page.getByRole('heading', { name: 'Brak pasujących zestawów' })).toBeVisible();
   await expect(page.getByRole('status')).toHaveText('Liczba zestawów: 0');
@@ -53,7 +53,7 @@ test('brak dopasowań i niepoprawne parametry nie psują spisu', async ({ page }
   await expect(page.getByLabel('Rok', { exact: true })).toHaveValue('all');
 });
 
-test('podstrona matury wyświetla lokalny PDF i pobiera rzeczywiste pliki', async ({ page, request }) => {
+test('exam details display a local PDF and download actual files', async ({ page, request }) => {
   await page.goto(`/arkusze/${modern.slug}/`, { waitUntil: 'domcontentloaded' });
   const sheet = modern.files.find(file => file.kind === 'sheet')!;
   await expect(page.locator('[data-exam-preview]')).toHaveAttribute('src', sheet.path);
@@ -71,7 +71,7 @@ test('podstrona matury wyświetla lokalny PDF i pobiera rzeczywiste pliki', asyn
   await expect(page.locator('.header-contact')).toHaveAttribute('href', '/#rezerwacja');
 });
 
-test('starszy egzamin zachowuje części arkusza i przełącza podgląd', async ({ page }) => {
+test('older exams retain separate paper parts and switch previews', async ({ page }) => {
   await page.goto(`/arkusze/${multipart.slug}/`, { waitUntil: 'domcontentloaded' });
   const second = multipart.files.find(file => file.kind === 'sheet' && file.part === 2)!;
   await page.getByRole('button', { name: second.label, exact: true }).click();
@@ -79,7 +79,7 @@ test('starszy egzamin zachowuje części arkusza i przełącza podgląd', async 
   await expect(page.getByRole('button', { name: second.label, exact: true })).toHaveAttribute('aria-pressed', 'true');
 });
 
-test('niepełny zestaw jasno opisuje brakujące materiały i paczkę ZIP', async ({ page }) => {
+test('incomplete sets identify missing materials and label their ZIP bundle', async ({ page }) => {
   expect(incomplete).toBeTruthy();
   await page.goto(`/arkusze/${incomplete.slug}/`, { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { name: 'Ten zestaw jest niepełny' })).toBeVisible();
@@ -88,7 +88,7 @@ test('niepełny zestaw jasno opisuje brakujące materiały i paczkę ZIP', async
 });
 
 for (const width of [360, 390, 768, 1024, 1366, 1440]) {
-  test(`archiwum mieści się w widoku ${width}px i działa z klawiaturą`, async ({ page }) => {
+  test(`the archive fits a ${width}px viewport and supports keyboard navigation`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/arkusze/');
     await page.getByLabel('Formuła', { exact: true }).focus();
@@ -100,7 +100,7 @@ for (const width of [360, 390, 768, 1024, 1366, 1440]) {
   });
 }
 
-test('sitemap i roboty wskazują kanoniczne adresy bez filtrów', async ({ request }) => {
+test('the sitemap and robots file reference canonical URLs without filters', async ({ request }) => {
   const response = await request.get('/sitemap.xml');
   expect(response.status()).toBe(200);
   const sitemap = await response.text();
@@ -110,9 +110,9 @@ test('sitemap i roboty wskazują kanoniczne adresy bez filtrów', async ({ reque
   expect(await (await request.get('/robots.txt')).text()).toContain('Sitemap: https://maturainformatyka.com/sitemap.xml');
 });
 
-test.describe('archiwum bez JavaScriptu', () => {
+test.describe('archive without JavaScript', () => {
   test.use({ javaScriptEnabled: false });
-  test('wszystkie zestawy, linki, nawigacja mobilna i pliki pozostają dostępne', async ({ page }) => {
+  test('all exam sets, links, mobile navigation, and files remain available', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto('/arkusze/');
     await expect(page.locator('[data-exam-row]:visible')).toHaveCount(catalog.length);

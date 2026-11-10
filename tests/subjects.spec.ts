@@ -1,13 +1,13 @@
 import { expect, test } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
-  await page.route('https://calendar.google.com/**', route => route.fulfill({ contentType: 'text/html', body: '<p>Kalendarz</p>' }));
+  await page.route('https://calendar.google.com/**', route => route.fulfill({ contentType: 'text/html', body: '<p>Calendar</p>' }));
   await page.goto('/');
   await page.locator('#zakres').scrollIntoViewIfNeeded();
   await expect(page.locator('#zakres').locator('xpath=ancestor::astro-island[1]')).not.toHaveAttribute('ssr');
 });
 
-test('pierwsze tematy są otwarte, zakładki działają niezależnie i nie zamykają panelu', async ({ page }) => {
+test('initial topics are open and independent tabs keep their panels open', async ({ page }) => {
   const groups = page.locator('[data-subject-group]');
   const first = groups.nth(0);
   const second = groups.nth(1);
@@ -29,7 +29,7 @@ test('pierwsze tematy są otwarte, zakładki działają niezależnie i nie zamyk
   await expect(page.locator('#przyklad-podstawowy')).toBeVisible();
 });
 
-test('semantyka i klawiatura ukrywają nieaktywny panel także przed fokusem', async ({ page }) => {
+test('semantics and keyboard navigation exclude inactive panels from focus', async ({ page }) => {
   const first = page.locator('[data-subject-group]').first();
   const tabs = first.getByRole('tab');
   await expect(first.getByRole('tablist')).toHaveAccessibleName('Programowanie i algorytmy');
@@ -60,7 +60,7 @@ test('semantyka i klawiatura ukrywają nieaktywny panel także przed fokusem', a
   }
 });
 
-test('przykłady fundamentów są zawsze widoczne, ograniczenie ruchu wyłącza przenikanie', async ({ page }) => {
+test('foundation examples remain visible and reduced motion disables crossfades', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.getByRole('tab', { name: 'Algorytmika' }).click();
   await expect(page.locator('#subject-panel-algorytmika')).toHaveCSS('animation-name', 'none');
@@ -79,7 +79,7 @@ test('przykłady fundamentów są zawsze widoczne, ograniczenie ruchu wyłącza 
   await expect(exam.getByRole('link', { name: 'Zasady oceniania — PDF' })).toHaveAttribute('href', '/pliki/matury/informatyka-2026-maj-formula-2023-rozszerzona/ocenianie.pdf#page=14');
 });
 
-test('bez JavaScriptu tematy są zwykłą treścią z nagłówkami', async ({ browser }) => {
+test('topics render as ordinary content with headings without JavaScript', async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   await page.route('https://calendar.google.com/**', route => route.abort());
@@ -98,7 +98,7 @@ test('bez JavaScriptu tematy są zwykłą treścią z nagłówkami', async ({ br
 });
 
 for (const width of [360, 390, 768, 1024, 1440]) {
-  test(`przełączanie nie zmienia wysokości ani przewinięcia przy ${width}px`, async ({ page }) => {
+  test(`topic switching preserves height and scroll position at ${width}px`, async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.setViewportSize({ width, height: 1000 });
     await page.evaluate(() => document.fonts.ready);

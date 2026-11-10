@@ -4,12 +4,12 @@ test.beforeEach(async ({ page }) => {
   await page.route("https://calendar.google.com/**", (route) =>
     route.fulfill({
       contentType: "text/html",
-      body: "<p>Kalendarz testowy</p>",
+      body: "<p>Test calendar</p>",
     }),
   );
 });
 
-test("wyspy zachowują statyczną treść i uruchamiają się dopiero przy przewinięciu", async ({
+test("islands retain static content and hydrate only when scrolled into view", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
@@ -33,7 +33,7 @@ test("wyspy zachowują statyczną treść i uruchamiają się dopiero przy przew
   ).toHaveCount(0);
 });
 
-test("hydratacja wszystkich sekcji i zmiana poziomów nie zgłaszają błędów React", async ({
+test("section hydration and level changes produce no React errors", async ({
   page,
 }) => {
   const errors: string[] = [];
@@ -86,7 +86,7 @@ test("hydratacja wszystkich sekcji i zmiana poziomów nie zgłaszają błędów 
   expect(errors).toEqual([]);
 });
 
-test("opóźnione skrypty nie blokują menu, FAQ ani treści", async ({ page }) => {
+test("delayed scripts leave navigation, FAQ, and content usable", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   // Simulate a failed script download, independently of the no-JavaScript context tests.
   await page.route("**/_astro/*.js", (route) =>

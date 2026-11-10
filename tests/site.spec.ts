@@ -1,10 +1,10 @@
 import { expect, test } from '@playwright/test';
 
 test.beforeEach(async ({ page, javaScriptEnabled }) => {
-  // Testujemy integrację po naszej stronie, bez połączeń z Google i rezerwacji terminów.
+  // Calendar integration is tested with local responses, without contacting Google or creating bookings.
   await page.route('https://calendar.google.com/**', route => route.fulfill({
     contentType: 'text/html',
-    body: '<!doctype html><html lang="pl"><title>Kalendarz testowy</title></html>',
+    body: '<!doctype html><html lang="en"><title>Test calendar</title></html>',
   }));
   await page.goto('/');
   if (javaScriptEnabled) {
@@ -15,14 +15,14 @@ test.beforeEach(async ({ page, javaScriptEnabled }) => {
   }
 });
 
-test('strona ładuje treść, metadane i lokalne obrazy', async ({ page }) => {
+test('the page loads content, metadata, and local images', async ({ page }) => {
   await expect(page).toHaveTitle(/Matura z informatyki/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'pl');
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /\S+/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://maturainformatyka.com/');
 
-  // Uwzględniamy także obrazy ładowane leniwie, bez zależności od przewijania.
+  // Lazy-loaded images are included independently of scrolling.
   const brokenImages = await page.locator('img').evaluateAll(async (images: HTMLImageElement[]) => {
     const results = await Promise.all(images.map(async image => {
       try {
@@ -38,7 +38,7 @@ test('strona ładuje treść, metadane i lokalne obrazy', async ({ page }) => {
   expect(brokenImages).toEqual([]);
 });
 
-test('nawigacja prowadzi do istniejących sekcji', async ({ page }) => {
+test('navigation links target existing sections', async ({ page }) => {
   const links = page.getByRole('navigation', { name: 'Nawigacja główna', exact: true }).getByRole('link');
   expect(await links.count()).toBeGreaterThan(0);
   for (const link of await links.all()) {
@@ -55,7 +55,7 @@ test('nawigacja prowadzi do istniejących sekcji', async ({ page }) => {
   }
 });
 
-test('przycisk spotkania prowadzi do kalendarza z linkiem alternatywnym', async ({ page }) => {
+test('the meeting action opens the calendar with an alternative booking link', async ({ page }) => {
   await page.locator('.hero-actions').getByRole('link', { name: 'Umów bezpłatne spotkanie' }).click();
   await expect(page).toHaveURL(/#rezerwacja$/);
   const booking = page.locator('#rezerwacja');
@@ -73,7 +73,7 @@ test('przycisk spotkania prowadzi do kalendarza z linkiem alternatywnym', async 
   await expect(alternative).toHaveAttribute('target', '_blank');
 });
 
-test('oferta poprzedza rezerwację, a główne przyciski mają wspólny cel', async ({ page }) => {
+test('the offer precedes booking and primary actions share a destination', async ({ page }) => {
   const sections = await page.locator('main section[id]').evaluateAll(elements => elements.map(element => element.id));
   expect(sections.indexOf('oferta')).toBeLessThan(sections.indexOf('rezerwacja'));
   expect(sections.indexOf('rezerwacja')).toBeLessThan(sections.indexOf('faq'));
@@ -84,7 +84,7 @@ test('oferta poprzedza rezerwację, a główne przyciski mają wspólny cel', as
   }
 });
 
-test('przykład lekcji pokazuje spójne dane, rozwiązanie i wynik', async ({ page }) => {
+test('the lesson example presents consistent data, code, and results', async ({ page }) => {
   const example = page.locator('#przyklad-podstawowy');
   await expect(example).toBeVisible();
   await expect(page.locator('#przyklad-trudniejszy')).toBeHidden();
@@ -99,7 +99,7 @@ test('przykład lekcji pokazuje spójne dane, rozwiązanie i wynik', async ({ pa
   await expect(example.locator('.mentor-hint')).toContainText('reszta z dzielenia przez 2');
 });
 
-test('przykład przełącza poziom i pozwala wielokrotnie wrócić do podstaw', async ({ page }) => {
+test('lesson levels can be changed and repeatedly reset to the basic example', async ({ page }) => {
   const basic = page.locator('#przyklad-podstawowy');
   const advanced = page.locator('#przyklad-trudniejszy');
   for (let turn = 0; turn < 2; turn++) {
@@ -112,7 +112,7 @@ test('przykład przełącza poziom i pozwala wielokrotnie wrócić do podstaw', 
     await expect(advanced.locator('.code-result strong')).toContainText('Największa suma: 6');
     await expect(advanced.locator('.sequence-caption')).toContainText('kolejne elementy');
     await expect(advanced.locator('.lesson-takeaway')).toContainText('O(n)');
-    // Ukryty panel nie występuje w drzewie dostępności ani w kolejności Tab.
+    // The hidden panel is excluded from the accessibility tree and tab order.
     await expect(page.getByRole('heading', { name: 'Policz, ile liczb w podanym ciągu jest parzystych.' })).toHaveCount(0);
     await page.keyboard.press('Tab');
     await expect(advanced.getByRole('button', { name: 'Prześledź rozwiązanie' })).toBeFocused();
@@ -128,7 +128,7 @@ test('przykład przełącza poziom i pozwala wielokrotnie wrócić do podstaw', 
   }
 });
 
-test('wyzwanie pokazuje rosnący podciąg i pozwala wracać przez wszystkie poziomy', async ({ page }) => {
+test('the challenge shows an increasing subsequence and supports returning through all levels', async ({ page }) => {
   const basic = page.locator('#przyklad-podstawowy');
   const advanced = page.locator('#przyklad-trudniejszy');
   const challenge = page.locator('#przyklad-wyzwanie');
@@ -161,10 +161,10 @@ test('wyzwanie pokazuje rosnący podciąg i pozwala wracać przez wszystkie pozi
 });
 
 for (const javaScriptEnabled of [true, false]) {
-  test.describe(`kolorowanie Python — JavaScript ${javaScriptEnabled ? 'włączony' : 'wyłączony'}`, () => {
+  test.describe(`Python highlighting with JavaScript ${javaScriptEnabled ? 'enabled' : 'disabled'}`, () => {
     test.use({ javaScriptEnabled });
 
-    test('trzy poziomy mają czytelne tokeny i zachowują tekst do kopiowania', async ({ page }) => {
+    test('all three levels have readable tokens and preserve copyable text', async ({ page }) => {
       await page.setViewportSize({ width: javaScriptEnabled ? 1440 : 360, height: 1000 });
       await page.emulateMedia({ reducedMotion: 'reduce' });
       const examples = [
@@ -235,7 +235,7 @@ for (const javaScriptEnabled of [true, false]) {
 }
 
 for (const width of [360, 390, 768, 1440]) {
-  test(`przełączanie poziomu z klawiatury przy ${width} px i ograniczeniu ruchu`, async ({ page }) => {
+  test(`keyboard level switching works at ${width}px with reduced motion`, async ({ page }) => {
     await page.setViewportSize({ width, height: 844 });
     await page.emulateMedia({ reducedMotion: 'reduce' });
     const basic = page.locator('#przyklad-podstawowy');
@@ -267,7 +267,7 @@ for (const width of [360, 390, 768, 1440]) {
   });
 }
 
-test('oznaczenie teorii ma postać liczby binarnej z indeksem podstawy', async ({ page }) => {
+test('the theory badge uses a binary number with a base subscript', async ({ page }) => {
   const badge = page.locator('.subject-foundation > div').filter({ has: page.getByRole('heading', { name: 'Teoria informatyki' }) }).locator('.foundation-code');
   await expect(badge).toHaveAttribute('aria-hidden', 'true');
   await expect(badge).toHaveText('10102');
@@ -279,11 +279,11 @@ for (const viewport of [
   { width: 768, height: 1024 }, { width: 1024, height: 768 },
   { width: 1440, height: 1000 }, { width: 1366, height: 650 },
 ]) {
-  test(`układ ${viewport.width}×${viewport.height} mieści treść i odsłania cel pod nagłówkiem`, async ({ page }) => {
+  test(`the ${viewport.width}×${viewport.height} layout fits content and reveals targets below the header`, async ({ page }) => {
     await page.setViewportSize(viewport);
     await page.emulateMedia({ reducedMotion: 'reduce' });
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-    // Kontrolujemy wszystkie sekcje, aby dekoracje i obrazy nie wypychały układu.
+    // Every section is checked for overflow caused by images and decorations.
     for (const id of ['#wspolpraca', '#przyklad', '#zakres', '#o-mnie', '#opinie', '#oferta', '#rezerwacja', '#faq', '#kontakt']) {
       await page.evaluate(target => { location.hash = target; }, id);
       await expect(page.locator(id)).toBeInViewport();
@@ -297,7 +297,7 @@ for (const viewport of [
   });
 }
 
-test('ograniczenie ruchu wyłącza animacje i zachowuje czytelność', async ({ page }) => {
+test('reduced motion disables animations and preserves readability', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.reload();
   await expect(page.locator('.hero-copy')).toBeVisible();
@@ -308,7 +308,7 @@ test('ograniczenie ruchu wyłącza animacje i zachowuje czytelność', async ({ 
   expect(await page.locator('.geometry-parallax').first().evaluate(element => getComputedStyle(element).transform)).toBe('none');
 });
 
-test('klawiatura pozwala ominąć nawigację i otworzyć FAQ', async ({ page }) => {
+test('keyboard navigation supports skipping navigation and opening FAQ entries', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.keyboard.press('Tab');
   const skip = page.getByRole('link', { name: 'Przejdź do treści' });
@@ -323,7 +323,7 @@ test('klawiatura pozwala ominąć nawigację i otworzyć FAQ', async ({ page }) 
   expect(await summary.evaluate(element => getComputedStyle(element).outlineStyle)).not.toBe('none');
 });
 
-test('kontakt udostępnia poprawne odnośniki e-mail i telefon', async ({ page }) => {
+test('contact links contain valid email and telephone destinations', async ({ page }) => {
   const email = page.locator('#kontakt').getByRole('link', { name: /NAPISZ DO MNIE/ });
   const address = (await email.locator('strong').innerText()).trim();
   expect(address).toMatch(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
@@ -334,7 +334,7 @@ test('kontakt udostępnia poprawne odnośniki e-mail i telefon', async ({ page }
   await expect(phone).toHaveAttribute('href', `tel:${number}`);
 });
 
-test('menu mobilne zamyka się po wyborze sekcji oraz po Escape', async ({ page }) => {
+test('the mobile menu closes after section selection and Escape', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   const menu = page.locator('.mobile-menu');
   const toggle = menu.locator('summary');
@@ -351,10 +351,10 @@ test('menu mobilne zamyka się po wyborze sekcji oraz po Escape', async ({ page 
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
-test.describe('bez JavaScriptu', () => {
+test.describe('without JavaScript', () => {
   test.use({ javaScriptEnabled: false });
 
-  test('menu mobilne, rezerwacja i rozwijanie FAQ nadal działają', async ({ page }) => {
+  test('mobile navigation, booking links, and FAQ expansion remain available', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.locator('.mobile-menu summary').click();
     await page.getByRole('navigation', { name: 'Nawigacja mobilna' }).getByRole('link', { name: 'FAQ', exact: true }).click();
@@ -372,7 +372,7 @@ test.describe('bez JavaScriptu', () => {
     await expect(page.locator('#przyklad-podstawowy pre code')).toContainText('if number % 2 == 0:');
   });
 
-  test('trzy poziomy zadania są dostępne przez linki bez JavaScriptu', async ({ page }) => {
+  test('links provide access to all three lesson levels without JavaScript', async ({ page }) => {
     await page.setViewportSize({ width: 360, height: 800 });
     const basic = page.locator('#przyklad-podstawowy');
     const advanced = page.locator('#przyklad-trudniejszy');

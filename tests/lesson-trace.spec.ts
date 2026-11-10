@@ -8,7 +8,7 @@ const examples: { algorithm: LessonAlgorithm; values: number[]; result: number; 
 ];
 
 for (const example of examples) {
-  test(`ślad ${example.algorithm} zgadza się z przykładem i odwołuje do jego kodu`, () => {
+  test(`the ${example.algorithm} trace matches its example and references its code`, () => {
     const input = Object.freeze([...example.values]);
     const steps = createLessonTrace(example.algorithm, input);
     expect(steps.length).toBeGreaterThan(2);
@@ -29,12 +29,12 @@ for (const example of examples) {
   });
 }
 
-test('zliczanie obejmuje zero i ujemne liczby parzyste oraz pusty ciąg', () => {
+test('parity counting handles zero, negative even numbers, and empty input', () => {
   expect(createLessonTrace('parity', [-4, -3, 0, 1, 2]).at(-1)?.result).toBe(3);
   expect(createLessonTrace('parity', []).at(-1)?.result).toBe(0);
 });
 
-test('Kadane wybiera niepusty fragment także dla samych liczb ujemnych', () => {
+test('Kadane selects a nonempty subarray for all-negative input', () => {
   for (const values of [[-8, -3, -5], [-1], [0], [4, -1, 2, -8, 3]]) {
     const last = createLessonTrace('kadane', values).at(-1)!;
     const sums = values.flatMap((_, start) => values.slice(start).map((_, offset) => values.slice(start, start + offset + 1).reduce((sum, value) => sum + value, 0)));
@@ -45,7 +45,7 @@ test('Kadane wybiera niepusty fragment także dla samych liczb ujemnych', () => 
   }
 });
 
-test('LIS zachowuje ścisłe rośnięcie, kolejność i poprawną długość przy remisach', () => {
+test('LIS preserves strict ordering, input order, and the correct length on ties', () => {
   for (const values of [[2, 2, 2], [4, 3, 2, 1], [1, 2, 2, 3], [1], [3, 1, 5, 2, 6, 4, 9]]) {
     const last = createLessonTrace('lis', values).at(-1)!;
     // Independent exhaustive subsequence oracle for these small inputs.
@@ -60,7 +60,7 @@ test('LIS zachowuje ścisłe rośnięcie, kolejność i poprawną długość prz
   }
 });
 
-test('migawki zachowują dawne wartości i nie współdzielą tablic', () => {
+test('snapshots retain previous values and do not share arrays', () => {
   for (const { algorithm, values } of examples) {
     const steps = createLessonTrace(algorithm, values);
     for (let index = 1; index < steps.length; index++) {
@@ -78,8 +78,8 @@ test('migawki zachowują dawne wartości i nie współdzielą tablic', () => {
   expect(lis.at(-1)?.variables.lengths).toEqual([1, 1, 2, 2, 3, 3, 4]);
 });
 
-test('odrzuca niepoprawne dane zamiast tworzyć nieprawdziwy pokaz', () => {
-  expect(() => createLessonTrace('kadane', [])).toThrow(/niepustego/);
-  expect(() => createLessonTrace('lis', [])).toThrow(/niepustego/);
-  expect(() => createLessonTrace('parity', [Number.NaN])).toThrow(/skończone/);
+test('invalid data is rejected before a trace is generated', () => {
+  expect(() => createLessonTrace('kadane', [])).toThrow(/nonempty/);
+  expect(() => createLessonTrace('lis', [])).toThrow(/nonempty/);
+  expect(() => createLessonTrace('parity', [Number.NaN])).toThrow(/finite/);
 });

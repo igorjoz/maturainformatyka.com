@@ -138,8 +138,8 @@ function lis(values: readonly number[]): LessonStep[] {
 }
 
 export function createLessonTrace(algorithm: LessonAlgorithm, values: readonly number[]): LessonStep[] {
-  if (values.some(value => !Number.isFinite(value))) throw new RangeError('Dane przykładu muszą zawierać skończone liczby.');
-  if (algorithm !== 'parity' && values.length === 0) throw new RangeError('Ten algorytm wymaga niepustego ciągu liczb.');
+  if (values.some(value => !Number.isFinite(value))) throw new RangeError('Example data must contain finite numbers.');
+  if (algorithm !== 'parity' && values.length === 0) throw new RangeError('This algorithm requires a nonempty sequence of numbers.');
   switch (algorithm) {
     case 'parity': return parity(values);
     case 'kadane': return kadane(values);

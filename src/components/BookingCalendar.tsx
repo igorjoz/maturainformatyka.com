@@ -19,7 +19,7 @@ export default function BookingCalendar({
       !embedUrl.pathname.includes("/appointments/schedules/")
     ) {
       throw new Error(
-        "introMeeting.bookingUrl: użyj pełnego adresu calendar.google.com z pola src kodu osadzenia strony rezerwacji.",
+        "introMeeting.bookingUrl must contain the complete calendar.google.com URL from the booking-page iframe src attribute.",
       );
     }
     embedUrl.searchParams.set("gv", "true");

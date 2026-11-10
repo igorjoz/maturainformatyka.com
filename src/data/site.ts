@@ -10,7 +10,7 @@ export const introMeeting = {
   format: 'online',
   costLabel: 'bezpłatnie',
   cta: 'Umów bezpłatne spotkanie',
-  // Wklej pełny adres z atrybutu src kodu „Wbudowana strona rezerwacji” Google.
+  // The booking URL is the complete src attribute from the Google booking-page embed.
   bookingUrl: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ25WZbeDzESmQuNbh_KRaelOGxbBfgdW267RQf88-KVEOg6ysqbp2CJwDwL09aipDRayW0GvPJD',
   heading: 'Poznajmy się na darmowym spotkaniu online.',
   description: 'Podczas spotkania zapoznawczego porozmawiamy o Twoich oczekiwaniach i celu przygotowania do matury. Poznasz mój sposób pracy, a ja wstępnie sprawdzę Twój poziom i zaproponuję, jak mogę Ci pomóc.',

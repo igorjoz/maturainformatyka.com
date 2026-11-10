@@ -1,29 +1,29 @@
 {
   "checkedOn": "2026-11-09",
   "completeHistoricalArchive": false,
-  "description": "Import obejmuje standardowe zestawy odnalezione w oficjalnych indeksach. Brak wyniku w indeksie nie dowodzi, że materiał nie istnieje. Katalog wymaga dalszego uzupełniania poniższych luk.",
+  "description": "The import includes standard exam sets found in official indexes. Absence from an index does not establish that a material does not exist. The following gaps remain unresolved.",
   "unresolvedCoverage": [
     {
-      "period": "maj 2014",
+      "period": "May 2014",
       "formula": "starsza",
       "levels": [
         "podstawowy",
         "rozszerzony"
       ],
-      "status": "Brak odnalezionych plików informatyki w odczytanych indeksach CKE i OKE Poznań. Obie pozycje pozostają w inwentarzu, bez publicznych podstron."
+      "status": "No computer science files were found in the examined CKE and OKE Poznan indexes. Both entries remain in the inventory without public exam pages."
     },
     {
-      "period": "terminy dodatkowe",
-      "status": "Nie odnaleziono zestawów z terminów dodatkowych w przeszukanych oficjalnych indeksach. Czerwiec 2020 w katalogu jest terminem głównym. Filtr dodatkowy pozostaje dostępny i pokazuje brak wyników."
+      "period": "additional sessions",
+      "status": "No additional-session sets were found in the examined official indexes. June 2020 entries represent the main session. The additional-session filter remains available and returns no results."
     },
     {
       "period": "2025–2026",
       "formula": "2015",
-      "status": "Nie odnaleziono plików w przeszukanych indeksach; brak kompletu Formuły 2015 dla tych roczników."
+      "status": "No files were found in the examined indexes; Formula 2015 sets for these years remain unavailable in the archive."
     },
     {
-      "period": "pozostałe próbne i pokazowe",
-      "status": "Uwzględniono odnalezione standardowe zestawy. Sprawdzone podstrony września 2022, grudnia 2023 i stycznia 2026 nie zawierały odnalezionych odnośników do plików informatyki."
+      "period": "other mock and sample papers",
+      "status": "The archive includes the standard sets found in the examined sources. The checked September 2022, December 2023, and January 2026 pages yielded no computer science file links."
     }
   ],
   "checkedIndexes": [
@@ -271,8 +271,8 @@
     "https://oke.wroc.pl/egzamin-maturalny/formula-2015/egzamin-maturalny-arkusze-egzaminacyjne/"
   ],
   "networkNotes": [
-    "Stare źródła CKE pod HTTP zastąpiono działającymi odpowiednikami HTTPS.",
-    "Nowy serwis CKE potrafi zwrócić inną domyślną sesję po podaniu niedostępnej sesji; nie wykorzystano takich odpowiedzi do przypisywania dat.",
-    "OKE Poznań wymagało uzupełnienia lokalnego łańcucha zaufanych CA certyfikatem pośrednim wystawcy. Weryfikacja TLS pozostała włączona."
+    "Legacy HTTP CKE source URLs were replaced with working HTTPS equivalents.",
+    "The new CKE service can return a different default session when an unavailable session is requested. Such responses were not used to assign exam dates.",
+    "OKE Poznan required an intermediate certificate from the issuer to be added to the local trusted CA store. TLS verification remained enabled."
   ]
 }
