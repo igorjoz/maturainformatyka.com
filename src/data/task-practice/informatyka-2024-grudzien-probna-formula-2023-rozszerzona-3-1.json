@@ -1,0 +1,31 @@
+{
+  "id": "informatyka-2024-grudzien-probna-formula-2023-rozszerzona-3-1",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "91d25fa66744a3218b25da62ede99e5ab8a52c7ce34f33f74cfb4fe479be718c",
+  "fields": [
+    {
+      "id": "ile",
+      "label": "Liczba kwadratów",
+      "kind": "number",
+      "target": "[data-practice=\"ile\"]"
+    },
+    {
+      "id": "pierwszy",
+      "label": "Pierwszy kwadrat w pliku",
+      "kind": "number",
+      "target": "[data-practice=\"pierwszy\"]"
+    }
+  ],
+  "variants": [
+    {
+      "ile": [
+        "20"
+      ],
+      "pierwszy": [
+        "4489"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

@@ -1,0 +1,74 @@
+{
+  "id": "informatyka-2022-marzec-pokazowa-formula-2023-rozszerzona-4-3",
+  "mode": "interactive",
+  "reason": "Jednoznaczne wyniki CKE; porównanie wartości pól. Sprawdzamy wynik, bez oceny programu ani plików.",
+  "gradingSha256": "fc6438480010d4f5d8743e02382ab8917cc4e19ba682c168f625d367eb5922d5",
+  "fields": [
+    {
+      "id": "czas",
+      "label": "Długość najdłuższego opadu w godzinach",
+      "kind": "number",
+      "target": "[data-practice=\"czas\"]"
+    },
+    {
+      "id": "data-poczatek",
+      "label": "Data początku (dd.mm.rrrr)",
+      "kind": "text",
+      "target": "[data-practice=\"data-poczatek\"]"
+    },
+    {
+      "id": "godzina-poczatek",
+      "label": "Godzina początku (gg:mm)",
+      "kind": "text",
+      "target": "[data-practice=\"godzina-poczatek\"]"
+    },
+    {
+      "id": "data-koniec",
+      "label": "Data końca (dd.mm.rrrr)",
+      "kind": "text",
+      "target": "[data-practice=\"data-koniec\"]"
+    },
+    {
+      "id": "godzina-koniec",
+      "label": "Godzina końca (gg:mm)",
+      "kind": "text",
+      "target": "[data-practice=\"godzina-koniec\"]"
+    },
+    {
+      "id": "opad",
+      "label": "Łączna suma opadów (cm)",
+      "kind": "number",
+      "target": "[data-practice=\"opad\"]"
+    }
+  ],
+  "variants": [
+    {
+      "czas": [
+        "37"
+      ],
+      "data-poczatek": [
+        "22.05.2019",
+        "22.5.2019",
+        "2019-05-22"
+      ],
+      "godzina-poczatek": [
+        "16:00",
+        "16.00"
+      ],
+      "data-koniec": [
+        "24.05.2019",
+        "24.5.2019",
+        "2019-05-24"
+      ],
+      "godzina-koniec": [
+        "04:00",
+        "4:00",
+        "04.00",
+        "4.00"
+      ],
+      "opad": [
+        "74"
+      ]
+    }
+  ]
+}

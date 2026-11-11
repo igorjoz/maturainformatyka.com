@@ -1,0 +1,24 @@
+{
+  "id": "informatyka-2026-maj-formula-2023-rozszerzona-7-3",
+  "mode": "interactive",
+  "reason": "CKE dopuszcza dwa rodzaje odpowiedzi: numer dnia 167 lub datę 2023-08-14. Jawne równoważne zapisy daty.",
+  "gradingSha256": "4e96eb7d14946ff46285e1e1938c79973f59700b1be42a25a755d9a71a07d97c",
+  "fields": [
+    {
+      "id": "dzien",
+      "label": "Numer dnia lub data",
+      "kind": "text",
+      "target": "[data-practice=\"dzien\"]"
+    }
+  ],
+  "variants": [
+    {
+      "dzien": [
+        "167",
+        "14.08.2023",
+        "2023-08-14",
+        "14.8.2023"
+      ]
+    }
+  ]
+}

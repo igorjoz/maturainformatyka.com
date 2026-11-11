@@ -1,0 +1,39 @@
+{
+  "id": "informatyka-2023-maj-formula-2023-rozszerzona-6-4",
+  "mode": "interactive",
+  "reason": "Jednoznaczne wyniki CKE; porównanie wartości pól. Sprawdzamy wynik, bez oceny programu ani plików.",
+  "gradingSha256": "375d12d92505bca779d1f894a94adbc803bd7d1b2b173c4dd918e5fb7de6ea28",
+  "fields": [
+    {
+      "id": "wynik-1",
+      "label": "Konfitura malinowo-porzeczkowa (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-1\"]"
+    },
+    {
+      "id": "wynik-2",
+      "label": "Konfitura malinowo-truskawkowa (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-2\"]"
+    },
+    {
+      "id": "wynik-3",
+      "label": "Konfitura truskawkowo-porzeczkowa (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-3\"]"
+    }
+  ],
+  "variants": [
+    {
+      "wynik-1": [
+        "18008"
+      ],
+      "wynik-2": [
+        "29732"
+      ],
+      "wynik-3": [
+        "18382"
+      ]
+    }
+  ]
+}

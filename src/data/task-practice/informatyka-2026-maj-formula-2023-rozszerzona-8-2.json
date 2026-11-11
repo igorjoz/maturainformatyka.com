@@ -1,0 +1,31 @@
+{
+  "id": "informatyka-2026-maj-formula-2023-rozszerzona-8-2",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "ff74a8c2e134f284f4e5a05126b880e39318adf349c2faa3bf9168a29eb20817",
+  "fields": [
+    {
+      "id": "kobiety",
+      "label": "Liczba kobiet bez zakupów",
+      "kind": "number",
+      "target": "[data-practice=\"kobiety\"]"
+    },
+    {
+      "id": "mezczyzni",
+      "label": "Liczba mężczyzn bez zakupów",
+      "kind": "number",
+      "target": "[data-practice=\"mezczyzni\"]"
+    }
+  ],
+  "variants": [
+    {
+      "kobiety": [
+        "689"
+      ],
+      "mezczyzni": [
+        "651"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

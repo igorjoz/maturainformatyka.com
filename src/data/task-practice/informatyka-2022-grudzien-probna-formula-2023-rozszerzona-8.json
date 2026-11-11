@@ -1,0 +1,52 @@
+{
+  "id": "informatyka-2022-grudzien-probna-formula-2023-rozszerzona-8",
+  "mode": "interactive",
+  "reason": "Uzupełnianie wyłącznie pustych komórek; komórki przykładowe pozostają nieedytowalne.",
+  "gradingSha256": "40fa78d229a280dc72f71110e75b213a5e12d6eece0dc0af235e754639744a3a",
+  "fields": [
+    {
+      "id": "suma-4",
+      "label": "Suma w systemie czwórkowym",
+      "kind": "number",
+      "target": "[data-practice=\"suma-4\"]",
+      "base": 4
+    },
+    {
+      "id": "suma-16",
+      "label": "Suma w systemie szesnastkowym",
+      "kind": "number",
+      "target": "[data-practice=\"suma-16\"]",
+      "base": 16
+    },
+    {
+      "id": "roznica-4",
+      "label": "Różnica w systemie czwórkowym",
+      "kind": "number",
+      "target": "[data-practice=\"roznica-4\"]",
+      "base": 4
+    },
+    {
+      "id": "roznica-16",
+      "label": "Różnica w systemie szesnastkowym",
+      "kind": "number",
+      "target": "[data-practice=\"roznica-16\"]",
+      "base": 16
+    }
+  ],
+  "variants": [
+    {
+      "suma-4": [
+        "12133"
+      ],
+      "suma-16": [
+        "19F"
+      ],
+      "roznica-4": [
+        "223"
+      ],
+      "roznica-16": [
+        "2B"
+      ]
+    }
+  ]
+}

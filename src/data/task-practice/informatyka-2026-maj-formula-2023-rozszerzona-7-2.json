@@ -1,0 +1,121 @@
+{
+  "id": "informatyka-2026-maj-formula-2023-rozszerzona-7-2",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "22af833b4db13040dffea9aac4ffc700b76958f8365a4bab9e5362fda584b273",
+  "fields": [
+    {
+      "id": "miesiac1",
+      "label": "Miesiąc 1 — najdłuższy ciąg dni bez opadów",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac1\"]"
+    },
+    {
+      "id": "miesiac2",
+      "label": "Miesiąc 2 — najdłuższy ciąg dni bez opadów",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac2\"]"
+    },
+    {
+      "id": "miesiac3",
+      "label": "Miesiąc 3 — najdłuższy ciąg dni bez opadów",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac3\"]"
+    },
+    {
+      "id": "miesiac4",
+      "label": "Miesiąc 4 — najdłuższy ciąg dni bez opadów",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac4\"]"
+    },
+    {
+      "id": "miesiac5",
+      "label": "Miesiąc 5 — najdłuższy ciąg dni bez opadów",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac5\"]"
+    },
+    {
+      "id": "miesiac6",
+      "label": "Miesiąc 6 — najdłuższy ciąg dni bez opadów",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac6\"]"
+    },
+    {
+      "id": "miesiac7",
+      "label": "Miesiąc 7 — najdłuższy ciąg dni bez opadów",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac7\"]"
+    },
+    {
+      "id": "miesiac8",
+      "label": "Miesiąc 8 — najdłuższy ciąg dni bez opadów",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac8\"]"
+    },
+    {
+      "id": "miesiac9",
+      "label": "Miesiąc 9 — najdłuższy ciąg dni bez opadów",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac9\"]"
+    },
+    {
+      "id": "miesiac10",
+      "label": "Miesiąc 10 — najdłuższy ciąg dni bez opadów",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac10\"]"
+    },
+    {
+      "id": "miesiac11",
+      "label": "Miesiąc 11 — najdłuższy ciąg dni bez opadów",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac11\"]"
+    },
+    {
+      "id": "miesiac12",
+      "label": "Miesiąc 12 — najdłuższy ciąg dni bez opadów",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac12\"]"
+    }
+  ],
+  "variants": [
+    {
+      "miesiac1": [
+        "11"
+      ],
+      "miesiac2": [
+        "7"
+      ],
+      "miesiac3": [
+        "20"
+      ],
+      "miesiac4": [
+        "8"
+      ],
+      "miesiac5": [
+        "20"
+      ],
+      "miesiac6": [
+        "11"
+      ],
+      "miesiac7": [
+        "10"
+      ],
+      "miesiac8": [
+        "8"
+      ],
+      "miesiac9": [
+        "14"
+      ],
+      "miesiac10": [
+        "15"
+      ],
+      "miesiac11": [
+        "10"
+      ],
+      "miesiac12": [
+        "10"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

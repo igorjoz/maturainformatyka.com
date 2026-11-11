@@ -1,0 +1,191 @@
+{
+  "id": "informatyka-2025-maj-formula-2023-rozszerzona-3-2",
+  "mode": "interactive",
+  "reason": "Liczba punktów oraz jedna trójka punktów CKE. Dowolna kolejność całych punktów, współrzędne każdej pary muszą pozostać powiązane.",
+  "gradingSha256": "c647382562208f9e3793cc335ca715f649ee86d0057bc550eea50b690a727e4e",
+  "fields": [
+    {
+      "id": "wewnatrz",
+      "label": "a) Liczba punktów wewnątrz kwadratu",
+      "kind": "number",
+      "target": "[data-practice=\"wewnatrz\"]"
+    },
+    {
+      "id": "x1",
+      "label": "b) Punkt 1 — x",
+      "kind": "number",
+      "target": "[data-practice=\"x1\"]"
+    },
+    {
+      "id": "y1",
+      "label": "b) Punkt 1 — y",
+      "kind": "number",
+      "target": "[data-practice=\"y1\"]"
+    },
+    {
+      "id": "x2",
+      "label": "b) Punkt 2 — x",
+      "kind": "number",
+      "target": "[data-practice=\"x2\"]"
+    },
+    {
+      "id": "y2",
+      "label": "b) Punkt 2 — y",
+      "kind": "number",
+      "target": "[data-practice=\"y2\"]"
+    },
+    {
+      "id": "x3",
+      "label": "b) Punkt 3 — x",
+      "kind": "number",
+      "target": "[data-practice=\"x3\"]"
+    },
+    {
+      "id": "y3",
+      "label": "b) Punkt 3 — y",
+      "kind": "number",
+      "target": "[data-practice=\"y3\"]"
+    }
+  ],
+  "variants": [
+    {
+      "wewnatrz": [
+        "24"
+      ],
+      "x1": [
+        "5832"
+      ],
+      "y1": [
+        "1801"
+      ],
+      "x2": [
+        "7410"
+      ],
+      "y2": [
+        "1990"
+      ],
+      "x3": [
+        "8988"
+      ],
+      "y3": [
+        "2179"
+      ]
+    },
+    {
+      "wewnatrz": [
+        "24"
+      ],
+      "x1": [
+        "5832"
+      ],
+      "y1": [
+        "1801"
+      ],
+      "x2": [
+        "8988"
+      ],
+      "y2": [
+        "2179"
+      ],
+      "x3": [
+        "7410"
+      ],
+      "y3": [
+        "1990"
+      ]
+    },
+    {
+      "wewnatrz": [
+        "24"
+      ],
+      "x1": [
+        "7410"
+      ],
+      "y1": [
+        "1990"
+      ],
+      "x2": [
+        "5832"
+      ],
+      "y2": [
+        "1801"
+      ],
+      "x3": [
+        "8988"
+      ],
+      "y3": [
+        "2179"
+      ]
+    },
+    {
+      "wewnatrz": [
+        "24"
+      ],
+      "x1": [
+        "7410"
+      ],
+      "y1": [
+        "1990"
+      ],
+      "x2": [
+        "8988"
+      ],
+      "y2": [
+        "2179"
+      ],
+      "x3": [
+        "5832"
+      ],
+      "y3": [
+        "1801"
+      ]
+    },
+    {
+      "wewnatrz": [
+        "24"
+      ],
+      "x1": [
+        "8988"
+      ],
+      "y1": [
+        "2179"
+      ],
+      "x2": [
+        "5832"
+      ],
+      "y2": [
+        "1801"
+      ],
+      "x3": [
+        "7410"
+      ],
+      "y3": [
+        "1990"
+      ]
+    },
+    {
+      "wewnatrz": [
+        "24"
+      ],
+      "x1": [
+        "8988"
+      ],
+      "y1": [
+        "2179"
+      ],
+      "x2": [
+        "7410"
+      ],
+      "y2": [
+        "1990"
+      ],
+      "x3": [
+        "5832"
+      ],
+      "y3": [
+        "1801"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

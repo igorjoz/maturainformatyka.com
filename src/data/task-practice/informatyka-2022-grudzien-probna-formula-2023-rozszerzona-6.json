@@ -1,0 +1,120 @@
+{
+  "id": "informatyka-2022-grudzien-probna-formula-2023-rozszerzona-6",
+  "mode": "interactive",
+  "reason": "Dopasowanie zamkniętych opcji do opisów; jednoznaczny klucz CKE.",
+  "gradingSha256": "3df280346ba9ce2789ffc9c406e05bf9c2b61977729f766fb554612150f5e5e5",
+  "fields": [
+    {
+      "id": "wysylanie",
+      "label": "Wysyłanie poczty elektronicznej",
+      "kind": "single",
+      "target": "[data-practice=\"wysylanie\"]",
+      "options": [
+        {
+          "value": "FTP",
+          "label": "FTP"
+        },
+        {
+          "value": "SMTP",
+          "label": "SMTP"
+        },
+        {
+          "value": "IMAP",
+          "label": "IMAP"
+        },
+        {
+          "value": "HTTPS",
+          "label": "HTTPS"
+        }
+      ]
+    },
+    {
+      "id": "pliki",
+      "label": "Przesyłanie plików",
+      "kind": "single",
+      "target": "[data-practice=\"pliki\"]",
+      "options": [
+        {
+          "value": "FTP",
+          "label": "FTP"
+        },
+        {
+          "value": "SMTP",
+          "label": "SMTP"
+        },
+        {
+          "value": "IMAP",
+          "label": "IMAP"
+        },
+        {
+          "value": "HTTPS",
+          "label": "HTTPS"
+        }
+      ]
+    },
+    {
+      "id": "hipertekst",
+      "label": "Szyfrowane przesyłanie dokumentów hipertekstowych",
+      "kind": "single",
+      "target": "[data-practice=\"hipertekst\"]",
+      "options": [
+        {
+          "value": "FTP",
+          "label": "FTP"
+        },
+        {
+          "value": "SMTP",
+          "label": "SMTP"
+        },
+        {
+          "value": "IMAP",
+          "label": "IMAP"
+        },
+        {
+          "value": "HTTPS",
+          "label": "HTTPS"
+        }
+      ]
+    },
+    {
+      "id": "odbieranie",
+      "label": "Odbieranie poczty elektronicznej",
+      "kind": "single",
+      "target": "[data-practice=\"odbieranie\"]",
+      "options": [
+        {
+          "value": "FTP",
+          "label": "FTP"
+        },
+        {
+          "value": "SMTP",
+          "label": "SMTP"
+        },
+        {
+          "value": "IMAP",
+          "label": "IMAP"
+        },
+        {
+          "value": "HTTPS",
+          "label": "HTTPS"
+        }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "wysylanie": [
+        "SMTP"
+      ],
+      "pliki": [
+        "FTP"
+      ],
+      "hipertekst": [
+        "HTTPS"
+      ],
+      "odbieranie": [
+        "IMAP"
+      ]
+    }
+  ]
+}

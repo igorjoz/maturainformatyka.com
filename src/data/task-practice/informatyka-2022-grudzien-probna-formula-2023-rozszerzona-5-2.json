@@ -1,0 +1,25 @@
+{
+  "id": "informatyka-2022-grudzien-probna-formula-2023-rozszerzona-5-2",
+  "mode": "interactive",
+  "reason": "Trzy imiona i nazwiska z klucza w dowolnej kolejności; jawne warianty polskich znaków. Sprawdzamy wynik, nie SQL.",
+  "gradingSha256": "3fe6c2422304a79dfaec26c691f941518bf2ea3e32ab820a2f214b52a1041b20",
+  "fields": [
+    {
+      "id": "lista",
+      "label": "Imiona i nazwiska, oddzielone średnikami",
+      "kind": "text",
+      "target": "[data-practice=\"lista\"]",
+      "unordered": true
+    }
+  ],
+  "variants": [
+    {
+      "lista": [
+        "Anna Poplawska;Marcin Bober;Mateusz Slomka",
+        "Anna Popławska;Marcin Bober;Mateusz Słomka",
+        "Anna Poplawska;Marcin Bober;Mateusz Słomka",
+        "Anna Popławska;Marcin Bober;Mateusz Slomka"
+      ]
+    }
+  ]
+}

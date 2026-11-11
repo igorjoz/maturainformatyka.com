@@ -1,0 +1,23 @@
+{
+  "id": "informatyka-2025-maj-formula-2023-rozszerzona-7-3",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "aa290999b93079736b6fa04e88c1c66eddd685d0ef59d6fc4989b79310a0ce48",
+  "fields": [
+    {
+      "id": "obszary",
+      "label": "Nazwy obszarów (oddziel średnikami, dowolna kolejność)",
+      "kind": "text",
+      "target": "[data-practice=\"obszary\"]",
+      "unordered": true
+    }
+  ],
+  "variants": [
+    {
+      "obszary": [
+        "Aeolis;Amazonis;Arabia;Elysium;Eridania;Mare Tyrrhenum;Sinus Sabaeus;Syrtis Major"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

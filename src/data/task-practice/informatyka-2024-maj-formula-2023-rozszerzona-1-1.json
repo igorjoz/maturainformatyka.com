@@ -1,0 +1,69 @@
+{
+  "id": "informatyka-2024-maj-formula-2023-rozszerzona-1-1",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "41829ced03b72df9fd18a2066d2fd5ec8a1985350297c3007d4ff513ccbdf844",
+  "fields": [
+    {
+      "id": "plansza-a",
+      "label": "Wynik dla planszy a",
+      "kind": "single",
+      "target": "[data-practice=\"plansza-a\"]",
+      "options": [
+        {
+          "value": "P",
+          "label": "PRAWDA"
+        },
+        {
+          "value": "F",
+          "label": "FAŁSZ"
+        }
+      ]
+    },
+    {
+      "id": "plansza-b",
+      "label": "Wynik dla planszy b",
+      "kind": "single",
+      "target": "[data-practice=\"plansza-b\"]",
+      "options": [
+        {
+          "value": "P",
+          "label": "PRAWDA"
+        },
+        {
+          "value": "F",
+          "label": "FAŁSZ"
+        }
+      ]
+    },
+    {
+      "id": "plansza-c",
+      "label": "Wynik dla planszy c",
+      "kind": "single",
+      "target": "[data-practice=\"plansza-c\"]",
+      "options": [
+        {
+          "value": "P",
+          "label": "PRAWDA"
+        },
+        {
+          "value": "F",
+          "label": "FAŁSZ"
+        }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "plansza-a": [
+        "P"
+      ],
+      "plansza-b": [
+        "F"
+      ],
+      "plansza-c": [
+        "P"
+      ]
+    }
+  ]
+}

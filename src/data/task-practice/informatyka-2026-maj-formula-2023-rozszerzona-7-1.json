@@ -1,0 +1,121 @@
+{
+  "id": "informatyka-2026-maj-formula-2023-rozszerzona-7-1",
+  "mode": "interactive",
+  "reason": "Dwanaście jednoznacznych średnich miesięcznych w dokładności określonej przez CKE. Część graficzna podlega oddzielnej ocenie.",
+  "gradingSha256": "a3b727e9b8cb3234111119502491997e2ca38b5cd0004d77c0b3415284426689",
+  "fields": [
+    {
+      "id": "miesiac1",
+      "label": "Miesiąc 1 — średnia temperatura (°C)",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac1\"]"
+    },
+    {
+      "id": "miesiac2",
+      "label": "Miesiąc 2 — średnia temperatura (°C)",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac2\"]"
+    },
+    {
+      "id": "miesiac3",
+      "label": "Miesiąc 3 — średnia temperatura (°C)",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac3\"]"
+    },
+    {
+      "id": "miesiac4",
+      "label": "Miesiąc 4 — średnia temperatura (°C)",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac4\"]"
+    },
+    {
+      "id": "miesiac5",
+      "label": "Miesiąc 5 — średnia temperatura (°C)",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac5\"]"
+    },
+    {
+      "id": "miesiac6",
+      "label": "Miesiąc 6 — średnia temperatura (°C)",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac6\"]"
+    },
+    {
+      "id": "miesiac7",
+      "label": "Miesiąc 7 — średnia temperatura (°C)",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac7\"]"
+    },
+    {
+      "id": "miesiac8",
+      "label": "Miesiąc 8 — średnia temperatura (°C)",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac8\"]"
+    },
+    {
+      "id": "miesiac9",
+      "label": "Miesiąc 9 — średnia temperatura (°C)",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac9\"]"
+    },
+    {
+      "id": "miesiac10",
+      "label": "Miesiąc 10 — średnia temperatura (°C)",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac10\"]"
+    },
+    {
+      "id": "miesiac11",
+      "label": "Miesiąc 11 — średnia temperatura (°C)",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac11\"]"
+    },
+    {
+      "id": "miesiac12",
+      "label": "Miesiąc 12 — średnia temperatura (°C)",
+      "kind": "number",
+      "target": "[data-practice=\"miesiac12\"]"
+    }
+  ],
+  "variants": [
+    {
+      "miesiac1": [
+        "1.1"
+      ],
+      "miesiac2": [
+        "4.1"
+      ],
+      "miesiac3": [
+        "4.1"
+      ],
+      "miesiac4": [
+        "7.4"
+      ],
+      "miesiac5": [
+        "15.9"
+      ],
+      "miesiac6": [
+        "20.5"
+      ],
+      "miesiac7": [
+        "20.4"
+      ],
+      "miesiac8": [
+        "21.1"
+      ],
+      "miesiac9": [
+        "13.7"
+      ],
+      "miesiac10": [
+        "12.5"
+      ],
+      "miesiac11": [
+        "5.2"
+      ],
+      "miesiac12": [
+        "1.6"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wartości w zestawieniu. Wykres oraz komputerową realizację obliczeń porównaj osobno z kryteriami CKE."
+}

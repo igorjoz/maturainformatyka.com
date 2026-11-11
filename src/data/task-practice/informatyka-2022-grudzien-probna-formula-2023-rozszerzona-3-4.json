@@ -1,0 +1,156 @@
+{
+  "id": "informatyka-2022-grudzien-probna-formula-2023-rozszerzona-3-4",
+  "mode": "interactive",
+  "reason": "Jednoznaczne wyniki CKE; porównanie wartości pól. Sprawdzamy wynik, bez oceny programu ani plików.",
+  "gradingSha256": "fdb3d7820a0d84039f56650160dfb1e61aeea54d0f355f390baeb23282cb757d",
+  "fields": [
+    {
+      "id": "wynik-1",
+      "label": "Liczba wystąpień cyfry 0",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-1\"]"
+    },
+    {
+      "id": "wynik-2",
+      "label": "Liczba wystąpień cyfry 1",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-2\"]"
+    },
+    {
+      "id": "wynik-3",
+      "label": "Liczba wystąpień cyfry 2",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-3\"]"
+    },
+    {
+      "id": "wynik-4",
+      "label": "Liczba wystąpień cyfry 3",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-4\"]"
+    },
+    {
+      "id": "wynik-5",
+      "label": "Liczba wystąpień cyfry 4",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-5\"]"
+    },
+    {
+      "id": "wynik-6",
+      "label": "Liczba wystąpień cyfry 5",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-6\"]"
+    },
+    {
+      "id": "wynik-7",
+      "label": "Liczba wystąpień cyfry 6",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-7\"]"
+    },
+    {
+      "id": "wynik-8",
+      "label": "Liczba wystąpień cyfry 7",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-8\"]"
+    },
+    {
+      "id": "wynik-9",
+      "label": "Liczba wystąpień cyfry 8",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-9\"]"
+    },
+    {
+      "id": "wynik-10",
+      "label": "Liczba wystąpień cyfry 9",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-10\"]"
+    },
+    {
+      "id": "wynik-11",
+      "label": "Liczba wystąpień cyfry A",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-11\"]"
+    },
+    {
+      "id": "wynik-12",
+      "label": "Liczba wystąpień cyfry B",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-12\"]"
+    },
+    {
+      "id": "wynik-13",
+      "label": "Liczba wystąpień cyfry C",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-13\"]"
+    },
+    {
+      "id": "wynik-14",
+      "label": "Liczba wystąpień cyfry D",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-14\"]"
+    },
+    {
+      "id": "wynik-15",
+      "label": "Liczba wystąpień cyfry E",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-15\"]"
+    },
+    {
+      "id": "wynik-16",
+      "label": "Liczba wystąpień cyfry F",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-16\"]"
+    }
+  ],
+  "variants": [
+    {
+      "wynik-1": [
+        "32"
+      ],
+      "wynik-2": [
+        "26"
+      ],
+      "wynik-3": [
+        "37"
+      ],
+      "wynik-4": [
+        "31"
+      ],
+      "wynik-5": [
+        "43"
+      ],
+      "wynik-6": [
+        "25"
+      ],
+      "wynik-7": [
+        "28"
+      ],
+      "wynik-8": [
+        "23"
+      ],
+      "wynik-9": [
+        "38"
+      ],
+      "wynik-10": [
+        "28"
+      ],
+      "wynik-11": [
+        "45"
+      ],
+      "wynik-12": [
+        "33"
+      ],
+      "wynik-13": [
+        "29"
+      ],
+      "wynik-14": [
+        "23"
+      ],
+      "wynik-15": [
+        "44"
+      ],
+      "wynik-16": [
+        "10"
+      ]
+    }
+  ]
+}

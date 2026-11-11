@@ -1,0 +1,23 @@
+{
+  "id": "informatyka-2024-maj-formula-2023-rozszerzona-3-3",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "95f9502372348a3160cb1e11fb9a86017d07a6641b504980f7f0195e33d05661",
+  "fields": [
+    {
+      "id": "liczby",
+      "label": "Liczby (oddziel średnikami, dowolna kolejność)",
+      "kind": "text",
+      "target": "[data-practice=\"liczby\"]",
+      "unordered": true
+    }
+  ],
+  "variants": [
+    {
+      "liczby": [
+        "784;14196;2247;24087;3871;10192"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

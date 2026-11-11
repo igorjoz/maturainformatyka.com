@@ -1,0 +1,43 @@
+{
+  "id": "informatyka-2025-maj-formula-2023-rozszerzona-4",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "a5b21777ca5ed8b9b74cc20909c83c1a051808f89761428d329c1f9c55da9e8b",
+  "fields": [
+    {
+      "id": "wybor",
+      "label": "Właściwa odpowiedź",
+      "kind": "single",
+      "target": "[data-practice=\"wybor\"]",
+      "options": [
+        {
+          "value": "A",
+          "label": "A",
+          "selector": "li:nth-child(1)"
+        },
+        {
+          "value": "B",
+          "label": "B",
+          "selector": "li:nth-child(2)"
+        },
+        {
+          "value": "C",
+          "label": "C",
+          "selector": "li:nth-child(3)"
+        },
+        {
+          "value": "D",
+          "label": "D",
+          "selector": "li:nth-child(4)"
+        }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "wybor": [
+        "D"
+      ]
+    }
+  ]
+}

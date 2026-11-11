@@ -1,0 +1,30 @@
+{
+  "id": "informatyka-2022-grudzien-probna-formula-2023-rozszerzona-4-3",
+  "mode": "interactive",
+  "reason": "Jednoznaczne wyniki CKE; porównanie wartości pól. Sprawdzamy wynik, bez oceny programu ani plików.",
+  "gradingSha256": "79a9903d99df3c5e11ddbe738a85d2fd6414a35c6a87e6cc1746e61ab09ce413",
+  "fields": [
+    {
+      "id": "wynik-1",
+      "label": "a) Liczba dni pobierania wody z wodociągów",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-1\"]"
+    },
+    {
+      "id": "wynik-2",
+      "label": "b) Łączna liczba litrów pobranych z wodociągów",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-2\"]"
+    }
+  ],
+  "variants": [
+    {
+      "wynik-1": [
+        "93"
+      ],
+      "wynik-2": [
+        "19152"
+      ]
+    }
+  ]
+}

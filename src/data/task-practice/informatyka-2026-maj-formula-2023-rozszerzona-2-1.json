@@ -1,0 +1,30 @@
+{
+  "id": "informatyka-2026-maj-formula-2023-rozszerzona-2-1",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "9cf0e99f89143139fe6d2704e98c88311a25a1cc643787316cefd18d3c301a56",
+  "fields": [
+    {
+      "id": "p88765",
+      "label": "Liczba przeniesień dla 88765 + 11111",
+      "kind": "number",
+      "target": "[data-practice=\"p88765\"]"
+    },
+    {
+      "id": "p456789",
+      "label": "Liczba przeniesień dla 456789 + 222222",
+      "kind": "number",
+      "target": "[data-practice=\"p456789\"]"
+    }
+  ],
+  "variants": [
+    {
+      "p88765": [
+        "0"
+      ],
+      "p456789": [
+        "3"
+      ]
+    }
+  ]
+}

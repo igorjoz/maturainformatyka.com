@@ -1,0 +1,48 @@
+{
+  "id": "informatyka-2022-marzec-pokazowa-formula-2023-rozszerzona-5-1",
+  "mode": "interactive",
+  "reason": "Jednoznaczne wyniki CKE; porównanie wartości pól. Sprawdzamy wynik, bez oceny programu ani plików.",
+  "gradingSha256": "652ac8b9573d27d66ef0efae17dd68468fbc74657754a19d748775b3e95af268",
+  "fields": [
+    {
+      "id": "wynik-1",
+      "label": "Liczba wpłynięć w roku 2016",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-1\"]"
+    },
+    {
+      "id": "wynik-2",
+      "label": "Liczba wpłynięć w roku 2017",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-2\"]"
+    },
+    {
+      "id": "wynik-3",
+      "label": "Liczba wpłynięć w roku 2018",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-3\"]"
+    },
+    {
+      "id": "wynik-4",
+      "label": "Liczba wpłynięć w roku 2019",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-4\"]"
+    }
+  ],
+  "variants": [
+    {
+      "wynik-1": [
+        "2531"
+      ],
+      "wynik-2": [
+        "2522"
+      ],
+      "wynik-3": [
+        "2449"
+      ],
+      "wynik-4": [
+        "2532"
+      ]
+    }
+  ]
+}

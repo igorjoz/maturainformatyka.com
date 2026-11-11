@@ -1,0 +1,39 @@
+{
+  "id": "informatyka-2022-grudzien-probna-formula-2023-rozszerzona-1-2",
+  "mode": "interactive",
+  "reason": "Jednoznaczne wyniki CKE; porównanie wartości pól. Sprawdzamy wynik, bez oceny programu ani plików.",
+  "gradingSha256": "4f8d5f7e9a89dd141fbee1f87dbc7019f003627e528fd2b3fbe73a7c8b58a7d0",
+  "fields": [
+    {
+      "id": "druzyna",
+      "label": "Drużyna, która wygrała pierwszy set",
+      "kind": "text",
+      "target": "[data-practice=\"druzyna\"]"
+    },
+    {
+      "id": "punkty-a",
+      "label": "Punkty drużyny A",
+      "kind": "number",
+      "target": "[data-practice=\"punkty-a\"]"
+    },
+    {
+      "id": "punkty-b",
+      "label": "Punkty drużyny B",
+      "kind": "number",
+      "target": "[data-practice=\"punkty-b\"]"
+    }
+  ],
+  "variants": [
+    {
+      "druzyna": [
+        "B"
+      ],
+      "punkty-a": [
+        "1001"
+      ],
+      "punkty-b": [
+        "1004"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+---
+import type { ExamTaskGroup } from '../data/tasks';
+interface Props { groups: ExamTaskGroup[]; position: 'top' | 'bottom' }
+const { groups, position } = Astro.props;
+---
+<nav class="exam-reader-controls" aria-label={position === 'top' ? 'Wybór zadania — nad treścią' : 'Wybór zadania — pod treścią'}>
+  <div class="exam-reader-select">
+    <label class="sr-only" for={`exam-task-${position}`}>Wybierz zadanie</label>
+    <select id={`exam-task-${position}`} data-reader-select>{groups.map((group, index) => <option value={group.number}>Zadanie {group.number} ({index + 1} z {groups.length})</option>)}</select>
+  </div>
+  <p class="sr-only" data-reader-count aria-live={position === 'top' ? 'polite' : 'off'} aria-atomic="true"></p>
+  <div class="exam-reader-buttons"><button type="button" data-reader-previous aria-label="Poprzednie zadanie"><span aria-hidden="true">←</span><span class="exam-reader-button-label"> Poprzednie</span></button><button type="button" data-reader-next aria-label="Następne zadanie"><span class="exam-reader-button-label">Następne </span><span aria-hidden="true">→</span></button></div>
+</nav>

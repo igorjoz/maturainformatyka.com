@@ -1,0 +1,34 @@
+{
+  "id": "informatyka-2026-maj-formula-2023-rozszerzona-8-4",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "d3135cfb24851712eb4d17b3918a8bd20fd32fc39f011b8ac464b48737f126c4",
+  "fields": [
+    {
+      "id": "sprzedawca",
+      "label": "IdSprzedawcy",
+      "kind": "number",
+      "target": "[data-practice=\"sprzedawca\"]"
+    },
+    {
+      "id": "miesiac",
+      "label": "Miesiąc (nazwa lub numer)",
+      "kind": "text",
+      "target": "[data-practice=\"miesiac\"]"
+    }
+  ],
+  "variants": [
+    {
+      "sprzedawca": [
+        "14"
+      ],
+      "miesiac": [
+        "styczeń",
+        "styczen",
+        "1",
+        "01"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

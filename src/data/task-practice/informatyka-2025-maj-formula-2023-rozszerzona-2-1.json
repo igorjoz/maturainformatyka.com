@@ -1,0 +1,67 @@
+{
+  "id": "informatyka-2025-maj-formula-2023-rozszerzona-2-1",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "c5bf36b13168f75c88c697af93f5c961d3cd7f9fcd1215c2b5b609ca25161542",
+  "fields": [
+    {
+      "id": "palindrom1",
+      "label": "Palindrom 1 (kolejność z pliku)",
+      "kind": "text",
+      "target": "[data-practice=\"palindrom1\"]"
+    },
+    {
+      "id": "palindrom2",
+      "label": "Palindrom 2 (kolejność z pliku)",
+      "kind": "text",
+      "target": "[data-practice=\"palindrom2\"]"
+    },
+    {
+      "id": "palindrom3",
+      "label": "Palindrom 3 (kolejność z pliku)",
+      "kind": "text",
+      "target": "[data-practice=\"palindrom3\"]"
+    },
+    {
+      "id": "palindrom4",
+      "label": "Palindrom 4 (kolejność z pliku)",
+      "kind": "text",
+      "target": "[data-practice=\"palindrom4\"]"
+    },
+    {
+      "id": "palindrom5",
+      "label": "Palindrom 5 (kolejność z pliku)",
+      "kind": "text",
+      "target": "[data-practice=\"palindrom5\"]"
+    },
+    {
+      "id": "palindrom6",
+      "label": "Palindrom 6 (kolejność z pliku)",
+      "kind": "text",
+      "target": "[data-practice=\"palindrom6\"]"
+    }
+  ],
+  "variants": [
+    {
+      "palindrom1": [
+        "++o+o++o+o++"
+      ],
+      "palindrom2": [
+        "+*+**++**+*+"
+      ],
+      "palindrom3": [
+        "*+o++**++o+*"
+      ],
+      "palindrom4": [
+        "*oo*o**o*oo*"
+      ],
+      "palindrom5": [
+        "+*++*oo*++*+"
+      ],
+      "palindrom6": [
+        "+o++oooo++o+"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

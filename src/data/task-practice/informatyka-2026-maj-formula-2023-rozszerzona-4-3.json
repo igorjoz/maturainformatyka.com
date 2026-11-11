@@ -1,0 +1,31 @@
+{
+  "id": "informatyka-2026-maj-formula-2023-rozszerzona-4-3",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "c0c2aaf0820504eefc4d5b4f6d59b1d524827c2459611b66014e20e03d4f9f6d",
+  "fields": [
+    {
+      "id": "numer",
+      "label": "Numer pracownika",
+      "kind": "number",
+      "target": "[data-practice=\"numer\"]"
+    },
+    {
+      "id": "podwladni",
+      "label": "Liczba bezpośrednich podwładnych",
+      "kind": "number",
+      "target": "[data-practice=\"podwladni\"]"
+    }
+  ],
+  "variants": [
+    {
+      "numer": [
+        "2"
+      ],
+      "podwladni": [
+        "19"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

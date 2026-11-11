@@ -1,0 +1,66 @@
+{
+  "id": "informatyka-2025-maj-formula-2023-rozszerzona-1-1",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "eab941076d8c56ee82021fda143b98ca265f127ac7d5af218d09d4951183b970",
+  "fields": [
+    {
+      "id": "f43657688",
+      "label": "przestaw(43657688)",
+      "kind": "number",
+      "target": "[data-practice=\"f43657688\"]"
+    },
+    {
+      "id": "ile43657688",
+      "label": "Liczba wywołań dla n = 43657688",
+      "kind": "number",
+      "target": "[data-practice=\"ile43657688\"]"
+    },
+    {
+      "id": "f154005710",
+      "label": "przestaw(154005710)",
+      "kind": "number",
+      "target": "[data-practice=\"f154005710\"]"
+    },
+    {
+      "id": "ile154005710",
+      "label": "Liczba wywołań dla n = 154005710",
+      "kind": "number",
+      "target": "[data-practice=\"ile154005710\"]"
+    },
+    {
+      "id": "f998877665544321",
+      "label": "przestaw(998877665544321)",
+      "kind": "number",
+      "target": "[data-practice=\"f998877665544321\"]"
+    },
+    {
+      "id": "ile998877665544321",
+      "label": "Liczba wywołań dla n = 998877665544321",
+      "kind": "number",
+      "target": "[data-practice=\"ile998877665544321\"]"
+    }
+  ],
+  "variants": [
+    {
+      "f43657688": [
+        "34566788"
+      ],
+      "ile43657688": [
+        "4"
+      ],
+      "f154005710": [
+        "145007501"
+      ],
+      "ile154005710": [
+        "5"
+      ],
+      "f998877665544321": [
+        "989786756453412"
+      ],
+      "ile998877665544321": [
+        "8"
+      ]
+    }
+  ]
+}

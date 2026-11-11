@@ -1,0 +1,157 @@
+{
+  "id": "informatyka-2024-maj-formula-2023-rozszerzona-8-3",
+  "mode": "interactive",
+  "reason": "Osiem par rejestracja–imię i nazwisko, 16 edytowalnych pól. Kolejność alfabetyczna numerów rejestracyjnych jest wymagana w poleceniu CKE.",
+  "gradingSha256": "c2b509250da5d3279875fd0a0a5e9a6d6a18e349889ca0e8c9b6a221391ff548",
+  "fields": [
+    {
+      "id": "rejestracja1",
+      "label": "Wiersz 1 — numer rejestracyjny",
+      "kind": "text",
+      "target": "[data-practice=\"rejestracja1\"]"
+    },
+    {
+      "id": "kierowca1",
+      "label": "Wiersz 1 — imię i nazwisko właściciela",
+      "kind": "text",
+      "target": "[data-practice=\"kierowca1\"]"
+    },
+    {
+      "id": "rejestracja2",
+      "label": "Wiersz 2 — numer rejestracyjny",
+      "kind": "text",
+      "target": "[data-practice=\"rejestracja2\"]"
+    },
+    {
+      "id": "kierowca2",
+      "label": "Wiersz 2 — imię i nazwisko właściciela",
+      "kind": "text",
+      "target": "[data-practice=\"kierowca2\"]"
+    },
+    {
+      "id": "rejestracja3",
+      "label": "Wiersz 3 — numer rejestracyjny",
+      "kind": "text",
+      "target": "[data-practice=\"rejestracja3\"]"
+    },
+    {
+      "id": "kierowca3",
+      "label": "Wiersz 3 — imię i nazwisko właściciela",
+      "kind": "text",
+      "target": "[data-practice=\"kierowca3\"]"
+    },
+    {
+      "id": "rejestracja4",
+      "label": "Wiersz 4 — numer rejestracyjny",
+      "kind": "text",
+      "target": "[data-practice=\"rejestracja4\"]"
+    },
+    {
+      "id": "kierowca4",
+      "label": "Wiersz 4 — imię i nazwisko właściciela",
+      "kind": "text",
+      "target": "[data-practice=\"kierowca4\"]"
+    },
+    {
+      "id": "rejestracja5",
+      "label": "Wiersz 5 — numer rejestracyjny",
+      "kind": "text",
+      "target": "[data-practice=\"rejestracja5\"]"
+    },
+    {
+      "id": "kierowca5",
+      "label": "Wiersz 5 — imię i nazwisko właściciela",
+      "kind": "text",
+      "target": "[data-practice=\"kierowca5\"]"
+    },
+    {
+      "id": "rejestracja6",
+      "label": "Wiersz 6 — numer rejestracyjny",
+      "kind": "text",
+      "target": "[data-practice=\"rejestracja6\"]"
+    },
+    {
+      "id": "kierowca6",
+      "label": "Wiersz 6 — imię i nazwisko właściciela",
+      "kind": "text",
+      "target": "[data-practice=\"kierowca6\"]"
+    },
+    {
+      "id": "rejestracja7",
+      "label": "Wiersz 7 — numer rejestracyjny",
+      "kind": "text",
+      "target": "[data-practice=\"rejestracja7\"]"
+    },
+    {
+      "id": "kierowca7",
+      "label": "Wiersz 7 — imię i nazwisko właściciela",
+      "kind": "text",
+      "target": "[data-practice=\"kierowca7\"]"
+    },
+    {
+      "id": "rejestracja8",
+      "label": "Wiersz 8 — numer rejestracyjny",
+      "kind": "text",
+      "target": "[data-practice=\"rejestracja8\"]"
+    },
+    {
+      "id": "kierowca8",
+      "label": "Wiersz 8 — imię i nazwisko właściciela",
+      "kind": "text",
+      "target": "[data-practice=\"kierowca8\"]"
+    }
+  ],
+  "variants": [
+    {
+      "rejestracja1": [
+        "BHW4028"
+      ],
+      "kierowca1": [
+        "Sandra Wheeler"
+      ],
+      "rejestracja2": [
+        "CJX1859"
+      ],
+      "kierowca2": [
+        "Quynn Travis"
+      ],
+      "rejestracja3": [
+        "KNM7950"
+      ],
+      "kierowca3": [
+        "Jasper Santos"
+      ],
+      "rejestracja4": [
+        "NIP6570"
+      ],
+      "kierowca4": [
+        "Honorato Roth"
+      ],
+      "rejestracja5": [
+        "QFR8936"
+      ],
+      "kierowca5": [
+        "Ivy Bowen"
+      ],
+      "rejestracja6": [
+        "SRU9727"
+      ],
+      "kierowca6": [
+        "Helen White"
+      ],
+      "rejestracja7": [
+        "XHK9060"
+      ],
+      "kierowca7": [
+        "Quentin Tyler"
+      ],
+      "rejestracja8": [
+        "YYS1077"
+      ],
+      "kierowca8": [
+        "Kevin Wright"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

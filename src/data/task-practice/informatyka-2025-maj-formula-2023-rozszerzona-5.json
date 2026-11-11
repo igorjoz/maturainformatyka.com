@@ -1,0 +1,72 @@
+{
+  "id": "informatyka-2025-maj-formula-2023-rozszerzona-5",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "09a25229eed52cfee049f2227fc8949380e17fcc1e4cbd2a35b39854441bfa3f",
+  "fields": [
+    {
+      "id": "cyfra1",
+      "label": "Brakująca cyfra 1, od góry i od lewej",
+      "kind": "number",
+      "target": "[data-practice=\"cyfra1\"]",
+      "base": 2
+    },
+    {
+      "id": "cyfra2",
+      "label": "Brakująca cyfra 2, od góry i od lewej",
+      "kind": "number",
+      "target": "[data-practice=\"cyfra2\"]",
+      "base": 2
+    },
+    {
+      "id": "cyfra3",
+      "label": "Brakująca cyfra 3, od góry i od lewej",
+      "kind": "number",
+      "target": "[data-practice=\"cyfra3\"]",
+      "base": 2
+    },
+    {
+      "id": "cyfra4",
+      "label": "Brakująca cyfra 4, od góry i od lewej",
+      "kind": "number",
+      "target": "[data-practice=\"cyfra4\"]",
+      "base": 2
+    },
+    {
+      "id": "cyfra5",
+      "label": "Brakująca cyfra 5, od góry i od lewej",
+      "kind": "number",
+      "target": "[data-practice=\"cyfra5\"]",
+      "base": 2
+    },
+    {
+      "id": "cyfra6",
+      "label": "Brakująca cyfra 6, od góry i od lewej",
+      "kind": "number",
+      "target": "[data-practice=\"cyfra6\"]",
+      "base": 2
+    }
+  ],
+  "variants": [
+    {
+      "cyfra1": [
+        "0"
+      ],
+      "cyfra2": [
+        "1"
+      ],
+      "cyfra3": [
+        "1"
+      ],
+      "cyfra4": [
+        "0"
+      ],
+      "cyfra5": [
+        "0"
+      ],
+      "cyfra6": [
+        "0"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "id": "informatyka-2023-maj-formula-2023-rozszerzona-7-2",
+  "mode": "interactive",
+  "reason": "Dziesięć gier z ich średnimi (20 pól), uporządkowanych według nazw z danych. Jawne warianty polskiej pisowni dwóch nazw.",
+  "gradingSha256": "4ed37678a7a8c6e1e75bf9ace7c9c63390fcc674a509f3a8ab64e9a864853055",
+  "fields": [
+    {
+      "id": "gra-1",
+      "label": "Gra 1 — nazwa",
+      "kind": "text",
+      "target": "[data-practice=\"gra-1\"]"
+    },
+    {
+      "id": "ocena-1",
+      "label": "Gra 1 — średnia ocena",
+      "kind": "number",
+      "target": "[data-practice=\"ocena-1\"]"
+    },
+    {
+      "id": "gra-2",
+      "label": "Gra 2 — nazwa",
+      "kind": "text",
+      "target": "[data-practice=\"gra-2\"]"
+    },
+    {
+      "id": "ocena-2",
+      "label": "Gra 2 — średnia ocena",
+      "kind": "number",
+      "target": "[data-practice=\"ocena-2\"]"
+    },
+    {
+      "id": "gra-3",
+      "label": "Gra 3 — nazwa",
+      "kind": "text",
+      "target": "[data-practice=\"gra-3\"]"
+    },
+    {
+      "id": "ocena-3",
+      "label": "Gra 3 — średnia ocena",
+      "kind": "number",
+      "target": "[data-practice=\"ocena-3\"]"
+    },
+    {
+      "id": "gra-4",
+      "label": "Gra 4 — nazwa",
+      "kind": "text",
+      "target": "[data-practice=\"gra-4\"]"
+    },
+    {
+      "id": "ocena-4",
+      "label": "Gra 4 — średnia ocena",
+      "kind": "number",
+      "target": "[data-practice=\"ocena-4\"]"
+    },
+    {
+      "id": "gra-5",
+      "label": "Gra 5 — nazwa",
+      "kind": "text",
+      "target": "[data-practice=\"gra-5\"]"
+    },
+    {
+      "id": "ocena-5",
+      "label": "Gra 5 — średnia ocena",
+      "kind": "number",
+      "target": "[data-practice=\"ocena-5\"]"
+    },
+    {
+      "id": "gra-6",
+      "label": "Gra 6 — nazwa",
+      "kind": "text",
+      "target": "[data-practice=\"gra-6\"]"
+    },
+    {
+      "id": "ocena-6",
+      "label": "Gra 6 — średnia ocena",
+      "kind": "number",
+      "target": "[data-practice=\"ocena-6\"]"
+    },
+    {
+      "id": "gra-7",
+      "label": "Gra 7 — nazwa",
+      "kind": "text",
+      "target": "[data-practice=\"gra-7\"]"
+    },
+    {
+      "id": "ocena-7",
+      "label": "Gra 7 — średnia ocena",
+      "kind": "number",
+      "target": "[data-practice=\"ocena-7\"]"
+    },
+    {
+      "id": "gra-8",
+      "label": "Gra 8 — nazwa",
+      "kind": "text",
+      "target": "[data-practice=\"gra-8\"]"
+    },
+    {
+      "id": "ocena-8",
+      "label": "Gra 8 — średnia ocena",
+      "kind": "number",
+      "target": "[data-practice=\"ocena-8\"]"
+    },
+    {
+      "id": "gra-9",
+      "label": "Gra 9 — nazwa",
+      "kind": "text",
+      "target": "[data-practice=\"gra-9\"]"
+    },
+    {
+      "id": "ocena-9",
+      "label": "Gra 9 — średnia ocena",
+      "kind": "number",
+      "target": "[data-practice=\"ocena-9\"]"
+    },
+    {
+      "id": "gra-10",
+      "label": "Gra 10 — nazwa",
+      "kind": "text",
+      "target": "[data-practice=\"gra-10\"]"
+    },
+    {
+      "id": "ocena-10",
+      "label": "Gra 10 — średnia ocena",
+      "kind": "number",
+      "target": "[data-practice=\"ocena-10\"]"
+    }
+  ],
+  "variants": [
+    {
+      "gra-1": [
+        "5 sekund"
+      ],
+      "ocena-1": [
+        "8.16"
+      ],
+      "gra-2": [
+        "Avalone"
+      ],
+      "ocena-2": [
+        "8.25"
+      ],
+      "gra-3": [
+        "Colt Express"
+      ],
+      "ocena-3": [
+        "7.54"
+      ],
+      "gra-4": [
+        "Jenga"
+      ],
+      "ocena-4": [
+        "8.16"
+      ],
+      "gra-5": [
+        "Koncept"
+      ],
+      "ocena-5": [
+        "8.37"
+      ],
+      "gra-6": [
+        "Mamy szpiega"
+      ],
+      "ocena-6": [
+        "8.22"
+      ],
+      "gra-7": [
+        "Przebiegle wielblady",
+        "Przebiegłe wielbłądy"
+      ],
+      "ocena-7": [
+        "7.73"
+      ],
+      "gra-8": [
+        "Sushi Go"
+      ],
+      "ocena-8": [
+        "8.07"
+      ],
+      "gra-9": [
+        "Swiatowy Konflikt",
+        "Światowy Konflikt"
+      ],
+      "ocena-9": [
+        "7.80"
+      ],
+      "gra-10": [
+        "Szeryf z Nottingham"
+      ],
+      "ocena-10": [
+        "7.88"
+      ]
+    }
+  ]
+}

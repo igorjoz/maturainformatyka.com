@@ -1,0 +1,30 @@
+{
+  "id": "informatyka-2024-grudzien-probna-formula-2023-rozszerzona-2-2",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "40d6fab93add29b6de7512dd960cec231b62c68dcbea7ca781ad183a1f13ddfa",
+  "fields": [
+    {
+      "id": "x3",
+      "label": "Największe x dla p = 3",
+      "kind": "number",
+      "target": "[data-practice=\"x3\"]"
+    },
+    {
+      "id": "x4",
+      "label": "Największe x dla p = 4",
+      "kind": "number",
+      "target": "[data-practice=\"x4\"]"
+    }
+  ],
+  "variants": [
+    {
+      "x3": [
+        "96"
+      ],
+      "x4": [
+        "97"
+      ]
+    }
+  ]
+}

@@ -41,6 +41,7 @@ export const site = {
   navigation: [
     { href: '#wspolpraca', label: 'Współpraca' },
     { href: '#zakres', label: 'Zakres' },
+    { href: '/zadania/', label: 'Zadania' },
     { href: '/arkusze/', label: 'Arkusze maturalne' },
     { href: '#o-mnie', label: 'O mnie' },
     { href: '#opinie', label: 'Opinie' },

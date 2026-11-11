@@ -143,3 +143,20 @@ DEPLOY_DRY_RUN=true bash scripts/deploy-hostinger.sh
 ```
 
 A dry run reports transfers and removals without changing hosted files. Deployment overwrites matching files and removes withdrawn routes; it does not create a backup or atomically replace the hosting directory.
+
+## Task catalog and practice
+
+`/zadania/` contains 154 subtasks from seven Formula 2023 exam sets, organized by topic and difficulty. Each task includes its instructions, input files, official answers, and CKE marking criteria. Supported tasks also provide interactive answer checking.
+
+| Command | Purpose |
+| --- | --- |
+| `npm run tasks:validate` | Validate task content, source references, files, and marking criteria |
+| `npm run tasks:test` | Run task validator tests |
+| `npm run tasks:review` | Generate the task classification report |
+| `npm run grading:review` | Generate the marking criteria coverage report |
+| `npm run practice:validate` | Validate practice models and task references |
+| `npm run practice:review` | Generate the practice coverage report |
+
+The build validates both task content and practice models. Answers and marking criteria are rendered during the build; their content is excluded from the catalog search index.
+
+Maintenance documentation: [task catalog](docs/task-catalog.md), [marking criteria](docs/task-grading.md), and [interactive practice](docs/task-practice.md). The report commands generate local Markdown summaries in `.tools/task-reports/`. These outputs are derived from the source data and are not tracked.

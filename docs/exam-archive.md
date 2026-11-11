@@ -2,9 +2,26 @@
 
 The archive is served as static files on the existing hosting platform. `/arkusze/` displays Formula 2023 by default and the full list when JavaScript is disabled. Filters use the `formula`, `year`, `level`, and `kind` query parameters. `formula=all` selects all formulas, and the clear-filters action displays the entire collection. Each exam page has a canonical URL without query parameters. The `powrot` parameter preserves the return address of the filtered list.
 
+## Paper reader
+
+Exam pages provide original downloads, a PDF preview, and a task index. Papers represented in the task catalog also provide an HTML reader, grouped by parent task. Instructions, input-file links, editorial notes, and marking criteria are rendered during the build. Interactive answer checking is available on individual subtask pages.
+
+| Parameter | Behavior |
+| --- | --- |
+| `widok=zadania` | Opens the HTML task reader; PDF is the default |
+| `zadanie=4` | Selects parent task 4 in either mode |
+| `powrot` | Preserves the archive filters and return position |
+| `#podpunkt-4-2` | Identifies a subtask within the HTML reader |
+
+PDF mode links to the first physical `sheetPages` entry using `#page=`. Browser PDF viewers may handle this fragment differently; scrolling inside a PDF does not update task selection. Invalid modes fall back to PDF, and invalid task numbers select the first task. Reader changes participate in browser history; preferences are not stored between papers.
+
+Return links accept only task numbers and anchors belonging to the current paper. Without JavaScript, downloads, PDF previews, and links to individual task pages remain available. Multipart papers retain separate PDF controls.
+
+Reader behavior is covered by `tests/exam-reader.spec.ts`, including history, return links, downloads, marking panels, mobile layouts, and operation without JavaScript.
+
 ## Adding or updating an exam set
 
-The maintenance workflow consists of the following stages:
+Import workflow:
 
 1. Identification of the standard variant in an official CKE, BIP, or OKE archive. The formula and session are verified against the document description rather than inferred solely from the year or server directory. The main session in 2020 took place in June. Formula 2015 and the older formula were used concurrently.
 2. Creation of an entry in `src/data/exam-sources.json` or an update to its `files` list. The `id` and `slug` remain stable because a slug change affects both the exam page and download URLs. Previously published URLs are preserved.
@@ -43,6 +60,6 @@ The import report covers entries in the source inventory. The separate `exam-sou
 
 ## Deployment and hosting verification
 
-The entire `dist/` directory is published, including `pliki/`, the `arkusze/` pages, `sitemap.xml`, and `robots.txt`. The deployment script transfers assets and downloadable documents before all HTML files. Existing `.htaccess` files and older hosted assets are retained.
+The entire `dist/` directory is published, including `pliki/`, the `arkusze/` pages, `sitemap.xml`, and `robots.txt`. The deployment script transfers assets and downloadable documents before all HTML files. Obsolete `index.html` routes under the managed application namespaces are removed after HTML publication. Hosting configuration and older assets are retained; deployment details are documented in [README](../README.md#deployment).
 
 Post-deployment verification covers `/arkusze/`, direct access to an exam page, a local PDF, and a `zestaw.zip` download. Download responses are expected to contain the requested PDF or ZIP content. Existing hosting redirect rules may require adjustment if they intercept the new paths and return HTML instead.

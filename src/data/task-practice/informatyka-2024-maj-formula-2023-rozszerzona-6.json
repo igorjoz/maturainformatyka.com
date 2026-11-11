@@ -1,0 +1,32 @@
+{
+  "id": "informatyka-2024-maj-formula-2023-rozszerzona-6",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "434cf04ff218980e9a771b23d4ae2ce3ba216cacf742ab2bea296ec8427dad9d",
+  "fields": [
+    {
+      "id": "suma",
+      "label": "Suma w systemie trójkowym",
+      "kind": "number",
+      "target": "[data-practice=\"suma\"]",
+      "base": 3
+    },
+    {
+      "id": "roznica",
+      "label": "Różnica w systemie trójkowym",
+      "kind": "number",
+      "target": "[data-practice=\"roznica\"]",
+      "base": 3
+    }
+  ],
+  "variants": [
+    {
+      "suma": [
+        "112020"
+      ],
+      "roznica": [
+        "20211"
+      ]
+    }
+  ]
+}

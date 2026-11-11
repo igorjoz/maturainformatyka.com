@@ -1,0 +1,21 @@
+{
+  "id": "informatyka-2022-marzec-pokazowa-formula-2023-rozszerzona-3-3",
+  "mode": "interactive",
+  "reason": "Jednoznaczne wyniki CKE; porównanie wartości pól. Sprawdzamy wynik, bez oceny programu ani plików.",
+  "gradingSha256": "d76a4a29fcdccab3314df190290826fa052c105b2126a125a5f1110c2c8d4d08",
+  "fields": [
+    {
+      "id": "wynik-1",
+      "label": "Liczba wierszy, w których M jest liczbą pierwszą",
+      "kind": "number",
+      "target": "[data-practice=\"wynik-1\"]"
+    }
+  ],
+  "variants": [
+    {
+      "wynik-1": [
+        "343"
+      ]
+    }
+  ]
+}

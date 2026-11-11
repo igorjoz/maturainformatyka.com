@@ -1,0 +1,96 @@
+{
+  "id": "informatyka-2025-maj-formula-2023-rozszerzona-1-2",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "b06547fdd3ddceb73cdb65dcf8d1f77cc0b009bb9ab2a59bd4f333c3f4eb9142",
+  "fields": [
+    {
+      "id": "zdanie-1",
+      "label": "Zdanie 1",
+      "kind": "single",
+      "target": "[data-practice=\"zdanie-1\"]",
+      "options": [
+        {
+          "value": "P",
+          "label": "Prawda",
+          "selector": "td:nth-child(3)"
+        },
+        {
+          "value": "F",
+          "label": "Fałsz",
+          "selector": "td:nth-child(4)"
+        }
+      ]
+    },
+    {
+      "id": "zdanie-2",
+      "label": "Zdanie 2",
+      "kind": "single",
+      "target": "[data-practice=\"zdanie-2\"]",
+      "options": [
+        {
+          "value": "P",
+          "label": "Prawda",
+          "selector": "td:nth-child(3)"
+        },
+        {
+          "value": "F",
+          "label": "Fałsz",
+          "selector": "td:nth-child(4)"
+        }
+      ]
+    },
+    {
+      "id": "zdanie-3",
+      "label": "Zdanie 3",
+      "kind": "single",
+      "target": "[data-practice=\"zdanie-3\"]",
+      "options": [
+        {
+          "value": "P",
+          "label": "Prawda",
+          "selector": "td:nth-child(3)"
+        },
+        {
+          "value": "F",
+          "label": "Fałsz",
+          "selector": "td:nth-child(4)"
+        }
+      ]
+    },
+    {
+      "id": "zdanie-4",
+      "label": "Zdanie 4",
+      "kind": "single",
+      "target": "[data-practice=\"zdanie-4\"]",
+      "options": [
+        {
+          "value": "P",
+          "label": "Prawda",
+          "selector": "td:nth-child(3)"
+        },
+        {
+          "value": "F",
+          "label": "Fałsz",
+          "selector": "td:nth-child(4)"
+        }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "zdanie-1": [
+        "F"
+      ],
+      "zdanie-2": [
+        "P"
+      ],
+      "zdanie-3": [
+        "P"
+      ],
+      "zdanie-4": [
+        "F"
+      ]
+    }
+  ]
+}

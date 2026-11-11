@@ -1,0 +1,21 @@
+{
+  "id": "informatyka-2026-maj-formula-2023-rozszerzona-7-4",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "55876540915837e71896869bcde21aa119dc8b0099a271e269ebeb42ed693670",
+  "fields": [
+    {
+      "id": "amury",
+      "label": "Najmniejsza liczba amurów",
+      "kind": "number",
+      "target": "[data-practice=\"amury\"]"
+    }
+  ],
+  "variants": [
+    {
+      "amury": [
+        "94"
+      ]
+    }
+  ]
+}

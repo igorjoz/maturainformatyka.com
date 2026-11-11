@@ -1,0 +1,100 @@
+{
+  "id": "informatyka-2023-maj-formula-2023-rozszerzona-1-2",
+  "mode": "interactive",
+  "reason": "Siedem liczb i dwa krótkie wzory; przykłady CKE i podane minimum 5 pozostają nieedytowalne. Jawne warianty zapisu potęgi i odejmowania.",
+  "gradingSha256": "81f9049c0d751dcfe3d99764c968d37c53b8a4c94758ef08715030ef47c2e61f",
+  "fields": [
+    {
+      "id": "n7-min",
+      "label": "7 książek — minimalna liczba półek",
+      "kind": "number",
+      "target": "[data-practice=\"n7-min\"]"
+    },
+    {
+      "id": "n7-max",
+      "label": "7 książek — maksymalna liczba półek",
+      "kind": "number",
+      "target": "[data-practice=\"n7-max\"]"
+    },
+    {
+      "id": "n16-max",
+      "label": "16 książek — maksymalna liczba półek",
+      "kind": "number",
+      "target": "[data-practice=\"n16-max\"]"
+    },
+    {
+      "id": "n31-min",
+      "label": "31 książek — minimalna liczba półek",
+      "kind": "number",
+      "target": "[data-practice=\"n31-min\"]"
+    },
+    {
+      "id": "n31-max",
+      "label": "31 książek — maksymalna liczba półek",
+      "kind": "number",
+      "target": "[data-practice=\"n31-max\"]"
+    },
+    {
+      "id": "n32-min",
+      "label": "32 książki — minimalna liczba półek",
+      "kind": "number",
+      "target": "[data-practice=\"n32-min\"]"
+    },
+    {
+      "id": "n32-max",
+      "label": "32 książki — maksymalna liczba półek",
+      "kind": "number",
+      "target": "[data-practice=\"n32-max\"]"
+    },
+    {
+      "id": "nk-min",
+      "label": "2^k − 1 książek — minimalna liczba półek",
+      "kind": "text",
+      "target": "[data-practice=\"nk-min\"]"
+    },
+    {
+      "id": "nk-max",
+      "label": "2^k − 1 książek — maksymalna liczba półek (potęgę zapisz jako 2^k)",
+      "kind": "text",
+      "target": "[data-practice=\"nk-max\"]"
+    }
+  ],
+  "variants": [
+    {
+      "n7-min": [
+        "3"
+      ],
+      "n7-max": [
+        "7"
+      ],
+      "n16-max": [
+        "16"
+      ],
+      "n31-min": [
+        "5"
+      ],
+      "n31-max": [
+        "31"
+      ],
+      "n32-min": [
+        "6"
+      ],
+      "n32-max": [
+        "32"
+      ],
+      "nk-min": [
+        "k"
+      ],
+      "nk-max": [
+        "2^k-1",
+        "2^k - 1",
+        "2^k−1",
+        "2^k − 1",
+        "2^k–1",
+        "2^k – 1",
+        "2**k-1",
+        "2**k - 1"
+      ]
+    }
+  ]
+}

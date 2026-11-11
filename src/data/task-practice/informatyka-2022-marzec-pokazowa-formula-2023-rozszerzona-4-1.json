@@ -1,0 +1,33 @@
+{
+  "id": "informatyka-2022-marzec-pokazowa-formula-2023-rozszerzona-4-1",
+  "mode": "interactive",
+  "reason": "Jednoznaczne wyniki CKE; porównanie wartości pól. Sprawdzamy wynik, bez oceny programu ani plików.",
+  "gradingSha256": "5e44cfa41bfc3c2b1055f1c6faad09d3c28fd873399fe430110c813defc0503d",
+  "fields": [
+    {
+      "id": "data",
+      "label": "Dzień największej amplitudy (dd.mm.rrrr)",
+      "kind": "text",
+      "target": "[data-practice=\"data\"]"
+    },
+    {
+      "id": "amplituda",
+      "label": "Najwyższa dobowa amplituda temperatury (°C)",
+      "kind": "number",
+      "target": "[data-practice=\"amplituda\"]"
+    }
+  ],
+  "variants": [
+    {
+      "data": [
+        "02.04.2019",
+        "2.04.2019",
+        "2.4.2019",
+        "2019-04-02"
+      ],
+      "amplituda": [
+        "14.8"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "id": "informatyka-2024-maj-formula-2023-rozszerzona-7-1",
+  "mode": "interactive",
+  "reason": "Trzy pary NIP–liczba kilogramów. Akceptowana dowolna kolejność pełnych par; nie dopuszczamy przenoszenia liczby kilogramów między klientami.",
+  "gradingSha256": "9b3f898520347b9a3efdee06b906c296bf3a4db6f6c704b894a2dab9670d1eff",
+  "fields": [
+    {
+      "id": "nip1",
+      "label": "NIP klienta 1",
+      "kind": "text",
+      "target": "[data-practice=\"nip1\"]"
+    },
+    {
+      "id": "kg1",
+      "label": "Zakupione kilogramy klienta 1",
+      "kind": "number",
+      "target": "[data-practice=\"kg1\"]"
+    },
+    {
+      "id": "nip2",
+      "label": "NIP klienta 2",
+      "kind": "text",
+      "target": "[data-practice=\"nip2\"]"
+    },
+    {
+      "id": "kg2",
+      "label": "Zakupione kilogramy klienta 2",
+      "kind": "number",
+      "target": "[data-practice=\"kg2\"]"
+    },
+    {
+      "id": "nip3",
+      "label": "NIP klienta 3",
+      "kind": "text",
+      "target": "[data-practice=\"nip3\"]"
+    },
+    {
+      "id": "kg3",
+      "label": "Zakupione kilogramy klienta 3",
+      "kind": "number",
+      "target": "[data-practice=\"kg3\"]"
+    }
+  ],
+  "variants": [
+    {
+      "nip1": [
+        "164-61-25-530",
+        "1646125530"
+      ],
+      "kg1": [
+        "12185"
+      ],
+      "nip2": [
+        "159-34-45-151",
+        "1593445151"
+      ],
+      "kg2": [
+        "12047"
+      ],
+      "nip3": [
+        "091-99-74-175",
+        "0919974175"
+      ],
+      "kg3": [
+        "11769"
+      ]
+    },
+    {
+      "nip1": [
+        "164-61-25-530",
+        "1646125530"
+      ],
+      "kg1": [
+        "12185"
+      ],
+      "nip2": [
+        "091-99-74-175",
+        "0919974175"
+      ],
+      "kg2": [
+        "11769"
+      ],
+      "nip3": [
+        "159-34-45-151",
+        "1593445151"
+      ],
+      "kg3": [
+        "12047"
+      ]
+    },
+    {
+      "nip1": [
+        "159-34-45-151",
+        "1593445151"
+      ],
+      "kg1": [
+        "12047"
+      ],
+      "nip2": [
+        "164-61-25-530",
+        "1646125530"
+      ],
+      "kg2": [
+        "12185"
+      ],
+      "nip3": [
+        "091-99-74-175",
+        "0919974175"
+      ],
+      "kg3": [
+        "11769"
+      ]
+    },
+    {
+      "nip1": [
+        "159-34-45-151",
+        "1593445151"
+      ],
+      "kg1": [
+        "12047"
+      ],
+      "nip2": [
+        "091-99-74-175",
+        "0919974175"
+      ],
+      "kg2": [
+        "11769"
+      ],
+      "nip3": [
+        "164-61-25-530",
+        "1646125530"
+      ],
+      "kg3": [
+        "12185"
+      ]
+    },
+    {
+      "nip1": [
+        "091-99-74-175",
+        "0919974175"
+      ],
+      "kg1": [
+        "11769"
+      ],
+      "nip2": [
+        "164-61-25-530",
+        "1646125530"
+      ],
+      "kg2": [
+        "12185"
+      ],
+      "nip3": [
+        "159-34-45-151",
+        "1593445151"
+      ],
+      "kg3": [
+        "12047"
+      ]
+    },
+    {
+      "nip1": [
+        "091-99-74-175",
+        "0919974175"
+      ],
+      "kg1": [
+        "11769"
+      ],
+      "nip2": [
+        "159-34-45-151",
+        "1593445151"
+      ],
+      "kg2": [
+        "12047"
+      ],
+      "nip3": [
+        "164-61-25-530",
+        "1646125530"
+      ],
+      "kg3": [
+        "12185"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

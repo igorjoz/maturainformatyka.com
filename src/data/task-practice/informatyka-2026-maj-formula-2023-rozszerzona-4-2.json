@@ -1,0 +1,22 @@
+{
+  "id": "informatyka-2026-maj-formula-2023-rozszerzona-4-2",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "77eea60c151f42c7f9a2e52f58b5b872f63493819d86a133dd6f1d41227e7a7c",
+  "fields": [
+    {
+      "id": "pracownicy",
+      "label": "Liczba pracowników bez podwładnych",
+      "kind": "number",
+      "target": "[data-practice=\"pracownicy\"]"
+    }
+  ],
+  "variants": [
+    {
+      "pracownicy": [
+        "25113"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "warunki-i-petle",
+    "name": "Warunki i pętle",
+    "section": "programowanie"
+  },
+  {
+    "id": "napisy",
+    "name": "Napisy",
+    "section": "programowanie"
+  },
+  {
+    "id": "tablice-i-ciagi",
+    "name": "Tablice i ciągi",
+    "section": "programowanie"
+  },
+  {
+    "id": "pliki",
+    "name": "Pliki",
+    "section": "programowanie"
+  },
+  {
+    "id": "analiza-i-symulacja",
+    "name": "Analiza i symulacja",
+    "section": "algorytmika"
+  },
+  {
+    "id": "wyszukiwanie",
+    "name": "Wyszukiwanie",
+    "section": "algorytmika"
+  },
+  {
+    "id": "sortowanie",
+    "name": "Sortowanie",
+    "section": "algorytmika"
+  },
+  {
+    "id": "rekurencja",
+    "name": "Rekurencja",
+    "section": "algorytmika"
+  },
+  {
+    "id": "zlozonosc",
+    "name": "Złożoność obliczeniowa",
+    "section": "algorytmika"
+  },
+  {
+    "id": "algorytmy-liczbowe",
+    "name": "Algorytmy liczbowe",
+    "section": "algorytmika"
+  },
+  {
+    "id": "formuly",
+    "name": "Formuły",
+    "section": "arkusze-kalkulacyjne"
+  },
+  {
+    "id": "analiza-danych",
+    "name": "Agregacja i analiza danych",
+    "section": "arkusze-kalkulacyjne"
+  },
+  {
+    "id": "daty",
+    "name": "Daty",
+    "section": "arkusze-kalkulacyjne"
+  },
+  {
+    "id": "wykresy",
+    "name": "Wykresy",
+    "section": "arkusze-kalkulacyjne"
+  },
+  {
+    "id": "relacje-i-laczenie-tabel",
+    "name": "Relacje i łączenie tabel",
+    "section": "bazy-danych"
+  },
+  {
+    "id": "filtrowanie",
+    "name": "Filtrowanie",
+    "section": "bazy-danych"
+  },
+  {
+    "id": "grupowanie-i-agregacja",
+    "name": "Grupowanie i agregacja",
+    "section": "bazy-danych"
+  },
+  {
+    "id": "systemy-liczbowe",
+    "name": "Systemy liczbowe",
+    "section": "teoria"
+  },
+  {
+    "id": "reprezentacja-danych",
+    "name": "Reprezentacja danych",
+    "section": "teoria"
+  },
+  {
+    "id": "logika",
+    "name": "Logika",
+    "section": "teoria"
+  },
+  {
+    "id": "sieci-komputerowe",
+    "name": "Sieci komputerowe",
+    "section": "teoria"
+  },
+  {
+    "id": "kryptografia",
+    "name": "Kryptografia",
+    "section": "teoria"
+  },
+  {
+    "id": "prawo-autorskie",
+    "name": "Prawo autorskie",
+    "section": "teoria"
+  },
+  {
+    "id": "bezpieczenstwo-danych",
+    "name": "Bezpieczeństwo danych",
+    "section": "teoria"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "id": "informatyka-2022-grudzien-probna-formula-2023-rozszerzona-2-4",
+  "mode": "interactive",
+  "reason": "Sześć par CKE, czyli 12 wartości; pary w dowolnej kolejności, ze ścisłym zachowaniem x i y w parze. Sprawdzamy wynik programu.",
+  "gradingSha256": "72a84c22b8feb754e70a94e3f2fd99f87d6adea20439a4c49ee4aa0855482953",
+  "fields": [
+    {
+      "id": "lista",
+      "label": "Pary x y, oddzielone średnikami",
+      "kind": "text",
+      "target": "[data-practice=\"lista\"]",
+      "unordered": true
+    }
+  ],
+  "variants": [
+    {
+      "lista": [
+        "47 3044;7650 61204;1 245;7 63669;9125 18250;5 43246"
+      ]
+    }
+  ]
+}

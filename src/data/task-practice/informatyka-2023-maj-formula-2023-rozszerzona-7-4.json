@@ -1,0 +1,98 @@
+{
+  "id": "informatyka-2023-maj-formula-2023-rozszerzona-7-4",
+  "mode": "interactive",
+  "reason": "Jednoznaczne tytuły i liczby ocen; dwa pełne warianty pozwalają podać dwa tytuły juniorów w dowolnej kolejności, bez duplikatów.",
+  "gradingSha256": "d63c263e8d1e8fd48173b19fd15e3e925ce8c80d0329d0f314492e1c152be31b",
+  "fields": [
+    {
+      "id": "junior-1",
+      "label": "Juniorzy — pierwszy tytuł gry",
+      "kind": "text",
+      "target": "[data-practice=\"junior-1\"]"
+    },
+    {
+      "id": "junior-2",
+      "label": "Juniorzy — drugi tytuł gry",
+      "kind": "text",
+      "target": "[data-practice=\"junior-2\"]"
+    },
+    {
+      "id": "junior-oceny",
+      "label": "Juniorzy — największa liczba ocen jednej gry",
+      "kind": "number",
+      "target": "[data-practice=\"junior-oceny\"]"
+    },
+    {
+      "id": "senior",
+      "label": "Seniorzy — tytuł gry",
+      "kind": "text",
+      "target": "[data-practice=\"senior\"]"
+    },
+    {
+      "id": "senior-oceny",
+      "label": "Seniorzy — największa liczba ocen jednej gry",
+      "kind": "number",
+      "target": "[data-practice=\"senior-oceny\"]"
+    },
+    {
+      "id": "weteran",
+      "label": "Weterani — tytuł gry",
+      "kind": "text",
+      "target": "[data-practice=\"weteran\"]"
+    },
+    {
+      "id": "weteran-oceny",
+      "label": "Weterani — największa liczba ocen jednej gry",
+      "kind": "number",
+      "target": "[data-practice=\"weteran-oceny\"]"
+    }
+  ],
+  "variants": [
+    {
+      "junior-1": [
+        "Terraformacja Marsa"
+      ],
+      "junior-2": [
+        "K2"
+      ],
+      "junior-oceny": [
+        "6"
+      ],
+      "senior": [
+        "K2"
+      ],
+      "senior-oceny": [
+        "24"
+      ],
+      "weteran": [
+        "Robinson Crusoe"
+      ],
+      "weteran-oceny": [
+        "28"
+      ]
+    },
+    {
+      "junior-1": [
+        "K2"
+      ],
+      "junior-2": [
+        "Terraformacja Marsa"
+      ],
+      "junior-oceny": [
+        "6"
+      ],
+      "senior": [
+        "K2"
+      ],
+      "senior-oceny": [
+        "24"
+      ],
+      "weteran": [
+        "Robinson Crusoe"
+      ],
+      "weteran-oceny": [
+        "28"
+      ]
+    }
+  ]
+}

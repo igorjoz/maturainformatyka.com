@@ -1,0 +1,49 @@
+{
+  "id": "informatyka-2024-grudzien-probna-formula-2023-rozszerzona-3-3",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "39612239e0e20c7ff38f6472269ab2517e60012dc5897e07096964ab35a42a01",
+  "fields": [
+    {
+      "id": "mniejsze",
+      "label": "Liczba mniejszych różnic",
+      "kind": "number",
+      "target": "[data-practice=\"mniejsze\"]"
+    },
+    {
+      "id": "wieksze",
+      "label": "Liczba większych różnic",
+      "kind": "number",
+      "target": "[data-practice=\"wieksze\"]"
+    },
+    {
+      "id": "rowne",
+      "label": "Liczba równych różnic",
+      "kind": "number",
+      "target": "[data-practice=\"rowne\"]"
+    },
+    {
+      "id": "liczba-rowna",
+      "label": "Liczba równa swojej różnicy",
+      "kind": "number",
+      "target": "[data-practice=\"liczba-rowna\"]"
+    }
+  ],
+  "variants": [
+    {
+      "mniejsze": [
+        "947"
+      ],
+      "wieksze": [
+        "1052"
+      ],
+      "rowne": [
+        "1"
+      ],
+      "liczba-rowna": [
+        "6174"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

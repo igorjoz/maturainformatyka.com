@@ -1,0 +1,22 @@
+{
+  "id": "informatyka-2024-maj-formula-2023-rozszerzona-4-2",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "78e56982db43c09d9655e1053ccf06a3ac6d2ce8f5182e951f34ef408a117708",
+  "fields": [
+    {
+      "id": "liczba",
+      "label": "Sto pierwsza liczba od największej",
+      "kind": "number",
+      "target": "[data-practice=\"liczba\"]"
+    }
+  ],
+  "variants": [
+    {
+      "liczba": [
+        "1933"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

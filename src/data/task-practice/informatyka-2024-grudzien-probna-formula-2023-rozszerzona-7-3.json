@@ -1,0 +1,65 @@
+{
+  "id": "informatyka-2024-grudzien-probna-formula-2023-rozszerzona-7-3",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "f908fd9f474f69b5e769d5471f4bcfc85235b4f198fe28798e081ed1bdc12d42",
+  "fields": [
+    {
+      "id": "poczatek-data",
+      "label": "Data początku przedziału",
+      "kind": "text",
+      "target": "[data-practice=\"poczatek-data\"]"
+    },
+    {
+      "id": "poczatek-godzina",
+      "label": "Godzina początku przedziału",
+      "kind": "text",
+      "target": "[data-practice=\"poczatek-godzina\"]"
+    },
+    {
+      "id": "koniec-data",
+      "label": "Data końca przedziału",
+      "kind": "text",
+      "target": "[data-practice=\"koniec-data\"]"
+    },
+    {
+      "id": "koniec-godzina",
+      "label": "Godzina końca przedziału",
+      "kind": "text",
+      "target": "[data-practice=\"koniec-godzina\"]"
+    }
+  ],
+  "variants": [
+    {
+      "poczatek-data": [
+        "2.04",
+        "02.04",
+        "2.04.2024",
+        "02.04.2024",
+        "2024-04-02",
+        "2.4.2024",
+        "2 kwietnia"
+      ],
+      "poczatek-godzina": [
+        "1",
+        "01",
+        "1:00",
+        "01:00"
+      ],
+      "koniec-data": [
+        "2.04",
+        "02.04",
+        "2.04.2024",
+        "02.04.2024",
+        "2024-04-02",
+        "2.4.2024",
+        "2 kwietnia"
+      ],
+      "koniec-godzina": [
+        "16",
+        "16:00"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

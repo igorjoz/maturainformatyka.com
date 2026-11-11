@@ -1,0 +1,75 @@
+{
+  "id": "informatyka-2022-marzec-pokazowa-formula-2023-rozszerzona-6",
+  "mode": "interactive",
+  "reason": "Wybór P/F dla każdego zdania, zgodnie z kluczem CKE.",
+  "gradingSha256": "6532fc99a0561e3f8920ec70f766c229785ceb46f40b02cf76d2cb572349f931",
+  "fields": [
+    {
+      "id": "zdanie-1",
+      "label": "Zdanie 1: skopiowanie treści z wikipedia.org i użycie jej jako części własnego referatu, z nieznaczną zmianą tak, aby sformułowania nie były dokładnie takie same.",
+      "kind": "single",
+      "target": "[data-practice=\"zdanie-1\"]",
+      "options": [
+        {
+          "value": "P",
+          "label": "Prawda",
+          "selector": "td:nth-child(3)"
+        },
+        {
+          "value": "F",
+          "label": "Fałsz",
+          "selector": "td:nth-child(4)"
+        }
+      ]
+    },
+    {
+      "id": "zdanie-2",
+      "label": "Zdanie 2: użycie na własnym blogu zdjęcia z wikipedia.org z uwagą „zdjęcie pochodzi z wikipedia.org” i identyfikatorem autora.",
+      "kind": "single",
+      "target": "[data-practice=\"zdanie-2\"]",
+      "options": [
+        {
+          "value": "P",
+          "label": "Prawda",
+          "selector": "td:nth-child(3)"
+        },
+        {
+          "value": "F",
+          "label": "Fałsz",
+          "selector": "td:nth-child(4)"
+        }
+      ]
+    },
+    {
+      "id": "zdanie-3",
+      "label": "Zdanie 3: wklejenie własnego referatu jako część odpowiedniego hasła na wikipedia.org.",
+      "kind": "single",
+      "target": "[data-practice=\"zdanie-3\"]",
+      "options": [
+        {
+          "value": "P",
+          "label": "Prawda",
+          "selector": "td:nth-child(3)"
+        },
+        {
+          "value": "F",
+          "label": "Fałsz",
+          "selector": "td:nth-child(4)"
+        }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "zdanie-1": [
+        "F"
+      ],
+      "zdanie-2": [
+        "P"
+      ],
+      "zdanie-3": [
+        "P"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "informatyka-2024-grudzien-probna-formula-2023-rozszerzona-8-3",
+  "mode": "interactive",
+  "reason": "Identyfikator i sześć par numer rejestracyjny–usługa; porównanie całych par, z pominięciem ich kolejności.",
+  "gradingSha256": "4a1edd961c8c237d33e0d9e0d0b266e421e3360347a3844861b44dd15b36ca86",
+  "fields": [
+    {
+      "id": "wlasciciel",
+      "label": "Identyfikator właściciela",
+      "kind": "number",
+      "target": "[data-practice=\"wlasciciel\"]"
+    },
+    {
+      "id": "uslugi",
+      "label": "Numer rejestracyjny i nazwa usługi; kolejne pary oddziel średnikami",
+      "kind": "text",
+      "target": "[data-practice=\"uslugi\"]",
+      "unordered": true
+    }
+  ],
+  "variants": [
+    {
+      "wlasciciel": [
+        "897"
+      ],
+      "uslugi": [
+        "SB 3799 wymiana sprzegla;SB 3799 wymiana amortyzatora tyl;SB 9213 felga stalowa do 16 cali;SB 9213 ozonowanie ukladu klimatyzacji i kabiny;SB 5822 wymiana oleju silnikowego z filtrem;SB 5822 wymiana paska rozrzadu"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

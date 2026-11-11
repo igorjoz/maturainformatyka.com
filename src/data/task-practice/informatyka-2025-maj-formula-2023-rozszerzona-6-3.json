@@ -1,0 +1,32 @@
+{
+  "id": "informatyka-2025-maj-formula-2023-rozszerzona-6-3",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "8041309487e1ae32b3277fc1b6655929f1a7bfb016583b5d00491e8fdffb0388",
+  "fields": [
+    {
+      "id": "masa",
+      "label": "Największa masa w okresie 7 dni (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"masa\"]"
+    },
+    {
+      "id": "data",
+      "label": "Początek okresu",
+      "kind": "text",
+      "target": "[data-practice=\"data\"]"
+    }
+  ],
+  "variants": [
+    {
+      "masa": [
+        "174.5"
+      ],
+      "data": [
+        "13.12.2035",
+        "2035-12-13"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

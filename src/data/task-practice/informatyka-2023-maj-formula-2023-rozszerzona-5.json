@@ -1,0 +1,58 @@
+{
+  "id": "informatyka-2023-maj-formula-2023-rozszerzona-5",
+  "mode": "interactive",
+  "reason": "Wybór znaków porównania; pierwszy wiersz z podanym znakiem równości pozostaje nieedytowalny.",
+  "gradingSha256": "5b7eb7585d467cacf0b658244540cad612218b702539924751a882d81194b48f",
+  "fields": [
+    {
+      "id": "znak-1",
+      "label": "Znak porównania w wierszu 2",
+      "kind": "single",
+      "target": "[data-practice=\"znak-1\"]",
+      "options": [
+        {
+          "value": "<",
+          "label": "<"
+        },
+        {
+          "value": ">",
+          "label": ">"
+        },
+        {
+          "value": "=",
+          "label": "="
+        }
+      ]
+    },
+    {
+      "id": "znak-2",
+      "label": "Znak porównania w wierszu 3",
+      "kind": "single",
+      "target": "[data-practice=\"znak-2\"]",
+      "options": [
+        {
+          "value": "<",
+          "label": "<"
+        },
+        {
+          "value": ">",
+          "label": ">"
+        },
+        {
+          "value": "=",
+          "label": "="
+        }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "znak-1": [
+        "<"
+      ],
+      "znak-2": [
+        "<"
+      ]
+    }
+  ]
+}

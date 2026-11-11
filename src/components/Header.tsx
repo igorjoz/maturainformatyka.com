@@ -6,16 +6,18 @@ export default function Header({
   site,
   logo,
   home = true,
+  activeSection = "/arkusze/",
 }: {
   site: Pick<Site, "navigation">;
   logo: string;
   home?: boolean;
+  activeSection?: string;
 }) {
   const menu = useRef<HTMLDetailsElement>(null);
   const header = useRef<HTMLElement>(null);
   const progress = useRef<HTMLSpanElement>(null);
   const [open, setOpen] = useState(false);
-  const [current, setCurrent] = useState(home ? "" : "/arkusze/");
+  const [current, setCurrent] = useState(home ? "" : activeSection);
   useEffect(() => {
     document.documentElement.classList.add("navigation-enhanced");
     setOpen(menu.current?.open ?? false);
@@ -28,7 +30,7 @@ export default function Header({
       frame = 0;
       if (document.hidden) return;
       const bottom = header.current?.getBoundingClientRect().bottom ?? 88;
-      let active = home ? "" : "/arkusze/";
+      let active = home ? "" : activeSection;
       for (const section of sections)
         if (section.getBoundingClientRect().top <= bottom + innerHeight * 0.18)
           active = `#${section.id}`;
@@ -72,7 +74,7 @@ export default function Header({
       document.removeEventListener("keydown", escape);
       document.documentElement.classList.remove("navigation-enhanced");
     };
-  }, [site.navigation, home]);
+  }, [site.navigation, home, activeSection]);
   const links = site.navigation.map((link) => (
     <a
       key={link.href}

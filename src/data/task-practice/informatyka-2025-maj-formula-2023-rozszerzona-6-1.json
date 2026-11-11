@@ -1,0 +1,31 @@
+{
+  "id": "informatyka-2025-maj-formula-2023-rozszerzona-6-1",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "76ca52663622c55438d9e09fc5bdf760291236507fe48453e935270dd4919bc8",
+  "fields": [
+    {
+      "id": "ladunki",
+      "label": "Łączna masa ładunków (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"ladunki\"]"
+    },
+    {
+      "id": "martianeum",
+      "label": "Łączna masa martianeum (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"martianeum\"]"
+    }
+  ],
+  "variants": [
+    {
+      "ladunki": [
+        "41498.2"
+      ],
+      "martianeum": [
+        "3092.2943"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

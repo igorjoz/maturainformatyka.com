@@ -1,0 +1,14 @@
+---
+interface Props { prefix: string }
+const { prefix } = Astro.props;
+// Markdown documents reuse heading slugs such as "odpowiedź-cke". Scope those
+// anchors at build time when combining documents, without touching code/text.
+const html = (await Astro.slots.render('default')).replace(/<(?:h[1-6]|a)\b[^>]*>/gi, tag =>
+  tag.replace(/\s(id|href)=(["'])(.*?)\2/g, (attribute, name: string, quote: string, value: string) => {
+    if (name === 'id') return ` id=${quote}${prefix}-${value}${quote}`;
+    if (value.startsWith('#')) return ` href=${quote}#${prefix}-${value.slice(1)}${quote}`;
+    return attribute;
+  }),
+);
+---
+<Fragment set:html={html} />

@@ -1,0 +1,45 @@
+{
+  "id": "informatyka-2025-maj-formula-2023-rozszerzona-6-5",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "a7768912cc297b41c5ca1c2e072440c6f9549e3951f10d6859fae36474275fed",
+  "fields": [
+    {
+      "id": "wysylki",
+      "label": "Liczba wysyłek na orbitę",
+      "kind": "number",
+      "target": "[data-practice=\"wysylki\"]"
+    },
+    {
+      "id": "pierwsza",
+      "label": "Data pierwszej wysyłki",
+      "kind": "text",
+      "target": "[data-practice=\"pierwsza\"]"
+    },
+    {
+      "id": "ostatnia",
+      "label": "Data ostatniej wysyłki",
+      "kind": "text",
+      "target": "[data-practice=\"ostatnia\"]"
+    }
+  ],
+  "variants": [
+    {
+      "wysylki": [
+        "30"
+      ],
+      "pierwsza": [
+        "29.05.2033",
+        "2033-05-29",
+        "29.5.2033"
+      ],
+      "ostatnia": [
+        "1.09.2038",
+        "01.09.2038",
+        "2038-09-01",
+        "1.9.2038"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

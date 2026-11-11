@@ -1,0 +1,239 @@
+{
+  "examId": "informatyka-2022-grudzien-probna-formula-2023-rozszerzona",
+  "sheetPages": 16,
+  "gradingPages": 18,
+  "tasks": [
+    {
+      "number": "1.1",
+      "points": 2,
+      "sheetPages": [
+        4
+      ],
+      "gradingPages": [
+        2
+      ]
+    },
+    {
+      "number": "1.2",
+      "points": 3,
+      "sheetPages": [
+        4
+      ],
+      "gradingPages": [
+        3
+      ]
+    },
+    {
+      "number": "1.3",
+      "points": 3,
+      "sheetPages": [
+        4,
+        5
+      ],
+      "gradingPages": [
+        3,
+        4
+      ]
+    },
+    {
+      "number": "2.1",
+      "points": 2,
+      "sheetPages": [
+        6
+      ],
+      "gradingPages": [
+        4
+      ]
+    },
+    {
+      "number": "2.2",
+      "points": 2,
+      "sheetPages": [
+        6
+      ],
+      "gradingPages": [
+        5
+      ]
+    },
+    {
+      "number": "2.3",
+      "points": 1,
+      "sheetPages": [
+        6
+      ],
+      "gradingPages": [
+        5
+      ]
+    },
+    {
+      "number": "2.4",
+      "points": 3,
+      "sheetPages": [
+        6,
+        7
+      ],
+      "gradingPages": [
+        6
+      ]
+    },
+    {
+      "number": "3.1",
+      "points": 3,
+      "sheetPages": [
+        7
+      ],
+      "gradingPages": [
+        7
+      ]
+    },
+    {
+      "number": "3.2",
+      "points": 2,
+      "sheetPages": [
+        8
+      ],
+      "gradingPages": [
+        8
+      ]
+    },
+    {
+      "number": "3.3",
+      "points": 4,
+      "sheetPages": [
+        8
+      ],
+      "gradingPages": [
+        8,
+        9
+      ]
+    },
+    {
+      "number": "3.4",
+      "points": 3,
+      "sheetPages": [
+        9
+      ],
+      "gradingPages": [
+        9,
+        10
+      ]
+    },
+    {
+      "number": "4.1",
+      "points": 2,
+      "sheetPages": [
+        10
+      ],
+      "gradingPages": [
+        10,
+        11
+      ]
+    },
+    {
+      "number": "4.2",
+      "points": 3,
+      "sheetPages": [
+        10
+      ],
+      "gradingPages": [
+        11,
+        12
+      ]
+    },
+    {
+      "number": "4.3",
+      "points": 4,
+      "sheetPages": [
+        11
+      ],
+      "gradingPages": [
+        12,
+        13
+      ]
+    },
+    {
+      "number": "5.1",
+      "points": 2,
+      "sheetPages": [
+        12
+      ],
+      "gradingPages": [
+        13
+      ]
+    },
+    {
+      "number": "5.2",
+      "points": 2,
+      "sheetPages": [
+        12
+      ],
+      "gradingPages": [
+        14
+      ]
+    },
+    {
+      "number": "5.3",
+      "points": 2,
+      "sheetPages": [
+        12
+      ],
+      "gradingPages": [
+        15
+      ]
+    },
+    {
+      "number": "5.4",
+      "points": 1,
+      "sheetPages": [
+        13
+      ],
+      "gradingPages": [
+        16
+      ]
+    },
+    {
+      "number": "5.5",
+      "points": 2,
+      "sheetPages": [
+        13
+      ],
+      "gradingPages": [
+        16
+      ]
+    },
+    {
+      "number": "6",
+      "points": 1,
+      "sheetPages": [
+        14
+      ],
+      "gradingPages": [
+        17
+      ]
+    },
+    {
+      "number": "7",
+      "points": 1,
+      "sheetPages": [
+        14
+      ],
+      "gradingPages": [
+        17
+      ]
+    },
+    {
+      "number": "8",
+      "points": 2,
+      "sheetPages": [
+        14
+      ],
+      "gradingPages": [
+        18
+      ]
+    }
+  ],
+  "sourceSha256": {
+    "sheet": "3b8be27d31a4eced038a3f7b4bbca6272c8263fdbe7c627d0e16f923ff04b10b",
+    "grading": "f05468e571ab3935986036a8ea2b9f00a6870f486ccfeabb5c188a1636d1d54d"
+  }
+}

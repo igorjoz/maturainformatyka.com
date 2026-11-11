@@ -1,0 +1,89 @@
+---
+import { getEntry, render } from 'astro:content';
+import ArchiveLayout from '../../layouts/ArchiveLayout.astro';
+import TaskGrading from '../../components/TaskGrading';
+import { getTasks, taskPath, dataPath } from '../../data/tasks';
+import { difficultyNames } from '../../data/task-query';
+import { examKinds } from '../../data/exams';
+import { getTaskPractice } from '../../data/task-practice';
+export async function getStaticPaths() {
+  return (await getTasks()).map(task => ({ params: { identyfikator: task.id }, props: { task } }));
+}
+const { task } = Astro.props;
+const { Content } = await render(task.entry);
+const { Content: Context } = await render(task.context);
+const allTasks = await getTasks();
+const related = allTasks.filter(item => item.context.id === task.context.id && item.id !== task.id).sort((a,b) => a.number.localeCompare(b.number, 'pl', { numeric: true }));
+const dependencies = task.entry.data.dependencies.map(id => allTasks.find(item => item.id === id)!);
+const prerequisites = await Promise.all(dependencies.map(async item => ({ task: item, ...(await render(item.entry)) })));
+const file = (name: string) => task.exam.files.find(file => file.path.endsWith('/' + name))!;
+const sheet = file(task.context.data.sheetFile);
+const grading = file(task.context.data.gradingFile);
+const data = task.exam.files.find(file => file.kind === 'data');
+const path = taskPath(task);
+const examPath = `/arkusze/${task.exam.slug}/`;
+const examTasks = allTasks.filter(item => item.exam.id === task.exam.id).map(item => ({ number: item.number, parentNumber: item.context.data.number }));
+const practice = getTaskPractice(task.id);
+const interactive = practice?.mode === 'interactive';
+const officialGrading = await getEntry('taskGrading', task.id);
+if (!officialGrading) throw new Error(`Brak oficjalnego oceniania: ${task.id}`);
+const { Content: GradingContent } = await render(officialGrading);
+---
+<ArchiveLayout title={`Zadanie ${task.number}. ${task.title} — informatyka ${task.year}`} description={task.summary} canonical={path} activeSection="/zadania/" compactNavigation breadcrumbs={[{ name: 'Strona główna', path: '/' }, { name: 'Zadania', path: '/zadania/' }, { name: `Zadanie ${task.number} — ${task.year}`, path }]}>
+  <nav slot="navigation" class="task-navigation" aria-label="Ścieżka nawigacji">
+    <a href="/zadania/" class="text-link" data-task-back>← Zadania</a>
+    <span aria-current="page">Zadanie {task.number}</span>
+    <a href={examPath} class="text-link task-exam-link" data-exam-tasks={JSON.stringify(examTasks)}>Cały arkusz <span>{task.year} · {task.exam.sessionLabel}</span> <span aria-hidden="true">↗</span></a>
+  </nav>
+  <header class="task-intro">
+    <h1>{task.number}. {task.title}</h1>
+    <div class="task-metadata"><span>{task.year} · {task.exam.sessionLabel} · {examKinds[task.exam.kind]}</span><span>Formuła 2023</span><span class={`task-difficulty difficulty-${task.difficulty}`}>{difficultyNames[task.difficulty]}</span><strong>{task.points} pkt</strong></div>
+    <div class="task-tags">{task.topics.map(topic => <a href={`/zadania/tematy/${topic.id}/`}>{topic.name}</a>)}</div>
+  </header>
+  <div class="task-workspace">
+    <aside class="task-sidebar" aria-label="Materiały i pomoc w nauce">
+      <details class="task-materials" data-task-materials>
+        <summary>Pliki i arkusz <span aria-hidden="true">⌄</span></summary>
+        <div class="task-materials-body">
+          {task.entry.data.dataFiles.length > 0 && <div class="exam-downloads">{task.entry.data.dataFiles.map(name => <a class="file-link" href={dataPath(task.exam.id, name)} download><span>{name.split('/').at(-1)}</span><small>Plik do zadania ↓</small></a>)}</div>}
+          <div class="task-source-links"><a class="text-link" href={`${sheet.path}#page=${task.entry.data.sheetPages[0]}`} target="_blank" rel="noopener">Polecenie w PDF · str. {task.entry.data.sheetPages[0]} ↗</a>{data && <a class="text-link" href={data.path} download>Wszystkie dane egzaminu ↓</a>}<a class="text-link" href={examPath}>Cały arkusz · {task.year}</a></div>
+        </div>
+      </details>
+    </aside>
+    <div class="task-main">
+      {task.entry.data.editorialNote && <aside class="archive-notice"><h2>Uwaga o materiale źródłowym</h2><p>{task.entry.data.editorialNote}</p></aside>}
+      <form data-practice-form novalidate>
+        <article class="task-content task-rich-text" aria-label="Treść zadania CKE">
+          <span class="sr-only">ORYGINALNE POLECENIE CKE</span>
+          {task.context.body?.trim() && <section aria-labelledby="task-context-title"><h2 id="task-context-title">Wprowadzenie</h2><Context /></section>}
+          {prerequisites.length > 0 && <section class="task-prerequisites"><h2>Kontekst wcześniejszych podpunktów</h2>{prerequisites.map(({ task: prerequisite, Content: Prerequisite }) => <section><h3><a href={taskPath(prerequisite)} data-related-task>Zadanie {prerequisite.number}</a></h3><Prerequisite /></section>)}</section>}
+          <section aria-labelledby="task-command"><h2 id="task-command">Polecenie</h2><div id="task-command-content"><Content /></div></section>
+          {interactive && <div class="practice-actions" data-practice-actions hidden>
+            <p class="practice-note">{practice.note ?? (task.entry.data.dataFiles.length > 0 ? 'Sprawdź wynik z kluczem CKE. Program i sposób rozwiązania oceń według zasad poniżej.' : 'Sprawdź odpowiedź lub spróbuj ponownie. Punktację znajdziesz w zasadach CKE poniżej.')}</p>
+            <div class="practice-buttons"><button type="submit" class="button practice-submit">Sprawdź <span aria-hidden="true">✓</span></button><button type="button" data-show-answer>Pokaż odpowiedź</button><button type="reset" class="practice-reset">Od nowa</button></div>
+            <div class="practice-feedback" data-practice-status role="status" aria-live="polite" aria-atomic="true"></div>
+            <div class="practice-confetti" data-practice-confetti aria-hidden="true"></div>
+          </div>}
+        </article>
+      </form>
+      <TaskGrading answerStatus={officialGrading.data.answerStatus} editorialNote={officialGrading.data.editorialNote} sourceHref={`${grading.path}#page=${task.entry.data.gradingPages[0]}`} sourcePage={task.entry.data.gradingPages[0]}><GradingContent /></TaskGrading>
+      {related.length > 0 && <nav class="task-related" aria-label="Pozostałe podpunkty"><h2>Pozostałe podpunkty zadania {task.context.data.number}</h2><ul>{related.map(item => <li><a class="text-link" href={taskPath(item)} data-related-task>{item.number}. {item.title}</a></li>)}</ul></nav>}
+    </div>
+    <div class="task-tutoring"><p>Potrzebujesz pomocy w przygotowaniu do matury?</p><a class="text-link" href="/#oferta">Zobacz korepetycje <span aria-hidden="true">→</span></a></div>
+  </div>
+  <aside class="archive-source task-attribution"><p>Materiały i odpowiedzi: <abbr title="Centralna Komisja Egzaminacyjna">CKE</abbr></p><ul>{task.exam.sourcePages.map(source => <li><a href={source} target="_blank" rel="noopener">Oficjalne źródło egzaminu ↗</a></li>)}</ul><p class="archive-note">Tytuły, opisy i klasyfikacja tematów: opracowanie serwisu. Trudność jest oceną redakcyjną dla matury rozszerzonej.</p></aside>
+  {interactive && <script id="task-practice-data" type="application/json" set:html={JSON.stringify(practice).replace(/</g, '\\u003c')} />}
+</ArchiveLayout>
+<script>
+  import { restoreTaskReturn } from '../../scripts/task-return';
+  import '../../scripts/task-practice';
+  import { onPageLoad } from '../../scripts/page-lifecycle';
+  onPageLoad((signal) => {
+    restoreTaskReturn();
+    const materials = document.querySelector<HTMLDetailsElement>('[data-task-materials]');
+    const desktop = matchMedia('(min-width: 1200px)');
+    const arrangeMaterials = () => { if (materials) materials.open = desktop.matches; };
+    arrangeMaterials();
+    desktop.addEventListener('change', arrangeMaterials, { signal });
+  });
+</script>

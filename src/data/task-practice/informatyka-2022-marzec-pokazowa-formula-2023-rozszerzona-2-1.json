@@ -1,0 +1,69 @@
+{
+  "id": "informatyka-2022-marzec-pokazowa-formula-2023-rozszerzona-2-1",
+  "mode": "interactive",
+  "reason": "Uzupełnianie wyłącznie pustych komórek; komórki przykładowe pozostają nieedytowalne.",
+  "gradingSha256": "4b3c3316853eda62f6645b9287bc1c034985aea98d628cd9c176e2996b1bd583",
+  "fields": [
+    {
+      "id": "s-14",
+      "label": "Czy gra dla A = [1,2,5,10], s = 14 kończy się sukcesem?",
+      "kind": "single",
+      "target": "[data-practice=\"s-14\"]",
+      "options": [
+        {
+          "value": "TAK",
+          "label": "TAK"
+        },
+        {
+          "value": "NIE",
+          "label": "NIE"
+        }
+      ]
+    },
+    {
+      "id": "s-17",
+      "label": "Czy gra dla A = [13,5,5,2,7], s = 17 kończy się sukcesem?",
+      "kind": "single",
+      "target": "[data-practice=\"s-17\"]",
+      "options": [
+        {
+          "value": "TAK",
+          "label": "TAK"
+        },
+        {
+          "value": "NIE",
+          "label": "NIE"
+        }
+      ]
+    },
+    {
+      "id": "s-25",
+      "label": "Czy gra dla A = [7,6,5,4,3,2,1], s = 25 kończy się sukcesem?",
+      "kind": "single",
+      "target": "[data-practice=\"s-25\"]",
+      "options": [
+        {
+          "value": "TAK",
+          "label": "TAK"
+        },
+        {
+          "value": "NIE",
+          "label": "NIE"
+        }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "s-14": [
+        "NIE"
+      ],
+      "s-17": [
+        "TAK"
+      ],
+      "s-25": [
+        "TAK"
+      ]
+    }
+  ]
+}

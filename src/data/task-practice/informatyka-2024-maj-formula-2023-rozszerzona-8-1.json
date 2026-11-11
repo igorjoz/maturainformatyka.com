@@ -1,0 +1,31 @@
+{
+  "id": "informatyka-2024-maj-formula-2023-rozszerzona-8-1",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "a8f3b77371ae28e7434fcbb116674c3147e5ac4c0e7698f2554d79b33b7356e8",
+  "fields": [
+    {
+      "id": "kierowca",
+      "label": "Imię i nazwisko kierowcy",
+      "kind": "text",
+      "target": "[data-practice=\"kierowca\"]"
+    },
+    {
+      "id": "suma",
+      "label": "Suma mandatów (zł)",
+      "kind": "number",
+      "target": "[data-practice=\"suma\"]"
+    }
+  ],
+  "variants": [
+    {
+      "kierowca": [
+        "Rafael Blake"
+      ],
+      "suma": [
+        "3700"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

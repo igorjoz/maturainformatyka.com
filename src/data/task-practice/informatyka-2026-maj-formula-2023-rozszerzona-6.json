@@ -1,0 +1,30 @@
+{
+  "id": "informatyka-2026-maj-formula-2023-rozszerzona-6",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "7a8a02ae1b09d892d41b235157dc963ea768d5a51a7440bf92bb8de83aa7bd2a",
+  "fields": [
+    {
+      "id": "ipv4",
+      "label": "Długość adresu IPv4 w bitach",
+      "kind": "number",
+      "target": "[data-practice=\"ipv4\"]"
+    },
+    {
+      "id": "ipv6",
+      "label": "Długość adresu IPv6 w bitach",
+      "kind": "number",
+      "target": "[data-practice=\"ipv6\"]"
+    }
+  ],
+  "variants": [
+    {
+      "ipv4": [
+        "32"
+      ],
+      "ipv6": [
+        "128"
+      ]
+    }
+  ]
+}

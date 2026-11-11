@@ -1,20 +1,23 @@
 ---
 import '@fontsource-variable/manrope';
+import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 import '../styles/refresh.css';
 import '../styles/archive.css';
+import '../styles/tasks.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import logo from '../assets/logo-book-code.png';
 import { site } from '../data/site';
-interface Props { title: string; description: string; canonical: string; breadcrumbs: { name: string; path: string }[] }
-const { title, description, canonical, breadcrumbs } = Astro.props;
+interface Props { title: string; description: string; canonical: string; breadcrumbs: { name: string; path: string }[]; activeSection?: string; compactNavigation?: boolean; catalogPage?: boolean }
+const { title, description, canonical, breadcrumbs, activeSection = "/arkusze/", compactNavigation = false, catalogPage = false } = Astro.props;
 const canonicalUrl = new URL(canonical, Astro.site).href;
 const schema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: breadcrumbs.map((crumb, index) => ({ '@type': 'ListItem', position: index + 1, name: crumb.name, item: new URL(crumb.path, Astro.site).href })) };
 ---
 <!doctype html>
 <html lang="pl">
   <head>
+    <ClientRouter fallback="swap" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title} | Matura Informatyka</title>
@@ -28,16 +31,16 @@ const schema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={new URL(logo.src, Astro.site).href} />
-    <meta property="og:image:alt" content="Matura Informatyka — arkusze maturalne" />
+    <meta property="og:image:alt" content="Matura Informatyka — materiały do nauki" />
     <meta name="twitter:card" content="summary" />
     <script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />
   </head>
   <body>
-    <Header site={{ navigation: site.navigation }} logo={logo.src} home={false} client:load />
-    <main id="tresc" class="container archive-main">
-      <nav class="breadcrumbs" aria-label="Ścieżka nawigacji">
+    <Header site={{ navigation: site.navigation }} logo={logo.src} home={false} activeSection={activeSection} client:load />
+    <main id="tresc" class:list={['container archive-main', { 'task-page': compactNavigation, 'catalog-page': catalogPage }]}>
+      {compactNavigation ? <slot name="navigation" /> : <nav class="breadcrumbs" aria-label="Ścieżka nawigacji">
         <ol>{breadcrumbs.map((crumb, index) => <li>{index === breadcrumbs.length - 1 ? <span aria-current="page">{crumb.name}</span> : <a href={crumb.path}>{crumb.name}</a>}</li>)}</ol>
-      </nav>
+      </nav>}
       <slot />
     </main>
     <Footer year={new Date().getFullYear()} name={site.name} personal={site.personal} />

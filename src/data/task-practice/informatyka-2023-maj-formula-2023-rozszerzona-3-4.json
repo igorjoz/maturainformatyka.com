@@ -1,0 +1,30 @@
+{
+  "id": "informatyka-2023-maj-formula-2023-rozszerzona-3-4",
+  "mode": "interactive",
+  "reason": "Pozycja liczbowa i dokładny ciąg cyfr jako tekst — zachowujemy zero wiodące.",
+  "gradingSha256": "c443b5cad78fed49fbfb0769ba0dbfe332c18ddafd54ae3bd25b935174f01d01",
+  "fields": [
+    {
+      "id": "pozycja",
+      "label": "Pozycja początku najdłuższego ciągu",
+      "kind": "number",
+      "target": "[data-practice=\"pozycja\"]"
+    },
+    {
+      "id": "ciag",
+      "label": "Cyfry najdłuższego ciągu, bez odstępów",
+      "kind": "text",
+      "target": "[data-practice=\"ciag\"]"
+    }
+  ],
+  "variants": [
+    {
+      "pozycja": [
+        "2781"
+      ],
+      "ciag": [
+        "014576540"
+      ]
+    }
+  ]
+}

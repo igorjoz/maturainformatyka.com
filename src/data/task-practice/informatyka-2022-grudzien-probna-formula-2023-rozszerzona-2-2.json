@@ -1,0 +1,35 @@
+{
+  "id": "informatyka-2022-grudzien-probna-formula-2023-rozszerzona-2-2",
+  "mode": "interactive",
+  "reason": "Liczba i krótki wzór CKE; dopuszczone jawne warianty zapisu odejmowania, bez interpretacji wyrażeń.",
+  "gradingSha256": "a5bfd7c9b16365dc965014541f490379ccb9fab1696d1f3e3c1a7a2b0c5ccd05",
+  "fields": [
+    {
+      "id": "a",
+      "label": "a) Liczba strzałek dla N = 20",
+      "kind": "number",
+      "target": "[data-practice=\"a\"]"
+    },
+    {
+      "id": "b",
+      "label": "b) Liczba strzałek dla dowolnego N",
+      "kind": "text",
+      "target": "[data-practice=\"b\"]"
+    }
+  ],
+  "variants": [
+    {
+      "a": [
+        "19"
+      ],
+      "b": [
+        "N-1",
+        "N - 1",
+        "N−1",
+        "N − 1",
+        "N–1",
+        "N – 1"
+      ]
+    }
+  ]
+}

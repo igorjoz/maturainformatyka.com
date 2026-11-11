@@ -1,0 +1,31 @@
+{
+  "id": "informatyka-2024-maj-formula-2023-rozszerzona-3-2",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "50825f2bbe4e5d4a95855d9c392c2508c5b78c3588f89f25a0cbddaa27617026",
+  "fields": [
+    {
+      "id": "ile",
+      "label": "Liczba liczb bez nieparzystego skrótu",
+      "kind": "number",
+      "target": "[data-practice=\"ile\"]"
+    },
+    {
+      "id": "najwieksza",
+      "label": "Największa liczba bez nieparzystego skrótu",
+      "kind": "number",
+      "target": "[data-practice=\"najwieksza\"]"
+    }
+  ],
+  "variants": [
+    {
+      "ile": [
+        "18"
+      ],
+      "najwieksza": [
+        "28422"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

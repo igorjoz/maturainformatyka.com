@@ -1,0 +1,48 @@
+{
+  "id": "informatyka-2024-maj-formula-2023-rozszerzona-2-1",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "157ea3edafc9541c00868b4103a9f56ee795b041d32ac054e2ec09d21bd40446",
+  "fields": [
+    {
+      "id": "c542102",
+      "label": "Wartość c dla n = 542102",
+      "kind": "number",
+      "target": "[data-practice=\"c542102\"]"
+    },
+    {
+      "id": "ile542102",
+      "label": "Liczba wykonań instrukcji dla n = 542102",
+      "kind": "number",
+      "target": "[data-practice=\"ile542102\"]"
+    },
+    {
+      "id": "c87654321012345678",
+      "label": "Wartość c dla n = 87654321012345678",
+      "kind": "number",
+      "target": "[data-practice=\"c87654321012345678\"]"
+    },
+    {
+      "id": "ile87654321012345678",
+      "label": "Liczba wykonań instrukcji dla n = 87654321012345678",
+      "kind": "number",
+      "target": "[data-practice=\"ile87654321012345678\"]"
+    }
+  ],
+  "variants": [
+    {
+      "c542102": [
+        "121101"
+      ],
+      "ile542102": [
+        "2"
+      ],
+      "c87654321012345678": [
+        "41312111011121314"
+      ],
+      "ile87654321012345678": [
+        "8"
+      ]
+    }
+  ]
+}

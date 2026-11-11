@@ -1,0 +1,14 @@
+---
+import ArchiveLayout from '../../../layouts/ArchiveLayout.astro';
+import TaskCatalog from '../../../components/TaskCatalog.astro';
+import { getUsedTopics } from '../../../data/tasks';
+export async function getStaticPaths() {
+  return (await getUsedTopics()).map(topic => ({ params: { temat: topic.id }, props: { topic } }));
+}
+const { topic } = Astro.props;
+const path = `/zadania/tematy/${topic.id}/`;
+---
+<ArchiveLayout title={`${topic.name} — zadania maturalne z informatyki`} description={`Ćwicz temat: ${topic.name.toLocaleLowerCase('pl')}. Zadania maturalne z pełnymi poleceniami, danymi i odpowiedziami CKE.`} canonical={path} activeSection="/zadania/" catalogPage breadcrumbs={[{ name: 'Strona główna', path: '/' }, { name: 'Zadania', path: '/zadania/' }, { name: topic.name, path }]}>
+  <header class="archive-intro catalog-intro"><h1>{topic.name}</h1></header>
+  <TaskCatalog topic={topic.id} />
+</ArchiveLayout>

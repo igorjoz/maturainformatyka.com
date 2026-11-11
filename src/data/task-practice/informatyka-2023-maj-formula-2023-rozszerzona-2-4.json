@@ -1,0 +1,21 @@
+{
+  "id": "informatyka-2023-maj-formula-2023-rozszerzona-2-4",
+  "mode": "interactive",
+  "reason": "Jednoznaczny dziesiętny wynik działania XOR.",
+  "gradingSha256": "e8fed065d4f7056aa5b33b2b0b1e40bf5b01670987b48edbcaaff704dbe97fc9",
+  "fields": [
+    {
+      "id": "wynik",
+      "label": "Wynik działania XOR w systemie dziesiętnym",
+      "kind": "number",
+      "target": "[data-practice=\"wynik\"]"
+    }
+  ],
+  "variants": [
+    {
+      "wynik": [
+        "123"
+      ]
+    }
+  ]
+}

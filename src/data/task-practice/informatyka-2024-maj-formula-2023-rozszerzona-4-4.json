@@ -1,0 +1,40 @@
+{
+  "id": "informatyka-2024-maj-formula-2023-rozszerzona-4-4",
+  "mode": "interactive",
+  "reason": "Trzy wyniki CKE; średnia porównywana w podanej w kluczu dokładności 12 miejsc po przecinku. Długość i pierwszy element porównywane dokładnie.",
+  "gradingSha256": "0c79cec76972d81ec3819124335d26d4977e056e980036a73e672693e991057a",
+  "fields": [
+    {
+      "id": "srednia",
+      "label": "Średnia — zapis do 12 miejsc po przecinku",
+      "kind": "number",
+      "target": "[data-practice=\"srednia\"]"
+    },
+    {
+      "id": "dlugosc",
+      "label": "Liczba elementów ciągu",
+      "kind": "number",
+      "target": "[data-practice=\"dlugosc\"]"
+    },
+    {
+      "id": "poczatek",
+      "label": "Pierwszy element ciągu",
+      "kind": "number",
+      "target": "[data-practice=\"poczatek\"]"
+    }
+  ],
+  "variants": [
+    {
+      "srednia": [
+        "1200.704918032787"
+      ],
+      "dlugosc": [
+        "61"
+      ],
+      "poczatek": [
+        "1847"
+      ]
+    }
+  ],
+  "note": "Formularz porównuje średnią zapisaną do 12 miejsc po przecinku, jak w kluczu CKE. Sprawdzamy wyniki, a nie program, pliki ani sposób rozwiązania; nie przyznajemy punktów."
+}

@@ -1,0 +1,23 @@
+{
+  "id": "informatyka-2025-maj-formula-2023-rozszerzona-7-4",
+  "mode": "interactive",
+  "reason": "Dziesięć nazw w pełnej odpowiedzi CKE; nie akceptujemy 22-elementowej listy z wariantu ocenianego tylko na część punktów.",
+  "gradingSha256": "1f80d72a008c51541b5c223010483bd611ab222811a4e0d5795d656895c69196",
+  "fields": [
+    {
+      "id": "laziki",
+      "label": "Nazwy łazików (oddziel średnikami, dowolna kolejność)",
+      "kind": "text",
+      "target": "[data-practice=\"laziki\"]",
+      "unordered": true
+    }
+  ],
+  "variants": [
+    {
+      "laziki": [
+        "Mariner 14;Mariner 15;Mariner 20;Viking 17;Spirit 7;Spirit 12;Rosetta 1;Rosetta 8;Phoenix 3;Phoenix 13"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

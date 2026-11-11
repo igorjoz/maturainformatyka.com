@@ -1,0 +1,54 @@
+{
+  "id": "informatyka-2023-maj-formula-2023-rozszerzona-4",
+  "mode": "interactive",
+  "reason": "Wybór P/F dla każdego zdania, zgodnie z kluczem CKE.",
+  "gradingSha256": "a9c7cfd6d930863bb250a38b9b238a458e5bccdad13593dab22f0b0943feda53",
+  "fields": [
+    {
+      "id": "zdanie-1",
+      "label": "Zdanie 1: odszyfrowania wiadomości wysłanej do osoby A przez osobę B.",
+      "kind": "single",
+      "target": "[data-practice=\"zdanie-1\"]",
+      "options": [
+        {
+          "value": "P",
+          "label": "Prawda",
+          "selector": "td:nth-child(3)"
+        },
+        {
+          "value": "F",
+          "label": "Fałsz",
+          "selector": "td:nth-child(4)"
+        }
+      ]
+    },
+    {
+      "id": "zdanie-2",
+      "label": "Zdanie 2: uwierzytelnienia osoby B przez osobę A.",
+      "kind": "single",
+      "target": "[data-practice=\"zdanie-2\"]",
+      "options": [
+        {
+          "value": "P",
+          "label": "Prawda",
+          "selector": "td:nth-child(3)"
+        },
+        {
+          "value": "F",
+          "label": "Fałsz",
+          "selector": "td:nth-child(4)"
+        }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "zdanie-1": [
+        "P"
+      ],
+      "zdanie-2": [
+        "F"
+      ]
+    }
+  ]
+}

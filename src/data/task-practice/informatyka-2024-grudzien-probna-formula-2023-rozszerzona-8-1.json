@@ -1,0 +1,22 @@
+{
+  "id": "informatyka-2024-grudzien-probna-formula-2023-rozszerzona-8-1",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "582e514f0022e95cc9e80ef822a19715bb4140d8cfdda3076727226d373cdb0f",
+  "fields": [
+    {
+      "id": "samochody",
+      "label": "Liczba różnych samochodów",
+      "kind": "number",
+      "target": "[data-practice=\"samochody\"]"
+    }
+  ],
+  "variants": [
+    {
+      "samochody": [
+        "177"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

@@ -12,5 +12,14 @@
 !images/**
 !scripts/
 !scripts/exam_archive.py
+!scripts/task_catalog.py
 !docs/
 !docs/exam-import-report.json
+!docs/task-inventory/
+!docs/task-inventory/**
+
+!scripts/task_grading.py
+!docs/task-grading-inventory/
+!docs/task-grading-inventory/**
+
+!scripts/task_practice.py

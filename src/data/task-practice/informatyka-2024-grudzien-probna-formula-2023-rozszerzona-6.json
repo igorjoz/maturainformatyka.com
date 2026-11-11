@@ -1,0 +1,32 @@
+{
+  "id": "informatyka-2024-grudzien-probna-formula-2023-rozszerzona-6",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "8b06ec978c0af58230173fc12f0ab9e19ff961e3e59f04c49e90864725d7ff1e",
+  "fields": [
+    {
+      "id": "suma",
+      "label": "Suma w systemie piątkowym",
+      "kind": "number",
+      "target": "[data-practice=\"suma\"]",
+      "base": 5
+    },
+    {
+      "id": "roznica",
+      "label": "Różnica w systemie piątkowym",
+      "kind": "number",
+      "target": "[data-practice=\"roznica\"]",
+      "base": 5
+    }
+  ],
+  "variants": [
+    {
+      "suma": [
+        "3123"
+      ],
+      "roznica": [
+        "430"
+      ]
+    }
+  ]
+}
