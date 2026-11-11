@@ -1,0 +1,90 @@
+{
+  "id": "informatyka-2022-marzec-pokazowa-formula-2023-rozszerzona-7",
+  "mode": "interactive",
+  "reason": "Wybór jednej kolumny w każdym wierszu, zgodnie z tabelą CKE.",
+  "gradingSha256": "9b31aad5b707e5ba54755be92871d29fc27a6972cb0440d453d731df43a1088d",
+  "fields": [
+    {
+      "id": "sposob-1",
+      "label": "Należy zapisać w bazie danych sklepu w całości.",
+      "kind": "single",
+      "target": "[data-practice=\"sposob-1\"]",
+      "options": [
+        {
+          "value": "login",
+          "label": "Login",
+          "selector": "td:nth-child(2)"
+        },
+        {
+          "value": "haslo",
+          "label": "Hasło",
+          "selector": "td:nth-child(3)"
+        },
+        {
+          "value": "karta",
+          "label": "Dane karty kredytowej",
+          "selector": "td:nth-child(4)"
+        }
+      ]
+    },
+    {
+      "id": "sposob-2",
+      "label": "Nie należy przechowywać w bazie danych sklepu w żadnej formie.",
+      "kind": "single",
+      "target": "[data-practice=\"sposob-2\"]",
+      "options": [
+        {
+          "value": "login",
+          "label": "Login",
+          "selector": "td:nth-child(2)"
+        },
+        {
+          "value": "haslo",
+          "label": "Hasło",
+          "selector": "td:nth-child(3)"
+        },
+        {
+          "value": "karta",
+          "label": "Dane karty kredytowej",
+          "selector": "td:nth-child(4)"
+        }
+      ]
+    },
+    {
+      "id": "sposob-3",
+      "label": "Należy zapisać jedynie skrót (hash) danych, a nie – całą oryginalną treść.",
+      "kind": "single",
+      "target": "[data-practice=\"sposob-3\"]",
+      "options": [
+        {
+          "value": "login",
+          "label": "Login",
+          "selector": "td:nth-child(2)"
+        },
+        {
+          "value": "haslo",
+          "label": "Hasło",
+          "selector": "td:nth-child(3)"
+        },
+        {
+          "value": "karta",
+          "label": "Dane karty kredytowej",
+          "selector": "td:nth-child(4)"
+        }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "sposob-1": [
+        "login"
+      ],
+      "sposob-2": [
+        "karta"
+      ],
+      "sposob-3": [
+        "haslo"
+      ]
+    }
+  ]
+}

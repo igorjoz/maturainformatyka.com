@@ -1,0 +1,48 @@
+{
+  "id": "informatyka-2023-maj-formula-2023-rozszerzona-3-2",
+  "mode": "interactive",
+  "reason": "Jednoznaczne wyniki CKE; porównanie wartości pól. Sprawdzamy wynik, bez oceny programu ani plików.",
+  "gradingSha256": "6bb459919ab5d2f2d9e6bc647f4a810bfcfd6d1bef12a217c8c6340dde877029",
+  "fields": [
+    {
+      "id": "najrzadszy",
+      "label": "Najrzadszy fragment dwucyfrowy",
+      "kind": "text",
+      "target": "[data-practice=\"najrzadszy\"]"
+    },
+    {
+      "id": "min-wystapienia",
+      "label": "Liczba wystąpień najrzadszego fragmentu",
+      "kind": "number",
+      "target": "[data-practice=\"min-wystapienia\"]"
+    },
+    {
+      "id": "najczestszy",
+      "label": "Najczęstszy fragment dwucyfrowy",
+      "kind": "text",
+      "target": "[data-practice=\"najczestszy\"]"
+    },
+    {
+      "id": "max-wystapienia",
+      "label": "Liczba wystąpień najczęstszego fragmentu",
+      "kind": "number",
+      "target": "[data-practice=\"max-wystapienia\"]"
+    }
+  ],
+  "variants": [
+    {
+      "najrzadszy": [
+        "88"
+      ],
+      "min-wystapienia": [
+        "80"
+      ],
+      "najczestszy": [
+        "65"
+      ],
+      "max-wystapienia": [
+        "124"
+      ]
+    }
+  ]
+}

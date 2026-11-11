@@ -1,0 +1,22 @@
+{
+  "id": "informatyka-2023-maj-formula-2023-rozszerzona-2-3",
+  "mode": "interactive",
+  "reason": "Jednoznaczne wyniki CKE; porównanie wartości pól. Sprawdzamy wynik, bez oceny programu ani plików.",
+  "gradingSha256": "a8c32898462b2f5a008a3a77a8128c3348fcb5b46066398ac52cd9b88a97113f",
+  "fields": [
+    {
+      "id": "najwieksza",
+      "label": "Największa liczba w zapisie binarnym",
+      "kind": "number",
+      "target": "[data-practice=\"najwieksza\"]",
+      "base": 2
+    }
+  ],
+  "variants": [
+    {
+      "najwieksza": [
+        "1110100011100011100"
+      ]
+    }
+  ]
+}

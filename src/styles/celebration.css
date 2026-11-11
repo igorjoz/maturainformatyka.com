@@ -18,10 +18,10 @@
 .contact-arrived .celebration-particle { animation: celebration-fall var(--confetti-duration) ease-out both; animation-delay: var(--particle-delay); }
 .contact-arrived .celebration-ring { animation: green-ripple 1800ms ease-out both; }
 .contact-arrived .contact-booking { animation: booking-glow 2400ms ease-out both; }
-.contact-section:not(.motion-active) .celebration-ribbon,
-.contact-section:not(.motion-active) .celebration-particle,
-.contact-section:not(.motion-active) .celebration-ring,
-.contact-section:not(.motion-active) .contact-booking { animation-play-state: paused; }
+.contact-section:not(.celebration-active) .celebration-ribbon,
+.contact-section:not(.celebration-active) .celebration-particle,
+.contact-section:not(.celebration-active) .celebration-ring,
+.contact-section:not(.celebration-active) .contact-booking { animation-play-state: paused; }
 @keyframes green-ripple { from { opacity: .6; transform: scale(.2); } to { opacity: 0; transform: scale(10); } }
 @keyframes booking-glow { 35% { border-color: var(--free-green); box-shadow: 0 0 0 8px #00843d0a, 0 12px 40px #00843d20; } }
 @keyframes ribbon-unfurl { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
@@ -40,3 +40,5 @@
 @media (prefers-reduced-motion: reduce) {
   .contact-celebration { display: none; }
 }
+
+@media print { .contact-celebration { display: none !important; } }

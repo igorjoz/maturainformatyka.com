@@ -1,0 +1,43 @@
+{
+  "id": "informatyka-2024-grudzien-probna-formula-2023-rozszerzona-8-2",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "09f01143da5256fbbc587c1eec4014ff9de6dc6c699535d4db72a0ee188edd06",
+  "fields": [
+    {
+      "id": "usluga",
+      "label": "Nazwa najczęściej wykonywanej usługi",
+      "kind": "text",
+      "target": "[data-practice=\"usluga\"]"
+    },
+    {
+      "id": "ile",
+      "label": "Liczba wykonań usługi",
+      "kind": "number",
+      "target": "[data-practice=\"ile\"]"
+    },
+    {
+      "id": "marki",
+      "label": "Marki bez tej usługi (oddziel średnikami, dowolna kolejność)",
+      "kind": "text",
+      "target": "[data-practice=\"marki\"]",
+      "unordered": true
+    }
+  ],
+  "variants": [
+    {
+      "usluga": [
+        "wymiana plynu chłodniczego",
+        "wymiana płynu chłodniczego",
+        "wymiana plynu chlodniczego"
+      ],
+      "ile": [
+        "29"
+      ],
+      "marki": [
+        "bmw;daewoo;honda;kia;lancia;mazda;nissan;saab;volkswagen"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

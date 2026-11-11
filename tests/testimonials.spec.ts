@@ -1,14 +1,14 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./support/expanded-home";
 
 test.beforeEach(async ({ page }) => {
   await page.route("https://calendar.google.com/**", (route) =>
-    route.fulfill({ contentType: "text/html", body: "<p>Kalendarz</p>" }),
+    route.fulfill({ contentType: "text/html", body: "<p>Calendar</p>" }),
   );
   await page.goto("/#opinie");
   await expect(page.locator("#opinie")).toHaveClass(/motion-ready/);
 });
 
-test("opinia reaguje na kursor, zachowuje wejście i wraca do spoczynku", async ({ page }) => {
+test("testimonial cards respond to the pointer, retain entrance effects, and return to rest", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });
   const cards = page.locator(".testimonial-card");
   await expect(cards).toHaveCount(3);
@@ -52,10 +52,10 @@ test("opinia reaguje na kursor, zachowuje wejście i wraca do spoczynku", async 
 });
 
 for (const width of [360, 768]) {
-  test.describe(`dotyk przy ${width}px`, () => {
+  test.describe(`touch input at ${width}px`, () => {
     test.use({ viewport: { width, height: 900 }, hasTouch: true, isMobile: true });
 
-    test("poświata wygasa po dotknięciu; karty mieszczą się w ekranie", async ({ page }) => {
+    test("the touch glow fades and cards fit the viewport", async ({ page }) => {
       const cards = page.locator(".testimonial-card");
       for (const card of await cards.all()) {
         await card.scrollIntoViewIfNeeded();

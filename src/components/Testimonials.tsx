@@ -20,7 +20,7 @@ export default function Testimonials({
         aria-labelledby="testimonials-title"
       >
         <div className="section-heading">
-          <p className="eyebrow">05 / OPINIE UCZNIÓW</p>
+          <p className="eyebrow">OPINIE UCZNIÓW</p>
           <div>
             <h2 id="testimonials-title">Tak wspominają wspólną naukę.</h2>
             <p>Opinie opublikowane na e-korepetycje.net.</p>

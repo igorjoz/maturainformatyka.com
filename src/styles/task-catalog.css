@@ -1,0 +1,65 @@
+.archive-main.catalog-page { padding-top:16px; }
+.catalog-page .breadcrumbs ol { margin-bottom:12px; }
+.catalog-page .catalog-intro { max-width:none; margin:0 0 20px; }
+.catalog-page .catalog-intro h1 { font-size:32px; margin:0; }
+.task-catalog-layout { display:grid; grid-template-columns:260px minmax(0,1fr); align-items:start; gap:24px; }
+.task-catalog-layout:has(>[data-task-filters][hidden]) { grid-template-columns:minmax(0,1fr); }
+.task-catalog-controls.task-filters { grid-template-columns:minmax(0,1fr); gap:16px; padding:0; background:transparent; border:0; border-radius:0; }
+.task-catalog-controls .task-search { grid-column:auto; }
+.task-catalog-controls .task-mobile-section { display:none; }
+.task-catalog-controls .task-topic-picker { gap:8px; }
+.filter-label { font-size:.875rem; font-weight:700; }
+.task-sections { display:grid; gap:6px; }
+.section-button { --section:#385e51; display:flex; align-items:center; gap:8px; width:100%; padding:10px; border:1px solid var(--line); border-radius:10px; background:var(--white); color:var(--ink); font:inherit; font-size:.875rem; font-weight:700; text-align:left; min-height:48px; cursor:pointer; }
+.section-button svg { color:var(--section); flex-shrink:0; }
+.section-button [data-section-count] { margin-left:auto; font-size:.75rem; padding:1px 6px; background:var(--soft); color:var(--muted); border-radius:4px; }
+.section-button[data-task-section="programowanie"] { --section:#365f87; }
+.section-button[data-task-section="algorytmika"] { --section:#6a4d88; }
+.section-button[data-task-section="arkusze-kalkulacyjne"] { --section:#377052; }
+.section-button[data-task-section="bazy-danych"] { --section:#93672b; }
+.section-button[data-task-section="teoria"] { --section:#94584b; }
+.section-button:hover { border-color:var(--section); }
+.section-button[aria-pressed="true"] { border-color:var(--section); background:color-mix(in srgb,var(--section) 9%,white); box-shadow:inset 3px 0 var(--section); }
+.task-topic-buttons { display:flex; flex-wrap:wrap; gap:6px; padding-top:4px; }
+.topic-button { display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:8px 10px; border:1px solid var(--line); border-radius:12px; background:var(--white); color:var(--ink); font:inherit; font-size:.8125rem; cursor:pointer; text-decoration:none; }
+.topic-button>span { color:var(--muted); font-size:.75rem; }
+.topic-button:hover { border-color:var(--sage); background:var(--soft); }
+.topic-button[aria-current], .topic-button[aria-pressed="true"] { background:var(--ink); color:var(--white); border-color:var(--ink); }
+.topic-button[aria-current]>span { color:#d9e8e2; }
+.task-catalog-controls .task-filter-options { gap:4px; }
+.task-catalog-controls .practice-filter { display:flex; align-items:center; gap:10px; cursor:pointer; min-height:44px; }
+.task-catalog-controls input[type="checkbox"] { width:20px; height:20px; min-height:20px; flex-shrink:0; accent-color:var(--sage); }
+.task-extra-filters { min-width:0; }
+.task-extra-filters summary,.task-topic-directory>summary { cursor:pointer; min-height:44px; padding-block:10px; font-size:.875rem; font-weight:700; }
+.task-extra-fields { display:grid; gap:16px; padding-block:8px; }
+.task-extra-fields>div { display:grid; gap:8px; min-width:0; }
+[data-mobile-topics]:empty { display:none; }
+.task-catalog-controls .archive-reset { min-height:44px; padding-inline:0; font-size:.875rem; }
+.task-catalog-results { min-width:0; }
+.task-catalog-results .task-results-bar { margin:0 0 16px; gap:4px; flex-direction:column; }
+.task-catalog-results [data-task-active] { max-width:100%; overflow-wrap:anywhere; }
+.task-catalog-results .task-list { grid-template-columns:minmax(0,1fr); }
+.practice-badge { color:#285841; display:inline-flex; align-items:center; gap:5px; font-size:.75rem; }
+.catalog-source-note { margin-top:32px; font-size:.8125rem; }
+.catalog-source-note p+p { margin-top:8px; }
+.task-topic-directory { margin-bottom:12px; }
+.task-topic-directory .topic-directory { margin-block:12px 24px; }
+.task-topic-directory h2 { font-size:1rem; }
+[data-task-filters][hidden], [data-topic-buttons][hidden], [data-topic-choice][hidden] { display:none!important; }
+@media(min-width:1280px) {
+  .task-catalog-results .task-list { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:1023px) {
+  .catalog-page .catalog-intro h1 { font-size:28px; }
+  .task-catalog-layout { grid-template-columns:minmax(0,1fr); gap:16px; }
+  .task-catalog-controls.task-filters { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; }
+  .task-catalog-controls .task-search { grid-column:1/-1; }
+  .task-catalog-controls .task-mobile-section { display:grid; }
+  .task-catalog-controls .task-topic-picker { display:none; }
+  .task-catalog-controls .task-filter-options { grid-column:1/-1; display:block; position:relative; }
+  .task-catalog-controls :is(select,input[type="search"]) { min-width:0; min-height:44px; padding:8px; font-size:.875rem; }
+  .task-extra-filters summary { padding-right:110px; }
+  .task-extra-fields { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .task-extra-fields :is([data-mobile-topics],.practice-filter) { grid-column:1/-1; }
+  .task-catalog-controls .archive-reset { position:absolute; top:0; right:0; padding-inline:4px; }
+}

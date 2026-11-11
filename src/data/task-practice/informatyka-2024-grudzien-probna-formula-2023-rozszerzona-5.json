@@ -1,0 +1,75 @@
+{
+  "id": "informatyka-2024-grudzien-probna-formula-2023-rozszerzona-5",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "544ee24c235dd7b21c48b9b1e6298bb803d57587af8efae2ea4c9819b8add425",
+  "fields": [
+    {
+      "id": "zdanie-1",
+      "label": "Zdanie 1",
+      "kind": "single",
+      "target": "[data-practice=\"zdanie-1\"]",
+      "options": [
+        {
+          "value": "P",
+          "label": "Prawda",
+          "selector": "td:nth-child(3)"
+        },
+        {
+          "value": "F",
+          "label": "Fałsz",
+          "selector": "td:nth-child(4)"
+        }
+      ]
+    },
+    {
+      "id": "zdanie-2",
+      "label": "Zdanie 2",
+      "kind": "single",
+      "target": "[data-practice=\"zdanie-2\"]",
+      "options": [
+        {
+          "value": "P",
+          "label": "Prawda",
+          "selector": "td:nth-child(3)"
+        },
+        {
+          "value": "F",
+          "label": "Fałsz",
+          "selector": "td:nth-child(4)"
+        }
+      ]
+    },
+    {
+      "id": "zdanie-3",
+      "label": "Zdanie 3",
+      "kind": "single",
+      "target": "[data-practice=\"zdanie-3\"]",
+      "options": [
+        {
+          "value": "P",
+          "label": "Prawda",
+          "selector": "td:nth-child(3)"
+        },
+        {
+          "value": "F",
+          "label": "Fałsz",
+          "selector": "td:nth-child(4)"
+        }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "zdanie-1": [
+        "F"
+      ],
+      "zdanie-2": [
+        "P"
+      ],
+      "zdanie-3": [
+        "F"
+      ]
+    }
+  ]
+}

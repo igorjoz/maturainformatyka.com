@@ -1,0 +1,31 @@
+{
+  "id": "informatyka-2026-maj-formula-2023-rozszerzona-4-4",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "9041bb6065c5507ab53d1410cd58b67d54a091c2c4745407586d944a522ce572",
+  "fields": [
+    {
+      "id": "przelozeni",
+      "label": "Największa liczba przełożonych",
+      "kind": "number",
+      "target": "[data-practice=\"przelozeni\"]"
+    },
+    {
+      "id": "pracownicy",
+      "label": "Liczba pracowników z taką liczbą przełożonych",
+      "kind": "number",
+      "target": "[data-practice=\"pracownicy\"]"
+    }
+  ],
+  "variants": [
+    {
+      "przelozeni": [
+        "22"
+      ],
+      "pracownicy": [
+        "2"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

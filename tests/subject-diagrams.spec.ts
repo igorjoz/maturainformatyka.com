@@ -1,8 +1,8 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./support/expanded-home";
 
 test.beforeEach(async ({ page }) => {
   await page.route("https://calendar.google.com/**", (route) =>
-    route.fulfill({ contentType: "text/html", body: "<p>Kalendarz</p>" }),
+    route.fulfill({ contentType: "text/html", body: "<p>Calendar</p>" }),
   );
   await page.goto("/#zakres");
   await expect(
@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
   ).not.toHaveAttribute("ssr");
 });
 
-test("sekwencje kończą się poprawnym wynikiem; powtórka nie zmienia wyboru ani fokusu", async ({
+test("sequences finish with the correct result and replay preserves selection and focus", async ({
   page,
 }) => {
   for (const [kind, result] of [
@@ -67,7 +67,7 @@ test("sekwencje kończą się poprawnym wynikiem; powtórka nie zmienia wyboru a
   }
 });
 
-test("wyjście poza widok i ukrycie dokumentu wstrzymują sekwencję; zakończona nie startuje ponownie", async ({
+test("leaving the viewport or hiding the document pauses sequences without restarting completed ones", async ({
   page,
 }) => {
   const diagram = page.locator('[data-diagram="programowanie"]');
@@ -106,7 +106,7 @@ test("wyjście poza widok i ukrycie dokumentu wstrzymują sekwencję; zakończon
   await expect(diagram).toHaveAttribute("data-playback", "complete");
 });
 
-test("teoria i CKE mają skończone sekwencje, a ograniczenie ruchu od razu pokazuje wynik", async ({
+test("theory and CKE sequences finish, and reduced motion shows results immediately", async ({
   page,
 }) => {
   for (const kind of ["teoria", "matura"]) {
@@ -135,7 +135,7 @@ test("teoria i CKE mają skończone sekwencje, a ograniczenie ruchu od razu poka
 });
 
 for (const width of [360, 390, 768, 1024, 1440]) {
-  test(`siatka i diagramy mieszczą się przy ${width}px`, async ({ page }) => {
+  test(`the grid and diagrams fit at ${width}px`, async ({ page }) => {
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.setViewportSize({ width, height: 1000 });
     await page.evaluate(() => document.fonts.ready);
@@ -166,10 +166,8 @@ for (const width of [360, 390, 768, 1024, 1440]) {
         elements.map((el) => el.getBoundingClientRect().toJSON()),
       );
       expect(boxes[1].top).toBeGreaterThanOrEqual(boxes[0].bottom);
-      await expect(page.locator(".subject-foundation")).toHaveCSS(
-        "grid-template-columns",
-        `${width - (width <= 600 ? 40 : 64)}px`,
-      );
+      const gridWidth = await page.locator(".subject-foundation").evaluate(el => parseFloat(getComputedStyle(el).gridTemplateColumns));
+      expect(gridWidth).toBeCloseTo(await page.locator("#zakres").evaluate(el => el.getBoundingClientRect().width), 0);
     }
     for (const diagram of await page.locator("[data-diagram]:visible").all()) {
       const box = (await diagram.boundingBox())!;
@@ -184,7 +182,7 @@ for (const width of [360, 390, 768, 1024, 1440]) {
   });
 }
 
-test("bez JavaScriptu wszystkie diagramy i wyniki są czytelne, bez niedziałających przycisków", async ({
+test("all diagrams and results remain readable without JavaScript or inactive controls", async ({
   browser,
 }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });

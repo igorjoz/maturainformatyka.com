@@ -1,5 +1,6 @@
 ---
 import '@fontsource-variable/manrope';
+import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 import { getImage } from 'astro:assets';
 import socialPortrait from '../assets/portrait-social.png';
@@ -10,8 +11,10 @@ import logo from '../assets/logo-book-code.png';
 import '../styles/subjects.css';
 import '../styles/lesson-lab.css';
 import '../styles/refresh.css';
-import '../styles/celebration.css';
+import ContactEffects from '../components/ContactEffects.astro';
 import '../styles/archive.css';
+import '../styles/tasks.css';
+import '../styles/home.css';
 import ArchiveTeaser from '../components/ArchiveTeaser.astro';
 import Header from '../components/Header.tsx';
 import Hero from '../components/Hero.tsx';
@@ -31,6 +34,7 @@ const socialUrl = new URL(socialImage.src, Astro.site ?? Astro.url);
 <!doctype html>
 <html lang="pl">
   <head>
+    <ClientRouter fallback="swap" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={site.description} />
@@ -55,16 +59,34 @@ const socialUrl = new URL(socialImage.src, Astro.site ?? Astro.url);
     <main id="tresc">
       <Hero site={{ name: site.name, hero: site.hero, onlinePrice: site.onlinePrice }} introMeeting={{ duration: introMeeting.duration, format: introMeeting.format, costLabel: introMeeting.costLabel, cta: introMeeting.cta }} portraitImage={props.portraitImage} client:load />
       <Learning site={{ steps: site.steps }} client:visible={{ rootMargin: '200px' }} />
-      <LessonExample lesson={props.lesson} client:visible={{ rootMargin: '200px' }} />
-      <Subjects site={{ subjects: site.subjects }} groups={props.groups} maturaExample={maturaExample} client:visible={{ rootMargin: '200px' }} />
-      <ArchiveTeaser />
-      <About site={{ about: site.about, projects: props.site.projects, personal: site.personal }} client:visible={{ rootMargin: '200px' }} />
+      <section class="container home-overview" aria-labelledby="scope-preview"><h2 id="scope-preview">Przygotowanie do całej matury</h2><p>Programowanie i algorytmy, arkusze kalkulacyjne, bazy danych i teoria — łączymy wiedzę z rozwiązywaniem zadań CKE.</p><details class="home-disclosure"><summary>Zobacz szczegółowy zakres</summary><div class="disclosure-body"><Subjects site={{ subjects: site.subjects }} groups={props.groups} maturaExample={maturaExample} client:visible={{ rootMargin: '200px' }} /></div></details></section>
+      <section class="container home-overview" aria-labelledby="lesson-preview"><h2 id="lesson-preview">Zobacz, jak pracujemy na lekcji</h2><p>Od zrozumienia zadania do samodzielnego rozwiązania. Poznaj przykład z kodem i symulacją działania algorytmu.</p><details class="home-disclosure lesson-disclosure"><summary>Zobacz przykładową lekcję</summary><div class="disclosure-body"><LessonExample lesson={props.lesson} client:visible={{ rootMargin: '200px' }} /></div></details></section>
       <Testimonials site={{ listing: site.listing }} testimonials={testimonials} client:visible={{ rootMargin: '200px' }} />
       <Offer site={{ onlinePrice: site.onlinePrice, benefits: site.benefits, durations: site.durations }} introMeeting={{ duration: introMeeting.duration, cta: introMeeting.cta }} client:visible={{ rootMargin: '200px' }} />
+      <About site={{ about: site.about, projects: props.site.projects, personal: site.personal }} client:visible={{ rootMargin: '200px' }} />
+      <ArchiveTeaser />
       <IntroMeeting site={{ email: site.email, phone: site.phone, phoneHref: site.phoneHref }} introMeeting={introMeeting} />
       <Faq site={{ email: site.email }} faqs={faqs} />
       <Contact site={{ email: site.email, phone: site.phone, phoneHref: site.phoneHref, listing: site.listing }} introMeeting={{ duration: introMeeting.duration, format: introMeeting.format, costLabel: introMeeting.costLabel, cta: introMeeting.cta }} client:visible={{ rootMargin: '200px' }} />
     </main>
+    <ContactEffects />
     <Footer year={new Date().getFullYear()} name={site.name} personal={site.personal} />
   </body>
 </html>
+
+<script>
+  import { onPageLoad } from '../scripts/page-lifecycle';
+  onPageLoad((signal) => {
+    const revealFragment = () => {
+      let id: string;
+      try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+      const target = document.getElementById(id);
+      if (!target) return;
+      let parent = target.parentElement;
+      while (parent) { if (parent instanceof HTMLDetailsElement) parent.open = true; parent = parent.parentElement; }
+      requestAnimationFrame(() => target.scrollIntoView({block:'start'}));
+    };
+    window.addEventListener('hashchange', revealFragment, { signal });
+    if (location.hash) revealFragment();
+  });
+</script>

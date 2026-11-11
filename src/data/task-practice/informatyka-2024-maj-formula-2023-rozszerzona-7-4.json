@@ -1,0 +1,31 @@
+{
+  "id": "informatyka-2024-maj-formula-2023-rozszerzona-7-4",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "d56366af22e93c586ac6aa14541d99df709875f31582c792aae186487909a9d4",
+  "fields": [
+    {
+      "id": "transakcje",
+      "label": "Liczba transakcji z rabatem",
+      "kind": "number",
+      "target": "[data-practice=\"transakcje\"]"
+    },
+    {
+      "id": "rabaty",
+      "label": "Łączna wartość rabatów (zł)",
+      "kind": "number",
+      "target": "[data-practice=\"rabaty\"]"
+    }
+  ],
+  "variants": [
+    {
+      "transakcje": [
+        "180"
+      ],
+      "rabaty": [
+        "3089.10"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

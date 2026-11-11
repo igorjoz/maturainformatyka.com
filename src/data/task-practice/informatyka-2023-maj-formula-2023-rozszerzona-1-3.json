@@ -1,0 +1,138 @@
+{
+  "id": "informatyka-2023-maj-formula-2023-rozszerzona-1-3",
+  "mode": "interactive",
+  "reason": "Dwa jednoznaczne ciągi po 7 liczb, w kolejności wypisywania przez algorytm.",
+  "gradingSha256": "5b57cb10e0a27327c2a53c2449d6b98e6d1352f622bc2d67a30e7b5258563f5c",
+  "fields": [
+    {
+      "id": "a-1",
+      "label": "a) Liczba 1 w wypisanym ciągu",
+      "kind": "number",
+      "target": "[data-practice=\"a-1\"]"
+    },
+    {
+      "id": "a-2",
+      "label": "a) Liczba 2 w wypisanym ciągu",
+      "kind": "number",
+      "target": "[data-practice=\"a-2\"]"
+    },
+    {
+      "id": "a-3",
+      "label": "a) Liczba 3 w wypisanym ciągu",
+      "kind": "number",
+      "target": "[data-practice=\"a-3\"]"
+    },
+    {
+      "id": "a-4",
+      "label": "a) Liczba 4 w wypisanym ciągu",
+      "kind": "number",
+      "target": "[data-practice=\"a-4\"]"
+    },
+    {
+      "id": "a-5",
+      "label": "a) Liczba 5 w wypisanym ciągu",
+      "kind": "number",
+      "target": "[data-practice=\"a-5\"]"
+    },
+    {
+      "id": "a-6",
+      "label": "a) Liczba 6 w wypisanym ciągu",
+      "kind": "number",
+      "target": "[data-practice=\"a-6\"]"
+    },
+    {
+      "id": "a-7",
+      "label": "a) Liczba 7 w wypisanym ciągu",
+      "kind": "number",
+      "target": "[data-practice=\"a-7\"]"
+    },
+    {
+      "id": "b-1",
+      "label": "b) Liczba 1 w wypisanym ciągu",
+      "kind": "number",
+      "target": "[data-practice=\"b-1\"]"
+    },
+    {
+      "id": "b-2",
+      "label": "b) Liczba 2 w wypisanym ciągu",
+      "kind": "number",
+      "target": "[data-practice=\"b-2\"]"
+    },
+    {
+      "id": "b-3",
+      "label": "b) Liczba 3 w wypisanym ciągu",
+      "kind": "number",
+      "target": "[data-practice=\"b-3\"]"
+    },
+    {
+      "id": "b-4",
+      "label": "b) Liczba 4 w wypisanym ciągu",
+      "kind": "number",
+      "target": "[data-practice=\"b-4\"]"
+    },
+    {
+      "id": "b-5",
+      "label": "b) Liczba 5 w wypisanym ciągu",
+      "kind": "number",
+      "target": "[data-practice=\"b-5\"]"
+    },
+    {
+      "id": "b-6",
+      "label": "b) Liczba 6 w wypisanym ciągu",
+      "kind": "number",
+      "target": "[data-practice=\"b-6\"]"
+    },
+    {
+      "id": "b-7",
+      "label": "b) Liczba 7 w wypisanym ciągu",
+      "kind": "number",
+      "target": "[data-practice=\"b-7\"]"
+    }
+  ],
+  "variants": [
+    {
+      "a-1": [
+        "9"
+      ],
+      "a-2": [
+        "2"
+      ],
+      "a-3": [
+        "12"
+      ],
+      "a-4": [
+        "10"
+      ],
+      "a-5": [
+        "14"
+      ],
+      "a-6": [
+        "13"
+      ],
+      "a-7": [
+        "15"
+      ],
+      "b-1": [
+        "10"
+      ],
+      "b-2": [
+        "8"
+      ],
+      "b-3": [
+        "4"
+      ],
+      "b-4": [
+        "6"
+      ],
+      "b-5": [
+        "15"
+      ],
+      "b-6": [
+        "12"
+      ],
+      "b-7": [
+        "13"
+      ]
+    }
+  ]
+}

@@ -14,7 +14,7 @@ export default function Learning({ site }: { site: Pick<Site, "steps"> }) {
         aria-labelledby="process-title"
       >
         <div className="section-heading">
-          <p className="eyebrow">01 / TWOJA ŚCIEŻKA</p>
+          <p className="eyebrow">TWOJA ŚCIEŻKA</p>
           <div>
             <h2 id="process-title">
               Dobry wynik zaczyna się

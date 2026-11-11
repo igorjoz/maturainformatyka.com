@@ -1,0 +1,120 @@
+{
+  "id": "informatyka-2026-maj-formula-2023-rozszerzona-4-1",
+  "mode": "interactive",
+  "reason": "Dwanaście pustych komórek tabeli. Uzupełnione przez CKE wiersze pracowników 2 i 8 pozostają nieedytowalne.",
+  "gradingSha256": "d55c3e390bd7f367aac7bcbc2f8da6db4815c5a372da2d548a3cea8f39b2a9e4",
+  "fields": [
+    {
+      "id": "bezposredni1",
+      "label": "Pracownik 1 — bezpośredni podwładni",
+      "kind": "number",
+      "target": "[data-practice=\"bezposredni1\"]"
+    },
+    {
+      "id": "wszyscy1",
+      "label": "Pracownik 1 — wszyscy podwładni",
+      "kind": "number",
+      "target": "[data-practice=\"wszyscy1\"]"
+    },
+    {
+      "id": "bezposredni3",
+      "label": "Pracownik 3 — bezpośredni podwładni",
+      "kind": "number",
+      "target": "[data-practice=\"bezposredni3\"]"
+    },
+    {
+      "id": "wszyscy3",
+      "label": "Pracownik 3 — wszyscy podwładni",
+      "kind": "number",
+      "target": "[data-practice=\"wszyscy3\"]"
+    },
+    {
+      "id": "bezposredni4",
+      "label": "Pracownik 4 — bezpośredni podwładni",
+      "kind": "number",
+      "target": "[data-practice=\"bezposredni4\"]"
+    },
+    {
+      "id": "wszyscy4",
+      "label": "Pracownik 4 — wszyscy podwładni",
+      "kind": "number",
+      "target": "[data-practice=\"wszyscy4\"]"
+    },
+    {
+      "id": "bezposredni5",
+      "label": "Pracownik 5 — bezpośredni podwładni",
+      "kind": "number",
+      "target": "[data-practice=\"bezposredni5\"]"
+    },
+    {
+      "id": "wszyscy5",
+      "label": "Pracownik 5 — wszyscy podwładni",
+      "kind": "number",
+      "target": "[data-practice=\"wszyscy5\"]"
+    },
+    {
+      "id": "bezposredni6",
+      "label": "Pracownik 6 — bezpośredni podwładni",
+      "kind": "number",
+      "target": "[data-practice=\"bezposredni6\"]"
+    },
+    {
+      "id": "wszyscy6",
+      "label": "Pracownik 6 — wszyscy podwładni",
+      "kind": "number",
+      "target": "[data-practice=\"wszyscy6\"]"
+    },
+    {
+      "id": "bezposredni7",
+      "label": "Pracownik 7 — bezpośredni podwładni",
+      "kind": "number",
+      "target": "[data-practice=\"bezposredni7\"]"
+    },
+    {
+      "id": "wszyscy7",
+      "label": "Pracownik 7 — wszyscy podwładni",
+      "kind": "number",
+      "target": "[data-practice=\"wszyscy7\"]"
+    }
+  ],
+  "variants": [
+    {
+      "bezposredni1": [
+        "2"
+      ],
+      "wszyscy1": [
+        "7"
+      ],
+      "bezposredni3": [
+        "1"
+      ],
+      "wszyscy3": [
+        "1"
+      ],
+      "bezposredni4": [
+        "1"
+      ],
+      "wszyscy4": [
+        "1"
+      ],
+      "bezposredni5": [
+        "0"
+      ],
+      "wszyscy5": [
+        "0"
+      ],
+      "bezposredni6": [
+        "0"
+      ],
+      "wszyscy6": [
+        "0"
+      ],
+      "bezposredni7": [
+        "0"
+      ],
+      "wszyscy7": [
+        "0"
+      ]
+    }
+  ]
+}

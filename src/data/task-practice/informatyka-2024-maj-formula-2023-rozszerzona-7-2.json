@@ -1,0 +1,31 @@
+{
+  "id": "informatyka-2024-maj-formula-2023-rozszerzona-7-2",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "87d395bb7dd2c311b9f0815a98131b14be301bbc58a76be8e50d715b2aa317e5",
+  "fields": [
+    {
+      "id": "przychod",
+      "label": "Całkowity przychód (zł)",
+      "kind": "number",
+      "target": "[data-practice=\"przychod\"]"
+    },
+    {
+      "id": "odmiana",
+      "label": "Odmiana dająca największy przychód",
+      "kind": "text",
+      "target": "[data-practice=\"odmiana\"]"
+    }
+  ],
+  "variants": [
+    {
+      "przychod": [
+        "2422669.40"
+      ],
+      "odmiana": [
+        "Reneta"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

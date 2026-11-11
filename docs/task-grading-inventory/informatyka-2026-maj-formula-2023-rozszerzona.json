@@ -1,0 +1,269 @@
+{
+  "examId": "informatyka-2026-maj-formula-2023-rozszerzona",
+  "sourceSha256": "aafd83e3713af62854c075623cf874ec7dde78801e506755a41998fccaa62509",
+  "tasks": [
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-1-1",
+      "answerStatus": "provided",
+      "gradingPages": [
+        2,
+        3
+      ],
+      "answerVariants": 1,
+      "hasTables": true,
+      "hasCode": false,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-1-2",
+      "answerStatus": "provided",
+      "gradingPages": [
+        3
+      ],
+      "answerVariants": 1,
+      "hasTables": true,
+      "hasCode": false,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-1-3",
+      "answerStatus": "provided",
+      "gradingPages": [
+        4
+      ],
+      "answerVariants": 1,
+      "hasTables": true,
+      "hasCode": false,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-2-1",
+      "answerStatus": "provided",
+      "gradingPages": [
+        5
+      ],
+      "answerVariants": 1,
+      "hasTables": true,
+      "hasCode": false,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-2-2",
+      "answerStatus": "provided",
+      "gradingPages": [
+        5,
+        6
+      ],
+      "answerVariants": 1,
+      "hasTables": false,
+      "hasCode": true,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-3-1",
+      "answerStatus": "provided",
+      "gradingPages": [
+        7
+      ],
+      "answerVariants": 1,
+      "hasTables": false,
+      "hasCode": false,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-3-2",
+      "answerStatus": "provided",
+      "gradingPages": [
+        8
+      ],
+      "answerVariants": 1,
+      "hasTables": false,
+      "hasCode": false,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-3-3",
+      "answerStatus": "provided",
+      "gradingPages": [
+        8,
+        9
+      ],
+      "answerVariants": 1,
+      "hasTables": false,
+      "hasCode": false,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-4-1",
+      "answerStatus": "provided",
+      "gradingPages": [
+        10
+      ],
+      "answerVariants": 1,
+      "hasTables": true,
+      "hasCode": false,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-4-2",
+      "answerStatus": "provided",
+      "gradingPages": [
+        10,
+        11
+      ],
+      "answerVariants": 1,
+      "hasTables": false,
+      "hasCode": false,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-4-3",
+      "answerStatus": "provided",
+      "gradingPages": [
+        11,
+        12
+      ],
+      "answerVariants": 1,
+      "hasTables": false,
+      "hasCode": false,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-4-4",
+      "answerStatus": "provided",
+      "gradingPages": [
+        12
+      ],
+      "answerVariants": 1,
+      "hasTables": false,
+      "hasCode": false,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-5",
+      "answerStatus": "provided",
+      "gradingPages": [
+        13
+      ],
+      "answerVariants": 1,
+      "hasTables": false,
+      "hasCode": false,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-6",
+      "answerStatus": "provided",
+      "gradingPages": [
+        13
+      ],
+      "answerVariants": 1,
+      "hasTables": false,
+      "hasCode": false,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-7-1",
+      "answerStatus": "provided",
+      "gradingPages": [
+        14,
+        15
+      ],
+      "answerVariants": 1,
+      "hasTables": true,
+      "hasCode": false,
+      "hasFigures": true
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-7-2",
+      "answerStatus": "provided",
+      "gradingPages": [
+        15,
+        16
+      ],
+      "answerVariants": 1,
+      "hasTables": true,
+      "hasCode": false,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-7-3",
+      "answerStatus": "provided",
+      "gradingPages": [
+        16,
+        17
+      ],
+      "answerVariants": 1,
+      "hasTables": false,
+      "hasCode": false,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-7-4",
+      "answerStatus": "provided",
+      "gradingPages": [
+        17
+      ],
+      "answerVariants": 1,
+      "hasTables": false,
+      "hasCode": false,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-8-1",
+      "answerStatus": "provided",
+      "gradingPages": [
+        18
+      ],
+      "answerVariants": 1,
+      "hasTables": false,
+      "hasCode": false,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-8-2",
+      "answerStatus": "provided",
+      "gradingPages": [
+        18,
+        19
+      ],
+      "answerVariants": 1,
+      "hasTables": false,
+      "hasCode": false,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-8-3",
+      "answerStatus": "provided",
+      "gradingPages": [
+        19,
+        20
+      ],
+      "answerVariants": 1,
+      "hasTables": false,
+      "hasCode": false,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-8-4",
+      "answerStatus": "provided",
+      "gradingPages": [
+        20
+      ],
+      "answerVariants": 1,
+      "hasTables": false,
+      "hasCode": false,
+      "hasFigures": false
+    },
+    {
+      "id": "informatyka-2026-maj-formula-2023-rozszerzona-8-5",
+      "answerStatus": "provided",
+      "gradingPages": [
+        21
+      ],
+      "answerVariants": 1,
+      "hasTables": false,
+      "hasCode": true,
+      "hasFigures": false
+    }
+  ]
+}

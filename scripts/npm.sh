@@ -13,7 +13,7 @@ if ! command -v node >/dev/null 2>&1 || ! node -e '
   const [major, minor] = process.versions.node.split(".").map(Number);
   process.exit(process.platform === "linux" && (major > 22 || (major === 22 && minor >= 12)) ? 0 : 1);
 '; then
-  printf '%s\n' 'Potrzebny jest Linuxowy Node.js >= 22.12 w WSL.' 'Zainstaluj Node.js w Ubuntu (np. przez nvm), zamiast korzystać z npm z Windows.' 'Instrukcje: README.md' >&2
+  printf '%s\n' 'WSL requires Linux Node.js >= 22.12.' 'A Linux Node.js installation (for example through nvm) is required instead of Windows npm.' 'Documentation: README.md' >&2
   exit 1
 fi
 

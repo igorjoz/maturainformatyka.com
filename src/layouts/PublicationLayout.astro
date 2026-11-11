@@ -1,0 +1,61 @@
+---
+import '@fontsource-variable/manrope';
+import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
+import '../styles/refresh.css';
+import '../styles/publications.css';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import { ContactPanel } from '../components/Contact';
+import ContactEffects from '../components/ContactEffects.astro';
+import logo from '../assets/logo-book-code.png';
+import { site, introMeeting } from '../data/site';
+interface Props {
+  title: string; description: string; canonical: string;
+  breadcrumbs: { name: string; path: string }[];
+  activeSection?: string; guide?: boolean;
+  article?: { author: string; publishedAt: string; updatedAt: string };
+  toc?: { id: string; label: string }[];
+}
+const { title, description, canonical, breadcrumbs, activeSection = '/wiedza/', article, toc = [], guide = false } = Astro.props;
+const canonicalUrl = new URL(canonical, Astro.site).href;
+const socialImage = new URL('/images/knowledge-social.png', Astro.site).href;
+const schemas: Record<string, unknown>[] = [{ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: breadcrumbs.map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.name, item: new URL(item.path, Astro.site).href })) }];
+if (article) schemas.push({ '@context': 'https://schema.org', '@type': 'Article', headline: title, description, mainEntityOfPage: canonicalUrl, url: canonicalUrl, image: socialImage, author: { '@type': 'Person', name: article.author }, datePublished: article.publishedAt, dateModified: article.updatedAt, inLanguage: 'pl-PL' });
+---
+<!doctype html>
+<html lang="pl" data-knowledge-index={canonical === '/wiedza/' ? '' : undefined}>
+  <head>
+    <ClientRouter fallback="swap" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | Matura Informatyka</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#18364a" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <meta property="og:type" content={article ? 'article' : 'website'} />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Matura z informatyki — wiedza, zadania i plan przygotowań" />
+    <meta name="twitter:card" content="summary_large_image" />
+    {article && <><meta property="article:published_time" content={article.publishedAt} /><meta property="article:modified_time" content={article.updatedAt} /></>}
+    <script type="application/ld+json" set:html={JSON.stringify(schemas).replace(/</g, '\\u003c')} />
+  </head>
+  <body class:list={['publication-page', { 'publication-guide': guide }]}>
+    <a class="publication-skip" href="#tresc">Przejdź do treści</a>
+    <Header site={{ navigation: site.navigation }} logo={logo.src} home={false} activeSection={activeSection} client:load />
+    <main id="tresc" class="container publication-main">
+      <nav class="publication-breadcrumbs" aria-label="Ścieżka nawigacji"><ol>{breadcrumbs.map((item, index) => <li>{index === breadcrumbs.length - 1 ? <span aria-current="page">{item.name}</span> : <a href={item.path}>{item.name}</a>}</li>)}</ol></nav>
+      {toc.length > 0 ? <div class="publication-reading-layout"><aside class="publication-toc"><details open><summary>Na tej stronie</summary><nav aria-label="Spis treści"><ol>{toc.map(item => <li><a href={`#${item.id}`}>{item.label}</a></li>)}</ol></nav></details></aside><div class="publication-reading-content"><slot /></div></div> : <slot />}
+    </main>
+    <ContactPanel site={site} introMeeting={introMeeting} author={site.name} materials />
+    <ContactEffects />
+    <Footer year={new Date().getFullYear()} name={site.name} personal={site.personal} />
+  </body>
+</html>

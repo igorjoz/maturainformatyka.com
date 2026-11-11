@@ -1,0 +1,28 @@
+<aside class="guide-context-link guide-notice" data-guide-notice aria-label="Przewodnik po maturze 2027">
+  <p>Przygotowujesz się do matury 2027? <a href="/matura-2027/">Poznaj zasady i mapę umiejętności →</a></p>
+  <button type="button" data-guide-notice-close aria-label="Zamknij informację o maturze 2027" hidden>×</button>
+</aside>
+<!-- Read synchronously before paint, including after Astro navigation. -->
+<script is:inline data-astro-rerun>
+  try {
+    if (localStorage.getItem('matura:2027:guide-notice:dismissed') === '1') {
+      document.querySelector('[data-guide-notice]')?.setAttribute('hidden', '');
+    }
+  } catch {}
+</script>
+<script>
+  import { onPageLoad } from '../scripts/page-lifecycle';
+  onPageLoad(signal => {
+    const notice = document.querySelector<HTMLElement>('[data-guide-notice]');
+    const close = notice?.querySelector<HTMLButtonElement>('[data-guide-notice-close]');
+    if (!notice || !close) return;
+    const key = 'matura:2027:guide-notice:dismissed';
+    try { notice.hidden = localStorage.getItem(key) === '1'; } catch {}
+    close.hidden = false;
+    close.addEventListener('click', () => {
+      notice.hidden = true;
+      try { localStorage.setItem(key, '1'); } catch {}
+      document.querySelector<HTMLElement>('.contact-email')?.focus({ preventScroll: true });
+    }, { signal });
+  });
+</script>

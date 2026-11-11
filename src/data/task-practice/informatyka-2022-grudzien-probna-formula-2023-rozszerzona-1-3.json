@@ -1,0 +1,39 @@
+{
+  "id": "informatyka-2022-grudzien-probna-formula-2023-rozszerzona-1-3",
+  "mode": "interactive",
+  "reason": "Jednoznaczne wyniki CKE; porównanie wartości pól. Sprawdzamy wynik, bez oceny programu ani plików.",
+  "gradingSha256": "45c27f5283639594d015d4be51da470b7634d513135d368f4cf4a06d518b829e",
+  "fields": [
+    {
+      "id": "passy",
+      "label": "Liczba dobrych pass",
+      "kind": "number",
+      "target": "[data-practice=\"passy\"]"
+    },
+    {
+      "id": "druzyna",
+      "label": "Drużyna z najdłuższą passą",
+      "kind": "text",
+      "target": "[data-practice=\"druzyna\"]"
+    },
+    {
+      "id": "dlugosc",
+      "label": "Długość najdłuższej passy",
+      "kind": "number",
+      "target": "[data-practice=\"dlugosc\"]"
+    }
+  ],
+  "variants": [
+    {
+      "passy": [
+        "6"
+      ],
+      "druzyna": [
+        "B"
+      ],
+      "dlugosc": [
+        "15"
+      ]
+    }
+  ]
+}

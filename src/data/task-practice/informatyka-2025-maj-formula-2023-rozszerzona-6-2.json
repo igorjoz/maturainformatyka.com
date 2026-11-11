@@ -1,0 +1,22 @@
+{
+  "id": "informatyka-2025-maj-formula-2023-rozszerzona-6-2",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "56bc7e89e2aacc84ae4f2ba36f9a6f731fb21d905eaade18d96520ecaf24b7f8",
+  "fields": [
+    {
+      "id": "obszar",
+      "label": "Nazwa obszaru",
+      "kind": "text",
+      "target": "[data-practice=\"obszar\"]"
+    }
+  ],
+  "variants": [
+    {
+      "obszar": [
+        "Thaumasia"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Import official exam files explicitly; validate the local archive without network."""
+"""Explicit imports of official exam files and offline archive validation."""
 import argparse
 import concurrent.futures
 import hashlib
@@ -38,23 +38,23 @@ def official_url(value):
 def validate_sources(sources):
     ids, slugs = set(), set()
     if not sources:
-        raise ValueError('Katalog źródeł jest pusty')
+        raise ValueError('The source inventory is empty')
     for exam in sources:
         for field, values in [('id', ids), ('slug', slugs)]:
             value = exam[field]
             if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', value) or value in values:
-                raise ValueError(f'Niepoprawny lub powtórzony {field}: {value}')
+                raise ValueError(f'Invalid or duplicate {field}: {value}')
             values.add(value)
         if exam['formula'] not in FORMULAS or exam['kind'] not in KINDS or exam['level'] not in {'podstawowy', 'rozszerzony'}:
-            raise ValueError(f'Niepoprawna klasyfikacja: {exam["id"]}')
+            raise ValueError(f'Invalid classification: {exam["id"]}')
         if not isinstance(exam['year'], int) or not 2005 <= exam['year'] <= 2100 or not 0 <= exam['month'] <= 12:
-            raise ValueError(f'Niepoprawna data: {exam["id"]}')
+            raise ValueError(f'Invalid date: {exam["id"]}')
         if not exam['sourcePages'] or not all(official_url(url) for url in exam['sourcePages']):
-            raise ValueError(f'Wymagane oficjalne źródło HTTPS: {exam["id"]}')
+            raise ValueError(f'An official HTTPS source is required: {exam["id"]}')
         names = set()
         for file in exam['files']:
             if file['kind'] not in FILE_KINDS or not official_url(file['url']):
-                raise ValueError(f'Niepoprawny rodzaj lub źródło: {file}')
+                raise ValueError(f'Invalid file kind or source: {file}')
             original_name = urllib.parse.unquote(urllib.parse.urlsplit(file['url']).path).rsplit('/', 1)[-1].lower()
             if file['kind'] in {'sheet', 'data'} and (
                 re.search(r'^[me]inp[-_]r[012][-_](?:200|300|400|660|700|q00|z00)[-_]', original_name)
@@ -62,29 +62,29 @@ def validate_sources(sources):
                 or re.search(r'^a[23467]informat', original_name)
                 or re.search(r'_a[23467]_(?:wb|braille)', original_name)
             ):
-                raise ValueError(f'Wariant dostosowany w katalogu standardowym: {file["url"]}')
+                raise ValueError(f'Adapted variant in the standard inventory: {file["url"]}')
             name = file['filename']
             if not re.fullmatch(r'[a-z0-9][a-z0-9.-]*\.(pdf|zip|rar)', name) or name in names:
-                raise ValueError(f'Niepoprawna lub powtórzona nazwa pliku: {name}')
+                raise ValueError(f'Invalid or duplicate filename: {name}')
             names.add(name)
         for requirement in exam['required']:
             if requirement['kind'] not in FILE_KINDS or not requirement['label']:
-                raise ValueError(f'Niepoprawne wymaganie: {exam["id"]}')
+                raise ValueError(f'Invalid requirement: {exam["id"]}')
 
 
 def inspect_file(data, suffix):
     if suffix == '.pdf':
         if not data.startswith(b'%PDF-') or b'%%EOF' not in data[-4096:]:
-            raise ValueError('Niepoprawny PDF (nagłówek lub zakończenie)')
+            raise ValueError('Invalid PDF header or end marker')
     elif suffix == '.zip':
         with zipfile.ZipFile(io.BytesIO(data)) as archive:
             if not archive.namelist() or archive.testzip() is not None:
-                raise ValueError('Puste lub uszkodzone archiwum ZIP')
+                raise ValueError('Empty or corrupted ZIP archive')
     elif suffix == '.rar':
         if not data.startswith((b'Rar!\x1a\x07\x00', b'Rar!\x1a\x07\x01\x00')):
-            raise ValueError('Niepoprawny nagłówek RAR')
+            raise ValueError('Invalid RAR header')
     else:
-        raise ValueError(f'Nieobsługiwany format: {suffix}')
+        raise ValueError(f'Unsupported format: {suffix}')
 
 
 def metadata(path, root, kind, label, source=None, part=None):
@@ -113,6 +113,7 @@ def build_bundle(exam, root):
             info.external_attr = 0o644 << 16
             archive.writestr(info, (root / 'public' / file['path'].lstrip('/')).read_bytes())
     temporary.replace(path)
+    # Bundle labels are displayed in the Polish download interface.
     return metadata(path, root, 'bundle', 'Dostępne pliki ZIP' if exam['missing'] else 'Cały zestaw ZIP')
 
 
@@ -130,14 +131,14 @@ def import_archive(root, refresh=False):
         public_path = '/' + path.relative_to(root / 'public').as_posix()
         old = known.get(public_path)
         if not refresh and path.exists() and old and hashlib.sha256(path.read_bytes()).hexdigest() != old['sha256']:
-            raise ValueError(f'Zmieniony lokalny plik: {public_path}. Sprawdź go przed ponownym importem.')
+            raise ValueError(f'Local file changed: {public_path}. Verification is required before reimporting.')
         try:
             if refresh or not path.exists() or (old and old['source'] != source['url']):
                 url = urllib.parse.quote(source['url'], safe=':/?=&%+,')
                 request = urllib.request.Request(url, headers={'User-Agent': 'MaturaInformatyka-Archive/1.0'})
                 with urllib.request.urlopen(request, timeout=60) as response:
                     if not official_url(response.url):
-                        raise ValueError('Przekierowanie poza oficjalne źródła')
+                        raise ValueError('Redirect outside official sources')
                     data = response.read()
                 inspect_file(data, path.suffix)
                 temporary = path.with_suffix(path.suffix + '.part')
@@ -145,7 +146,7 @@ def import_archive(root, refresh=False):
                 temporary.replace(path)
             result = metadata(path, root, source['kind'], source['label'], source['url'], source.get('part'))
             if not refresh and old and old['source'] == source['url'] and old['sha256'] != result['sha256']:
-                raise ValueError('Suma kontrolna lokalnego pliku uległa zmianie; sprawdź plik przed ponownym importem')
+                raise ValueError('The local file checksum changed; verification is required before reimporting')
             return exam['id'], result, None
         except Exception as error:
             return exam['id'], None, {'url': source['url'], 'label': source['label'], 'error': str(error)}
@@ -157,7 +158,7 @@ def import_archive(root, refresh=False):
             entry = results.setdefault(exam_id, {'files': [], 'errors': []})
             entry['errors' if error else 'files'].append(error or file)
             if index % 20 == 0:
-                print(f'Przetworzono {index}/{len(jobs)} plików', flush=True)
+                print(f'Processed {index}/{len(jobs)} files', flush=True)
     catalog, report = [], []
     for source in sources:
         result = results.get(source['id'], {'files': [], 'errors': []})
@@ -171,7 +172,7 @@ def import_archive(root, refresh=False):
         catalog.append(exam)
     write_json(catalog_path, catalog)
     write_json(root / 'docs/exam-import-report.json', {'sources': len(sources), 'published': len(catalog), 'sets': report})
-    print(f'Zaimportowano {len(catalog)} zestawów. Raport: docs/exam-import-report.json')
+    print(f'Imported exam sets: {len(catalog)}. Report: docs/exam-import-report.json')
 
 
 def validate_archive(root):
@@ -183,49 +184,49 @@ def validate_archive(root):
     count = 0
     for exam in catalog:
         if exam['id'] in seen_ids or exam['slug'] in seen_slugs:
-            raise ValueError(f'Powtórzony zestaw: {exam["id"]}')
+            raise ValueError(f'Duplicate exam set: {exam["id"]}')
         seen_ids.add(exam['id'])
         seen_slugs.add(exam['slug'])
         source = source_by_id[exam['id']]
         for key in ['slug', 'formula', 'formulaLabel', 'year', 'month', 'kind', 'level', 'sessionLabel', 'sourcePages']:
             if exam[key] != source[key]:
-                raise ValueError(f'Niezgodne metadane {key}: {exam["id"]}')
+                raise ValueError(f'Metadata mismatch for {key}: {exam["id"]}')
         if not exam['files'] or exam['missing'] != missing_files(source, exam['files']):
-            raise ValueError(f'Niezgodny opis braków: {exam["id"]}')
+            raise ValueError(f'Missing-material status mismatch: {exam["id"]}')
         paths = set()
         for file in [*exam['files'], exam['bundle']]:
             prefix = '/pliki/matury/' + exam['slug'] + '/'
             if not file['path'].startswith(prefix) or '/' in file['path'][len(prefix):] or file['path'] in paths:
-                raise ValueError(f'Niepoprawna lub powtórzona ścieżka: {file["path"]}')
+                raise ValueError(f'Invalid or duplicate path: {file["path"]}')
             paths.add(file['path'])
             path = root / 'public' / file['path'].lstrip('/')
             actual = metadata(path, root, file['kind'], file['label'], file['source'], file.get('part'))
             if actual != file:
-                raise ValueError(f'Niezgodne rozmiar, typ lub suma kontrolna: {file["path"]}')
+                raise ValueError(f'File size, type, or checksum mismatch: {file["path"]}')
             if file['kind'] != 'bundle' and not any(
                 item['url'] == file['source'] and item['filename'] == path.name and item['kind'] == file['kind'] and
                 item['label'] == file['label'] and item.get('part') == file.get('part') for item in source['files']):
-                raise ValueError(f'Plik nie pochodzi z deklarowanego źródła: {path}')
+                raise ValueError(f'File does not match its declared source: {path}')
             count += 1
         with zipfile.ZipFile(root / 'public' / exam['bundle']['path'].lstrip('/')) as bundle:
             if bundle.namelist() != [Path(file['path']).name for file in exam['files']]:
-                raise ValueError(f'Niezgodna lista plików ZIP: {exam["id"]}')
+                raise ValueError(f'ZIP file list mismatch: {exam["id"]}')
             for file in exam['files']:
                 if hashlib.sha256(bundle.read(Path(file['path']).name)).hexdigest() != file['sha256']:
-                    raise ValueError(f'Niezgodna zawartość ZIP: {file["path"]}')
+                    raise ValueError(f'ZIP contents mismatch: {file["path"]}')
     if not catalog:
-        raise ValueError('Brak opublikowanych zestawów')
+        raise ValueError('No published exam sets')
     unpublished = set(source_by_id) - seen_ids
     report = read_json(root / 'docs/exam-import-report.json')
     if any(not any(item['id'] == key and item['files'] == 0 and item['missing'] for item in report['sets']) for key in unpublished):
-        raise ValueError('Zestaw pominięty bez wyjaśnienia w raporcie')
-    print(f'Poprawne archiwum: {len(catalog)} zestawów, {count} plików (wraz z paczkami ZIP).')
+        raise ValueError('Exam set omitted without an explanation in the report')
+    print(f'Archive validation passed. Exam sets: {len(catalog)}. Files: {count} (including ZIP bundles).')
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('command', choices=['import', 'validate'])
-    parser.add_argument('--refresh', action='store_true', help='Pobierz ponownie pliki i świadomie odśwież sumy kontrolne')
+    parser.add_argument('--refresh', action='store_true', help='Downloads all original files again and refreshes checksums')
     args = parser.parse_args()
     try:
         if args.command == 'import':
@@ -233,7 +234,7 @@ def main():
         else:
             validate_archive(ROOT)
     except (ValueError, KeyError, OSError, zipfile.BadZipFile) as error:
-        print(f'Błąd archiwum: {error}', file=sys.stderr)
+        print(f'Archive error: {error}', file=sys.stderr)
         sys.exit(1)
 
 

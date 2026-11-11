@@ -1,0 +1,31 @@
+{
+  "id": "informatyka-2025-maj-formula-2023-rozszerzona-2-4",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "3e4eff7f0593f16f504201b5852da4f18b2da196f93884b59cbfc0726d8ec29b",
+  "fields": [
+    {
+      "id": "suma",
+      "label": "Suma w zapisie dziesiętnym",
+      "kind": "number",
+      "target": "[data-practice=\"suma\"]"
+    },
+    {
+      "id": "symbole",
+      "label": "Suma w zapisie symbolami o, +, *",
+      "kind": "text",
+      "target": "[data-practice=\"symbole\"]"
+    }
+  ],
+  "variants": [
+    {
+      "suma": [
+        "527865439"
+      ],
+      "symbole": [
+        "++oo*+oo*++ooo*o*++"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

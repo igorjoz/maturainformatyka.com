@@ -1,4 +1,4 @@
-"""Exercise corrupt files, metadata and bundles using an isolated local fixture."""
+"""Validation coverage for corrupt files, metadata, and bundles in an isolated fixture."""
 import copy
 import io
 import json
@@ -16,17 +16,17 @@ class ArchiveValidationTests(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
         self.source = {'id': 'test-2023', 'slug': 'test-2023', 'year': 2023, 'month': 5,
-                       'formula': '2023', 'formulaLabel': 'Formuła 2023', 'kind': 'glowny',
-                       'level': 'rozszerzony', 'sessionLabel': 'Maj',
+                       'formula': '2023', 'formulaLabel': 'Formula 2023', 'kind': 'glowny',
+                       'level': 'rozszerzony', 'sessionLabel': 'May',
                        'sourcePages': ['https://cke.gov.pl/arkusze/'],
-                       'files': [{'kind': 'sheet', 'label': 'Arkusz', 'filename': 'arkusz.pdf', 'url': 'https://cke.gov.pl/test.pdf'}],
-                       'required': [{'kind': 'sheet', 'label': 'arkusz'}, {'kind': 'data', 'label': 'dane do zadań'}]}
+                       'files': [{'kind': 'sheet', 'label': 'Exam paper', 'filename': 'paper.pdf', 'url': 'https://cke.gov.pl/test.pdf'}],
+                       'required': [{'kind': 'sheet', 'label': 'exam paper'}, {'kind': 'data', 'label': 'task data'}]}
         directory = self.root / 'public/pliki/matury/test-2023'
         directory.mkdir(parents=True)
-        self.pdf = directory / 'arkusz.pdf'
+        self.pdf = directory / 'paper.pdf'
         self.pdf.write_bytes(b'%PDF-1.7\nfixture\n%%EOF\n')
         self.exam = {key: copy.deepcopy(value) for key, value in self.source.items() if key not in {'files', 'required'}}
-        self.exam.update(files=[metadata(self.pdf, self.root, 'sheet', 'Arkusz', 'https://cke.gov.pl/test.pdf')], missing=['dane do zadań'])
+        self.exam.update(files=[metadata(self.pdf, self.root, 'sheet', 'Exam paper', 'https://cke.gov.pl/test.pdf')], missing=['task data'])
         self.exam['bundle'] = build_bundle(self.exam, self.root)
         self.save('src/data/exam-sources.json', [self.source])
         self.save('src/data/exams.json', [self.exam])
@@ -47,14 +47,14 @@ class ArchiveValidationTests(unittest.TestCase):
 
     def test_changed_pdf_checksum_fails(self):
         self.pdf.write_bytes(b'%PDF-1.7\nchanged\n%%EOF\n')
-        with self.assertRaisesRegex(ValueError, 'suma kontrolna'):
+        with self.assertRaisesRegex(ValueError, 'checksum'):
             validate_archive(self.root)
 
     def test_duplicate_ids_and_path_traversal_fail(self):
-        with self.assertRaisesRegex(ValueError, 'powtórzony'):
+        with self.assertRaisesRegex(ValueError, 'duplicate'):
             validate_sources([self.source, self.source])
-        self.source['files'][0]['filename'] = '../arkusz.pdf'
-        with self.assertRaisesRegex(ValueError, 'nazwa pliku'):
+        self.source['files'][0]['filename'] = '../paper.pdf'
+        with self.assertRaisesRegex(ValueError, 'filename'):
             validate_sources([self.source])
 
     def test_html_error_page_is_not_a_pdf(self):
@@ -62,24 +62,24 @@ class ArchiveValidationTests(unittest.TestCase):
             inspect_file(b'<html>404</html>', '.pdf')
 
     def test_braille_sheet_package_cannot_be_used_as_standard_exam_data(self):
-        self.source['files'].append({'kind': 'data', 'label': 'Dane', 'filename': 'dane.zip',
+        self.source['files'].append({'kind': 'data', 'label': 'Task data', 'filename': 'data.zip',
                                      'url': 'https://cke.gov.pl/informatyka_A6_WB.zip'})
-        with self.assertRaisesRegex(ValueError, 'Wariant dostosowany'):
+        with self.assertRaisesRegex(ValueError, 'Adapted variant'):
             validate_sources([self.source])
 
     def test_missing_status_cannot_hide_a_broken_entry(self):
         self.exam['missing'] = []
         self.save('src/data/exams.json', [self.exam])
-        with self.assertRaisesRegex(ValueError, 'opis braków'):
+        with self.assertRaisesRegex(ValueError, 'Missing-material status'):
             validate_archive(self.root)
 
     def test_bundle_cannot_include_a_different_pdf_even_with_updated_checksum(self):
         path = self.root / 'public' / self.exam['bundle']['path'].lstrip('/')
         with zipfile.ZipFile(path, 'w') as archive:
-            archive.writestr('arkusz.pdf', b'a different document')
-        self.exam['bundle'] = metadata(path, self.root, 'bundle', 'Dostępne pliki ZIP')
+            archive.writestr('paper.pdf', b'a different document')
+        self.exam['bundle'] = metadata(path, self.root, 'bundle', 'Available files ZIP')
         self.save('src/data/exams.json', [self.exam])
-        with self.assertRaisesRegex(ValueError, 'zawartość ZIP'):
+        with self.assertRaisesRegex(ValueError, 'ZIP contents'):
             validate_archive(self.root)
 
     def test_corrupt_zip_fails_crc_check(self):

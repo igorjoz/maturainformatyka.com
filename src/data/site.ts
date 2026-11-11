@@ -9,11 +9,11 @@ export const introMeeting = {
   duration: introDuration,
   format: 'online',
   costLabel: 'bezpłatnie',
-  cta: 'Umów bezpłatne spotkanie',
-  // Wklej pełny adres z atrybutu src kodu „Wbudowana strona rezerwacji” Google.
+  cta: 'Umów bezpłatną rozmowę',
+  // The booking URL is the complete src attribute from the Google booking-page embed.
   bookingUrl: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ25WZbeDzESmQuNbh_KRaelOGxbBfgdW267RQf88-KVEOg6ysqbp2CJwDwL09aipDRayW0GvPJD',
-  heading: 'Poznajmy się na darmowym spotkaniu online.',
-  description: 'Podczas spotkania zapoznawczego porozmawiamy o Twoich oczekiwaniach i celu przygotowania do matury. Poznasz mój sposób pracy, a ja wstępnie sprawdzę Twój poziom i zaproponuję, jak mogę Ci pomóc.',
+  heading: 'Poznajmy się podczas bezpłatnej rozmowy online.',
+  description: 'Podczas bezpłatnej rozmowy porozmawiamy o Twoich oczekiwaniach i celu przygotowania do matury. Poznasz mój sposób pracy, a ja wstępnie sprawdzę Twój poziom i zaproponuję, jak mogę Ci pomóc.',
   agenda: [
     { title: 'Poznajemy Twój cel', description: 'Porozmawiamy o tym, kiedy zdajesz maturę i jaki wynik chcesz osiągnąć.' },
     { title: 'Omawiamy trudności', description: 'Przyjrzymy się temu, co już potrafisz i które tematy sprawiają Ci najwięcej problemów.' },
@@ -24,7 +24,7 @@ export const introMeeting = {
     { question: 'Czy muszę włączyć kamerę?', answer: 'Kamera jest opcjonalna. Możesz dołączyć do rozmowy tak, jak jest Ci wygodnie.' },
     { question: 'Czy muszę od razu zdecydować się na zajęcia?', answer: 'Nie. Spotkanie służy temu, żebyśmy się poznali. O dalszej współpracy możesz spokojnie zdecydować po rozmowie.' },
   ],
-  contactInvitation: `Umów bezpłatne, ${introDuration}-minutowe spotkanie zapoznawcze online.`,
+  contactInvitation: `Umów bezpłatną, ${introDuration}-minutową rozmowę online.`,
 };
 
 export const site = {
@@ -39,13 +39,11 @@ export const site = {
   inPersonPrice: 240,
   durations: [45, 60, 90, 120],
   navigation: [
-    { href: '#wspolpraca', label: 'Współpraca' },
-    { href: '#zakres', label: 'Zakres' },
-    { href: '/arkusze/', label: 'Arkusze maturalne' },
-    { href: '#o-mnie', label: 'O mnie' },
-    { href: '#opinie', label: 'Opinie' },
-    { href: '#oferta', label: 'Oferta' },
-    { href: '#faq', label: 'FAQ' },
+    { href: '#wspolpraca', label: 'Korepetycje' },
+    { href: '/matura-2027/', label: 'Matura 2027' },
+    { href: '/wiedza/', label: 'Wiedza' },
+    { href: '/zadania/', label: 'Zadania' },
+    { href: '/arkusze/', label: 'Arkusze' },
   ],
   hero: {
     heading: 'Matura z informatyki.',
@@ -162,7 +160,7 @@ export const lessonExample = {
 };
 
 export const faqs = [
-  { question: 'Jak wygląda bezpłatne spotkanie zapoznawcze?', answer: `Przez ${introMeeting.duration} minut rozmawiamy online o Twoim celu, poziomie i planie nauki. Nie musisz decydować się na zajęcia. ${introMeeting.bookingUrl ? 'Termin wybierzesz w kalendarzu powyżej. Potwierdzenie i link do Google Meet otrzymasz e-mailem.' : 'Aby umówić spotkanie, napisz do mnie lub zadzwoń.'}` },
+  { question: 'Jak wygląda bezpłatna rozmowa?', answer: `Przez ${introMeeting.duration} minut rozmawiamy online o Twoim celu, poziomie i planie nauki. Nie musisz decydować się na zajęcia. ${introMeeting.bookingUrl ? 'Termin wybierzesz w kalendarzu powyżej. Potwierdzenie i link do Google Meet otrzymasz e-mailem.' : 'Aby umówić spotkanie, napisz do mnie lub zadzwoń.'}` },
   { question: 'Jak wyglądają regularne zajęcia?', answer: 'Pracujemy zgodnie z indywidualnym planem przygotowania, rozwiązując zadania maturalne i omawiając zagadnienia, które wymagają uwagi. Po zajęciach otrzymujesz podsumowanie, materiały i wskazówki do samodzielnej pracy.' },
   { question: 'Czy muszę już dobrze programować?', answer: 'Punkt startu ustalamy indywidualnie. Napisz, co już potrafisz i kiedy zdajesz maturę. Na tej podstawie porozmawiamy o zakresie przygotowania i realnym planie pracy.' },
   { question: 'Python czy C++ — w którym języku pracujemy?', answer: 'Przygotowuję zarówno w Pythonie, jak i C++. Wybór dopasujemy do Twojego dotychczasowego doświadczenia i planu przygotowania.' },

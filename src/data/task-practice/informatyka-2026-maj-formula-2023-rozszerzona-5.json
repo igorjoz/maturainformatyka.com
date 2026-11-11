@@ -1,0 +1,32 @@
+{
+  "id": "informatyka-2026-maj-formula-2023-rozszerzona-5",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "04aaf955e2099a321863560e88fcd53b640bf794b8efa07545cd7a99ce244ee8",
+  "fields": [
+    {
+      "id": "piatkowy",
+      "label": "Brakująca liczba w systemie piątkowym",
+      "kind": "number",
+      "target": "[data-practice=\"piatkowy\"]",
+      "base": 5
+    },
+    {
+      "id": "trojkowy",
+      "label": "Brakująca liczba w systemie trójkowym",
+      "kind": "number",
+      "target": "[data-practice=\"trojkowy\"]",
+      "base": 3
+    }
+  ],
+  "variants": [
+    {
+      "piatkowy": [
+        "1212"
+      ],
+      "trojkowy": [
+        "1000220"
+      ]
+    }
+  ]
+}

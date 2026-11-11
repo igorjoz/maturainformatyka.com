@@ -1,0 +1,22 @@
+{
+  "id": "informatyka-2025-maj-formula-2023-rozszerzona-7-1",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "d9c4fab21319c5db0cb64efed01d5dc8e176101a536e1b520987cf8c8fe69b3b",
+  "fields": [
+    {
+      "id": "obszar",
+      "label": "Nazwa obszaru",
+      "kind": "text",
+      "target": "[data-practice=\"obszar\"]"
+    }
+  ],
+  "variants": [
+    {
+      "obszar": [
+        "Mare Boreum"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

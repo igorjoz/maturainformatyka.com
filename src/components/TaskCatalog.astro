@@ -1,0 +1,73 @@
+---
+import { getTasks, getUsedTopics, taskPath } from '../data/tasks';
+import { sectionNames, difficultyNames, normalizeSearch } from '../data/task-query';
+import { examKinds } from '../data/exams';
+import '../styles/task-catalog.css';
+interface Props { topic?: string }
+const { topic: fixedTopic } = Astro.props;
+const allTasks = await getTasks();
+const tasks = fixedTopic ? allTasks.filter(task => task.topics.some(topic => topic.id === fixedTopic)) : allTasks;
+const topics = await getUsedTopics();
+const years = [...new Set(allTasks.map(task => task.year))].sort((a, b) => b - a);
+const search = (text: string) => [...new Set(normalizeSearch(text.replace(/<[^>]*>/g, ' ')).split(/\s+/))].join(' ');
+const facets = allTasks.map(task => ({ id: task.id, sections: task.sections, topics: task.topics.map(topic => topic.id), difficulty: String(task.difficulty), year: String(task.year), kind: task.exam.kind, practice: task.practiceAvailable, search: search(task.searchText) }));
+const icons: Record<string, string> = {
+  programowanie: 'm8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18',
+  algorytmika: 'M9 3h6v6H9zM3 15h6v6H3zm12 0h6v6h-6zM12 9v3M6 15v-3h12v3',
+  'arkusze-kalkulacyjne': 'M3 4h18v16H3zM3 9h18M3 14h18M9 4v16M15 4v16',
+  'bazy-danych': 'M3 6c0-4 18-4 18 0s-18 4-18 0zm0 0v12c0 4 18 4 18 0V6M3 12c0 4 18 4 18 0',
+  teoria: 'M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1m0-15c3-2 6-2 9-1v15c-3-1-6-1-9 1V5',
+};
+---
+<section data-task-catalog data-fixed-topic={fixedTopic ?? ''} data-fixed-section={topics.find(topic => topic.id === fixedTopic)?.section ?? ''}>
+  <script type="application/json" data-task-facets set:html={JSON.stringify(facets).replace(/</g, '\\u003c')} />
+  <noscript><details class="task-topic-directory"><summary>Wybierz temat</summary><nav class="topic-directory" aria-label="Wybierz temat">{Object.entries(sectionNames).map(([id, name]) => <div><h2>{name}</h2><ul>{topics.filter(topic => topic.section === id).map(topic => <li><a href={`/zadania/tematy/${topic.id}/`}>{topic.name}</a></li>)}</ul></div>)}</nav></details></noscript>
+  <div class="task-catalog-layout">
+    <form class="task-filters task-catalog-controls" data-task-filters hidden aria-label="Wyszukaj i filtruj zadania">
+      <input type="hidden" name="temat" value="all" />
+      <div class="task-search"><label for="task-q">Szukaj zadania</label><input type="search" id="task-q" name="q" placeholder="Np. napisy, liczby, 4.2…" autocomplete="off" /></div>
+      <div class="task-mobile-section"><label for="task-section">Dział</label><select id="task-section" name="dzial"><option value="all">Wszystkie</option>{Object.entries(sectionNames).map(([id, name]) => <option value={id}>{name}</option>)}</select></div>
+      <div class="task-difficulty-filter"><label for="task-difficulty">Trudność</label><select id="task-difficulty" name="trudnosc"><option value="all">Każda trudność</option>{Object.entries(difficultyNames).map(([id, name]) => <option value={id}>{name}</option>)}</select></div>
+      <div class="task-topic-picker">
+        <p class="filter-label" id="task-sections-label">Wybierz dział</p>
+        <div class="task-sections" role="group" aria-labelledby="task-sections-label">
+          <button type="button" class="section-button" data-task-section="all" aria-pressed="true"><span>Wszystkie</span><span data-section-count="all">{allTasks.length}</span></button>
+          {Object.entries(sectionNames).map(([id, name]) => <button type="button" class="section-button" data-task-section={id} aria-pressed="false"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={icons[id]} /></svg><span>{name}</span><span data-section-count={id}>{allTasks.filter(task => task.sections.includes(id)).length}</span></button>)}
+        </div>
+        <div data-desktop-topics>
+          <div class="task-topic-buttons" data-topic-buttons hidden role="group" aria-label="Wybierz temat">
+            <button type="button" class="topic-button" data-all-topics>Wszystkie tematy działu</button>
+            {topics.map(topic => <a class="topic-button" data-topic-choice={topic.id} data-topic-section={topic.section} data-topic-name={topic.name} href={`/zadania/tematy/${topic.id}/`}>{topic.name}<span data-topic-count>{allTasks.filter(task => task.topics.some(item => item.id === topic.id)).length}</span></a>)}
+          </div>
+        </div>
+      </div>
+      <div class="task-filter-options">
+        <details class="task-extra-filters"><summary>Więcej filtrów <span data-extra-count></span></summary><div class="task-extra-fields">
+          <div data-mobile-topics></div>
+          <div><label for="task-year">Rok</label><select id="task-year" name="rok"><option value="all">Wszystkie lata</option>{years.map(year => <option value={year}>{year}</option>)}</select></div>
+          <div><label for="task-kind">Rodzaj zestawu</label><select id="task-kind" name="rodzaj"><option value="all">Wszystkie rodzaje</option>{Object.entries(examKinds).filter(([kind]) => allTasks.some(task => task.exam.kind === kind)).map(([id, name]) => <option value={id}>{name}</option>)}</select></div>
+          <label class="practice-filter"><input type="checkbox" name="sprawdzanie" value="1" /> Ze sprawdzaniem odpowiedzi</label>
+          <div><label for="task-sort">Kolejność</label><select id="task-sort" name="sort"><option value="latwiejsze">Od łatwiejszych</option><option value="trudniejsze">Od trudniejszych</option><option value="najnowsze">Od najnowszych</option><option value="najstarsze">Od najstarszych</option><option value="punkty">Punkty rosnąco</option></select></div>
+        </div></details>
+        <button type="reset" class="archive-reset">Wyczyść filtry</button>
+      </div>
+    </form>
+    <div class="task-catalog-results">
+      <div class="task-results-bar"><p role="status" aria-live="polite" aria-atomic="true" data-task-count>Liczba zadań: {tasks.length}</p><p data-task-active hidden></p></div>
+      <div data-task-empty hidden class="archive-notice"><h2>Brak pasujących zadań</h2><p>Zmień temat lub pozostałe filtry. Możesz też wyczyścić wszystkie filtry.</p></div>
+      <div class="task-list" data-task-list>
+        {tasks.map(task => <article class="task-card" data-task-row data-id={task.id} data-number={task.number} data-difficulty={task.difficulty} data-points={task.points} data-year={task.year} data-month={task.month} data-sections={task.sections.join(' ')} data-topics={task.topics.map(topic => topic.id).join(' ')} data-kind={task.exam.kind} data-practice-available={String(task.practiceAvailable)}>
+          <p class="exam-meta">{task.year} · {task.exam.sessionLabel} · {examKinds[task.exam.kind]}</p>
+          <h2><a href={taskPath(task)} data-task-link>{task.number}. {task.title}</a></h2>
+          <p>{task.summary}</p>
+          <div class="task-tags">{task.topics.map(topic => <a href={`/zadania/tematy/${topic.id}/`}>{topic.name}</a>)}</div>
+          <p class="task-card-footer"><span class={`task-difficulty difficulty-${task.difficulty}`}>{difficultyNames[task.difficulty]}</span><span>{task.points} pkt</span>{task.practiceAvailable && <span class="practice-badge"><span aria-hidden="true">✓</span> Sprawdzisz odpowiedź</span>}</p>
+        </article>)}
+      </div>
+      <div class="catalog-source-note"><p>154 podpunkty z 7 zestawów Formuły 2023: matury majowe 2023–2026, dwa zestawy próbne i jeden pokazowy.</p><p>Materiały i odpowiedzi: CKE. Trudność jest oceną redakcyjną serwisu.</p></div>
+    </div>
+  </div>
+</section>
+<script>
+  import '../scripts/task-catalog';
+</script>

@@ -1,0 +1,41 @@
+{
+  "id": "informatyka-2024-grudzien-probna-formula-2023-rozszerzona-7-1",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "870617df62add515acd8afc559b4e92dd7583b19c9698e6a4960b39f90799c78",
+  "fields": [
+    {
+      "id": "wiatr",
+      "label": "Dzień maksimum energii wiatrowej",
+      "kind": "text",
+      "target": "[data-practice=\"wiatr\"]"
+    },
+    {
+      "id": "slonce",
+      "label": "Dzień maksimum energii fotowoltaicznej",
+      "kind": "text",
+      "target": "[data-practice=\"slonce\"]"
+    }
+  ],
+  "variants": [
+    {
+      "wiatr": [
+        "2.04",
+        "02.04",
+        "2.04.2024",
+        "02.04.2024",
+        "2024-04-02",
+        "2.4.2024",
+        "2 kwietnia"
+      ],
+      "slonce": [
+        "30.04",
+        "30.04.2024",
+        "2024-04-30",
+        "30.4.2024",
+        "30 kwietnia"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

@@ -1,0 +1,191 @@
+{
+  "id": "informatyka-2025-maj-formula-2023-rozszerzona-2-2",
+  "mode": "interactive",
+  "reason": "Liczba kwadratów i trzy pary współrzędnych CKE. Akceptujemy sześć kolejności pełnych par, nie ich mieszanki.",
+  "gradingSha256": "c07473b071a4e3b5feb0ec9ac7c643cf299912d9b23805793c2ef2c116a20f02",
+  "fields": [
+    {
+      "id": "ile",
+      "label": "Liczba kwadratów",
+      "kind": "number",
+      "target": "[data-practice=\"ile\"]"
+    },
+    {
+      "id": "wiersz1",
+      "label": "Kwadrat 1 — wiersz środka",
+      "kind": "number",
+      "target": "[data-practice=\"wiersz1\"]"
+    },
+    {
+      "id": "kolumna1",
+      "label": "Kwadrat 1 — pozycja środka w wierszu",
+      "kind": "number",
+      "target": "[data-practice=\"kolumna1\"]"
+    },
+    {
+      "id": "wiersz2",
+      "label": "Kwadrat 2 — wiersz środka",
+      "kind": "number",
+      "target": "[data-practice=\"wiersz2\"]"
+    },
+    {
+      "id": "kolumna2",
+      "label": "Kwadrat 2 — pozycja środka w wierszu",
+      "kind": "number",
+      "target": "[data-practice=\"kolumna2\"]"
+    },
+    {
+      "id": "wiersz3",
+      "label": "Kwadrat 3 — wiersz środka",
+      "kind": "number",
+      "target": "[data-practice=\"wiersz3\"]"
+    },
+    {
+      "id": "kolumna3",
+      "label": "Kwadrat 3 — pozycja środka w wierszu",
+      "kind": "number",
+      "target": "[data-practice=\"kolumna3\"]"
+    }
+  ],
+  "variants": [
+    {
+      "ile": [
+        "3"
+      ],
+      "wiersz1": [
+        "399"
+      ],
+      "kolumna1": [
+        "5"
+      ],
+      "wiersz2": [
+        "546"
+      ],
+      "kolumna2": [
+        "2"
+      ],
+      "wiersz3": [
+        "630"
+      ],
+      "kolumna3": [
+        "11"
+      ]
+    },
+    {
+      "ile": [
+        "3"
+      ],
+      "wiersz1": [
+        "399"
+      ],
+      "kolumna1": [
+        "5"
+      ],
+      "wiersz2": [
+        "630"
+      ],
+      "kolumna2": [
+        "11"
+      ],
+      "wiersz3": [
+        "546"
+      ],
+      "kolumna3": [
+        "2"
+      ]
+    },
+    {
+      "ile": [
+        "3"
+      ],
+      "wiersz1": [
+        "546"
+      ],
+      "kolumna1": [
+        "2"
+      ],
+      "wiersz2": [
+        "399"
+      ],
+      "kolumna2": [
+        "5"
+      ],
+      "wiersz3": [
+        "630"
+      ],
+      "kolumna3": [
+        "11"
+      ]
+    },
+    {
+      "ile": [
+        "3"
+      ],
+      "wiersz1": [
+        "546"
+      ],
+      "kolumna1": [
+        "2"
+      ],
+      "wiersz2": [
+        "630"
+      ],
+      "kolumna2": [
+        "11"
+      ],
+      "wiersz3": [
+        "399"
+      ],
+      "kolumna3": [
+        "5"
+      ]
+    },
+    {
+      "ile": [
+        "3"
+      ],
+      "wiersz1": [
+        "630"
+      ],
+      "kolumna1": [
+        "11"
+      ],
+      "wiersz2": [
+        "399"
+      ],
+      "kolumna2": [
+        "5"
+      ],
+      "wiersz3": [
+        "546"
+      ],
+      "kolumna3": [
+        "2"
+      ]
+    },
+    {
+      "ile": [
+        "3"
+      ],
+      "wiersz1": [
+        "630"
+      ],
+      "kolumna1": [
+        "11"
+      ],
+      "wiersz2": [
+        "546"
+      ],
+      "kolumna2": [
+        "2"
+      ],
+      "wiersz3": [
+        "399"
+      ],
+      "kolumna3": [
+        "5"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

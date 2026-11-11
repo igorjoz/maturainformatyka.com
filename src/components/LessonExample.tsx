@@ -249,7 +249,7 @@ export default function LessonExample({ lesson }: { lesson: LessonContent }) {
     >
       <div className="container section" data-lesson-switcher>
         <div className="section-heading">
-          <p className="eyebrow">02 / OD POMYSŁU DO KODU</p>
+          <p className="eyebrow">OD POMYSŁU DO KODU</p>
           <div>
             <h2 id="example-title">{lesson.title}</h2>
             <p>{lesson.description}</p>

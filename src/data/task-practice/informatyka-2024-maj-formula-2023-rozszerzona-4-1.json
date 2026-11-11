@@ -1,0 +1,22 @@
+{
+  "id": "informatyka-2024-maj-formula-2023-rozszerzona-4-1",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "2462512b6440f2fdc1b87d4e71cab03294bb09ec80fd7d7feb7b4fe5a6185709",
+  "fields": [
+    {
+      "id": "ile",
+      "label": "Liczba dzielników w pierwszym wierszu",
+      "kind": "number",
+      "target": "[data-practice=\"ile\"]"
+    }
+  ],
+  "variants": [
+    {
+      "ile": [
+        "212"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

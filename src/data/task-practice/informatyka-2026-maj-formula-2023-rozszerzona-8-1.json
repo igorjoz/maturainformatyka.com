@@ -1,0 +1,22 @@
+{
+  "id": "informatyka-2026-maj-formula-2023-rozszerzona-8-1",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "66fd19e23fe182bd3986081d4b142a5b4148a390bcf1e950fe89394cd26a3c6d",
+  "fields": [
+    {
+      "id": "klient",
+      "label": "Imię i nazwisko klienta",
+      "kind": "text",
+      "target": "[data-practice=\"klient\"]"
+    }
+  ],
+  "variants": [
+    {
+      "klient": [
+        "Marcelino Kruk"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

@@ -1,0 +1,31 @@
+{
+  "id": "informatyka-2026-maj-formula-2023-rozszerzona-1-2",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "669f18a346a087ffa1a8ed2dcea6ae78a22c9c9458782159201df6be06b8cfca",
+  "fields": [
+    {
+      "id": "a1",
+      "label": "A(1, 777), zapis dziesiętny",
+      "kind": "number",
+      "target": "[data-practice=\"a1\"]"
+    },
+    {
+      "id": "a2",
+      "label": "A(2 · 10^6, 256 · 10^6), zapis dziesiętny",
+      "kind": "number",
+      "target": "[data-practice=\"a2\"]"
+    }
+  ],
+  "variants": [
+    {
+      "a1": [
+        "777"
+      ],
+      "a2": [
+        "512000000000000"
+      ]
+    }
+  ],
+  "note": "W formularzu wpisz liczby w zapisie dziesiętnym. Zapis z operatorami mnożenia i potęgowania porównaj z odpowiedzią CKE."
+}

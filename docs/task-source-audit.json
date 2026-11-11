@@ -1,0 +1,76 @@
+{
+  "scope": "7 lokalnych zestawów Formuły 2023",
+  "method": "Nagłówki Zadanie z fizycznych stron oryginalnych PDF porównane z niezależną inwentaryzacją; osobna kontrola wizualna treści podczas redakcji.",
+  "exams": [
+    {
+      "examId": "informatyka-2022-grudzien-probna-formula-2023-rozszerzona",
+      "subtasks": 22,
+      "totalPoints": 50,
+      "sourceHeadingsMatch": true,
+      "sourceSha256": {
+        "sheet": "3b8be27d31a4eced038a3f7b4bbca6272c8263fdbe7c627d0e16f923ff04b10b",
+        "grading": "f05468e571ab3935986036a8ea2b9f00a6870f486ccfeabb5c188a1636d1d54d"
+      }
+    },
+    {
+      "examId": "informatyka-2022-marzec-pokazowa-formula-2023-rozszerzona",
+      "subtasks": 22,
+      "totalPoints": 50,
+      "sourceHeadingsMatch": true,
+      "sourceSha256": {
+        "sheet": "754fcebb06cc668c2a52bfee145b518c2ffd3496d4065e708ffe7c3c471e6a9c",
+        "grading": "c19b33296939e02b184bce34997f29fa4210deef634632f8591579af02ec3a3e"
+      }
+    },
+    {
+      "examId": "informatyka-2023-maj-formula-2023-rozszerzona",
+      "subtasks": 23,
+      "totalPoints": 50,
+      "sourceHeadingsMatch": true,
+      "sourceSha256": {
+        "sheet": "b1db742e22c65c1b951bc49ef3e4dc1b3f8fb039244c0631f45173c3b7626efb",
+        "grading": "c71257fe225d9a54b7555a0153dda524636fc60a22dd7937c5cafadad202c838"
+      }
+    },
+    {
+      "examId": "informatyka-2024-grudzien-probna-formula-2023-rozszerzona",
+      "subtasks": 21,
+      "totalPoints": 50,
+      "sourceHeadingsMatch": true,
+      "sourceSha256": {
+        "sheet": "7b651bc366c9c57b5f456c9c49d9fc06337e1fbb41850ea63909629d9ffabb2d",
+        "grading": "30e08a91663d2afee4a09a6cb6b394bc34c611291e0171381d43f6edb99a014d"
+      }
+    },
+    {
+      "examId": "informatyka-2024-maj-formula-2023-rozszerzona",
+      "subtasks": 22,
+      "totalPoints": 50,
+      "sourceHeadingsMatch": true,
+      "sourceSha256": {
+        "sheet": "a14a228708baf715cd23e9f323a4e0d67c2390fbe629b493e29c142c770b49cb",
+        "grading": "32d0ecba637a900c4273c78f599664175612cb51b2daf6217ad69e6ce49a6daf"
+      }
+    },
+    {
+      "examId": "informatyka-2025-maj-formula-2023-rozszerzona",
+      "subtasks": 21,
+      "totalPoints": 50,
+      "sourceHeadingsMatch": true,
+      "sourceSha256": {
+        "sheet": "c7617b64289607293654ea5aedd39b959ae54e24b51525bfe9b6a140deb3902e",
+        "grading": "936ae9551db0b89e9ab64be241943f74ecbfe24a3b754e999d1c285f187d72aa"
+      }
+    },
+    {
+      "examId": "informatyka-2026-maj-formula-2023-rozszerzona",
+      "subtasks": 23,
+      "totalPoints": 50,
+      "sourceHeadingsMatch": true,
+      "sourceSha256": {
+        "sheet": "ab8ce661cf1367675d12c6fba0f2710316ed5b08445e8853a53c173dcfd571ba",
+        "grading": "aafd83e3713af62854c075623cf874ec7dde78801e506755a41998fccaa62509"
+      }
+    }
+  ]
+}

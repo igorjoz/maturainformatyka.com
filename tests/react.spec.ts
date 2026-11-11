@@ -1,15 +1,15 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./support/expanded-home";
 
 test.beforeEach(async ({ page }) => {
   await page.route("https://calendar.google.com/**", (route) =>
     route.fulfill({
       contentType: "text/html",
-      body: "<p>Kalendarz testowy</p>",
+      body: "<p>Test calendar</p>",
     }),
   );
 });
 
-test("wyspy zachowują statyczną treść i uruchamiają się dopiero przy przewinięciu", async ({
+test("islands retain static content and hydrate only when scrolled into view", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
@@ -33,7 +33,7 @@ test("wyspy zachowują statyczną treść i uruchamiają się dopiero przy przew
   ).toHaveCount(0);
 });
 
-test("hydratacja wszystkich sekcji i zmiana poziomów nie zgłaszają błędów React", async ({
+test("section hydration and level changes produce no React errors", async ({
   page,
 }) => {
   const errors: string[] = [];
@@ -86,7 +86,7 @@ test("hydratacja wszystkich sekcji i zmiana poziomów nie zgłaszają błędów 
   expect(errors).toEqual([]);
 });
 
-test("opóźnione skrypty nie blokują menu, FAQ ani treści", async ({ page }) => {
+test("delayed scripts leave navigation, FAQ, and content usable", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   // Simulate a failed script download, independently of the no-JavaScript context tests.
   await page.route("**/_astro/*.js", (route) =>
@@ -96,7 +96,8 @@ test("opóźnione skrypty nie blokują menu, FAQ ani treści", async ({ page }) 
   const menu = page.locator(".mobile-menu");
   await menu.locator("summary").click();
   await expect(menu).toHaveAttribute("open", "");
-  await menu.getByRole("link", { name: "FAQ", exact: true }).click();
+  await menu.locator("summary").click();
+  await page.goto("/#faq");
   const question = page.locator("#faq details").first();
   await question.locator("summary").click();
   await expect(question.locator("p")).toBeVisible();

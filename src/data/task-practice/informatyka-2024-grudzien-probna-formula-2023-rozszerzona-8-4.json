@@ -1,0 +1,39 @@
+{
+  "id": "informatyka-2024-grudzien-probna-formula-2023-rozszerzona-8-4",
+  "mode": "interactive",
+  "reason": "Dwa pełne warianty CKE: (150530, 105860) albo (150935, 106130). Mieszanie przychodów pomiędzy wariantami nie jest poprawnym zestawem.",
+  "gradingSha256": "b608ff03e4fd6f9f8c2d7e1ce4d651788fb9df651370273d597a8d12a6654d8d",
+  "fields": [
+    {
+      "id": "listopad",
+      "label": "Przychód w listopadzie",
+      "kind": "number",
+      "target": "[data-practice=\"listopad\"]"
+    },
+    {
+      "id": "grudzien",
+      "label": "Przychód w grudniu",
+      "kind": "number",
+      "target": "[data-practice=\"grudzien\"]"
+    }
+  ],
+  "variants": [
+    {
+      "listopad": [
+        "150530"
+      ],
+      "grudzien": [
+        "105860"
+      ]
+    },
+    {
+      "listopad": [
+        "150935"
+      ],
+      "grudzien": [
+        "106130"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

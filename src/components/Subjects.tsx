@@ -249,7 +249,7 @@ export default function Subjects({
       aria-labelledby="subjects-title"
     >
       <div className="section-heading">
-        <p className="eyebrow">03 / ZAKRES PRZYGOTOWANIA</p>
+        <p className="eyebrow">ZAKRES PRZYGOTOWANIA</p>
         <div>
           <h2 id="subjects-title">
             Łączysz wiedzę.

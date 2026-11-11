@@ -1,0 +1,31 @@
+{
+  "id": "informatyka-2022-marzec-pokazowa-formula-2023-rozszerzona-3-1",
+  "mode": "interactive",
+  "reason": "Dwa jednoznaczne wyniki b. Wykładniki x mają wiele poprawnych wartości, więc pozostają do samodzielnego porównania; klucz CKE zawiera tylko przykłady x.",
+  "gradingSha256": "1da4ccfc890f9c379aebef36de5ed43a2fff3c1f198cd2a82240a358534fc6bf",
+  "note": "Sprawdzamy tylko wartości b w wierszach M = 11 i M = 80. Wykładniki x porównaj samodzielnie — równania mogą mieć więcej niż jedno rozwiązanie.",
+  "fields": [
+    {
+      "id": "b-11",
+      "label": "b dla M = 11, a = 3, x = 3",
+      "kind": "number",
+      "target": "[data-practice=\"b-11\"]"
+    },
+    {
+      "id": "b-80",
+      "label": "b dla M = 80, a = 9, x = 2",
+      "kind": "number",
+      "target": "[data-practice=\"b-80\"]"
+    }
+  ],
+  "variants": [
+    {
+      "b-11": [
+        "5"
+      ],
+      "b-80": [
+        "1"
+      ]
+    }
+  ]
+}

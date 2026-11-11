@@ -1,0 +1,43 @@
+{
+  "id": "informatyka-2022-marzec-pokazowa-formula-2023-rozszerzona-4-4",
+  "mode": "interactive",
+  "reason": "Jednoznaczne wyniki i jawne zapisy daty. Zachowana rozbieżność punktacji: katalog 3 pkt, kryteria CKE 2 pkt.",
+  "gradingSha256": "2430e78e4ef5442c21ebce66c70e13042eea89dc13c7b36cddabe14f253d5d40",
+  "fields": [
+    {
+      "id": "wyjazdy",
+      "label": "a) Liczba wszystkich wyjazdów pługów",
+      "kind": "number",
+      "target": "[data-practice=\"wyjazdy\"]"
+    },
+    {
+      "id": "dzien",
+      "label": "b) Dzień największej liczby wyjazdów (dd.mm.rrrr)",
+      "kind": "text",
+      "target": "[data-practice=\"dzien\"]"
+    },
+    {
+      "id": "maksimum",
+      "label": "b) Największa liczba wyjazdów w jednym dniu",
+      "kind": "number",
+      "target": "[data-practice=\"maksimum\"]"
+    }
+  ],
+  "variants": [
+    {
+      "wyjazdy": [
+        "30"
+      ],
+      "dzien": [
+        "22.02.2019",
+        "22.2.2019",
+        "2019-02-22",
+        "22 lutego",
+        "22 lutego 2019"
+      ],
+      "maksimum": [
+        "4"
+      ]
+    }
+  ]
+}

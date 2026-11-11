@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: Sprawdź połączenie i plan wysyłki bez zmiany plików na hostingu
+        description: Connection and transfer-plan verification without changes to hosted files
         type: boolean
         default: false
 
@@ -46,11 +46,20 @@ jobs:
       - name: Test archive validation
         run: npm run exams:test
 
+      - name: Test task validation
+        run: npm run tasks:test
+
+      - name: Test deployment page cleanup
+        run: python3 -m unittest discover -s scripts -p 'test_deploy_pages.py'
+
       - name: Install test browser
         run: npx playwright install --with-deps chromium
 
       - name: Build and test website
         run: npm test
+
+      - name: Verify development homepage during checks and builds
+        run: npm run test:dev
 
       - name: Deploy to Hostinger
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'

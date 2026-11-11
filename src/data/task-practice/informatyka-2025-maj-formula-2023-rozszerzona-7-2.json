@@ -1,0 +1,44 @@
+{
+  "id": "informatyka-2025-maj-formula-2023-rozszerzona-7-2",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "5f67e6b18f94f9864d4537bd9d20d17c41c2e648aaf754f2c2f8c5b66d074887",
+  "fields": [
+    {
+      "id": "lazik",
+      "label": "Nazwa łazika",
+      "kind": "text",
+      "target": "[data-practice=\"lazik\"]"
+    },
+    {
+      "id": "pierwszy",
+      "label": "Data pierwszego pomiaru",
+      "kind": "text",
+      "target": "[data-practice=\"pierwszy\"]"
+    },
+    {
+      "id": "ostatni",
+      "label": "Data ostatniego pomiaru",
+      "kind": "text",
+      "target": "[data-practice=\"ostatni\"]"
+    }
+  ],
+  "variants": [
+    {
+      "lazik": [
+        "Spirit 14"
+      ],
+      "pierwszy": [
+        "29.08.2066",
+        "2066-08-29",
+        "29.8.2066"
+      ],
+      "ostatni": [
+        "25.07.2076",
+        "2076-07-25",
+        "25.7.2076"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

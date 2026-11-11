@@ -1,0 +1,47 @@
+{
+  "id": "informatyka-2022-grudzien-probna-formula-2023-rozszerzona-4-1",
+  "mode": "interactive",
+  "reason": "Wariant odpowiedzi dopuszczony przez CKE: początek i koniec okresu oraz liczba podlewań. Bez wymagania redundantnej długości okresu; jawne zapisy dat.",
+  "gradingSha256": "fa9dc9ed3b92f5022e913a75b202e40e9d796d043955c57d8f19754bc64beca0",
+  "fields": [
+    {
+      "id": "poczatek",
+      "label": "a) Początek okresu (dd.mm.rrrr)",
+      "kind": "text",
+      "target": "[data-practice=\"poczatek\"]"
+    },
+    {
+      "id": "koniec",
+      "label": "a) Koniec okresu (dd.mm.rrrr)",
+      "kind": "text",
+      "target": "[data-practice=\"koniec\"]"
+    },
+    {
+      "id": "podlewanie",
+      "label": "b) Liczba podlewań",
+      "kind": "number",
+      "target": "[data-practice=\"podlewanie\"]"
+    }
+  ],
+  "variants": [
+    {
+      "poczatek": [
+        "12.08.2022",
+        "12.08.22",
+        "12.8.2022",
+        "2022-08-12"
+      ],
+      "koniec": [
+        "01.09.2022",
+        "1.09.2022",
+        "01.09.22",
+        "1.09.22",
+        "1.9.2022",
+        "2022-09-01"
+      ],
+      "podlewanie": [
+        "18"
+      ]
+    }
+  ]
+}

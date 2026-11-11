@@ -23,7 +23,7 @@ export default function Offer({
         <GeometryBackdrop variant="light" />
         <div className="container offer">
           <div className="offer-copy" data-reveal>
-            <p className="eyebrow">06 / TWOJE PRZYGOTOWANIE</p>
+            <p className="eyebrow">TWOJE PRZYGOTOWANIE</p>
             <h2 id="offer-title">
               Twój cel.
               <br />

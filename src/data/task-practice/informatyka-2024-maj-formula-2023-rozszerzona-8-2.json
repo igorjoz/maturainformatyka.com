@@ -1,0 +1,32 @@
+{
+  "id": "informatyka-2024-maj-formula-2023-rozszerzona-8-2",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "cb8ddf1e8345c3eb67873da1b1fd8c564b0106ad2a368f401bacdf91a1ba9074",
+  "fields": [
+    {
+      "id": "miesiac",
+      "label": "Miesiąc",
+      "kind": "text",
+      "target": "[data-practice=\"miesiac\"]"
+    },
+    {
+      "id": "punkty",
+      "label": "Łączna liczba punktów karnych",
+      "kind": "number",
+      "target": "[data-practice=\"punkty\"]"
+    }
+  ],
+  "variants": [
+    {
+      "miesiac": [
+        "listopad",
+        "11"
+      ],
+      "punkty": [
+        "1766"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

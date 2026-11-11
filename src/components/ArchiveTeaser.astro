@@ -1,16 +1,28 @@
 ---
 import { exams } from '../data/exams';
+import { getTasks } from '../data/tasks';
+const tasks = await getTasks();
+const interactiveCount = tasks.filter(task => task.practiceAvailable).length;
+const firstYear = Math.min(...exams.map(exam => exam.year));
 ---
 <section class="section archive-teaser" aria-labelledby="archive-teaser-title">
-  <div class="container archive-teaser-inner">
-    <div>
-      <p class="eyebrow">MATERIAŁY DO SAMODZIELNEJ NAUKI</p>
-      <h2 id="archive-teaser-title">Twój kolejny arkusz.<br />Wszystko w jednym miejscu.</h2>
-      <p>Arkusze maturalne z informatyki, zasady oceniania i dane do zadań. Wybierz formułę i rocznik, a potem pobierz materiały lub otwórz arkusz na stronie.</p>
-    </div>
-    <div class="archive-teaser-action">
-      <span>{exams.length} zestawów · od 2005 roku</span>
-      <a class="button button-primary" href="/arkusze/">Przeglądaj arkusze maturalne <span aria-hidden="true">→</span></a>
+  <div class="container">
+    <p class="eyebrow">MATERIAŁY DO SAMODZIELNEJ NAUKI</p>
+    <h2 id="archive-teaser-title">Ćwicz temat. Albo rozwiąż cały arkusz.</h2>
+    <a class="guide-home-link" href="/matura-2027/"><span class="eyebrow">TWÓJ PUNKT STARTU · 2027</span><strong>Wiesz, co trzeba umieć?</strong><span>Poznaj zasady egzaminu, sprawdź umiejętności i wybierz swoją ścieżkę nauki.</span><span aria-hidden="true">↗</span></a>
+    <div class="materials-choices">
+      <article class="materials-choice" data-material-choice="tasks">
+        <h3>Zadania według tematów</h3>
+        <p class="materials-total"><strong>{tasks.length}</strong> zadania</p>
+        <p>{interactiveCount} ze sprawdzaniem odpowiedzi. Wybierz temat i trudność, rozwiąż zadanie i porównaj odpowiedź z CKE.</p>
+        <a class="button button-primary" href="/zadania/">Ćwicz zadania według tematów <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="materials-choice" data-material-choice="exams">
+        <h3>Arkusze maturalne</h3>
+        <p class="materials-total"><strong>{exams.length}</strong> zestawów · od {firstYear} roku</p>
+        <p>Pracuj z całym arkuszem. Pobierz polecenia, dane do zadań i oficjalne zasady oceniania CKE.</p>
+        <a class="button button-secondary" href="/arkusze/">Przeglądaj arkusze maturalne <span aria-hidden="true">→</span></a>
+      </article>
     </div>
   </div>
 </section>

@@ -1,0 +1,23 @@
+{
+  "id": "informatyka-2024-grudzien-probna-formula-2023-rozszerzona-3-2",
+  "mode": "interactive",
+  "reason": "Dziesięć jednoznacznych liczb CKE, porównanie jako nieuporządkowanej listy z zachowaniem liczby wystąpień.",
+  "gradingSha256": "af6daf164e954f90cda5851ae0f15c7bc00143f198a0dfcbbbacd3b5cf525873",
+  "fields": [
+    {
+      "id": "liczby",
+      "label": "Liczby (oddziel średnikami, dowolna kolejność)",
+      "kind": "text",
+      "target": "[data-practice=\"liczby\"]",
+      "unordered": true
+    }
+  ],
+  "variants": [
+    {
+      "liczby": [
+        "2730;8190;2310;4620;7770;8610;4830;4290;6930;6630"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

@@ -1,0 +1,64 @@
+/* Both panels are rendered at build time; only the selected task enters the tab order. */
+[data-reader-modes][hidden], [data-reader-pdf-actions][hidden], [data-exam-pdf-panel][hidden], [data-exam-task-reader][hidden], [data-exam-task-group][hidden] { display:none!important; }
+.exam-header { display:flex; align-items:center; gap:24px; margin-bottom:12px; }
+.exam-header nav { flex-shrink:0; }
+.exam-header nav a { display:inline-flex; align-items:center; min-height:44px; font-size:.875rem; }
+.exam-header>div { min-width:0; }
+.exam-header h1 { margin:0; font-size:1.5rem; line-height:1.3; letter-spacing:-.025em; overflow-wrap:anywhere; }
+.exam-header h1 span { color:var(--sage); }
+.exam-metadata { margin-top:4px; font-size:.8125rem; line-height:1.5; color:var(--muted); }
+.exam-files.exam-files-compact { margin-block:0 12px; }
+.exam-files-compact .file-link { min-height:56px; padding:8px 12px; }
+.exam-reader-toolbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px 20px; margin-bottom:12px; }
+.exam-reader-toolbar#exam-preview-title { scroll-margin-top:12px; }
+.exam-reader-toolbar:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
+.exam-reader-toolbar .preview-actions { margin:0; gap:8px 20px; }
+.exam-reader-toolbar .preview-actions>div { gap:8px; }
+.exam-reader-toolbar .preview-actions :is(a,button) { min-height:44px; font-size:.875rem; }
+.exam-reader-toolbar .preview-actions a { display:inline-flex; align-items:center; gap:6px; }
+.exam-task-reader { scroll-margin-top:12px; }
+.exam-reading-modes { display:inline-flex; gap:4px; margin:0; padding:3px; border:1px solid var(--line); border-radius:10px; background:var(--soft); }
+.exam-reading-modes button, .exam-reader-buttons button { min-height:44px; padding:8px 16px; border:1px solid var(--line); border-radius:7px; background:var(--white); color:var(--ink); font:inherit; font-size:.875rem; font-weight:650; cursor:pointer; }
+.exam-reading-modes button { min-width:80px; border-color:transparent; }
+.exam-reading-modes button[aria-pressed="true"] { background:var(--ink); color:var(--white); }
+.exam-reading-modes button:focus-visible, .exam-reader-controls :is(button,select):focus-visible, .exam-reader-group :is(h3,h4)[tabindex]:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
+.exam-reader-controls { display:flex; align-items:center; flex-wrap:wrap; gap:8px 20px; padding:10px; border:1px solid var(--line); border-radius:var(--radius); background:var(--soft); }
+.exam-reader-select { display:grid; gap:6px; }
+.exam-reader-select label { font-size:.875rem; font-weight:700; }
+.exam-reader-select select { min-height:44px; min-width:180px; padding:8px 32px 8px 12px; border:1px solid var(--line); border-radius:7px; background:var(--white); color:var(--ink); font:inherit; font-size:.875rem; }
+.exam-reader-controls p { align-self:center; margin:0; font-size:.875rem; color:var(--muted); }
+.exam-reader-buttons { display:flex; flex-wrap:wrap; gap:8px; margin-left:auto; }
+.exam-reader-buttons button:disabled { opacity:.45; cursor:default; }
+.exam-reader-group { margin-block:16px; min-width:0; }
+.exam-reader-heading { display:flex; align-items:baseline; gap:16px; justify-content:space-between; margin-bottom:16px; }
+.exam-reader-heading h3 { font-size:1.6rem; line-height:1.4; }
+.exam-reader-heading h4 { font-size:1.2rem; line-height:1.4; }
+.exam-reader-heading span { flex-shrink:0; font-size:.875rem; font-weight:700; }
+.exam-reader-group :is(h3,h4)[tabindex] { scroll-margin-top:120px; }
+.exam-reader-context { margin-bottom:28px; }
+.exam-reader-context h4 { margin-bottom:16px; font-size:1.125rem; }
+.exam-reader-subtask { padding-block:24px; border-top:1px solid var(--line); }
+.exam-reader-subtask>.archive-notice { margin-block:16px; }
+.exam-reader-subtask h5 { font-size:1rem; margin-bottom:8px; }
+.exam-reader-materials { margin-top:16px; }
+.exam-reader-materials .exam-downloads { margin-block:12px; }
+.exam-reader-links { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px 24px; font-size:.875rem; }
+@media(max-width:600px) {
+  .exam-header { flex-direction:column; align-items:stretch; gap:4px; margin-bottom:12px; }
+  .exam-header nav a { min-height:32px; }
+  .exam-header h1 { font-size:1.25rem; }
+  .exam-metadata { font-size:.75rem; }
+  .exam-files-compact .exam-downloads { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; }
+  .exam-files-compact .file-link { min-width:0; min-height:58px; padding:8px; font-size:.75rem; line-height:1.4; overflow-wrap:anywhere; }
+  .exam-files-compact .file-link small { font-size:.6875rem; }
+  .exam-reader-toolbar { gap:8px; }
+  .exam-reader-controls { flex-wrap:nowrap; padding:8px; gap:8px; }
+  .exam-reader-select { flex:1; min-width:0; }
+  .exam-reader-select select { min-width:0; width:100%; }
+  .exam-reader-buttons { flex-wrap:nowrap; margin:0; }
+  .exam-reader-buttons button { width:44px; padding-inline:8px; }
+  .exam-reader-button-label { display:none; }
+  .exam-reader-heading { gap:12px; }
+  .exam-reader-heading h3 { font-size:1.35rem; }
+  .exam-reader-heading h4 { font-size:1.1rem; }
+}

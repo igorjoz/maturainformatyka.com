@@ -1,0 +1,62 @@
+{
+  "id": "informatyka-2026-maj-formula-2023-rozszerzona-1-1",
+  "mode": "interactive",
+  "reason": "Pięć pustych pól tabeli; sekwencje wywołań porównujemy po pominięciu odstępów, z jawnym wariantem potęgowym CKE i zapisem dziesiętnym. Nie wykonujemy wyrażeń.",
+  "gradingSha256": "b9f3191f3e60b3aec084120c1777fa54732c136a9f05342bb73c90eeeab79ace",
+  "fields": [
+    {
+      "id": "ile32",
+      "label": "Liczba wywołań dla m = 2^5, n = 2^5",
+      "kind": "number",
+      "target": "[data-practice=\"ile32\"]"
+    },
+    {
+      "id": "wywolania32",
+      "label": "Wywołania dla m = 2^5, n = 2^5",
+      "kind": "text",
+      "target": "[data-practice=\"wywolania32\"]",
+      "compact": true
+    },
+    {
+      "id": "ile15",
+      "label": "Liczba wywołań dla m = 10, n = 15",
+      "kind": "number",
+      "target": "[data-practice=\"ile15\"]"
+    },
+    {
+      "id": "wywolania15",
+      "label": "Wywołania dla m = 10, n = 15",
+      "kind": "text",
+      "target": "[data-practice=\"wywolania15\"]",
+      "compact": true
+    },
+    {
+      "id": "ile100",
+      "label": "Liczba wywołań dla m = 1, n = 2^100 + 1",
+      "kind": "number",
+      "target": "[data-practice=\"ile100\"]"
+    }
+  ],
+  "variants": [
+    {
+      "ile32": [
+        "5"
+      ],
+      "wywolania32": [
+        "A(64,16),A(128,8),A(256,4),A(512,2),A(1024,1)",
+        "A(2^6,2^4),A(2^7,2^3),A(2^8,2^2),A(2^9,2^1),A(2^10,2^0)",
+        "A(2^6,2^4),A(2^7,2^3),A(2^8,2^2),A(2^9,2),A(2^10,1)"
+      ],
+      "ile15": [
+        "3"
+      ],
+      "wywolania15": [
+        "A(10,7),A(10,3),A(10,1)"
+      ],
+      "ile100": [
+        "100"
+      ]
+    }
+  ],
+  "note": "Wywołania zapisz jako A(m,n), oddzielając je przecinkami. Argumenty możesz zapisać dziesiętnie lub jako potęgi 2 z symbolem ^."
+}

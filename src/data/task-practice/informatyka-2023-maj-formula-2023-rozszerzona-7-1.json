@@ -1,0 +1,21 @@
+{
+  "id": "informatyka-2023-maj-formula-2023-rozszerzona-7-1",
+  "mode": "interactive",
+  "reason": "Jednoznaczne wyniki CKE; porównanie wartości pól. Sprawdzamy wynik, bez oceny programu ani plików.",
+  "gradingSha256": "a93acf87f5d8db5e96ec269ec14977591da09de3c7519129c8c39ee34a02e48c",
+  "fields": [
+    {
+      "id": "gra",
+      "label": "Tytuł gry z największą liczbą ocen",
+      "kind": "text",
+      "target": "[data-practice=\"gra\"]"
+    }
+  ],
+  "variants": [
+    {
+      "gra": [
+        "K2"
+      ]
+    }
+  ]
+}

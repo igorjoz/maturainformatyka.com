@@ -1,0 +1,22 @@
+{
+  "id": "informatyka-2022-grudzien-probna-formula-2023-rozszerzona-5-3",
+  "mode": "interactive",
+  "reason": "16 numerów pokoi z klucza w dowolnej kolejności, z kontrolą duplikatów. Sprawdzamy wynik, nie SQL.",
+  "gradingSha256": "e0ca76373d9a53c4bcfb7caf6bf20d1db3c3a1fd2d99bd6d3a6b30b919e22881",
+  "fields": [
+    {
+      "id": "lista",
+      "label": "Numery pokoi, oddzielone średnikami",
+      "kind": "text",
+      "target": "[data-practice=\"lista\"]",
+      "unordered": true
+    }
+  ],
+  "variants": [
+    {
+      "lista": [
+        "104;107;109;110;114;117;207;215;306;310;314;402;411;415;416;418"
+      ]
+    }
+  ]
+}

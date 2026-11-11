@@ -1,0 +1,22 @@
+{
+  "id": "informatyka-2022-marzec-pokazowa-formula-2023-rozszerzona-5-3",
+  "mode": "interactive",
+  "reason": "Sześć nazw nabrzeży w dowolnej kolejności, z kontrolą duplikatów. Sprawdzamy wynik, nie SQL.",
+  "gradingSha256": "365493876e846b8cb3070bf1e0f9baef2fc50af6c3799d8a3f385336e997ad24",
+  "fields": [
+    {
+      "id": "lista",
+      "label": "Nazwy nabrzeży, oddzielone średnikami",
+      "kind": "text",
+      "target": "[data-practice=\"lista\"]",
+      "unordered": true
+    }
+  ],
+  "variants": [
+    {
+      "lista": [
+        "ALMEX;BYTOMSKIE USKOK;CAL;OKO BASEN;PRCIP;REMSTAT"
+      ]
+    }
+  ]
+}

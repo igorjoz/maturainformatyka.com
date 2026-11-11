@@ -1,0 +1,54 @@
+{
+  "id": "informatyka-2022-grudzien-probna-formula-2023-rozszerzona-7",
+  "mode": "interactive",
+  "reason": "Wybór P/F dla każdego zdania, zgodnie z kluczem CKE.",
+  "gradingSha256": "913855debf94e4f5ecf0d0246c6c21f263385f343815f4e057a4be14992d2472",
+  "fields": [
+    {
+      "id": "zdanie-1",
+      "label": "Zdanie 1: Klucz symetryczny umożliwia przeprowadzanie operacji szyfrowania i deszyfrowania.",
+      "kind": "single",
+      "target": "[data-practice=\"zdanie-1\"]",
+      "options": [
+        {
+          "value": "P",
+          "label": "Prawda",
+          "selector": "td:nth-child(3)"
+        },
+        {
+          "value": "F",
+          "label": "Fałsz",
+          "selector": "td:nth-child(4)"
+        }
+      ]
+    },
+    {
+      "id": "zdanie-2",
+      "label": "Zdanie 2: W szyfrowaniu symetrycznym używa się dwóch kluczy: prywatnego i publicznego.",
+      "kind": "single",
+      "target": "[data-practice=\"zdanie-2\"]",
+      "options": [
+        {
+          "value": "P",
+          "label": "Prawda",
+          "selector": "td:nth-child(3)"
+        },
+        {
+          "value": "F",
+          "label": "Fałsz",
+          "selector": "td:nth-child(4)"
+        }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "zdanie-1": [
+        "P"
+      ],
+      "zdanie-2": [
+        "F"
+      ]
+    }
+  ]
+}

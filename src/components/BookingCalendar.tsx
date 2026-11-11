@@ -19,14 +19,14 @@ export default function BookingCalendar({
       !embedUrl.pathname.includes("/appointments/schedules/")
     ) {
       throw new Error(
-        "introMeeting.bookingUrl: użyj pełnego adresu calendar.google.com z pola src kodu osadzenia strony rezerwacji.",
+        "introMeeting.bookingUrl must contain the complete calendar.google.com URL from the booking-page iframe src attribute.",
       );
     }
     embedUrl.searchParams.set("gv", "true");
     embedUrl.searchParams.set("hl", "pl");
   }
 
-  const emailHref = `mailto:${site.email}?subject=${encodeURIComponent("Bezpłatne spotkanie zapoznawcze — matura z informatyki")}&body=${encodeURIComponent(`Cześć Igor!\n\nChcę umówić bezpłatne, ${introMeeting.duration}-minutowe spotkanie online.\n\nRok, w którym zdaję maturę: \nMój poziom: \nMój cel: \nDogodne terminy: \n`)}`;
+  const emailHref = `mailto:${site.email}?subject=${encodeURIComponent("Bezpłatna rozmowa — matura z informatyki")}&body=${encodeURIComponent(`Cześć Igor!\n\nChcę umówić bezpłatną, ${introMeeting.duration}-minutową rozmowę online.\n\nRok, w którym zdaję maturę: \nMój poziom: \nMój cel: \nDogodne terminy: \n`)}`;
   return (
     <>
       <section
@@ -49,7 +49,7 @@ export default function BookingCalendar({
             <p>
               {embedUrl
                 ? "Wybierz dzień i godzinę w kalendarzu poniżej. Potwierdzenie rezerwacji i link do Google Meet otrzymasz e-mailem."
-                : "Napisz, jakie terminy Ci odpowiadają. Wspólnie wybierzemy czas na bezpłatne spotkanie zapoznawcze."}
+                : "Napisz, jakie terminy Ci odpowiadają. Wspólnie wybierzemy czas na bezpłatną rozmowę."}
             </p>
           </div>
           <div

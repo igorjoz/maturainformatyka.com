@@ -1,7 +1,7 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './support/expanded-home';
 
 test.beforeEach(async ({ page }) => {
-  await page.route('https://calendar.google.com/**', route => route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>Kalendarz testowy</title>' }));
+  await page.route('https://calendar.google.com/**', route => route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>Test calendar</title>' }));
   await page.goto('/');
   await page.locator('#przyklad').scrollIntoViewIfNeeded();
   await expect(page.locator('#przyklad').locator('xpath=ancestor::astro-island[1]')).not.toHaveAttribute('ssr');
@@ -14,7 +14,7 @@ const examples = [
 ];
 
 for (const example of examples) {
-  test(`${example.id}: krok, cofanie, reset i końcowy wynik`, async ({ page }) => {
+  test(`${example.id}: stepping, previous steps, reset, and the final result`, async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto(`/#${example.id}`);
     const panel = page.locator(`#${example.id}`);
@@ -51,7 +51,7 @@ for (const example of examples) {
   });
 }
 
-test('odtwarzanie działa co 1200 ms, pauzuje i kończy się na wyniku', async ({ page }) => {
+test('playback advances every 1200 ms, pauses, and stops at the result', async ({ page }) => {
   const panel = page.locator('#przyklad-podstawowy');
   await panel.getByRole('button', { name: 'Prześledź rozwiązanie' }).click();
   await page.clock.install({ time: new Date('2026-01-01T00:00:00Z') });
@@ -73,7 +73,7 @@ test('odtwarzanie działa co 1200 ms, pauzuje i kończy się na wyniku', async (
   await expect(panel.locator('.code-result strong')).toContainText('3 liczby parzyste');
 });
 
-test('opuszczenie sekcji i ukrycie karty zatrzymują odtwarzanie bez automatycznego wznowienia', async ({ page }) => {
+test('leaving the section or hiding the tab pauses playback without automatic resumption', async ({ page }) => {
   const panel = page.locator('#przyklad-podstawowy');
   await panel.getByRole('button', { name: 'Prześledź rozwiązanie' }).click();
   const play = panel.locator('[data-lab-play]');
@@ -99,7 +99,7 @@ test('opuszczenie sekcji i ukrycie karty zatrzymują odtwarzanie bez automatyczn
   await expect(panel).toHaveAttribute('data-lab-step', pausedAt!);
 });
 
-test('zmiana poziomu przywraca podsumowanie i zeruje poprzedni odtwarzacz', async ({ page }) => {
+test('changing levels restores the summary and resets the previous player', async ({ page }) => {
   const basic = page.locator('#przyklad-podstawowy');
   const advanced = page.locator('#przyklad-trudniejszy');
   await basic.getByRole('button', { name: 'Prześledź rozwiązanie' }).click();
@@ -114,7 +114,7 @@ test('zmiana poziomu przywraca podsumowanie i zeruje poprzedni odtwarzacz', asyn
   await expect(basic.locator('.number-sequence .is-highlighted')).toHaveText(['8', '12', '4']);
 });
 
-test('włączenie ograniczenia ruchu zatrzymuje demonstrację i zostawia ręczne kroki', async ({ page }) => {
+test('enabling reduced motion stops playback and retains manual stepping', async ({ page }) => {
   const panel = page.locator('#przyklad-podstawowy');
   await panel.getByRole('button', { name: 'Prześledź rozwiązanie' }).click();
   await panel.locator('[data-lab-play]').click();
@@ -131,7 +131,7 @@ test('włączenie ograniczenia ruchu zatrzymuje demonstrację i zostawia ręczne
 });
 
 for (const width of [360, 390, 768, 1024, 1366, 1440]) {
-  test(`laboratorium przy ${width} px mieści dane i przyciski`, async ({ page }) => {
+  test(`the laboratory fits its data and controls at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 844 });
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/#przyklad-wyzwanie');
@@ -144,11 +144,11 @@ for (const width of [360, 390, 768, 1024, 1366, 1440]) {
   });
 }
 
-test('nawigacja oznacza aktualną sekcję i aktualizuje postęp przy ograniczeniu ruchu', async ({ page }) => {
+test('navigation marks the active section and updates progress with reduced motion', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   for (const id of ['wspolpraca', 'zakres', 'o-mnie', 'opinie', 'oferta', 'faq']) {
     await page.evaluate(id => { location.hash = id; }, id);
-    await expect(page.locator(`.desktop-nav a[href="#${id}"]`)).toHaveAttribute('aria-current', 'location');
+    await expect(page.locator('.desktop-nav').getByRole('link', { name: 'Korepetycje', exact: true })).toHaveAttribute('aria-current', 'location');
     await expect(page.locator('.desktop-nav [aria-current]')).toHaveCount(1);
   }
   expect(await page.locator('[data-reading-progress]').evaluate(element => Number((element as HTMLElement).style.getPropertyValue('--reading-progress')))).toBeGreaterThan(0.5);

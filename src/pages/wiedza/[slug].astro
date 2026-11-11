@@ -1,0 +1,23 @@
+---
+import { render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import PublicationLayout from '../../layouts/PublicationLayout.astro';
+import { getPublications, publicationPath, publicationDateLabel, publicationSections, type Publication } from '../../data/publications';
+import { getTasks, taskPath } from '../../data/tasks';
+export const getStaticPaths = (async () => (await getPublications()).filter(entry => entry.data.kind === 'article').map(entry => ({ params: { slug: entry.data.slug }, props: { entry } }))) satisfies GetStaticPaths;
+interface Props { entry: Publication }
+const { entry } = Astro.props;
+const { Content, headings } = await render(entry);
+const tasks = (await getTasks()).filter(task => entry.data.relatedTasks.includes(task.id));
+const related = (await getPublications()).filter(item => item.id !== entry.id && (item.data.section === entry.data.section || item.data.kind === 'guide')).slice(0, 3);
+const toc = headings.filter(heading => heading.depth === 2).map(heading => ({ id: heading.slug, label: heading.text }));
+---
+<PublicationLayout title={entry.data.title} description={entry.data.description} canonical={publicationPath(entry)} article={entry.data} toc={toc} breadcrumbs={[{name:'Strona główna',path:'/'},{name:'Wiedza',path:'/wiedza/'},{name:entry.data.title,path:publicationPath(entry)}]}>
+  <article class="publication-article">
+    <header class="publication-article-header"><p class="publication-kicker">{publicationSections[entry.data.section]}</p><h1>{entry.data.title}</h1><p class="publication-lead">{entry.data.description}</p><p class="publication-meta">{entry.data.author} · Opublikowano <time datetime={entry.data.publishedAt}>{publicationDateLabel(entry.data.publishedAt)}</time><br />Aktualizacja: <time datetime={entry.data.updatedAt}>{publicationDateLabel(entry.data.updatedAt)}</time></p></header>
+    <div class="publication-prose"><Content /></div>
+    {tasks.length > 0 && <section class="publication-related"><h2>Przećwicz w zadaniach</h2><ul>{tasks.map(task => <li><a href={taskPath(task)}>{task.year} · {task.number}. {task.title}</a><span>{task.points} pkt</span></li>)}</ul></section>}
+    {entry.data.sources.length > 0 && <section class="publication-sources"><h2>Źródła i dalsza lektura</h2><ol>{entry.data.sources.map(source => <li><a href={source.url}>{source.title}</a>{source.pages && <span> · {source.pages}</span>}</li>)}</ol></section>}
+    {related.length > 0 && <aside class="publication-related"><h2>Czytaj dalej</h2><ul>{related.map(item => <li><a href={publicationPath(item)}>{item.data.title}</a></li>)}</ul></aside>}
+  </article>
+</PublicationLayout>

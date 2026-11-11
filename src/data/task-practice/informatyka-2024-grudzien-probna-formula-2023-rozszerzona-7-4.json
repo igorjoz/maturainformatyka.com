@@ -1,0 +1,22 @@
+{
+  "id": "informatyka-2024-grudzien-probna-formula-2023-rozszerzona-7-4",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "533a568506d651ea50e0a85e8977e990349786fcaaf1c16e90ed2568b7e430a6",
+  "fields": [
+    {
+      "id": "energia",
+      "label": "Minimalna początkowa energia (MWh)",
+      "kind": "number",
+      "target": "[data-practice=\"energia\"]"
+    }
+  ],
+  "variants": [
+    {
+      "energia": [
+        "179736"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

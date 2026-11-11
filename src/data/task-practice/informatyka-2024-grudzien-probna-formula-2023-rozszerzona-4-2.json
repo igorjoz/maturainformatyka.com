@@ -1,0 +1,40 @@
+{
+  "id": "informatyka-2024-grudzien-probna-formula-2023-rozszerzona-4-2",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "698c9c26e29a72966c09d599f8a1b2a04599ce30cd90bcf7e05fecf787cb21a1",
+  "fields": [
+    {
+      "id": "dlugosc",
+      "label": "Długość ciągu",
+      "kind": "number",
+      "target": "[data-practice=\"dlugosc\"]"
+    },
+    {
+      "id": "wysokosc",
+      "label": "Wysokość ostatniego prostokąta",
+      "kind": "number",
+      "target": "[data-practice=\"wysokosc\"]"
+    },
+    {
+      "id": "szerokosc",
+      "label": "Szerokość ostatniego prostokąta",
+      "kind": "number",
+      "target": "[data-practice=\"szerokosc\"]"
+    }
+  ],
+  "variants": [
+    {
+      "dlugosc": [
+        "10"
+      ],
+      "wysokosc": [
+        "1001"
+      ],
+      "szerokosc": [
+        "627"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

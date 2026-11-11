@@ -1,0 +1,148 @@
+{
+  "id": "informatyka-2023-maj-formula-2023-rozszerzona-6-1",
+  "mode": "interactive",
+  "reason": "15 jednoznacznych wartości dostaw; wykres i plik arkusza pozostają do samodzielnego porównania.",
+  "gradingSha256": "c108370988cdab69a2aebf2f23806d978b976c06fdf8c47eb5e086ac75191932",
+  "fields": [
+    {
+      "id": "maj-maliny",
+      "label": "maj — maliny (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"maj-maliny\"]"
+    },
+    {
+      "id": "maj-truskawki",
+      "label": "maj — truskawki (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"maj-truskawki\"]"
+    },
+    {
+      "id": "maj-porzeczki",
+      "label": "maj — porzeczki (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"maj-porzeczki\"]"
+    },
+    {
+      "id": "czerwiec-maliny",
+      "label": "czerwiec — maliny (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"czerwiec-maliny\"]"
+    },
+    {
+      "id": "czerwiec-truskawki",
+      "label": "czerwiec — truskawki (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"czerwiec-truskawki\"]"
+    },
+    {
+      "id": "czerwiec-porzeczki",
+      "label": "czerwiec — porzeczki (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"czerwiec-porzeczki\"]"
+    },
+    {
+      "id": "lipiec-maliny",
+      "label": "lipiec — maliny (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"lipiec-maliny\"]"
+    },
+    {
+      "id": "lipiec-truskawki",
+      "label": "lipiec — truskawki (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"lipiec-truskawki\"]"
+    },
+    {
+      "id": "lipiec-porzeczki",
+      "label": "lipiec — porzeczki (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"lipiec-porzeczki\"]"
+    },
+    {
+      "id": "sierpien-maliny",
+      "label": "sierpień — maliny (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"sierpien-maliny\"]"
+    },
+    {
+      "id": "sierpien-truskawki",
+      "label": "sierpień — truskawki (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"sierpien-truskawki\"]"
+    },
+    {
+      "id": "sierpien-porzeczki",
+      "label": "sierpień — porzeczki (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"sierpien-porzeczki\"]"
+    },
+    {
+      "id": "wrzesien-maliny",
+      "label": "wrzesień — maliny (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"wrzesien-maliny\"]"
+    },
+    {
+      "id": "wrzesien-truskawki",
+      "label": "wrzesień — truskawki (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"wrzesien-truskawki\"]"
+    },
+    {
+      "id": "wrzesien-porzeczki",
+      "label": "wrzesień — porzeczki (kg)",
+      "kind": "number",
+      "target": "[data-practice=\"wrzesien-porzeczki\"]"
+    }
+  ],
+  "variants": [
+    {
+      "maj-maliny": [
+        "9238"
+      ],
+      "maj-truskawki": [
+        "9287"
+      ],
+      "maj-porzeczki": [
+        "3309"
+      ],
+      "czerwiec-maliny": [
+        "9485"
+      ],
+      "czerwiec-truskawki": [
+        "8916"
+      ],
+      "czerwiec-porzeczki": [
+        "5081"
+      ],
+      "lipiec-maliny": [
+        "11592"
+      ],
+      "lipiec-truskawki": [
+        "11339"
+      ],
+      "lipiec-porzeczki": [
+        "10567"
+      ],
+      "sierpien-maliny": [
+        "11045"
+      ],
+      "sierpien-truskawki": [
+        "11386"
+      ],
+      "sierpien-porzeczki": [
+        "11078"
+      ],
+      "wrzesien-maliny": [
+        "6532"
+      ],
+      "wrzesien-truskawki": [
+        "7476"
+      ],
+      "wrzesien-porzeczki": [
+        "6355"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wartości zestawienia. Wykres porównaj samodzielnie z odpowiedzią i kryteriami CKE."
+}

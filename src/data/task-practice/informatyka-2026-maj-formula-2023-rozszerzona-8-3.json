@@ -1,0 +1,31 @@
+{
+  "id": "informatyka-2026-maj-formula-2023-rozszerzona-8-3",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "0d378e9b63ac031fd6488cfa7f5fc36c889ede37648e425a62b9aaf59c384bb6",
+  "fields": [
+    {
+      "id": "sklepy",
+      "label": "Liczba sklepów",
+      "kind": "number",
+      "target": "[data-practice=\"sklepy\"]"
+    },
+    {
+      "id": "kwota",
+      "label": "Łączna kwota (zł)",
+      "kind": "number",
+      "target": "[data-practice=\"kwota\"]"
+    }
+  ],
+  "variants": [
+    {
+      "sklepy": [
+        "28"
+      ],
+      "kwota": [
+        "19443.29"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

@@ -1,0 +1,2 @@
+# Optional editorial tooling only; not required by CI, the build or the website.
+PyMuPDF==2.1

@@ -1,0 +1,51 @@
+{
+  "id": "informatyka-2026-maj-formula-2023-rozszerzona-3-1",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "23e6a2e3e5aad1844b81f46d2d45443e4d67c1180ea629ee2dd25acee33ea7f7",
+  "fields": [
+    {
+      "id": "slowo1",
+      "label": "Pierwsze słowo pary",
+      "kind": "text",
+      "target": "[data-practice=\"slowo1\"]"
+    },
+    {
+      "id": "slowo2",
+      "label": "Drugie słowo pary",
+      "kind": "text",
+      "target": "[data-practice=\"slowo2\"]"
+    },
+    {
+      "id": "roznica",
+      "label": "Wartość bezwzględna różnicy",
+      "kind": "number",
+      "target": "[data-practice=\"roznica\"]"
+    }
+  ],
+  "variants": [
+    {
+      "slowo1": [
+        "gpeeazeugmvsbzwsrxfplqdbakoxxe"
+      ],
+      "slowo2": [
+        "lhpbmoirdm"
+      ],
+      "roznica": [
+        "2206"
+      ]
+    },
+    {
+      "slowo1": [
+        "lhpbmoirdm"
+      ],
+      "slowo2": [
+        "gpeeazeugmvsbzwsrxfplqdbakoxxe"
+      ],
+      "roznica": [
+        "2206"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

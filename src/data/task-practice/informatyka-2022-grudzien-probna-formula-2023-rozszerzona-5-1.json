@@ -1,0 +1,30 @@
+{
+  "id": "informatyka-2022-grudzien-probna-formula-2023-rozszerzona-5-1",
+  "mode": "interactive",
+  "reason": "Jednoznaczne wyniki CKE; porównanie wartości pól. Sprawdzamy wynik, bez oceny programu ani plików.",
+  "gradingSha256": "0581e0023066b775dedb199ff5d62b4dd20fd78791a2e3375de6c669c84bee50",
+  "fields": [
+    {
+      "id": "imie-nazwisko",
+      "label": "Imię i nazwisko gościa",
+      "kind": "text",
+      "target": "[data-practice=\"imie-nazwisko\"]"
+    },
+    {
+      "id": "noclegi",
+      "label": "Łączna liczba noclegów",
+      "kind": "number",
+      "target": "[data-practice=\"noclegi\"]"
+    }
+  ],
+  "variants": [
+    {
+      "imie-nazwisko": [
+        "Mateusz Tokarczyk"
+      ],
+      "noclegi": [
+        "9"
+      ]
+    }
+  ]
+}

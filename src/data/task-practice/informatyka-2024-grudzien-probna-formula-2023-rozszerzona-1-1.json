@@ -1,0 +1,67 @@
+{
+  "id": "informatyka-2024-grudzien-probna-formula-2023-rozszerzona-1-1",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "2827da1922d1741ede7ab1a6568df45cdcd3b52ede0a9efe65fc0f507b44c725",
+  "fields": [
+    {
+      "id": "j6",
+      "label": "J(6), kolejne pozycje jedynek",
+      "kind": "text",
+      "target": "[data-practice=\"j6\"]"
+    },
+    {
+      "id": "bin42",
+      "label": "Zapis dwójkowy liczby 42",
+      "kind": "number",
+      "target": "[data-practice=\"bin42\"]",
+      "base": 2
+    },
+    {
+      "id": "j42",
+      "label": "J(42), kolejne pozycje jedynek",
+      "kind": "text",
+      "target": "[data-practice=\"j42\"]"
+    },
+    {
+      "id": "n",
+      "label": "Liczba n dla J(n) = (1, 2, 4, 7)",
+      "kind": "number",
+      "target": "[data-practice=\"n\"]"
+    },
+    {
+      "id": "bin-n",
+      "label": "Zapis dwójkowy liczby n dla J(n) = (1, 2, 4, 7)",
+      "kind": "number",
+      "target": "[data-practice=\"bin-n\"]",
+      "base": 2
+    }
+  ],
+  "variants": [
+    {
+      "j6": [
+        "2, 3",
+        "2,3",
+        "(2, 3)",
+        "(2,3)",
+        "2 3"
+      ],
+      "bin42": [
+        "101010"
+      ],
+      "j42": [
+        "2, 4, 6",
+        "2,4,6",
+        "(2, 4, 6)",
+        "(2,4,6)",
+        "2 4 6"
+      ],
+      "n": [
+        "75"
+      ],
+      "bin-n": [
+        "1001011"
+      ]
+    }
+  ]
+}

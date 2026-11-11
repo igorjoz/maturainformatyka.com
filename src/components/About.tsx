@@ -21,7 +21,7 @@ export default function About({
       >
         <GeometryBackdrop />
         <div className="about-copy" data-reveal>
-          <p className="eyebrow">04 / POZNAJMY SIĘ</p>
+          <p className="eyebrow">POZNAJMY SIĘ</p>
           <h2 id="about-title">{site.about.title}</h2>
           {site.about.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
@@ -30,11 +30,7 @@ export default function About({
             Więcej o mnie <Arrow diagonal />
           </a>
         </div>
-        <div className="projects">
-          <div className="projects-heading">
-            <span>MOJE PROJEKTY</span>
-            <span aria-hidden="true">↗</span>
-          </div>
+        <details className="projects home-disclosure" open><summary>Moje projekty</summary><div className="disclosure-body">
           {site.projects.map((project, index) => (
             <a
               key={project.name}
@@ -60,7 +56,7 @@ export default function About({
               </div>
             </a>
           ))}
-        </div>
+        </div></details>
       </section>
     </>
   );

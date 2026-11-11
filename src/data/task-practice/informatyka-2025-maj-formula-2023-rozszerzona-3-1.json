@@ -1,0 +1,22 @@
+{
+  "id": "informatyka-2025-maj-formula-2023-rozszerzona-3-1",
+  "mode": "interactive",
+  "reason": "Jednoznaczne odpowiedzi CKE; porównanie poszczególnych pól po normalizacji właściwej dla ich typu.",
+  "gradingSha256": "eae68fb4c27fefafa27864fb73d72bcbb78852025d9eca5e499a990ff7a00148",
+  "fields": [
+    {
+      "id": "pary",
+      "label": "Liczba par z NWD większym od 1",
+      "kind": "number",
+      "target": "[data-practice=\"pary\"]"
+    }
+  ],
+  "variants": [
+    {
+      "pary": [
+        "40"
+      ]
+    }
+  ],
+  "note": "Sprawdzamy wyniki. Program, pliki i sposób rozwiązania porównaj osobno z kryteriami CKE."
+}

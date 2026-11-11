@@ -1,0 +1,8 @@
+---
+import ArchiveLayout from '../../layouts/ArchiveLayout.astro';
+import TaskCatalog from '../../components/TaskCatalog.astro';
+---
+<ArchiveLayout title="Zadania maturalne z informatyki według tematów" description="Ćwicz zadania z informatyki według tematów i trudności. Pełne polecenia, pliki wejściowe i oficjalne ocenianie — Formuła 2023." canonical="/zadania/" activeSection="/zadania/" catalogPage breadcrumbs={[{ name: 'Strona główna', path: '/' }, { name: 'Zadania', path: '/zadania/' }]}>
+  <header class="archive-intro catalog-intro"><h1>Zadania maturalne z informatyki</h1></header>
+  <TaskCatalog />
+</ArchiveLayout>

@@ -1,201 +1,176 @@
-# Matura z informatyki — Igor Józefowicz
+# Computer science Matura preparation
 
-Statyczna witryna one page zbudowana w React, Astro, TypeScript i własnym CSS. Wszystkie sekcje, ikony i dekoracje są komponentami TSX; Astro generuje dokument HTML, metadane i zoptymalizowane obrazy. Bez własnego backendu, formularza i analityki. Rezerwacje obsługuje osadzona strona Google Calendar. Font Manrope jest hostowany lokalnie; oryginalne zdjęcia pozostają w `images/`.
+Website for Igor Józefowicz's computer science Matura tutoring, built with Astro, React, TypeScript, and custom CSS. Astro generates static HTML, optimized images, and metadata. React powers the interactive lesson examples and homepage sections.
 
-## Uruchomienie
+The site includes an exam archive (`/arkusze/`), a task catalog (`/zadania/`), a study guide (`/matura-2027/`), and a knowledge section (`/wiedza/`). Exam papers, marking guidelines, and task data are stored locally. Booking uses an embedded Google Calendar appointment page. The site has no custom backend or analytics.
 
-Wymagany Node.js 22.12 lub nowszy w obsługiwanej przez Astro wersji LTS.
+## Development
+
+Requirements: Node.js 22.12 or newer (see `engines` in `package.json`), npm, and Python 3.10 or newer. Build validation uses the Python standard library.
 
 ```bash
 npm ci
 npm run dev
 ```
 
-Adres lokalny: `http://127.0.0.1:4321`.
+The development server runs at `http://127.0.0.1:4321`.
 
-### Docker
-
-Uruchomienie gotowej strony w tle (wymagany Docker z Compose):
-
-```bash
-docker compose up --build -d
-```
-
-Strona jest dostępna pod **http://localhost:4321**. Obraz buduje i sprawdza projekt w Node.js, a gotowe pliki statyczne serwuje Nginx. Port jest udostępniony tylko lokalnie. Po zmianach kodu ponownie uruchom powyższe polecenie, aby przebudować obraz.
-
-```bash
-docker compose ps
-docker compose logs --tail=50 web
-docker compose down
-```
-
-### WSL: npm z Windows i błąd ENOTEMPTY
-
-Jeżeli `command -v npm` pokazuje `/mnt/c/Program Files/nodejs/npm`, terminal korzysta z Windowsowego npm na Linuxowym katalogu. Ścieżka `C:\Users\...\npm-cache` w logu również wskazuje na Windowsowe npm.
-
-W tym checkoutcie przygotowany został lokalny runtime Node.js dla Linuxa w ignorowanym `.tools/node/`. Uruchamiaj:
+On WSL, `bash scripts/npm.sh` prefers the checkout-local Linux runtime in `.tools/node/` when available and rejects Windows npm installations:
 
 ```bash
 bash scripts/npm.sh ci
 bash scripts/npm.sh run dev
 ```
 
-### Podgląd gotowej strony
+### Docker
 
 ```bash
-python3 -m http.server 4321 --bind 0.0.0.0 --directory dist
+docker compose up --build -d
+docker compose logs --tail=50 web
+docker compose down
 ```
 
-Następnie otwórz **http://localhost:4321** w przeglądarce Windows. Zatrzymanie serwera: Ctrl+C.
+Nginx serves the static build at `http://localhost:4321`, bound to the local interface. Source changes require rebuilding the image.
 
-## Weryfikacja i build
+## Checks and tests
 
 ```bash
 npm run check
+npm run exams:test
+python3 -m unittest discover -s scripts -p 'test_deploy_pages.py'
 npm run build
 npm run preview
 ```
 
-Gotowa witryna znajduje się w `dist/`. Do hostingu statycznego należy przekazać całą zawartość tego katalogu, wraz z `_astro/`. Publikację na Hostingerze obsługuje opisany poniżej workflow GitHub Actions.
+The build output is `dist/`. Static hosting requires its entire contents, including `_astro/` and downloads.
 
-### Testy
-
-Podstawowe testy przeglądarkowe korzystają z Playwright i Chromium. Po `npm ci` zainstaluj przeglądarkę (jednorazowo, ponownie po aktualizacji Playwright):
+Browser tests use Playwright and Chromium:
 
 ```bash
 npx playwright install --with-deps chromium
 npm test
+npm run test:dev
 ```
 
-`npm test` sam buduje stronę i uruchamia tymczasowy podgląd na porcie 4322. Testy sprawdzają treść i metadane, obrazy, nawigację, rezerwację, kontakt, trzy poziomy przykładu lekcji i ich przełączanie, oznaczenie teorii, kolejność oferty i kalendarza, menu mobilne, klawiaturę, ograniczenie ruchu i działanie bez JavaScriptu. Laboratorium ma testy kroków, cofania, resetu, odtwarzania co 1200 ms, zatrzymywania poza sekcją i w ukrytej karcie oraz zmiany poziomów. Osobne testy algorytmów porównują wyniki z niezależnymi obliczeniami, uwzględniają liczby ujemne i remisy oraz sprawdzają niezależność migawek. Testy kolorowania Pythona sprawdzają kolory tokenów, kontrast i zachowanie tekstu oraz wcięć przy zaznaczaniu kodu, także bez JavaScriptu. Układ strony i otwartego laboratorium jest sprawdzany dla szerokości 360, 390, 768, 1024, 1366 i 1440 px, również pod kątem odsłonięcia kotwic pod przyklejonym nagłówkiem. Połączenie z Google Calendar jest zastępowane lokalną odpowiedzią; testy nie rezerwują terminów ani nie sprawdzają dostępności zewnętrznej usługi. Po błędzie zrzut ekranu i ślad wykonania trafiają do ignorowanego `test-results/`.
+`npm test` builds the site and starts a preview server on port 4322. Tests cover content, metadata, interactive lessons, archive filtering and downloads, responsive layouts, keyboard access, reduced motion, and behavior without JavaScript. Google Calendar requests are stubbed; the tests do not create bookings or check live availability. Failure traces and screenshots are saved in `test-results/`.
 
-## Automatyczne wdrożenia na Hostingera
+`npm run test:dev` starts a separate development server on port 4323 and checks homepage hydration and the mobile menu before and after running `check` and `build`. Astro uses separate Vite caches for development, synchronization, builds, and previews. Results are saved in `test-results-dev/`.
 
-Workflow `.github/workflows/deploy.yml` instaluje zależności i Chromium, uruchamia `npm run check` oraz `npm test` (wraz z buildem), a po ich powodzeniu wysyła zawartość `dist/` przez rsync po SSH. Błąd testów zatrzymuje wdrożenie. Docker nie jest wymagany na hostingu.
+The browser suites run sequentially because both rebuild `dist/`.
 
-- Push do `master` uruchamia sprawdzanie, build, testy i wdrożenie.
-- Pull request do `master` uruchamia sprawdzanie, build i testy, bez dostępu do sekretów wdrożeniowych.
-- Ręczne uruchomienie jest dostępne w **Actions → Deploy to Hostinger → Run workflow**. Wybierz gałąź `master`. Zaznaczenie `dry_run` sprawdza połączenie i plan transferu bez zmiany plików na serwerze. Ręczne uruchomienie z innej gałęzi wykonuje sprawdzanie, build i testy.
-- Wdrożenia nie wykonują się równocześnie. Grafiki, style i skrypty są wysyłane przed `index.html`. Stare pliki, w tym `.htaccess` i wcześniejsze zasoby `_astro/`, pozostają na serwerze; automatyczne wdrożenie ich nie usuwa.
+## Project structure
 
-### Konfiguracja sekretów
-
-W repozytorium GitHub otwórz **Settings → Secrets and variables → Actions → New repository secret** i dodaj:
-
-| Sekret | Wartość |
+| Path | Contents |
 | --- | --- |
-| `HOSTINGER_HOST` | Adres IP lub nazwa serwera z hPanel, bez `ssh://` i bez portu. |
-| `HOSTINGER_PORT` | Port SSH z hPanel, zwykle `65002` na hostingu współdzielonym. |
-| `HOSTINGER_USER` | Nazwa użytkownika SSH z hPanel. |
-| `HOSTINGER_PATH` | Istniejący, zapisywalny katalog strony, np. `/home/u123456789/domains/maturainformatyka.com/public_html`. Użyj rzeczywistej ścieżki z konta. |
-| `HOSTINGER_SSH_KEY` | Cały klucz prywatny bez hasła, wraz z liniami `BEGIN` i `END`. Nie plik `.pub`. |
-| `HOSTINGER_KNOWN_HOSTS` | Pełny wpis z pliku `known_hosts` dla tego samego hosta i portu, np. `[ADRES_IP]:65002 ssh-ed25519 AAAA…`. Nie sam odcisk `SHA256:…`. |
+| `src/pages/` | Astro routes and sitemap |
+| `src/components/` | Astro components and React sections |
+| `src/data/site.ts` | Homepage content, prices, contact details, and booking configuration |
+| `src/data/exams.json` | Exam archive data |
+| `src/data/exam-sources.json` | Exam source inventory |
+| `src/build/` | Image preparation and syntax highlighting |
+| `src/hooks/` | React hooks for section effects |
+| `src/scripts/` | Browser interactions and algorithm traces |
+| `src/styles/` | Site styles and responsive layouts |
+| `public/pliki/matury/` | Exam papers, marking guidelines, and task data |
+| `images/` | Original artwork |
+| `scripts/` | Validation, asset generation, and deployment tools |
+| `tests/` | Playwright tests |
 
-W Hostingerze włącz SSH i dodaj odpowiadający klucz publiczny w **Dostęp SSH → Dodaj klucz SSH**. Przed zapisaniem `HOSTINGER_KNOWN_HOSTS` porównaj odcisk klucza serwera z odciskiem wyświetlanym w hPanel. Nie zapisuj klucza prywatnego w repozytorium.
+Student-facing content is in Polish. Public URLs, anchors, and query parameters retain their Polish names.
 
-Jeśli plik hosta został już zaakceptowany i zapisany w Windows PowerShell, jego zawartość skopiujesz poleceniem:
+### Exam archive
 
-```powershell
-Get-Content "$HOME\.ssh\hostinger_known_hosts" | Set-Clipboard
-```
+The [archive maintenance guide](docs/exam-archive.md) covers imports, ZIP generation, and validation. The [import report](docs/exam-import-report.json) records available files and missing materials; the [source audit](docs/exam-source-audit.json) tracks collection gaps. The archive is not a complete historical collection of CKE materials.
 
-### Pierwsze uruchomienie i aktualizacje
+### Homepage and lesson examples
 
-1. Zrób kopię obecnego katalogu strony w Hostingerze. Wdrożenie nadpisuje pliki o tych samych nazwach.
-2. Dodaj sześć sekretów i wyślij workflow oraz `scripts/deploy-hostinger.sh` do repozytorium. Push do `master` uruchomi wdrożenie automatycznie; jeśli chcesz zacząć od próby, dodaj pliki najpierw na innej gałęzi i uzupełnij sekrety dopiero po scaleniu workflow do `master`, następnie uruchom ręcznie z `dry_run`.
-3. Po udanym teście uruchom workflow na `master` bez `dry_run`. Sprawdź stronę, ilustracje i kalendarz pod domeną. Jeśli Hostinger lub CDN pokazuje poprzednią wersję, wyczyść jego cache.
-4. Następne pushe do `master` publikują aktualizacje automatycznie. Brak sekretu, błąd klucza, połączenia lub builda zatrzymuje wdrożenie. Dziennik jest dostępny w zakładce **Actions**.
+`src/pages/index.astro` composes the homepage. Header and hero components hydrate on load; interactive sections hydrate near the viewport. Static content remains available without JavaScript.
 
-Skrypt `scripts/deploy-hostinger.sh` odczytuje powyższe zmienne środowiskowe. Można go uruchomić po lokalnym buildzie na Linuxie/WSL z zainstalowanymi SSH i rsync; `DEPLOY_DRY_RUN=true bash scripts/deploy-hostinger.sh` wykonuje próbę. Skrypt usuwa tymczasowe pliki kluczy po zakończeniu i nie akceptuje nieznanych kluczy serwera automatycznie. Transfer nie jest atomową podmianą całego katalogu i nie wykonuje kopii zapasowej hostingu.
+Lesson examples demonstrate counting even numbers, Kadane's algorithm, and longest increasing subsequence length. `src/scripts/lesson-trace.ts` generates execution snapshots from fixed example data; the browser does not execute Python. Shiki highlights code during the build. Changes to example code require corresponding updates to trace line numbers.
 
-## Edycja
+Section effects respect reduced motion and release observers, listeners, and timers on unmount. `npm run report:bundle` reports JavaScript bundle sizes from `dist/_astro/`.
 
-- `src/data/site.ts` — treści, ceny, kontakt, projekty i FAQ.
-- `src/components/` — sekcje, ikony i dekoracje w React; `types.ts` definiuje dane przekazywane do komponentów.
-- `src/components/LessonExample.tsx` — trzy poziomy demonstracyjnego przykładu pracy nad zadaniem, z treścią i kodem w HTML oraz przełączaniem w tej samej karcie.
-- `src/components/Subjects.tsx` — dwa ilustrowane obszary nauki oraz teoria i zadania maturalne.
-- `src/styles/global.css` — style bazowe, responsywność i ograniczenie animacji; `refresh.css` — odświeżona kompozycja, odstępy i kontrolki.
-- `src/components/PortraitScene.tsx` — portret, orbity i warstwy kompozycji.
-- `src/hooks/useSectionMotion.ts` — lokalne efekty kursora, przewijania i wejścia, wraz ze sprzątaniem obserwatorów, nasłuchów i timerów.
-- `src/scripts/lesson-trace.ts` — kroki trzech algorytmów: dane, linie kodu, zmienne i objaśnienia.
-- `src/components/LessonExample.tsx` — reducer poziomu i odtwarzacza, pauzowanie i przywracanie pełnego rozwiązania.
-- `src/styles/lesson-lab.css` — wygląd panelu sterowania i wyróżnienia aktualnego kroku.
+### Booking
 
-Ilustracje zakresu nauki pochodzą z `images/algorithm.png` (algorytmy) i `images/relations.png` (dane). Oryginały mają 1536 × 1024 px. Podczas builda Astro tworzy warianty AVIF, WebP i zapasowe JPEG o szerokości 360, 640, 960 i 1280 px, z jakością 75. Przeglądarka dobiera plik do szerokości ilustracji i gęstości ekranu; `sizes` uwzględnia także dwukolumnowy układ na tablecie. Obrazy ładują się leniwie i są dekodowane asynchronicznie. Projekty w sekcji „O mnie” używają małych miniatur. Sekcja oferty ma kotwicę `#oferta`, przykład lekcji — `#przyklad`. Rezerwacja znajduje się pod ofertą, przed FAQ; wszystkie główne przyciski prowadzą do `#rezerwacja`.
+`introMeeting.bookingUrl` in `src/data/site.ts` contains the complete iframe URL for a Google Calendar appointment schedule. An empty value switches the booking section to email contact; an invalid URL fails the build.
 
-Treści trzech poziomów przykładu zapisano w `lessonExample.examples` w `src/data/site.ts`; lista `actions` określa przyciski przejścia i powrotu. Poziomy to „Podstawy” (liczenie parzystych liczb), „Krok dalej” (największa suma spójnego fragmentu, algorytm Kadane’a) oraz „Wyzwanie” (długość najdłuższego ściśle rosnącego podciągu, programowanie dynamiczne O(n²)). Wyzwanie oblicza długość 4, a wyróżnione liczby `[1, 2, 4, 9]` pokazują jeden z poprawnych podciągów. Po zmianie fokus trafia na polecenie, a przewijanie uwzględnia nagłówek i ograniczenie ruchu. Bez JavaScriptu wszystkie przykłady są widoczne kolejno, z linkami między nimi. Oznaczenie teorii ma postać `1010` z indeksem dolnym `2`, zapisanym w danych jako `base`.
+The booking section at `#rezerwacja` includes the appointment description, a lazy-loaded iframe, a direct booking link, and contact details. Availability, time zones, meeting links, and confirmations are configured in Google Calendar.
 
-Kod Python w `solution.py` używa angielskich nazw (`numbers`, `even_count`, `current_sum`, `best_sum`, `lengths`). Pole `code` pozostaje zwykłym tekstem; `src/build/page-props.ts` koloruje składnię przez Shiki podczas builda i przekazuje serializowalne tokeny do React. `PythonCode` renderuje tokeny oraz numerowane linie, również dla wersji bez JavaScriptu. Shiki nie jest wysyłane do przeglądarki. Motyw `css-variables` korzysta z palety `--astro-code-*` w `.lesson-code` w `src/styles/global.css`. Bloki zachowują wcięcia, zaznaczanie i kopiowanie tekstu, fokus klawiatury oraz własne przewijanie poziome. Czcionka ma 14 px na komputerze i 13 px na telefonie.
+### Assets
 
-### React i hydratacja
-
-`src/pages/index.astro` jest cienką warstwą dokumentu i kompozycji. Oficjalna integracja `@astrojs/react` generuje HTML komponentów podczas builda, a React przejmuje interakcje w przeglądarce. Header i Hero używają `client:load`; laboratorium, zakres, współpraca, projekty, opinie, oferta i kontakt — `client:visible` z wyprzedzeniem 200 px. FAQ, rezerwacja i stopka nie wymagają hydratacji. Nie ma routera ani globalnego magazynu stanu.
-
-Obrazy i tokeny kodu przygotowuje wyłącznie moduł builda. `ResponsivePicture` renderuje gotowe warianty AVIF/WebP i obraz zapasowy. Komponenty otrzymują dane przez typowane właściwości; narzędzia przetwarzania obrazów i Shiki pozostają poza paczkami klienta.
-
-Pierwszy render React jest zgodny z HTML z builda. Pełne przykłady i opisy są widoczne przed hydratacją oraz bez skryptów; kontrolki wymagające JavaScriptu pojawiają się dopiero po uruchomieniu komponentu. Laboratorium korzysta z `useReducer`, zakładki mają niezależny stan kart. Efekty sekcji używają referencji, obserwatorów i zmiennych CSS; ruch kursora nie powoduje renderowania React. Wszystkie efekty sprzątają zasoby przy demontażu.
-
-Wyniki odbioru migracji i porównanie rozmiaru paczek: [docs/react-migration.md](docs/react-migration.md). `npm run report:bundle` mierzy sumę plików JavaScriptu w `dist/_astro/`, wraz z rozmiarem gzip.
-
-### Interaktywny zakres przygotowania
-
-W sekcji `#zakres` pod ilustracjami są zakładki „Python lub C++” / „Algorytmika” oraz „Excel” / „SQL i Access”. Pierwszy temat jest widoczny od początku. Kliknięcie podmienia opis i przykładowe polecenie w tym samym miejscu, bez zamykania panelu i zmiany wysokości karty. Obie pary działają niezależnie. Strzałki lewo/prawo przełączają tematy (z zawijaniem), Home/End wybierają pierwszy/ostatni; fokus pozostaje na zakładce. Tab prowadzi do panelu i jego linków. Przy programowaniu link prowadzi do podstawowego przykładu lekcji.
-
-Panele zajmują wspólną komórkę siatki CSS, która rezerwuje wysokość dłuższego opisu także po zmianie szerokości. Nieaktywny panel jest niewidoczny (`visibility: hidden`), ma `aria-hidden` i `inert`, więc nie jest dostępny dla klawiatury ani czytników ekranu. Bez JavaScriptu wszystkie tematy są widoczne kolejno z nagłówkami, a zakładki pozostają ukryte. Ograniczenie ruchu wyłącza przenikanie; stan nie jest zapisywany między wizytami. Teoria i zadania maturalne mają osobne karty z przykładami widocznymi od razu.
-
-Karta „Zadania maturalne” przedstawia fragment zadania 7.1 „Staw” z oficjalnego arkusza CKE z maja 2026 (Formuła 2023, 3 pkt). Cytat jest oddzielony od wskazówek „Jak pracujemy nad zadaniem”. Linki prowadzą do strony 16 arkusza i strony 14 zasad oceniania na serwerze CKE. Metryka, kontekst, cytat, wskazówki i adresy są zapisane w `maturaExample` w `src/data/site.ts`. Strona nie pobiera dokumentów ani danych egzaminacyjnych; testy sprawdzają adresy źródeł bez wywoływania serwera CKE.
-
-Tytuł i wstęp obszaru są nad ilustracją; bezpośrednio pod nią są zakładki i opis tematu w osobnej karcie z wewnętrznym odstępem. Ilustracje reagują na precyzyjny kursor przechyleniem, zbliżeniem i poświatą. Dotyk daje krótkie podświetlenie. Dwa punkty na każdej ilustracji wybierają temat w tym samym panelu co zakładki; oba sposoby sterowania współdzielą stan. Kliknięcie punktu przenosi fokus na aktywny panel bez automatycznego skoku przeglądarki, a krótka animacja (420 ms) odsłania opis tylko w potrzebnym zakresie, zachowując minimum 96 px ilustracji nad nim. W bardzo niskim oknie priorytetem jest kontekst ilustracji i początek opisu. Animacja śledzi zmiany położenia karty podczas ładowania, ale nie wyrównuje strony po zakończeniu; ruch kółkiem, dotyk lub klawiatura ją przerywają. Przy ograniczeniu ruchu przejście jest natychmiastowe. Dotyczy to także ponownego wyboru tego samego tematu; same zakładki nie przewijają strony. Punkty mają co najmniej 44 × 44 px. Obrys fokusu jest tylko dla klawiatury i mieści się wewnątrz panelu.
-
-Treści i identyfikatory tematów są w `src/data/site.ts`, stan, pozycje punktów i sterowanie w `src/components/Subjects.tsx`, a wygląd w `src/styles/subjects.css`. Testy `tests/subjects.spec.ts` obejmują przełączanie, klawiaturę, dostępność, wersję bez skryptów i stabilną wysokość przy pięciu szerokościach ekranu. Dodatkowe testy `tests/visual-effects.spec.ts` sprawdzają punkty, kursor, dotyk i wstęgi na końcu strony.
-
-### Interaktywne laboratorium
-
-Każdy poziom początkowo pokazuje kompletne rozwiązanie. „Prześledź rozwiązanie” otwiera krok 0; dostępne są poprzedni i następny krok, odtwarzanie/pauza, powrót do początku i przycisk pokazania pełnego rozwiązania. Przejście do innego poziomu przywraca podsumowania. Bezpośredni link do identyfikatora przykładu otwiera odpowiedni poziom.
-
-Pole `algorithm` w danych wybiera `parity`, `kadane` albo `lis`. Generator otrzymuje dokładnie te same `values`, które renderuje komponent, i tworzy niezależne migawki z indeksami danych, numerami linii kodu, zmiennymi i objaśnieniem. Komponent React dodaje `data-code-line` do linii tokenów przygotowanych podczas builda, bez zmiany tekstu kodu. Po zmianie treści Python należy dopasować numery linii w generatorze. To demonstracja na ustalonych danych; strona nie wykonuje kodu Python. Rekonstrukcja wyróżnionego podciągu LIS służy ilustracji, natomiast pokazany kod oblicza jego długość.
-
-Odtwarzanie przechodzi o jeden krok co 1200 ms. Zatrzymuje się na końcu, przy zmianie poziomu, opuszczeniu sekcji i ukryciu karty; wymaga ręcznego wznowienia. Przy ograniczeniu ruchu pozostaje ręczne sterowanie krokami, bez odtwarzania w czasie i animowanych przejść. Przyciski obsługują klawiaturę i mają co najmniej 44 × 44 px, a objaśnienie kroku jest komunikatem `aria-live`.
-
-### Oprawa i animacje
-
-Nagłówek pokazuje postęp czytania i oznacza aktualną sekcję przez `aria-current="location"`. Te wskazówki działają także przy ograniczeniu ruchu. Sekcje korzystają ze wspólnych parametrów `--motion-reaction` (200 ms), `--motion-enter` (550 ms) i `--ease-out`.
-
-Świetlny fragment orbity, aktywowane etapy współpracy i sekwencyjne wejście korzyści uzupełniają istniejące animacje. Karty projektów otrzymują poświatę pod kursorem i niewielkie przybliżenie miniatury. Efekty kursora działają wyłącznie na ekranach szerszych niż 900 px z precyzyjnym wskaźnikiem; dotyk ma krótkie podświetlenie. Grafiki pozostają lokalnymi obrazami, a dekoracje używają CSS i SVG.
-
-Portret pochodzi z `images/portrait-art.png`. Responsywne AVIF/WebP i zapasowe PNG zachowują przezroczystość. Po zmianie oryginału odtwórz wariant z jasnym tłem dla Open Graph, a następnie uruchom build:
+Astro generates responsive image variants from local artwork. Asset generation commands:
 
 ```bash
-bash scripts/npm.sh exec -- node scripts/social-image.mjs
-bash scripts/npm.sh run build
+node scripts/social-image.mjs
+node scripts/brand-assets.mjs
+npm run build
 ```
 
-Adres w metadanych canonical i Open Graph to `https://maturainformatyka.com`, zgodnie z nazwą repozytorium. Można go zmienić przez `site` w `astro.config.mjs`. To wyłącznie metadane; domena i hosting nie są konfigurowane przez projekt.
+The social image script prepares the portrait preview. The brand script generates the header logo, PNG favicons, and `public/favicon.ico`. The production URL is configured in `astro.config.mjs` and used for canonical and social metadata.
 
-Nawigacja, FAQ i kompletna kompozycja portretu działają bez JavaScriptu. Skrypty zamykają menu mobilne i dodają animacje. Orbity i plamy koloru poruszają się tylko w widocznych sekcjach; ruch zatrzymuje się w nieaktywnej karcie. Tła reagują na przewijanie, a linia procesu pokazuje jego postęp. Reakcja portretu i kart na kursor jest aktywna tylko dla precyzyjnego wskaźnika na ekranach szerszych niż 900 px. Na urządzeniach dotykowych karty mają krótkie podświetlenie. Ustawienie ograniczenia ruchu wyłącza animacje i parallax. Elementy pozostają czytelne przed uruchomieniem efektów. FAQ korzysta z natywnego `details` i płynnego rozwijania w przeglądarkach obsługujących tę funkcję.
+## Deployment
 
-Na końcu strony duże wstęgi SVG w kolorach zieleni i miedzi rozwijają się wokół sekcji kontaktu. Towarzyszą im opadające konfetti i poświata panelu bezpłatnego spotkania. Efekt uruchamia się raz po dotarciu do końca stopki; wstęgi pozostają widoczne po animacji. Dekoracje są pod treścią, nie przechwytują kliknięć, respektują ograniczenie ruchu i zatrzymują się poza widokiem. Na telefonie mają mniejszą intensywność i mniej cząsteczek. Wygląd definiuje `src/styles/celebration.css`, a SVG i cząsteczki — `src/components/ContactCelebration.tsx`. Przyciski spotkania prowadzą do rezerwacji i działają również bez JavaScriptu strony.
+`.github/workflows/deploy.yml` runs checks, validator tests, browser tests, and the development-server regression test before transferring `dist/` to Hostinger over SSH with rsync.
 
-## Rezerwacja spotkania w Google Calendar
+- Pushes to `master` deploy automatically after checks pass.
+- Pull requests targeting `master` run checks without deployment secrets.
+- Manual runs on `master` support deployment and a `dry_run` option. Other branches run checks only.
+- Deployment jobs are serialized.
 
-1. Na komputerze w Google Calendar wybierz **Utwórz → Harmonogram spotkań**. Ustaw tytuł „Bezpłatne spotkanie zapoznawcze”, czas **30 minut**, własne godziny dostępności i strefę **Europe/Warsaw**. Jako punkt wyjścia można przyjąć minimum 24 godziny wyprzedzenia, dostępność na 30 dni naprzód i 15 minut buforu między spotkaniami.
-2. Włącz sprawdzanie kalendarza pod kątem dostępności. Jako miejsce spotkania wybierz **Google Meet**, pozostaw spotkania bezpłatne i zapisz harmonogram. Dostępność dodatkowych funkcji, w tym przypomnień, zależy od abonamentu Google.
-3. Przy stronie rezerwacji wybierz **Opcje udostępniania → Umieść na stronie internetowej → Pojedynczą stronę rezerwacji → Wbudowana strona rezerwacji**. Skopiuj pełny adres z atrybutu `src` wygenerowanego iframe (nie cały kod HTML ani skrócony link `calendar.app.google`). Nie udostępniaj publicznie swojego zwykłego kalendarza.
-4. Wklej adres do `introMeeting.bookingUrl` w `src/data/site.ts`. W kodzie TypeScript zapisuj zwykłe `&`, a nie encje HTML `&amp;`. Uruchom check i build, a następnie opublikuj nowy katalog `dist/` używaną metodą hostingu.
+### Repository secrets
 
-Sekcja `#rezerwacja` znajduje się pod ofertą, przed FAQ. Zawiera opis spotkania, agendę i pytania praktyczne. Iframe ładuje się leniwie; pod nim jest niezależny link „Otwórz rezerwację w Google” oraz kontakt mailowy i telefoniczny. Bez adresu rezerwacji strona wyświetla zaproszenie do kontaktu z gotową treścią e-maila, bez pustego iframe i niedziałających linków do Google. Podanie nieprawidłowego adresu zatrzymuje build.
+| Secret | Value |
+| --- | --- |
+| `HOSTINGER_HOST` | SSH hostname or IP address |
+| `HOSTINGER_PORT` | SSH port from hPanel |
+| `HOSTINGER_USER` | SSH username |
+| `HOSTINGER_PATH` | Existing writable website directory |
+| `HOSTINGER_SSH_KEY` | Complete private key without a passphrase; the matching public key must be registered in hPanel |
+| `HOSTINGER_KNOWN_HOSTS` | Full `known_hosts` entry for the host and port, verified against the fingerprint in hPanel |
 
-Po podłączeniu prawdziwego harmonogramu sprawdź na komputerze i telefonie wybór terminu oraz dostępność linku alternatywnego. Zarezerwuj termin testowy z innego adresu e-mail i sprawdź potwierdzenie, wpis w kalendarzu, Google Meet oraz zniknięcie zarezerwowanego terminu z dostępności. Sprawdź też blokadę terminu zajętego przez inne wydarzenie oznaczone jako „Zajęty”. Na końcu anuluj rezerwację testową i usuń testowe wydarzenia.
+SSH access must be enabled on the hosting account. Deployment requires SSH and rsync; Docker is not used on the server.
 
-Instrukcje Google: [tworzenie harmonogramu](https://support.google.com/calendar/answer/10729749?hl=pl), [osadzanie strony rezerwacji](https://support.google.com/calendar/answer/10733297?hl=pl).
+### Publication and route cleanup
 
-## Logo i favicon
+`scripts/deploy-hostinger.sh` uploads assets and downloads before publishing HTML. `scripts/sync-hostinger-pages.sh` then removes obsolete `index.html` routes under `arkusze/`, `zadania/`, `wiedza/`, and `matura-2027/`. The namespace list defines which routes the deployment owns. Other filenames, hosting configuration, downloads, and older hashed assets are preserved.
 
-Oryginał znaku znajduje się w `images/logo-book-code.png`. Wariant nagłówka ma przycięte przezroczyste marginesy; favicony zachowują kolory i przezroczystość. Po zmianie oryginału odtwórz zasoby:
+The cleanup handles withdrawn pages and renamed routes, including pages from earlier deployments. Retaining an old URL after a rename requires a hosting redirect. Cleanup tests use real rsync against temporary directories.
+
+For local deployment, the script reads the same environment variables as the workflow:
 
 ```bash
-bash scripts/npm.sh exec -- node scripts/brand-assets.mjs
-bash scripts/npm.sh run build
+DEPLOY_DRY_RUN=true bash scripts/deploy-hostinger.sh
 ```
 
-Skrypt zapisuje logo w `src/assets/logo-book-code.png`, favicony PNG 32 i 48 px oraz `public/favicon.ico` z rozmiarami 16, 32 i 48 px.
+A dry run reports transfers and removals without changing hosted files. Deployment overwrites matching files and removes withdrawn routes; it does not create a backup or atomically replace the hosting directory.
+
+## Task catalog and practice
+
+`/zadania/` contains 154 subtasks from seven Formula 2023 exam sets, organized by topic and difficulty. Each task includes its instructions, input files, official answers, and CKE marking criteria. Supported tasks also provide interactive answer checking.
+
+| Command | Purpose |
+| --- | --- |
+| `npm run tasks:validate` | Validate task content, source references, files, and marking criteria |
+| `npm run tasks:test` | Run task validator tests |
+| `npm run tasks:review` | Generate the task classification report |
+| `npm run grading:review` | Generate the marking criteria coverage report |
+| `npm run practice:validate` | Validate practice models and task references |
+| `npm run practice:review` | Generate the practice coverage report |
+
+The build validates both task content and practice models. Answers and marking criteria are rendered during the build; their content is excluded from the catalog search index.
+
+Maintenance documentation: [task catalog](docs/task-catalog.md), [marking criteria](docs/task-grading.md), and [interactive practice](docs/task-practice.md). The report commands generate local Markdown summaries in `.tools/task-reports/`. These outputs are derived from the source data and are not tracked.
+
+## Study guide and publications
+
+`/matura-2027/` combines exam requirements, a skills map, study paths, and a checklist. Exam facts and their review date are stored in `src/data/matura-2027.ts`; supporting sources are recorded in the [source audit](docs/matura-2027-sources.md). Self-assessment is stored locally in the browser under `matura:2027:study:v1`.
+
+`/wiedza/` lists published materials from `src/content/publications/`. Astro renders Markdown during the build. Draft articles are excluded from generated pages, the index, and the sitemap. The annual guide uses a separate route whose publication behavior is described in the publication guide. The [publication guide](docs/publications.md) and [Markdown template](docs/templates/publication.md) describe the content format and publishing process.
+
+## Navigation and shared layouts
+
+Astro's `ClientRouter` handles navigation between pages. Browser scripts use `src/scripts/page-lifecycle.ts` to initialize interactions after navigation and clean up when leaving a page.
+
+The homepage groups lesson details and subject coverage into collapsible sections. Links to existing section anchors expand their containing sections. The materials block calculates task, practice, and exam totals during the build. Material pages share the server-rendered `ContactPanel` with the homepage.
+
+Navigation tests are in `tests/navigation.spec.ts` and `tests/client-navigation.spec.ts`. Material layouts are covered by `tests/materials-presentation.spec.ts`; tests that need expanded homepage sections use `tests/support/expanded-home.ts`.
