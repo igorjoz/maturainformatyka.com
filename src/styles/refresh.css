@@ -4,7 +4,6 @@
 astro-island { display: contents; }
 .section { padding-block: 96px; }
 .section-heading { margin-bottom: 48px; }
-.hero { padding-block: 64px; }
 .hero-description { max-width: 560px; }
 .hero-intro-action { padding: 8px 0; }
 .hero-facts { padding-top: 24px; border-top: 1px solid var(--line); }
@@ -42,12 +41,10 @@ astro-island { display: contents; }
 .scene-intro .scene-orbit { animation-duration: var(--motion-enter); }
 @media (max-width: 900px) {
   .section { padding-block: 72px; }
-  .hero { padding-block: 40px; }
 }
 @media (max-width: 600px) {
   .section { padding-block: 64px; }
   .section-heading { margin-bottom: 32px; }
-  .hero { padding-block: 32px 40px; }
   .lesson-levels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; gap: 4px; padding: 4px; }
   .lesson-levels button { padding: 12px 6px; gap: 4px; font-size: 12px; flex-direction: column; }
   .lesson-levels button > span { font-size: 10px; }
@@ -66,6 +63,8 @@ astro-island { display: contents; }
 .guide-home-link:hover { border-color: var(--sage); }
 .guide-context-link { padding: 14px 18px; border-left: 3px solid var(--sage); margin-bottom: 28px; background: var(--soft); font-size: .9rem; }
 .guide-context-link a { text-decoration: underline; text-underline-offset: 3px; }
+.footer > span a { text-decoration: underline; margin-left: 10px; }
+@media (min-width: 1024px) and (max-width: 1199px) { .desktop-nav { gap: 12px; font-size: .8rem; } .header-inner { gap: 14px; } .brand { font-size: 16px; } .header-contact { font-size: .8rem; gap: 8px; } }
 
 .guide-notice{position:relative;display:flex;align-items:center;gap:16px;margin:32px 0 0;padding:14px 12px 14px 18px}
 .guide-notice[hidden]{display:none}

@@ -110,6 +110,21 @@ test('guide text provides concrete exam supplies and describes the guide storage
  const faq=page.locator('.guide-faq details').last();await faq.locator('summary').click();await expect(faq).toContainText('wybrana ścieżka');await expect(faq).toContainText('nie obejmuje wyników');
 });
 
+for(const width of [390,1366]) test(`guide contact celebration runs once at ${width}px`,async({page})=>{
+ await page.setViewportSize({width,height:768});await page.goto('/matura-2027/');
+ const contact=page.locator('#korepetycje-materialy');await expect(contact).not.toHaveClass(/contact-arrived/);
+ await page.locator('[data-page-end]').scrollIntoViewIfNeeded();await expect(contact).toHaveClass(/contact-arrived/);
+ await expect(contact.locator('.celebration-ribbons')).toHaveCSS('pointer-events','none');
+ await page.waitForTimeout(3000);
+ await expect(contact.locator('.celebration-ribbon').first()).toHaveCSS('stroke-dashoffset','0px');
+ await page.evaluate(()=>scrollTo({top:0,behavior:'instant'}));await page.locator('[data-page-end]').scrollIntoViewIfNeeded();
+ await expect(contact.locator('.celebration-ribbon').first()).toHaveCSS('stroke-dashoffset','0px');
+ await expect(contact.locator('.contact-booking-button')).toHaveAttribute('href','/#rezerwacja');
+ await page.emulateMedia({reducedMotion:'reduce'});await expect(contact.locator('.contact-celebration')).toBeHidden();
+ await page.emulateMedia({media:'print',reducedMotion:'no-preference'});await expect(contact.locator('.contact-celebration')).toBeHidden();
+});
+
+
 test('all skill descriptions have exactly one Potrafię label', async ({ page }) => {
  await page.goto('/matura-2027/');
  const descriptions = await page.locator('.guide-can-do').allTextContents();

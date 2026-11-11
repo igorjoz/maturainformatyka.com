@@ -1,9 +1,7 @@
 import { useEffect, useRef } from "react";
 
 /** Owns only decorative classes/CSS variables inside this section. UI state stays in React. */
-export function useSectionMotion<T extends HTMLElement>({
-  celebrate = false,
-} = {}) {
+export function useSectionMotion<T extends HTMLElement>() {
   const ref = useRef<T>(null);
   useEffect(() => {
     const root = ref.current;
@@ -21,7 +19,6 @@ export function useSectionMotion<T extends HTMLElement>({
     const cleanups: (() => void)[] = [];
     const tapped = new Map<HTMLElement, number>();
     let visible = !("IntersectionObserver" in window);
-    let endVisible = false;
     let scrollFrame = 0;
     let pointerFrame = 0;
     let target: HTMLElement | null = null;
@@ -160,7 +157,6 @@ export function useSectionMotion<T extends HTMLElement>({
         tapped.clear();
       }
       if (active && scene) scene.classList.add("scene-intro");
-      if (active && endVisible) root.classList.add("contact-arrived");
       schedule();
     };
     root.classList.add("motion-ready");
@@ -185,20 +181,6 @@ export function useSectionMotion<T extends HTMLElement>({
         .querySelectorAll("[data-reveal]")
         .forEach((element) => entrance.observe(element));
       cleanups.push(() => entrance.disconnect());
-      if (celebrate) {
-        const sentinel = document.querySelector("[data-page-end]");
-        if (sentinel) {
-          const finish = new IntersectionObserver(
-            (entries) => {
-              endVisible = entries[0]?.isIntersecting ?? false;
-              sync();
-            },
-            { rootMargin: "0px 0px 4px 0px" },
-          );
-          finish.observe(sentinel);
-          cleanups.push(() => finish.disconnect());
-        }
-      }
       process?.classList.add("process-enhanced");
     }
     window.addEventListener("scroll", schedule, { passive: true });
@@ -217,7 +199,7 @@ export function useSectionMotion<T extends HTMLElement>({
       cancelAnimationFrame(scrollFrame);
       resetPointer();
       for (const timer of tapped.values()) clearTimeout(timer);
-      root.classList.remove("motion-ready", "motion-active", "contact-arrived");
+      root.classList.remove("motion-ready", "motion-active");
       scene?.classList.remove("scene-intro");
       root
         .querySelectorAll(".is-revealed")
@@ -230,6 +212,6 @@ export function useSectionMotion<T extends HTMLElement>({
         step.classList.remove("step-active", "step-activated"),
       );
     };
-  }, [celebrate]);
+  }, []);
   return ref;
 }

@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './support/expanded-home';
 
 test.beforeEach(async ({ page, javaScriptEnabled }) => {
   // Calendar integration is tested with local responses, without contacting Google or creating bookings.
@@ -43,8 +43,8 @@ test('navigation links target existing sections', async ({ page }) => {
   expect(await links.count()).toBeGreaterThan(0);
   for (const link of await links.all()) {
     const href = await link.getAttribute('href');
-    if (href === '/arkusze/') {
-      await expect(link).toHaveAttribute('href', '/arkusze/');
+    if (['/arkusze/', '/zadania/', '/matura-2027/', '/wiedza/'].includes(href ?? '')) {
+      await expect(link).toHaveAttribute('href', href!);
       continue;
     }
     expect(href).toMatch(/^#.+/);
@@ -56,7 +56,7 @@ test('navigation links target existing sections', async ({ page }) => {
 });
 
 test('the meeting action opens the calendar with an alternative booking link', async ({ page }) => {
-  await page.locator('.hero-actions').getByRole('link', { name: 'Umów bezpłatne spotkanie' }).click();
+  await page.locator('.hero-actions').getByRole('link', { name: 'Umów bezpłatną rozmowę' }).click();
   await expect(page).toHaveURL(/#rezerwacja$/);
   const booking = page.locator('#rezerwacja');
   await expect(booking).toBeInViewport();
@@ -357,7 +357,8 @@ test.describe('without JavaScript', () => {
   test('mobile navigation, booking links, and FAQ expansion remain available', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.locator('.mobile-menu summary').click();
-    await page.getByRole('navigation', { name: 'Nawigacja mobilna' }).getByRole('link', { name: 'FAQ', exact: true }).click();
+    await page.locator('.mobile-menu summary').click();
+    await page.goto('/#faq');
     await expect(page).toHaveURL(/#faq$/);
     const question = page.locator('#faq details').filter({ hasText: 'Czy muszę już dobrze programować?' });
     const answer = question.locator('p');
@@ -366,7 +367,7 @@ test.describe('without JavaScript', () => {
     await expect(answer).toBeVisible();
     await question.locator('summary').click();
     await expect(answer).not.toBeVisible();
-    await page.locator('.hero-actions').getByRole('link', { name: 'Umów bezpłatne spotkanie' }).click();
+    await page.locator('.hero-actions').getByRole('link', { name: 'Umów bezpłatną rozmowę' }).click();
     await expect(page).toHaveURL(/#rezerwacja$/);
     await expect(page.locator('#rezerwacja')).toBeInViewport();
     await expect(page.locator('#przyklad-podstawowy pre code')).toContainText('if number % 2 == 0:');

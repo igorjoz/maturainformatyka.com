@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./support/expanded-home";
 
 test.beforeEach(async ({ page }) => {
   await page.route("https://calendar.google.com/**", (route) =>
@@ -185,7 +185,7 @@ test("ribbons start at the page end, remain after animation, and do not intercep
     "opacity",
     "0.8",
   );
-  await contact.getByRole("link", { name: "Umów bezpłatne spotkanie" }).click();
+  await contact.getByRole("link", { name: "Umów bezpłatną rozmowę" }).click();
   await expect(page).toHaveURL(/#rezerwacja$/);
 });
 

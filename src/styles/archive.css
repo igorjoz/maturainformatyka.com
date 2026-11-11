@@ -35,7 +35,6 @@
 .archive-source { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--line); max-width: 850px; }
 .archive-source p + p { margin-top: 16px; }
 .exam-files { margin-block: 32px 48px; }
-.exam-preview > p { max-width: 750px; }
 .preview-actions { display: flex; flex-wrap: wrap; gap: 16px 32px; margin-block: 24px; }
 .preview-actions > div { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
 .preview-actions button { border: 1px solid var(--line); border-radius: 8px; min-height: 48px; padding: 10px 16px; background: var(--white); cursor: pointer; color: var(--ink); }
@@ -43,50 +42,6 @@
 .exam-preview iframe { width: 100%; height: min(85vh, 980px); min-height: 420px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--soft); }
 .archive-teaser { background: var(--soft); border-block: 1px solid var(--line); }
 .archive-teaser-inner { display: grid; grid-template-columns: 1.6fr 1fr; gap: 48px; align-items: center; }
-.archive-teaser h2 { font-size: clamp(2rem, 3vw, 2.75rem); margin-block: 16px 24px; }
-.archive-teaser p:not(.eyebrow) { max-width: 640px; }
-.archive-teaser-action { display: grid; justify-items: start; gap: 16px; }
-.archive-teaser-action > span { color: var(--sage); font-size: var(--text-detail); }
-@media (min-width: 901px) and (max-width: 1360px) {
-  .desktop-nav { gap: 12px; font-size: 12px; }
-  .header-inner { gap: 12px; }
-  .brand { font-size: 15px; gap: 6px; }
-  .header-contact { font-size: 12px; gap: 6px; }
-}
-@media (max-width: 1100px) {
-  .archive-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .archive-reset { justify-self: start; }
-  .exam-row { grid-template-columns: 1fr 1fr; gap: 24px; }
-}
-@media (max-width: 700px) {
-  .archive-main { padding-block: 24px 56px; }
-  .breadcrumbs ol { margin-bottom: 24px; }
-  .archive-filters { padding: 16px; gap: 16px 12px; }
-  .exam-row, .archive-teaser-inner { grid-template-columns: 1fr; gap: 20px; }
-  .archive-intro h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
-  .exam-downloads { gap: 8px; }
-  .file-link { flex: 1 1 135px; }
-  .exam-preview iframe { min-height: 420px; }
-  .archive-teaser .button { width: 100%; }
-}
-@media (max-width: 420px) {
-  .archive-filters { grid-template-columns: 1fr; }
-}
-
-.materials-tutoring { margin:0 0 24px; padding:14px 18px; border-radius:8px; background:var(--soft); font-size:.875rem; color:var(--muted); }
-.materials-tutoring a { display:inline-block; color:var(--ink); font-weight:700; text-decoration:underline; text-underline-offset:4px; }
-.exam-open-link { margin-top:12px; min-height:44px; }
-.exam-task-index { scroll-margin-top:120px; padding:24px; border:1px solid var(--line); border-radius:var(--radius); }
-.exam-task-index h2 { margin-bottom:12px; font-size:1.5rem; }
-.exam-task-index ul { list-style:none; padding:0; margin-top:20px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 24px; }
-.exam-task-index li { display:flex; align-items:baseline; gap:12px; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--line); font-size:.9rem; }
-.exam-task-index li>span { white-space:nowrap; font-size:.8rem; color:var(--muted); }
-#exam-preview-title { scroll-margin-top:120px; }
-@media(max-width:700px) {
-  .exam-task-index { padding:18px; }
-  .exam-task-index ul { grid-template-columns:1fr; }
-}
-
 .archive-teaser h2 { font-size: clamp(2rem, 3vw, 2.75rem); margin-block: 16px 24px; }
 .archive-teaser p:not(.eyebrow) { max-width: 640px; }
 .archive-teaser-action { display: grid; justify-items: start; gap: 16px; }
@@ -132,4 +87,9 @@
 .materials-choice .materials-total { font-size:1.125rem; color:var(--ink); }
 .materials-total strong { font-size:2rem; font-weight:750; }
 .materials-choice .button { margin-top:auto; width:100%; }
-@media(max-width:700px) { .materials-choices { grid-template-columns:1fr; }.materials-choice { padding:20px; } }
+.materials-invitation .contact { gap:32px 56px; padding-block:64px; }
+.materials-invitation .contact h2 { font-size:clamp(1.8rem,3vw,2.8rem); }
+.materials-invitation .contact-email strong { font-size:clamp(1.25rem,2.4vw,2rem); overflow-wrap:anywhere; }
+.materials-invitation .contact-phone strong { font-size:clamp(1.25rem,2.4vw,2rem); }
+.materials-invitation .contact-links>a { overflow-wrap:anywhere; }
+@media(max-width:700px) { .materials-choices { grid-template-columns:1fr; }.materials-choice { padding:20px; }.materials-invitation .contact { padding-block:48px; gap:24px; } }

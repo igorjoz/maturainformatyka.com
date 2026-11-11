@@ -127,8 +127,8 @@ test.describe('archive without JavaScript', () => {
     await expect(page.getByRole('heading', { name: 'Materiały do pobrania' })).toBeVisible();
     await expect(page.getByRole('link', { name: /Otwórz PDF:/ })).toHaveCount(2);
     await page.locator('.mobile-menu summary').click();
-    await page.getByRole('navigation', { name: 'Nawigacja mobilna' }).getByRole('link', { name: 'Zakres', exact: true }).click();
-    await expect(page).toHaveURL(/\/#zakres$/);
+    await page.getByRole('navigation', { name: 'Nawigacja mobilna' }).getByRole('link', { name: 'Korepetycje', exact: true }).click();
+    await expect(page).toHaveURL(/\/#wspolpraca$/);
   });
 });
 
@@ -150,4 +150,14 @@ test('compact exam navigation retains downloads and returns through tasks to the
   await expect(page).toHaveURL(new RegExp(`/arkusze/${modern.slug}/`));
   await page.locator('[data-archive-back]').click();
   await expect(page).toHaveURL(/\/arkusze\/\?year=2026$/);
+});
+
+test('navigation shortens the archive label without reducing its readable size', async ({ page }) => {
+  await page.setViewportSize({ width:1280, height:900 });
+  await page.goto('/arkusze/');
+  const link = page.getByRole('navigation', { name:'Nawigacja główna', exact:true }).getByRole('link', { name:'Arkusze', exact:true });
+  await expect(link).toBeVisible();
+  expect(await link.evaluate(node => parseFloat(getComputedStyle(node).fontSize))).toBeGreaterThanOrEqual(14);
+  await page.setViewportSize({ width:1440, height:900 });
+  await expect(page.getByRole('navigation', { name:'Nawigacja główna', exact:true }).getByRole('link', { name:'Arkusze', exact:true })).toBeVisible();
 });

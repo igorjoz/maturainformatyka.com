@@ -2,7 +2,7 @@
 
 Website for Igor Józefowicz's computer science Matura tutoring, built with Astro, React, TypeScript, and custom CSS. Astro generates static HTML, optimized images, and metadata. React powers the interactive lesson examples and homepage sections.
 
-The exam archive at `/arkusze/` serves locally stored CKE papers, marking guidelines, and data files. Booking uses an embedded Google Calendar appointment page. The site has no custom backend or analytics.
+The site includes an exam archive (`/arkusze/`), a task catalog (`/zadania/`), a study guide (`/matura-2027/`), and a knowledge section (`/wiedza/`). Exam papers, marking guidelines, and task data are stored locally. Booking uses an embedded Google Calendar appointment page. The site has no custom backend or analytics.
 
 ## Development
 
@@ -166,3 +166,11 @@ Maintenance documentation: [task catalog](docs/task-catalog.md), [marking criter
 `/matura-2027/` combines exam requirements, a skills map, study paths, and a checklist. Exam facts and their review date are stored in `src/data/matura-2027.ts`; supporting sources are recorded in the [source audit](docs/matura-2027-sources.md). Self-assessment is stored locally in the browser under `matura:2027:study:v1`.
 
 `/wiedza/` lists published materials from `src/content/publications/`. Astro renders Markdown during the build. Draft articles are excluded from generated pages, the index, and the sitemap. The annual guide uses a separate route whose publication behavior is described in the publication guide. The [publication guide](docs/publications.md) and [Markdown template](docs/templates/publication.md) describe the content format and publishing process.
+
+## Navigation and shared layouts
+
+Astro's `ClientRouter` handles navigation between pages. Browser scripts use `src/scripts/page-lifecycle.ts` to initialize interactions after navigation and clean up when leaving a page.
+
+The homepage groups lesson details and subject coverage into collapsible sections. Links to existing section anchors expand their containing sections. The materials block calculates task, practice, and exam totals during the build. Material pages share the server-rendered `ContactPanel` with the homepage.
+
+Navigation tests are in `tests/navigation.spec.ts` and `tests/client-navigation.spec.ts`. Material layouts are covered by `tests/materials-presentation.spec.ts`; tests that need expanded homepage sections use `tests/support/expanded-home.ts`.

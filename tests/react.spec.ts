@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./support/expanded-home";
 
 test.beforeEach(async ({ page }) => {
   await page.route("https://calendar.google.com/**", (route) =>
@@ -96,7 +96,8 @@ test("delayed scripts leave navigation, FAQ, and content usable", async ({ page 
   const menu = page.locator(".mobile-menu");
   await menu.locator("summary").click();
   await expect(menu).toHaveAttribute("open", "");
-  await menu.getByRole("link", { name: "FAQ", exact: true }).click();
+  await menu.locator("summary").click();
+  await page.goto("/#faq");
   const question = page.locator("#faq details").first();
   await question.locator("summary").click();
   await expect(question.locator("p")).toBeVisible();

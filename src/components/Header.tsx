@@ -6,7 +6,7 @@ export default function Header({
   site,
   logo,
   home = true,
-  activeSection = "/arkusze/",
+  activeSection = "",
 }: {
   site: Pick<Site, "navigation">;
   logo: string;
@@ -21,7 +21,7 @@ export default function Header({
   useEffect(() => {
     document.documentElement.classList.add("navigation-enhanced");
     setOpen(menu.current?.open ?? false);
-    const sections = site.navigation
+    const sections = [...site.navigation, {href:"#zakres"}, {href:"#opinie"}, {href:"#oferta"}, {href:"#faq"}, {href:"#rezerwacja"}]
       .filter((link) => link.href.startsWith("#"))
       .map((link) => document.getElementById(link.href.slice(1)))
       .filter((element): element is HTMLElement => !!element);
@@ -31,9 +31,9 @@ export default function Header({
       if (document.hidden) return;
       const bottom = header.current?.getBoundingClientRect().bottom ?? 88;
       let active = home ? "" : activeSection;
-      for (const section of sections)
+      for (const section of [...sections].sort((a,b) => a.offsetTop-b.offsetTop))
         if (section.getBoundingClientRect().top <= bottom + innerHeight * 0.18)
-          active = `#${section.id}`;
+          active = section.id === "o-mnie" ? "#o-mnie" : "#wspolpraca";
       setCurrent(active);
       const reading = Math.max(
         0,
@@ -113,7 +113,7 @@ export default function Header({
             {links}
           </nav>
           <a className="header-contact" href={home ? "#rezerwacja" : "/#rezerwacja"}>
-            Bezpłatna rozmowa <Arrow />
+            Umów bezpłatną rozmowę <Arrow />
           </a>
           <details
             ref={menu}
@@ -146,6 +146,7 @@ export default function Header({
               }}
             >
               {links}
+              <a className="mobile-booking" href={home ? "#rezerwacja" : "/#rezerwacja"}>Umów bezpłatną rozmowę <Arrow /></a>
               <a href={home ? "#kontakt" : "/#kontakt"}>Kontakt</a>
             </nav>
           </details>

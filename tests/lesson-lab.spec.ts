@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './support/expanded-home';
 
 test.beforeEach(async ({ page }) => {
   await page.route('https://calendar.google.com/**', route => route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>Test calendar</title>' }));
@@ -148,7 +148,7 @@ test('navigation marks the active section and updates progress with reduced moti
   await page.emulateMedia({ reducedMotion: 'reduce' });
   for (const id of ['wspolpraca', 'zakres', 'o-mnie', 'opinie', 'oferta', 'faq']) {
     await page.evaluate(id => { location.hash = id; }, id);
-    await expect(page.locator(`.desktop-nav a[href="#${id}"]`)).toHaveAttribute('aria-current', 'location');
+    await expect(page.locator('.desktop-nav').getByRole('link', { name: 'Korepetycje', exact: true })).toHaveAttribute('aria-current', 'location');
     await expect(page.locator('.desktop-nav [aria-current]')).toHaveCount(1);
   }
   expect(await page.locator('[data-reading-progress]').evaluate(element => Number((element as HTMLElement).style.getPropertyValue('--reading-progress')))).toBeGreaterThan(0.5);

@@ -14,7 +14,7 @@ export default function Footer({
       <span>
         © {year} {name}
       </span>
-      <span>Matura z informatyki. Przygotowanie z planem.</span>
+      <span>Matura z informatyki. Przygotowanie z planem. <a href="/#o-mnie">O mnie</a></span>
       <a href={personal}>
         Strona osobista <Arrow diagonal />
       </a>

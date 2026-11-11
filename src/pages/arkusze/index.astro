@@ -19,6 +19,7 @@ const years = [...new Set(exams.map(exam => exam.year))].sort((a, b) => b - a);
   </form>
   <noscript><p class="archive-notice">Wyświetlamy wszystkie zestawy. Pobieranie plików i podstrony matur działają bez JavaScriptu.</p></noscript>
   <p class="archive-count" role="status" aria-live="polite" aria-atomic="true" data-archive-count>Liczba zestawów: {exams.length}</p>
+  <p class="materials-tutoring">Potrzebujesz pomocy w przygotowaniu do matury? <a href="/#oferta">Zobacz korepetycje ↗</a></p>
   <div class="archive-empty archive-notice" data-archive-empty hidden><h2>Brak pasujących zestawów</h2><p>Zmień rok, formułę lub pozostałe filtry.</p></div>
   <div class="exam-list">
     {exams.map(exam => <article class="exam-row" data-exam-row data-formula={exam.formula} data-year={exam.year} data-level={exam.level} data-kind={exam.kind}>
@@ -26,15 +27,16 @@ const years = [...new Set(exams.map(exam => exam.year))].sort((a, b) => b - a);
         <p class="exam-meta">{exam.formulaLabel} <span aria-hidden="true">·</span> {examKinds[exam.kind]}</p>
         <h2><a data-exam-detail href={`/arkusze/${exam.slug}/`}>Informatyka {exam.year} — {exam.sessionLabel}</a></h2>
         <p>Poziom {exam.level}</p>
+        <a class="text-link exam-open-link" data-exam-detail href={`/arkusze/${exam.slug}/`}>Zobacz arkusz <span aria-hidden="true">→</span></a>
         {exam.missing.length > 0 && <p class="exam-incomplete">Niepełny zestaw. Brak: {exam.missing.join(', ')}.</p>}
       </div>
       <div class="exam-downloads" aria-label={`Pliki: ${examTitle(exam)}`}>
-        {exam.files.map(file => <a class="file-link" href={file.path} download><span>{file.label}</span><small>{fileFormat(file)} · {fileSize(file.size)}</small></a>)}
+        {exam.files.filter(file => !file.label.startsWith('Karta odpowiedzi')).map(file => <a class="file-link" href={file.path} download><span>{file.label}</span><small>{fileFormat(file)} · {fileSize(file.size)}</small></a>)}
         <a class="file-link file-bundle" href={exam.bundle.path} download><span>{exam.missing.length ? 'Dostępne pliki ZIP' : 'Cały zestaw ZIP'}</span><small>ZIP · {fileSize(exam.bundle.size)}</small></a>
       </div>
     </article>)}
   </div>
-  <aside class="archive-source"><h2>Skąd pochodzą materiały?</h2><p>Udostępniamy lokalne kopie oficjalnych materiałów Centralnej Komisji Egzaminacyjnej. Źródła podajemy przy poszczególnych zestawach. Zasady oceniania zawierają oficjalne odpowiedzi; nie są naszymi autorskimi rozwiązaniami.</p></aside>
+  <aside class="archive-source"><p>Materiały i odpowiedzi: <a href="https://cke.gov.pl/egzamin-maturalny/" target="_blank" rel="noopener">CKE</a>. Oficjalne źródła znajdziesz przy poszczególnych zestawach.</p></aside>
 </ArchiveLayout>
 <script>
   import '../../scripts/archive';

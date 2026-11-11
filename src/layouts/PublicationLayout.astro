@@ -6,8 +6,10 @@ import '../styles/refresh.css';
 import '../styles/publications.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { ContactPanel } from '../components/Contact';
+import ContactEffects from '../components/ContactEffects.astro';
 import logo from '../assets/logo-book-code.png';
-import { site } from '../data/site';
+import { site, introMeeting } from '../data/site';
 interface Props {
   title: string; description: string; canonical: string;
   breadcrumbs: { name: string; path: string }[];
@@ -52,6 +54,8 @@ if (article) schemas.push({ '@context': 'https://schema.org', '@type': 'Article'
       <nav class="publication-breadcrumbs" aria-label="Ścieżka nawigacji"><ol>{breadcrumbs.map((item, index) => <li>{index === breadcrumbs.length - 1 ? <span aria-current="page">{item.name}</span> : <a href={item.path}>{item.name}</a>}</li>)}</ol></nav>
       {toc.length > 0 ? <div class="publication-reading-layout"><aside class="publication-toc"><details open><summary>Na tej stronie</summary><nav aria-label="Spis treści"><ol>{toc.map(item => <li><a href={`#${item.id}`}>{item.label}</a></li>)}</ol></nav></details></aside><div class="publication-reading-content"><slot /></div></div> : <slot />}
     </main>
+    <ContactPanel site={site} introMeeting={introMeeting} author={site.name} materials />
+    <ContactEffects />
     <Footer year={new Date().getFullYear()} name={site.name} personal={site.personal} />
   </body>
 </html>

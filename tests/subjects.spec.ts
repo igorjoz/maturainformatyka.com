@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './support/expanded-home';
 
 test.beforeEach(async ({ page }) => {
   await page.route('https://calendar.google.com/**', route => route.fulfill({ contentType: 'text/html', body: '<p>Calendar</p>' }));
@@ -84,6 +84,7 @@ test('topics render as ordinary content with headings without JavaScript', async
   const page = await context.newPage();
   await page.route('https://calendar.google.com/**', route => route.abort());
   await page.goto('/');
+  await page.getByText('Zobacz szczegółowy zakres', {exact:true}).click();
   await expect(page.locator('[data-subject-panel]:visible')).toHaveCount(4);
   await expect(page.locator('[data-subject-tabs]:visible')).toHaveCount(0);
   for (const panel of await page.locator('[data-subject-panel]').all()) {

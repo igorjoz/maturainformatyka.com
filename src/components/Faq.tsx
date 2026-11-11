@@ -15,7 +15,7 @@ export default function Faq({
         aria-labelledby="faq-title"
       >
         <div>
-          <p className="eyebrow">07 / WARTO WIEDZIEĆ</p>
+          <p className="eyebrow">WARTO WIEDZIEĆ</p>
           <h2 id="faq-title">Zanim zaczniemy.</h2>
           <p>
             Masz inne pytanie?

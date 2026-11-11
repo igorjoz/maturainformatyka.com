@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./support/expanded-home";
 
 test.beforeEach(async ({ page }) => {
   await page.route("https://calendar.google.com/**", (route) =>

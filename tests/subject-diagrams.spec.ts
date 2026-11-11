@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./support/expanded-home";
 
 test.beforeEach(async ({ page }) => {
   await page.route("https://calendar.google.com/**", (route) =>
@@ -166,10 +166,8 @@ for (const width of [360, 390, 768, 1024, 1440]) {
         elements.map((el) => el.getBoundingClientRect().toJSON()),
       );
       expect(boxes[1].top).toBeGreaterThanOrEqual(boxes[0].bottom);
-      await expect(page.locator(".subject-foundation")).toHaveCSS(
-        "grid-template-columns",
-        `${width - (width <= 600 ? 40 : 64)}px`,
-      );
+      const gridWidth = await page.locator(".subject-foundation").evaluate(el => parseFloat(getComputedStyle(el).gridTemplateColumns));
+      expect(gridWidth).toBeCloseTo(await page.locator("#zakres").evaluate(el => el.getBoundingClientRect().width), 0);
     }
     for (const diagram of await page.locator("[data-diagram]:visible").all()) {
       const box = (await diagram.boundingBox())!;
