@@ -42,3 +42,4 @@ playwright-report/
 # Python archive tooling
 __pycache__/
 *.pyc
+test-results-dev/

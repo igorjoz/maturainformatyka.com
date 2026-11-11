@@ -67,11 +67,12 @@ if [[ "$DEPLOY_DRY_RUN" == true ]]; then
   printf '%s\n' 'Dry run: hosting files will not be changed.'
 fi
 
-# Keep existing files, including .htaccess and assets used by older page versions.
-# Publish every HTML document only after all downloads and assets have arrived.
+# Keep hosting configuration and assets used by older page versions.
+# Publish HTML only after all downloads and assets have arrived, then remove
+# withdrawn index.html routes inside the application's managed namespaces.
 destination="hostinger-deploy:${HOSTINGER_PATH%/}/"
 rsync "${rsync_options[@]}" --exclude='*.html' dist/ "$destination"
-rsync "${rsync_options[@]}" --include='*/' --include='*.html' --exclude='*' dist/ "$destination"
+bash "$(dirname -- "${BASH_SOURCE[0]}")/sync-hostinger-pages.sh" dist "$destination" "${rsync_options[@]}"
 
 if [[ "$DEPLOY_DRY_RUN" == true ]]; then
   printf '%s\n' 'Dry run completed successfully.'
