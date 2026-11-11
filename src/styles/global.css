@@ -514,3 +514,21 @@ a:hover .diagonal { transform: rotate(-45deg) translateX(3px); }
   .scene-layer, .geometry-parallax, [data-card], .button:hover, .subject-art img, .project.pointer-active .project-illustration img, .project:focus-visible .project-illustration img { transform: none; }
   .process-enhanced .process-line { scale: 1; }
 }
+
+/* Reveal the knowledge cover over an opaque outgoing page. Avoid additive
+   blending and simultaneous fading of both full-page snapshots here. */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-knowledge-index]::view-transition-old(root) {
+    animation: none;
+    opacity: 1;
+    mix-blend-mode: normal;
+  }
+  html[data-knowledge-index]::view-transition-new(root) {
+    animation: knowledge-page-reveal 250ms ease both;
+    mix-blend-mode: normal;
+  }
+}
+@keyframes knowledge-page-reveal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

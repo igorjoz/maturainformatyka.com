@@ -57,3 +57,21 @@ astro-island { display: contents; }
   .lab-workspace { padding: 16px 12px; }
   .subject-foundation > .foundation-card { padding: 24px 20px; }
 }
+
+/* Entry points to the exam guide share the existing materials palette. */
+.guide-home-link { display: grid; grid-template-columns: 1fr auto; gap: 12px 24px; margin: 28px 0; padding: 28px 32px; color: var(--ink); background: var(--soft); border: 1px solid var(--line); border-radius: 20px; text-decoration: none; }
+.guide-home-link > :not(:last-child) { grid-column: 1; }
+.guide-home-link strong { font-size: clamp(1.4rem, 3vw, 2rem); }
+.guide-home-link > :last-child { grid-column: 2; grid-row: 1 / 4; align-self: center; font-size: 2.5rem; color: var(--accent); }
+.guide-home-link:hover { border-color: var(--sage); }
+.guide-context-link { padding: 14px 18px; border-left: 3px solid var(--sage); margin-bottom: 28px; background: var(--soft); font-size: .9rem; }
+.guide-context-link a { text-decoration: underline; text-underline-offset: 3px; }
+
+.guide-notice{position:relative;display:flex;align-items:center;gap:16px;margin:32px 0 0;padding:14px 12px 14px 18px}
+.guide-notice[hidden]{display:none}
+.guide-notice p{flex:1;min-width:0;margin:0;line-height:1.7}
+.guide-notice button{flex:0 0 44px;width:44px;height:44px;border:0;border-radius:8px;background:transparent;color:var(--sage);font:1.6rem var(--font);cursor:pointer}
+.guide-notice button[hidden]{display:none}
+.guide-notice button:hover{background:var(--paper)}
+.guide-notice button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media print{.guide-notice{display:none}}

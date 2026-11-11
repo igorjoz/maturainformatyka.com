@@ -1,5 +1,6 @@
 ---
 import '@fontsource-variable/manrope';
+import GuideNotice from '../components/GuideNotice.astro';
 import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 import '../styles/refresh.css';
@@ -42,6 +43,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
         <ol>{breadcrumbs.map((crumb, index) => <li>{index === breadcrumbs.length - 1 ? <span aria-current="page">{crumb.name}</span> : <a href={crumb.path}>{crumb.name}</a>}</li>)}</ol>
       </nav>}
       <slot />
+      <GuideNotice />
     </main>
     <Footer year={new Date().getFullYear()} name={site.name} personal={site.personal} />
   </body>

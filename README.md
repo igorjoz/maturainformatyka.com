@@ -160,3 +160,9 @@ A dry run reports transfers and removals without changing hosted files. Deployme
 The build validates both task content and practice models. Answers and marking criteria are rendered during the build; their content is excluded from the catalog search index.
 
 Maintenance documentation: [task catalog](docs/task-catalog.md), [marking criteria](docs/task-grading.md), and [interactive practice](docs/task-practice.md). The report commands generate local Markdown summaries in `.tools/task-reports/`. These outputs are derived from the source data and are not tracked.
+
+## Study guide and publications
+
+`/matura-2027/` combines exam requirements, a skills map, study paths, and a checklist. Exam facts and their review date are stored in `src/data/matura-2027.ts`; supporting sources are recorded in the [source audit](docs/matura-2027-sources.md). Self-assessment is stored locally in the browser under `matura:2027:study:v1`.
+
+`/wiedza/` lists published materials from `src/content/publications/`. Astro renders Markdown during the build. Draft articles are excluded from generated pages, the index, and the sitemap. The annual guide uses a separate route whose publication behavior is described in the publication guide. The [publication guide](docs/publications.md) and [Markdown template](docs/templates/publication.md) describe the content format and publishing process.

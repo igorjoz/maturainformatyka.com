@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#faf9f6"/>
+<rect x="870" width="330" height="630" fill="#18364a"/>
+<circle cx="1070" cy="320" r="235" fill="none" stroke="#8ca99b" stroke-width="2"/>
+<circle cx="1070" cy="320" r="155" fill="none" stroke="#8ca99b" stroke-opacity=".4"/>
+<circle cx="883" cy="177" r="16" fill="#dca57a"/>
+<path d="M930 300h80m30 0h80m-180 55h170" stroke="#a7c6b4" stroke-width="4"/>
+<text x="72" y="104" font-family="sans-serif" font-size="24" font-weight="700" letter-spacing="4" fill="#536c65">MATURAINFORMATYKA.COM</text>
+<text x="68" y="246" font-family="sans-serif" font-size="75" font-weight="700" letter-spacing="-3" fill="#18364a">Zrozum informatykę.</text>
+<text x="68" y="341" font-family="sans-serif" font-size="75" font-weight="700" letter-spacing="-3" fill="#536c65">Przygotuj się</text>
+<text x="68" y="429" font-family="sans-serif" font-size="75" font-weight="700" letter-spacing="-3" fill="#536c65">z planem.</text>
+<path d="M72 493h700" stroke="#d8dfd9"/>
+<text x="72" y="552" font-family="sans-serif" font-size="25" fill="#263e4d">Wiedza → Zadania → Świadoma nauka</text>
+</svg>
