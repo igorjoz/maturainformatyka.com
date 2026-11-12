@@ -68,7 +68,7 @@ const pythonExample = `with open("liczby.txt", encoding="utf-8") as file:\n    n
           <header><span class="guide-section-symbol" aria-hidden="true">{['</>','ƒ(n)','Σ','SQL','01'][index]}</span><div><p class="eyebrow">{section.kicker}</p><h3>{section.title}</h3></div><span class="guide-section-count" data-section-count={section.id} hidden></span></header>
           <p>{section.description}</p>
           <div class="guide-skills">{studySkills.filter(s=>s.section===section.id).map(skill=><div class="guide-skill-row"><details class="guide-skill" id={`umiejetnosc-${skill.id}`} data-skill={skill.id} data-section={skill.section}>
-            <summary><span>{skill.title}</span><span class="guide-expand" aria-hidden="true">+</span></summary>
+            <summary><span>{skill.title}</span><span class="guide-expand" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5v14" /></svg></span></summary>
             <div class="guide-skill-content"><p class="guide-can-do"><strong>Potrafię:</strong> {skill.canDo}</p><p class="guide-prerequisite"><strong>Przyda się wcześniej:</strong> {skill.prerequisites.join(' · ') || 'Możesz zacząć od tego punktu.'}</p>
               <div class="guide-example"><span class="eyebrow">MAŁY PRZYKŁAD</span><p>{skill.example}</p></div>
               <div class="guide-skill-tips"><p><strong>Uważaj na</strong>{skill.pitfall}</p><p><strong>Sprawdź się</strong>{skill.check}</p></div>
